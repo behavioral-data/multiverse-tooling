@@ -1,0 +1,1025 @@
+Filename,Code Path,age,hours,grade,collgrad,married,south,smsa,c_city,ttl_exp,tenure
+universe_1.R,_start,+ age,+ hours,+ grade,+ collgrad,+ married,+ south,+ smsa,+ c_city,+ ttl_exp,+ tenure
+universe_2.R,_start,+ age,+ hours,+ grade,+ collgrad,+ married,+ south,+ smsa,+ c_city,+ ttl_exp,
+universe_3.R,_start,+ age,+ hours,+ grade,+ collgrad,+ married,+ south,+ smsa,+ c_city,,+ tenure
+universe_4.R,_start,+ age,+ hours,+ grade,+ collgrad,+ married,+ south,+ smsa,+ c_city,,
+universe_5.R,_start,+ age,+ hours,+ grade,+ collgrad,+ married,+ south,+ smsa,,+ ttl_exp,+ tenure
+universe_6.R,_start,+ age,+ hours,+ grade,+ collgrad,+ married,+ south,+ smsa,,+ ttl_exp,
+universe_7.R,_start,+ age,+ hours,+ grade,+ collgrad,+ married,+ south,+ smsa,,,+ tenure
+universe_8.R,_start,+ age,+ hours,+ grade,+ collgrad,+ married,+ south,+ smsa,,,
+universe_9.R,_start,+ age,+ hours,+ grade,+ collgrad,+ married,+ south,,+ c_city,+ ttl_exp,+ tenure
+universe_10.R,_start,+ age,+ hours,+ grade,+ collgrad,+ married,+ south,,+ c_city,+ ttl_exp,
+universe_11.R,_start,+ age,+ hours,+ grade,+ collgrad,+ married,+ south,,+ c_city,,+ tenure
+universe_12.R,_start,+ age,+ hours,+ grade,+ collgrad,+ married,+ south,,+ c_city,,
+universe_13.R,_start,+ age,+ hours,+ grade,+ collgrad,+ married,+ south,,,+ ttl_exp,+ tenure
+universe_14.R,_start,+ age,+ hours,+ grade,+ collgrad,+ married,+ south,,,+ ttl_exp,
+universe_15.R,_start,+ age,+ hours,+ grade,+ collgrad,+ married,+ south,,,,+ tenure
+universe_16.R,_start,+ age,+ hours,+ grade,+ collgrad,+ married,+ south,,,,
+universe_17.R,_start,+ age,+ hours,+ grade,+ collgrad,+ married,,+ smsa,+ c_city,+ ttl_exp,+ tenure
+universe_18.R,_start,+ age,+ hours,+ grade,+ collgrad,+ married,,+ smsa,+ c_city,+ ttl_exp,
+universe_19.R,_start,+ age,+ hours,+ grade,+ collgrad,+ married,,+ smsa,+ c_city,,+ tenure
+universe_20.R,_start,+ age,+ hours,+ grade,+ collgrad,+ married,,+ smsa,+ c_city,,
+universe_21.R,_start,+ age,+ hours,+ grade,+ collgrad,+ married,,+ smsa,,+ ttl_exp,+ tenure
+universe_22.R,_start,+ age,+ hours,+ grade,+ collgrad,+ married,,+ smsa,,+ ttl_exp,
+universe_23.R,_start,+ age,+ hours,+ grade,+ collgrad,+ married,,+ smsa,,,+ tenure
+universe_24.R,_start,+ age,+ hours,+ grade,+ collgrad,+ married,,+ smsa,,,
+universe_25.R,_start,+ age,+ hours,+ grade,+ collgrad,+ married,,,+ c_city,+ ttl_exp,+ tenure
+universe_26.R,_start,+ age,+ hours,+ grade,+ collgrad,+ married,,,+ c_city,+ ttl_exp,
+universe_27.R,_start,+ age,+ hours,+ grade,+ collgrad,+ married,,,+ c_city,,+ tenure
+universe_28.R,_start,+ age,+ hours,+ grade,+ collgrad,+ married,,,+ c_city,,
+universe_29.R,_start,+ age,+ hours,+ grade,+ collgrad,+ married,,,,+ ttl_exp,+ tenure
+universe_30.R,_start,+ age,+ hours,+ grade,+ collgrad,+ married,,,,+ ttl_exp,
+universe_31.R,_start,+ age,+ hours,+ grade,+ collgrad,+ married,,,,,+ tenure
+universe_32.R,_start,+ age,+ hours,+ grade,+ collgrad,+ married,,,,,
+universe_33.R,_start,+ age,+ hours,+ grade,+ collgrad,,+ south,+ smsa,+ c_city,+ ttl_exp,+ tenure
+universe_34.R,_start,+ age,+ hours,+ grade,+ collgrad,,+ south,+ smsa,+ c_city,+ ttl_exp,
+universe_35.R,_start,+ age,+ hours,+ grade,+ collgrad,,+ south,+ smsa,+ c_city,,+ tenure
+universe_36.R,_start,+ age,+ hours,+ grade,+ collgrad,,+ south,+ smsa,+ c_city,,
+universe_37.R,_start,+ age,+ hours,+ grade,+ collgrad,,+ south,+ smsa,,+ ttl_exp,+ tenure
+universe_38.R,_start,+ age,+ hours,+ grade,+ collgrad,,+ south,+ smsa,,+ ttl_exp,
+universe_39.R,_start,+ age,+ hours,+ grade,+ collgrad,,+ south,+ smsa,,,+ tenure
+universe_40.R,_start,+ age,+ hours,+ grade,+ collgrad,,+ south,+ smsa,,,
+universe_41.R,_start,+ age,+ hours,+ grade,+ collgrad,,+ south,,+ c_city,+ ttl_exp,+ tenure
+universe_42.R,_start,+ age,+ hours,+ grade,+ collgrad,,+ south,,+ c_city,+ ttl_exp,
+universe_43.R,_start,+ age,+ hours,+ grade,+ collgrad,,+ south,,+ c_city,,+ tenure
+universe_44.R,_start,+ age,+ hours,+ grade,+ collgrad,,+ south,,+ c_city,,
+universe_45.R,_start,+ age,+ hours,+ grade,+ collgrad,,+ south,,,+ ttl_exp,+ tenure
+universe_46.R,_start,+ age,+ hours,+ grade,+ collgrad,,+ south,,,+ ttl_exp,
+universe_47.R,_start,+ age,+ hours,+ grade,+ collgrad,,+ south,,,,+ tenure
+universe_48.R,_start,+ age,+ hours,+ grade,+ collgrad,,+ south,,,,
+universe_49.R,_start,+ age,+ hours,+ grade,+ collgrad,,,+ smsa,+ c_city,+ ttl_exp,+ tenure
+universe_50.R,_start,+ age,+ hours,+ grade,+ collgrad,,,+ smsa,+ c_city,+ ttl_exp,
+universe_51.R,_start,+ age,+ hours,+ grade,+ collgrad,,,+ smsa,+ c_city,,+ tenure
+universe_52.R,_start,+ age,+ hours,+ grade,+ collgrad,,,+ smsa,+ c_city,,
+universe_53.R,_start,+ age,+ hours,+ grade,+ collgrad,,,+ smsa,,+ ttl_exp,+ tenure
+universe_54.R,_start,+ age,+ hours,+ grade,+ collgrad,,,+ smsa,,+ ttl_exp,
+universe_55.R,_start,+ age,+ hours,+ grade,+ collgrad,,,+ smsa,,,+ tenure
+universe_56.R,_start,+ age,+ hours,+ grade,+ collgrad,,,+ smsa,,,
+universe_57.R,_start,+ age,+ hours,+ grade,+ collgrad,,,,+ c_city,+ ttl_exp,+ tenure
+universe_58.R,_start,+ age,+ hours,+ grade,+ collgrad,,,,+ c_city,+ ttl_exp,
+universe_59.R,_start,+ age,+ hours,+ grade,+ collgrad,,,,+ c_city,,+ tenure
+universe_60.R,_start,+ age,+ hours,+ grade,+ collgrad,,,,+ c_city,,
+universe_61.R,_start,+ age,+ hours,+ grade,+ collgrad,,,,,+ ttl_exp,+ tenure
+universe_62.R,_start,+ age,+ hours,+ grade,+ collgrad,,,,,+ ttl_exp,
+universe_63.R,_start,+ age,+ hours,+ grade,+ collgrad,,,,,,+ tenure
+universe_64.R,_start,+ age,+ hours,+ grade,+ collgrad,,,,,,
+universe_65.R,_start,+ age,+ hours,+ grade,,+ married,+ south,+ smsa,+ c_city,+ ttl_exp,+ tenure
+universe_66.R,_start,+ age,+ hours,+ grade,,+ married,+ south,+ smsa,+ c_city,+ ttl_exp,
+universe_67.R,_start,+ age,+ hours,+ grade,,+ married,+ south,+ smsa,+ c_city,,+ tenure
+universe_68.R,_start,+ age,+ hours,+ grade,,+ married,+ south,+ smsa,+ c_city,,
+universe_69.R,_start,+ age,+ hours,+ grade,,+ married,+ south,+ smsa,,+ ttl_exp,+ tenure
+universe_70.R,_start,+ age,+ hours,+ grade,,+ married,+ south,+ smsa,,+ ttl_exp,
+universe_71.R,_start,+ age,+ hours,+ grade,,+ married,+ south,+ smsa,,,+ tenure
+universe_72.R,_start,+ age,+ hours,+ grade,,+ married,+ south,+ smsa,,,
+universe_73.R,_start,+ age,+ hours,+ grade,,+ married,+ south,,+ c_city,+ ttl_exp,+ tenure
+universe_74.R,_start,+ age,+ hours,+ grade,,+ married,+ south,,+ c_city,+ ttl_exp,
+universe_75.R,_start,+ age,+ hours,+ grade,,+ married,+ south,,+ c_city,,+ tenure
+universe_76.R,_start,+ age,+ hours,+ grade,,+ married,+ south,,+ c_city,,
+universe_77.R,_start,+ age,+ hours,+ grade,,+ married,+ south,,,+ ttl_exp,+ tenure
+universe_78.R,_start,+ age,+ hours,+ grade,,+ married,+ south,,,+ ttl_exp,
+universe_79.R,_start,+ age,+ hours,+ grade,,+ married,+ south,,,,+ tenure
+universe_80.R,_start,+ age,+ hours,+ grade,,+ married,+ south,,,,
+universe_81.R,_start,+ age,+ hours,+ grade,,+ married,,+ smsa,+ c_city,+ ttl_exp,+ tenure
+universe_82.R,_start,+ age,+ hours,+ grade,,+ married,,+ smsa,+ c_city,+ ttl_exp,
+universe_83.R,_start,+ age,+ hours,+ grade,,+ married,,+ smsa,+ c_city,,+ tenure
+universe_84.R,_start,+ age,+ hours,+ grade,,+ married,,+ smsa,+ c_city,,
+universe_85.R,_start,+ age,+ hours,+ grade,,+ married,,+ smsa,,+ ttl_exp,+ tenure
+universe_86.R,_start,+ age,+ hours,+ grade,,+ married,,+ smsa,,+ ttl_exp,
+universe_87.R,_start,+ age,+ hours,+ grade,,+ married,,+ smsa,,,+ tenure
+universe_88.R,_start,+ age,+ hours,+ grade,,+ married,,+ smsa,,,
+universe_89.R,_start,+ age,+ hours,+ grade,,+ married,,,+ c_city,+ ttl_exp,+ tenure
+universe_90.R,_start,+ age,+ hours,+ grade,,+ married,,,+ c_city,+ ttl_exp,
+universe_91.R,_start,+ age,+ hours,+ grade,,+ married,,,+ c_city,,+ tenure
+universe_92.R,_start,+ age,+ hours,+ grade,,+ married,,,+ c_city,,
+universe_93.R,_start,+ age,+ hours,+ grade,,+ married,,,,+ ttl_exp,+ tenure
+universe_94.R,_start,+ age,+ hours,+ grade,,+ married,,,,+ ttl_exp,
+universe_95.R,_start,+ age,+ hours,+ grade,,+ married,,,,,+ tenure
+universe_96.R,_start,+ age,+ hours,+ grade,,+ married,,,,,
+universe_97.R,_start,+ age,+ hours,+ grade,,,+ south,+ smsa,+ c_city,+ ttl_exp,+ tenure
+universe_98.R,_start,+ age,+ hours,+ grade,,,+ south,+ smsa,+ c_city,+ ttl_exp,
+universe_99.R,_start,+ age,+ hours,+ grade,,,+ south,+ smsa,+ c_city,,+ tenure
+universe_100.R,_start,+ age,+ hours,+ grade,,,+ south,+ smsa,+ c_city,,
+universe_101.R,_start,+ age,+ hours,+ grade,,,+ south,+ smsa,,+ ttl_exp,+ tenure
+universe_102.R,_start,+ age,+ hours,+ grade,,,+ south,+ smsa,,+ ttl_exp,
+universe_103.R,_start,+ age,+ hours,+ grade,,,+ south,+ smsa,,,+ tenure
+universe_104.R,_start,+ age,+ hours,+ grade,,,+ south,+ smsa,,,
+universe_105.R,_start,+ age,+ hours,+ grade,,,+ south,,+ c_city,+ ttl_exp,+ tenure
+universe_106.R,_start,+ age,+ hours,+ grade,,,+ south,,+ c_city,+ ttl_exp,
+universe_107.R,_start,+ age,+ hours,+ grade,,,+ south,,+ c_city,,+ tenure
+universe_108.R,_start,+ age,+ hours,+ grade,,,+ south,,+ c_city,,
+universe_109.R,_start,+ age,+ hours,+ grade,,,+ south,,,+ ttl_exp,+ tenure
+universe_110.R,_start,+ age,+ hours,+ grade,,,+ south,,,+ ttl_exp,
+universe_111.R,_start,+ age,+ hours,+ grade,,,+ south,,,,+ tenure
+universe_112.R,_start,+ age,+ hours,+ grade,,,+ south,,,,
+universe_113.R,_start,+ age,+ hours,+ grade,,,,+ smsa,+ c_city,+ ttl_exp,+ tenure
+universe_114.R,_start,+ age,+ hours,+ grade,,,,+ smsa,+ c_city,+ ttl_exp,
+universe_115.R,_start,+ age,+ hours,+ grade,,,,+ smsa,+ c_city,,+ tenure
+universe_116.R,_start,+ age,+ hours,+ grade,,,,+ smsa,+ c_city,,
+universe_117.R,_start,+ age,+ hours,+ grade,,,,+ smsa,,+ ttl_exp,+ tenure
+universe_118.R,_start,+ age,+ hours,+ grade,,,,+ smsa,,+ ttl_exp,
+universe_119.R,_start,+ age,+ hours,+ grade,,,,+ smsa,,,+ tenure
+universe_120.R,_start,+ age,+ hours,+ grade,,,,+ smsa,,,
+universe_121.R,_start,+ age,+ hours,+ grade,,,,,+ c_city,+ ttl_exp,+ tenure
+universe_122.R,_start,+ age,+ hours,+ grade,,,,,+ c_city,+ ttl_exp,
+universe_123.R,_start,+ age,+ hours,+ grade,,,,,+ c_city,,+ tenure
+universe_124.R,_start,+ age,+ hours,+ grade,,,,,+ c_city,,
+universe_125.R,_start,+ age,+ hours,+ grade,,,,,,+ ttl_exp,+ tenure
+universe_126.R,_start,+ age,+ hours,+ grade,,,,,,+ ttl_exp,
+universe_127.R,_start,+ age,+ hours,+ grade,,,,,,,+ tenure
+universe_128.R,_start,+ age,+ hours,+ grade,,,,,,,
+universe_129.R,_start,+ age,+ hours,,+ collgrad,+ married,+ south,+ smsa,+ c_city,+ ttl_exp,+ tenure
+universe_130.R,_start,+ age,+ hours,,+ collgrad,+ married,+ south,+ smsa,+ c_city,+ ttl_exp,
+universe_131.R,_start,+ age,+ hours,,+ collgrad,+ married,+ south,+ smsa,+ c_city,,+ tenure
+universe_132.R,_start,+ age,+ hours,,+ collgrad,+ married,+ south,+ smsa,+ c_city,,
+universe_133.R,_start,+ age,+ hours,,+ collgrad,+ married,+ south,+ smsa,,+ ttl_exp,+ tenure
+universe_134.R,_start,+ age,+ hours,,+ collgrad,+ married,+ south,+ smsa,,+ ttl_exp,
+universe_135.R,_start,+ age,+ hours,,+ collgrad,+ married,+ south,+ smsa,,,+ tenure
+universe_136.R,_start,+ age,+ hours,,+ collgrad,+ married,+ south,+ smsa,,,
+universe_137.R,_start,+ age,+ hours,,+ collgrad,+ married,+ south,,+ c_city,+ ttl_exp,+ tenure
+universe_138.R,_start,+ age,+ hours,,+ collgrad,+ married,+ south,,+ c_city,+ ttl_exp,
+universe_139.R,_start,+ age,+ hours,,+ collgrad,+ married,+ south,,+ c_city,,+ tenure
+universe_140.R,_start,+ age,+ hours,,+ collgrad,+ married,+ south,,+ c_city,,
+universe_141.R,_start,+ age,+ hours,,+ collgrad,+ married,+ south,,,+ ttl_exp,+ tenure
+universe_142.R,_start,+ age,+ hours,,+ collgrad,+ married,+ south,,,+ ttl_exp,
+universe_143.R,_start,+ age,+ hours,,+ collgrad,+ married,+ south,,,,+ tenure
+universe_144.R,_start,+ age,+ hours,,+ collgrad,+ married,+ south,,,,
+universe_145.R,_start,+ age,+ hours,,+ collgrad,+ married,,+ smsa,+ c_city,+ ttl_exp,+ tenure
+universe_146.R,_start,+ age,+ hours,,+ collgrad,+ married,,+ smsa,+ c_city,+ ttl_exp,
+universe_147.R,_start,+ age,+ hours,,+ collgrad,+ married,,+ smsa,+ c_city,,+ tenure
+universe_148.R,_start,+ age,+ hours,,+ collgrad,+ married,,+ smsa,+ c_city,,
+universe_149.R,_start,+ age,+ hours,,+ collgrad,+ married,,+ smsa,,+ ttl_exp,+ tenure
+universe_150.R,_start,+ age,+ hours,,+ collgrad,+ married,,+ smsa,,+ ttl_exp,
+universe_151.R,_start,+ age,+ hours,,+ collgrad,+ married,,+ smsa,,,+ tenure
+universe_152.R,_start,+ age,+ hours,,+ collgrad,+ married,,+ smsa,,,
+universe_153.R,_start,+ age,+ hours,,+ collgrad,+ married,,,+ c_city,+ ttl_exp,+ tenure
+universe_154.R,_start,+ age,+ hours,,+ collgrad,+ married,,,+ c_city,+ ttl_exp,
+universe_155.R,_start,+ age,+ hours,,+ collgrad,+ married,,,+ c_city,,+ tenure
+universe_156.R,_start,+ age,+ hours,,+ collgrad,+ married,,,+ c_city,,
+universe_157.R,_start,+ age,+ hours,,+ collgrad,+ married,,,,+ ttl_exp,+ tenure
+universe_158.R,_start,+ age,+ hours,,+ collgrad,+ married,,,,+ ttl_exp,
+universe_159.R,_start,+ age,+ hours,,+ collgrad,+ married,,,,,+ tenure
+universe_160.R,_start,+ age,+ hours,,+ collgrad,+ married,,,,,
+universe_161.R,_start,+ age,+ hours,,+ collgrad,,+ south,+ smsa,+ c_city,+ ttl_exp,+ tenure
+universe_162.R,_start,+ age,+ hours,,+ collgrad,,+ south,+ smsa,+ c_city,+ ttl_exp,
+universe_163.R,_start,+ age,+ hours,,+ collgrad,,+ south,+ smsa,+ c_city,,+ tenure
+universe_164.R,_start,+ age,+ hours,,+ collgrad,,+ south,+ smsa,+ c_city,,
+universe_165.R,_start,+ age,+ hours,,+ collgrad,,+ south,+ smsa,,+ ttl_exp,+ tenure
+universe_166.R,_start,+ age,+ hours,,+ collgrad,,+ south,+ smsa,,+ ttl_exp,
+universe_167.R,_start,+ age,+ hours,,+ collgrad,,+ south,+ smsa,,,+ tenure
+universe_168.R,_start,+ age,+ hours,,+ collgrad,,+ south,+ smsa,,,
+universe_169.R,_start,+ age,+ hours,,+ collgrad,,+ south,,+ c_city,+ ttl_exp,+ tenure
+universe_170.R,_start,+ age,+ hours,,+ collgrad,,+ south,,+ c_city,+ ttl_exp,
+universe_171.R,_start,+ age,+ hours,,+ collgrad,,+ south,,+ c_city,,+ tenure
+universe_172.R,_start,+ age,+ hours,,+ collgrad,,+ south,,+ c_city,,
+universe_173.R,_start,+ age,+ hours,,+ collgrad,,+ south,,,+ ttl_exp,+ tenure
+universe_174.R,_start,+ age,+ hours,,+ collgrad,,+ south,,,+ ttl_exp,
+universe_175.R,_start,+ age,+ hours,,+ collgrad,,+ south,,,,+ tenure
+universe_176.R,_start,+ age,+ hours,,+ collgrad,,+ south,,,,
+universe_177.R,_start,+ age,+ hours,,+ collgrad,,,+ smsa,+ c_city,+ ttl_exp,+ tenure
+universe_178.R,_start,+ age,+ hours,,+ collgrad,,,+ smsa,+ c_city,+ ttl_exp,
+universe_179.R,_start,+ age,+ hours,,+ collgrad,,,+ smsa,+ c_city,,+ tenure
+universe_180.R,_start,+ age,+ hours,,+ collgrad,,,+ smsa,+ c_city,,
+universe_181.R,_start,+ age,+ hours,,+ collgrad,,,+ smsa,,+ ttl_exp,+ tenure
+universe_182.R,_start,+ age,+ hours,,+ collgrad,,,+ smsa,,+ ttl_exp,
+universe_183.R,_start,+ age,+ hours,,+ collgrad,,,+ smsa,,,+ tenure
+universe_184.R,_start,+ age,+ hours,,+ collgrad,,,+ smsa,,,
+universe_185.R,_start,+ age,+ hours,,+ collgrad,,,,+ c_city,+ ttl_exp,+ tenure
+universe_186.R,_start,+ age,+ hours,,+ collgrad,,,,+ c_city,+ ttl_exp,
+universe_187.R,_start,+ age,+ hours,,+ collgrad,,,,+ c_city,,+ tenure
+universe_188.R,_start,+ age,+ hours,,+ collgrad,,,,+ c_city,,
+universe_189.R,_start,+ age,+ hours,,+ collgrad,,,,,+ ttl_exp,+ tenure
+universe_190.R,_start,+ age,+ hours,,+ collgrad,,,,,+ ttl_exp,
+universe_191.R,_start,+ age,+ hours,,+ collgrad,,,,,,+ tenure
+universe_192.R,_start,+ age,+ hours,,+ collgrad,,,,,,
+universe_193.R,_start,+ age,+ hours,,,+ married,+ south,+ smsa,+ c_city,+ ttl_exp,+ tenure
+universe_194.R,_start,+ age,+ hours,,,+ married,+ south,+ smsa,+ c_city,+ ttl_exp,
+universe_195.R,_start,+ age,+ hours,,,+ married,+ south,+ smsa,+ c_city,,+ tenure
+universe_196.R,_start,+ age,+ hours,,,+ married,+ south,+ smsa,+ c_city,,
+universe_197.R,_start,+ age,+ hours,,,+ married,+ south,+ smsa,,+ ttl_exp,+ tenure
+universe_198.R,_start,+ age,+ hours,,,+ married,+ south,+ smsa,,+ ttl_exp,
+universe_199.R,_start,+ age,+ hours,,,+ married,+ south,+ smsa,,,+ tenure
+universe_200.R,_start,+ age,+ hours,,,+ married,+ south,+ smsa,,,
+universe_201.R,_start,+ age,+ hours,,,+ married,+ south,,+ c_city,+ ttl_exp,+ tenure
+universe_202.R,_start,+ age,+ hours,,,+ married,+ south,,+ c_city,+ ttl_exp,
+universe_203.R,_start,+ age,+ hours,,,+ married,+ south,,+ c_city,,+ tenure
+universe_204.R,_start,+ age,+ hours,,,+ married,+ south,,+ c_city,,
+universe_205.R,_start,+ age,+ hours,,,+ married,+ south,,,+ ttl_exp,+ tenure
+universe_206.R,_start,+ age,+ hours,,,+ married,+ south,,,+ ttl_exp,
+universe_207.R,_start,+ age,+ hours,,,+ married,+ south,,,,+ tenure
+universe_208.R,_start,+ age,+ hours,,,+ married,+ south,,,,
+universe_209.R,_start,+ age,+ hours,,,+ married,,+ smsa,+ c_city,+ ttl_exp,+ tenure
+universe_210.R,_start,+ age,+ hours,,,+ married,,+ smsa,+ c_city,+ ttl_exp,
+universe_211.R,_start,+ age,+ hours,,,+ married,,+ smsa,+ c_city,,+ tenure
+universe_212.R,_start,+ age,+ hours,,,+ married,,+ smsa,+ c_city,,
+universe_213.R,_start,+ age,+ hours,,,+ married,,+ smsa,,+ ttl_exp,+ tenure
+universe_214.R,_start,+ age,+ hours,,,+ married,,+ smsa,,+ ttl_exp,
+universe_215.R,_start,+ age,+ hours,,,+ married,,+ smsa,,,+ tenure
+universe_216.R,_start,+ age,+ hours,,,+ married,,+ smsa,,,
+universe_217.R,_start,+ age,+ hours,,,+ married,,,+ c_city,+ ttl_exp,+ tenure
+universe_218.R,_start,+ age,+ hours,,,+ married,,,+ c_city,+ ttl_exp,
+universe_219.R,_start,+ age,+ hours,,,+ married,,,+ c_city,,+ tenure
+universe_220.R,_start,+ age,+ hours,,,+ married,,,+ c_city,,
+universe_221.R,_start,+ age,+ hours,,,+ married,,,,+ ttl_exp,+ tenure
+universe_222.R,_start,+ age,+ hours,,,+ married,,,,+ ttl_exp,
+universe_223.R,_start,+ age,+ hours,,,+ married,,,,,+ tenure
+universe_224.R,_start,+ age,+ hours,,,+ married,,,,,
+universe_225.R,_start,+ age,+ hours,,,,+ south,+ smsa,+ c_city,+ ttl_exp,+ tenure
+universe_226.R,_start,+ age,+ hours,,,,+ south,+ smsa,+ c_city,+ ttl_exp,
+universe_227.R,_start,+ age,+ hours,,,,+ south,+ smsa,+ c_city,,+ tenure
+universe_228.R,_start,+ age,+ hours,,,,+ south,+ smsa,+ c_city,,
+universe_229.R,_start,+ age,+ hours,,,,+ south,+ smsa,,+ ttl_exp,+ tenure
+universe_230.R,_start,+ age,+ hours,,,,+ south,+ smsa,,+ ttl_exp,
+universe_231.R,_start,+ age,+ hours,,,,+ south,+ smsa,,,+ tenure
+universe_232.R,_start,+ age,+ hours,,,,+ south,+ smsa,,,
+universe_233.R,_start,+ age,+ hours,,,,+ south,,+ c_city,+ ttl_exp,+ tenure
+universe_234.R,_start,+ age,+ hours,,,,+ south,,+ c_city,+ ttl_exp,
+universe_235.R,_start,+ age,+ hours,,,,+ south,,+ c_city,,+ tenure
+universe_236.R,_start,+ age,+ hours,,,,+ south,,+ c_city,,
+universe_237.R,_start,+ age,+ hours,,,,+ south,,,+ ttl_exp,+ tenure
+universe_238.R,_start,+ age,+ hours,,,,+ south,,,+ ttl_exp,
+universe_239.R,_start,+ age,+ hours,,,,+ south,,,,+ tenure
+universe_240.R,_start,+ age,+ hours,,,,+ south,,,,
+universe_241.R,_start,+ age,+ hours,,,,,+ smsa,+ c_city,+ ttl_exp,+ tenure
+universe_242.R,_start,+ age,+ hours,,,,,+ smsa,+ c_city,+ ttl_exp,
+universe_243.R,_start,+ age,+ hours,,,,,+ smsa,+ c_city,,+ tenure
+universe_244.R,_start,+ age,+ hours,,,,,+ smsa,+ c_city,,
+universe_245.R,_start,+ age,+ hours,,,,,+ smsa,,+ ttl_exp,+ tenure
+universe_246.R,_start,+ age,+ hours,,,,,+ smsa,,+ ttl_exp,
+universe_247.R,_start,+ age,+ hours,,,,,+ smsa,,,+ tenure
+universe_248.R,_start,+ age,+ hours,,,,,+ smsa,,,
+universe_249.R,_start,+ age,+ hours,,,,,,+ c_city,+ ttl_exp,+ tenure
+universe_250.R,_start,+ age,+ hours,,,,,,+ c_city,+ ttl_exp,
+universe_251.R,_start,+ age,+ hours,,,,,,+ c_city,,+ tenure
+universe_252.R,_start,+ age,+ hours,,,,,,+ c_city,,
+universe_253.R,_start,+ age,+ hours,,,,,,,+ ttl_exp,+ tenure
+universe_254.R,_start,+ age,+ hours,,,,,,,+ ttl_exp,
+universe_255.R,_start,+ age,+ hours,,,,,,,,+ tenure
+universe_256.R,_start,+ age,+ hours,,,,,,,,
+universe_257.R,_start,+ age,,+ grade,+ collgrad,+ married,+ south,+ smsa,+ c_city,+ ttl_exp,+ tenure
+universe_258.R,_start,+ age,,+ grade,+ collgrad,+ married,+ south,+ smsa,+ c_city,+ ttl_exp,
+universe_259.R,_start,+ age,,+ grade,+ collgrad,+ married,+ south,+ smsa,+ c_city,,+ tenure
+universe_260.R,_start,+ age,,+ grade,+ collgrad,+ married,+ south,+ smsa,+ c_city,,
+universe_261.R,_start,+ age,,+ grade,+ collgrad,+ married,+ south,+ smsa,,+ ttl_exp,+ tenure
+universe_262.R,_start,+ age,,+ grade,+ collgrad,+ married,+ south,+ smsa,,+ ttl_exp,
+universe_263.R,_start,+ age,,+ grade,+ collgrad,+ married,+ south,+ smsa,,,+ tenure
+universe_264.R,_start,+ age,,+ grade,+ collgrad,+ married,+ south,+ smsa,,,
+universe_265.R,_start,+ age,,+ grade,+ collgrad,+ married,+ south,,+ c_city,+ ttl_exp,+ tenure
+universe_266.R,_start,+ age,,+ grade,+ collgrad,+ married,+ south,,+ c_city,+ ttl_exp,
+universe_267.R,_start,+ age,,+ grade,+ collgrad,+ married,+ south,,+ c_city,,+ tenure
+universe_268.R,_start,+ age,,+ grade,+ collgrad,+ married,+ south,,+ c_city,,
+universe_269.R,_start,+ age,,+ grade,+ collgrad,+ married,+ south,,,+ ttl_exp,+ tenure
+universe_270.R,_start,+ age,,+ grade,+ collgrad,+ married,+ south,,,+ ttl_exp,
+universe_271.R,_start,+ age,,+ grade,+ collgrad,+ married,+ south,,,,+ tenure
+universe_272.R,_start,+ age,,+ grade,+ collgrad,+ married,+ south,,,,
+universe_273.R,_start,+ age,,+ grade,+ collgrad,+ married,,+ smsa,+ c_city,+ ttl_exp,+ tenure
+universe_274.R,_start,+ age,,+ grade,+ collgrad,+ married,,+ smsa,+ c_city,+ ttl_exp,
+universe_275.R,_start,+ age,,+ grade,+ collgrad,+ married,,+ smsa,+ c_city,,+ tenure
+universe_276.R,_start,+ age,,+ grade,+ collgrad,+ married,,+ smsa,+ c_city,,
+universe_277.R,_start,+ age,,+ grade,+ collgrad,+ married,,+ smsa,,+ ttl_exp,+ tenure
+universe_278.R,_start,+ age,,+ grade,+ collgrad,+ married,,+ smsa,,+ ttl_exp,
+universe_279.R,_start,+ age,,+ grade,+ collgrad,+ married,,+ smsa,,,+ tenure
+universe_280.R,_start,+ age,,+ grade,+ collgrad,+ married,,+ smsa,,,
+universe_281.R,_start,+ age,,+ grade,+ collgrad,+ married,,,+ c_city,+ ttl_exp,+ tenure
+universe_282.R,_start,+ age,,+ grade,+ collgrad,+ married,,,+ c_city,+ ttl_exp,
+universe_283.R,_start,+ age,,+ grade,+ collgrad,+ married,,,+ c_city,,+ tenure
+universe_284.R,_start,+ age,,+ grade,+ collgrad,+ married,,,+ c_city,,
+universe_285.R,_start,+ age,,+ grade,+ collgrad,+ married,,,,+ ttl_exp,+ tenure
+universe_286.R,_start,+ age,,+ grade,+ collgrad,+ married,,,,+ ttl_exp,
+universe_287.R,_start,+ age,,+ grade,+ collgrad,+ married,,,,,+ tenure
+universe_288.R,_start,+ age,,+ grade,+ collgrad,+ married,,,,,
+universe_289.R,_start,+ age,,+ grade,+ collgrad,,+ south,+ smsa,+ c_city,+ ttl_exp,+ tenure
+universe_290.R,_start,+ age,,+ grade,+ collgrad,,+ south,+ smsa,+ c_city,+ ttl_exp,
+universe_291.R,_start,+ age,,+ grade,+ collgrad,,+ south,+ smsa,+ c_city,,+ tenure
+universe_292.R,_start,+ age,,+ grade,+ collgrad,,+ south,+ smsa,+ c_city,,
+universe_293.R,_start,+ age,,+ grade,+ collgrad,,+ south,+ smsa,,+ ttl_exp,+ tenure
+universe_294.R,_start,+ age,,+ grade,+ collgrad,,+ south,+ smsa,,+ ttl_exp,
+universe_295.R,_start,+ age,,+ grade,+ collgrad,,+ south,+ smsa,,,+ tenure
+universe_296.R,_start,+ age,,+ grade,+ collgrad,,+ south,+ smsa,,,
+universe_297.R,_start,+ age,,+ grade,+ collgrad,,+ south,,+ c_city,+ ttl_exp,+ tenure
+universe_298.R,_start,+ age,,+ grade,+ collgrad,,+ south,,+ c_city,+ ttl_exp,
+universe_299.R,_start,+ age,,+ grade,+ collgrad,,+ south,,+ c_city,,+ tenure
+universe_300.R,_start,+ age,,+ grade,+ collgrad,,+ south,,+ c_city,,
+universe_301.R,_start,+ age,,+ grade,+ collgrad,,+ south,,,+ ttl_exp,+ tenure
+universe_302.R,_start,+ age,,+ grade,+ collgrad,,+ south,,,+ ttl_exp,
+universe_303.R,_start,+ age,,+ grade,+ collgrad,,+ south,,,,+ tenure
+universe_304.R,_start,+ age,,+ grade,+ collgrad,,+ south,,,,
+universe_305.R,_start,+ age,,+ grade,+ collgrad,,,+ smsa,+ c_city,+ ttl_exp,+ tenure
+universe_306.R,_start,+ age,,+ grade,+ collgrad,,,+ smsa,+ c_city,+ ttl_exp,
+universe_307.R,_start,+ age,,+ grade,+ collgrad,,,+ smsa,+ c_city,,+ tenure
+universe_308.R,_start,+ age,,+ grade,+ collgrad,,,+ smsa,+ c_city,,
+universe_309.R,_start,+ age,,+ grade,+ collgrad,,,+ smsa,,+ ttl_exp,+ tenure
+universe_310.R,_start,+ age,,+ grade,+ collgrad,,,+ smsa,,+ ttl_exp,
+universe_311.R,_start,+ age,,+ grade,+ collgrad,,,+ smsa,,,+ tenure
+universe_312.R,_start,+ age,,+ grade,+ collgrad,,,+ smsa,,,
+universe_313.R,_start,+ age,,+ grade,+ collgrad,,,,+ c_city,+ ttl_exp,+ tenure
+universe_314.R,_start,+ age,,+ grade,+ collgrad,,,,+ c_city,+ ttl_exp,
+universe_315.R,_start,+ age,,+ grade,+ collgrad,,,,+ c_city,,+ tenure
+universe_316.R,_start,+ age,,+ grade,+ collgrad,,,,+ c_city,,
+universe_317.R,_start,+ age,,+ grade,+ collgrad,,,,,+ ttl_exp,+ tenure
+universe_318.R,_start,+ age,,+ grade,+ collgrad,,,,,+ ttl_exp,
+universe_319.R,_start,+ age,,+ grade,+ collgrad,,,,,,+ tenure
+universe_320.R,_start,+ age,,+ grade,+ collgrad,,,,,,
+universe_321.R,_start,+ age,,+ grade,,+ married,+ south,+ smsa,+ c_city,+ ttl_exp,+ tenure
+universe_322.R,_start,+ age,,+ grade,,+ married,+ south,+ smsa,+ c_city,+ ttl_exp,
+universe_323.R,_start,+ age,,+ grade,,+ married,+ south,+ smsa,+ c_city,,+ tenure
+universe_324.R,_start,+ age,,+ grade,,+ married,+ south,+ smsa,+ c_city,,
+universe_325.R,_start,+ age,,+ grade,,+ married,+ south,+ smsa,,+ ttl_exp,+ tenure
+universe_326.R,_start,+ age,,+ grade,,+ married,+ south,+ smsa,,+ ttl_exp,
+universe_327.R,_start,+ age,,+ grade,,+ married,+ south,+ smsa,,,+ tenure
+universe_328.R,_start,+ age,,+ grade,,+ married,+ south,+ smsa,,,
+universe_329.R,_start,+ age,,+ grade,,+ married,+ south,,+ c_city,+ ttl_exp,+ tenure
+universe_330.R,_start,+ age,,+ grade,,+ married,+ south,,+ c_city,+ ttl_exp,
+universe_331.R,_start,+ age,,+ grade,,+ married,+ south,,+ c_city,,+ tenure
+universe_332.R,_start,+ age,,+ grade,,+ married,+ south,,+ c_city,,
+universe_333.R,_start,+ age,,+ grade,,+ married,+ south,,,+ ttl_exp,+ tenure
+universe_334.R,_start,+ age,,+ grade,,+ married,+ south,,,+ ttl_exp,
+universe_335.R,_start,+ age,,+ grade,,+ married,+ south,,,,+ tenure
+universe_336.R,_start,+ age,,+ grade,,+ married,+ south,,,,
+universe_337.R,_start,+ age,,+ grade,,+ married,,+ smsa,+ c_city,+ ttl_exp,+ tenure
+universe_338.R,_start,+ age,,+ grade,,+ married,,+ smsa,+ c_city,+ ttl_exp,
+universe_339.R,_start,+ age,,+ grade,,+ married,,+ smsa,+ c_city,,+ tenure
+universe_340.R,_start,+ age,,+ grade,,+ married,,+ smsa,+ c_city,,
+universe_341.R,_start,+ age,,+ grade,,+ married,,+ smsa,,+ ttl_exp,+ tenure
+universe_342.R,_start,+ age,,+ grade,,+ married,,+ smsa,,+ ttl_exp,
+universe_343.R,_start,+ age,,+ grade,,+ married,,+ smsa,,,+ tenure
+universe_344.R,_start,+ age,,+ grade,,+ married,,+ smsa,,,
+universe_345.R,_start,+ age,,+ grade,,+ married,,,+ c_city,+ ttl_exp,+ tenure
+universe_346.R,_start,+ age,,+ grade,,+ married,,,+ c_city,+ ttl_exp,
+universe_347.R,_start,+ age,,+ grade,,+ married,,,+ c_city,,+ tenure
+universe_348.R,_start,+ age,,+ grade,,+ married,,,+ c_city,,
+universe_349.R,_start,+ age,,+ grade,,+ married,,,,+ ttl_exp,+ tenure
+universe_350.R,_start,+ age,,+ grade,,+ married,,,,+ ttl_exp,
+universe_351.R,_start,+ age,,+ grade,,+ married,,,,,+ tenure
+universe_352.R,_start,+ age,,+ grade,,+ married,,,,,
+universe_353.R,_start,+ age,,+ grade,,,+ south,+ smsa,+ c_city,+ ttl_exp,+ tenure
+universe_354.R,_start,+ age,,+ grade,,,+ south,+ smsa,+ c_city,+ ttl_exp,
+universe_355.R,_start,+ age,,+ grade,,,+ south,+ smsa,+ c_city,,+ tenure
+universe_356.R,_start,+ age,,+ grade,,,+ south,+ smsa,+ c_city,,
+universe_357.R,_start,+ age,,+ grade,,,+ south,+ smsa,,+ ttl_exp,+ tenure
+universe_358.R,_start,+ age,,+ grade,,,+ south,+ smsa,,+ ttl_exp,
+universe_359.R,_start,+ age,,+ grade,,,+ south,+ smsa,,,+ tenure
+universe_360.R,_start,+ age,,+ grade,,,+ south,+ smsa,,,
+universe_361.R,_start,+ age,,+ grade,,,+ south,,+ c_city,+ ttl_exp,+ tenure
+universe_362.R,_start,+ age,,+ grade,,,+ south,,+ c_city,+ ttl_exp,
+universe_363.R,_start,+ age,,+ grade,,,+ south,,+ c_city,,+ tenure
+universe_364.R,_start,+ age,,+ grade,,,+ south,,+ c_city,,
+universe_365.R,_start,+ age,,+ grade,,,+ south,,,+ ttl_exp,+ tenure
+universe_366.R,_start,+ age,,+ grade,,,+ south,,,+ ttl_exp,
+universe_367.R,_start,+ age,,+ grade,,,+ south,,,,+ tenure
+universe_368.R,_start,+ age,,+ grade,,,+ south,,,,
+universe_369.R,_start,+ age,,+ grade,,,,+ smsa,+ c_city,+ ttl_exp,+ tenure
+universe_370.R,_start,+ age,,+ grade,,,,+ smsa,+ c_city,+ ttl_exp,
+universe_371.R,_start,+ age,,+ grade,,,,+ smsa,+ c_city,,+ tenure
+universe_372.R,_start,+ age,,+ grade,,,,+ smsa,+ c_city,,
+universe_373.R,_start,+ age,,+ grade,,,,+ smsa,,+ ttl_exp,+ tenure
+universe_374.R,_start,+ age,,+ grade,,,,+ smsa,,+ ttl_exp,
+universe_375.R,_start,+ age,,+ grade,,,,+ smsa,,,+ tenure
+universe_376.R,_start,+ age,,+ grade,,,,+ smsa,,,
+universe_377.R,_start,+ age,,+ grade,,,,,+ c_city,+ ttl_exp,+ tenure
+universe_378.R,_start,+ age,,+ grade,,,,,+ c_city,+ ttl_exp,
+universe_379.R,_start,+ age,,+ grade,,,,,+ c_city,,+ tenure
+universe_380.R,_start,+ age,,+ grade,,,,,+ c_city,,
+universe_381.R,_start,+ age,,+ grade,,,,,,+ ttl_exp,+ tenure
+universe_382.R,_start,+ age,,+ grade,,,,,,+ ttl_exp,
+universe_383.R,_start,+ age,,+ grade,,,,,,,+ tenure
+universe_384.R,_start,+ age,,+ grade,,,,,,,
+universe_385.R,_start,+ age,,,+ collgrad,+ married,+ south,+ smsa,+ c_city,+ ttl_exp,+ tenure
+universe_386.R,_start,+ age,,,+ collgrad,+ married,+ south,+ smsa,+ c_city,+ ttl_exp,
+universe_387.R,_start,+ age,,,+ collgrad,+ married,+ south,+ smsa,+ c_city,,+ tenure
+universe_388.R,_start,+ age,,,+ collgrad,+ married,+ south,+ smsa,+ c_city,,
+universe_389.R,_start,+ age,,,+ collgrad,+ married,+ south,+ smsa,,+ ttl_exp,+ tenure
+universe_390.R,_start,+ age,,,+ collgrad,+ married,+ south,+ smsa,,+ ttl_exp,
+universe_391.R,_start,+ age,,,+ collgrad,+ married,+ south,+ smsa,,,+ tenure
+universe_392.R,_start,+ age,,,+ collgrad,+ married,+ south,+ smsa,,,
+universe_393.R,_start,+ age,,,+ collgrad,+ married,+ south,,+ c_city,+ ttl_exp,+ tenure
+universe_394.R,_start,+ age,,,+ collgrad,+ married,+ south,,+ c_city,+ ttl_exp,
+universe_395.R,_start,+ age,,,+ collgrad,+ married,+ south,,+ c_city,,+ tenure
+universe_396.R,_start,+ age,,,+ collgrad,+ married,+ south,,+ c_city,,
+universe_397.R,_start,+ age,,,+ collgrad,+ married,+ south,,,+ ttl_exp,+ tenure
+universe_398.R,_start,+ age,,,+ collgrad,+ married,+ south,,,+ ttl_exp,
+universe_399.R,_start,+ age,,,+ collgrad,+ married,+ south,,,,+ tenure
+universe_400.R,_start,+ age,,,+ collgrad,+ married,+ south,,,,
+universe_401.R,_start,+ age,,,+ collgrad,+ married,,+ smsa,+ c_city,+ ttl_exp,+ tenure
+universe_402.R,_start,+ age,,,+ collgrad,+ married,,+ smsa,+ c_city,+ ttl_exp,
+universe_403.R,_start,+ age,,,+ collgrad,+ married,,+ smsa,+ c_city,,+ tenure
+universe_404.R,_start,+ age,,,+ collgrad,+ married,,+ smsa,+ c_city,,
+universe_405.R,_start,+ age,,,+ collgrad,+ married,,+ smsa,,+ ttl_exp,+ tenure
+universe_406.R,_start,+ age,,,+ collgrad,+ married,,+ smsa,,+ ttl_exp,
+universe_407.R,_start,+ age,,,+ collgrad,+ married,,+ smsa,,,+ tenure
+universe_408.R,_start,+ age,,,+ collgrad,+ married,,+ smsa,,,
+universe_409.R,_start,+ age,,,+ collgrad,+ married,,,+ c_city,+ ttl_exp,+ tenure
+universe_410.R,_start,+ age,,,+ collgrad,+ married,,,+ c_city,+ ttl_exp,
+universe_411.R,_start,+ age,,,+ collgrad,+ married,,,+ c_city,,+ tenure
+universe_412.R,_start,+ age,,,+ collgrad,+ married,,,+ c_city,,
+universe_413.R,_start,+ age,,,+ collgrad,+ married,,,,+ ttl_exp,+ tenure
+universe_414.R,_start,+ age,,,+ collgrad,+ married,,,,+ ttl_exp,
+universe_415.R,_start,+ age,,,+ collgrad,+ married,,,,,+ tenure
+universe_416.R,_start,+ age,,,+ collgrad,+ married,,,,,
+universe_417.R,_start,+ age,,,+ collgrad,,+ south,+ smsa,+ c_city,+ ttl_exp,+ tenure
+universe_418.R,_start,+ age,,,+ collgrad,,+ south,+ smsa,+ c_city,+ ttl_exp,
+universe_419.R,_start,+ age,,,+ collgrad,,+ south,+ smsa,+ c_city,,+ tenure
+universe_420.R,_start,+ age,,,+ collgrad,,+ south,+ smsa,+ c_city,,
+universe_421.R,_start,+ age,,,+ collgrad,,+ south,+ smsa,,+ ttl_exp,+ tenure
+universe_422.R,_start,+ age,,,+ collgrad,,+ south,+ smsa,,+ ttl_exp,
+universe_423.R,_start,+ age,,,+ collgrad,,+ south,+ smsa,,,+ tenure
+universe_424.R,_start,+ age,,,+ collgrad,,+ south,+ smsa,,,
+universe_425.R,_start,+ age,,,+ collgrad,,+ south,,+ c_city,+ ttl_exp,+ tenure
+universe_426.R,_start,+ age,,,+ collgrad,,+ south,,+ c_city,+ ttl_exp,
+universe_427.R,_start,+ age,,,+ collgrad,,+ south,,+ c_city,,+ tenure
+universe_428.R,_start,+ age,,,+ collgrad,,+ south,,+ c_city,,
+universe_429.R,_start,+ age,,,+ collgrad,,+ south,,,+ ttl_exp,+ tenure
+universe_430.R,_start,+ age,,,+ collgrad,,+ south,,,+ ttl_exp,
+universe_431.R,_start,+ age,,,+ collgrad,,+ south,,,,+ tenure
+universe_432.R,_start,+ age,,,+ collgrad,,+ south,,,,
+universe_433.R,_start,+ age,,,+ collgrad,,,+ smsa,+ c_city,+ ttl_exp,+ tenure
+universe_434.R,_start,+ age,,,+ collgrad,,,+ smsa,+ c_city,+ ttl_exp,
+universe_435.R,_start,+ age,,,+ collgrad,,,+ smsa,+ c_city,,+ tenure
+universe_436.R,_start,+ age,,,+ collgrad,,,+ smsa,+ c_city,,
+universe_437.R,_start,+ age,,,+ collgrad,,,+ smsa,,+ ttl_exp,+ tenure
+universe_438.R,_start,+ age,,,+ collgrad,,,+ smsa,,+ ttl_exp,
+universe_439.R,_start,+ age,,,+ collgrad,,,+ smsa,,,+ tenure
+universe_440.R,_start,+ age,,,+ collgrad,,,+ smsa,,,
+universe_441.R,_start,+ age,,,+ collgrad,,,,+ c_city,+ ttl_exp,+ tenure
+universe_442.R,_start,+ age,,,+ collgrad,,,,+ c_city,+ ttl_exp,
+universe_443.R,_start,+ age,,,+ collgrad,,,,+ c_city,,+ tenure
+universe_444.R,_start,+ age,,,+ collgrad,,,,+ c_city,,
+universe_445.R,_start,+ age,,,+ collgrad,,,,,+ ttl_exp,+ tenure
+universe_446.R,_start,+ age,,,+ collgrad,,,,,+ ttl_exp,
+universe_447.R,_start,+ age,,,+ collgrad,,,,,,+ tenure
+universe_448.R,_start,+ age,,,+ collgrad,,,,,,
+universe_449.R,_start,+ age,,,,+ married,+ south,+ smsa,+ c_city,+ ttl_exp,+ tenure
+universe_450.R,_start,+ age,,,,+ married,+ south,+ smsa,+ c_city,+ ttl_exp,
+universe_451.R,_start,+ age,,,,+ married,+ south,+ smsa,+ c_city,,+ tenure
+universe_452.R,_start,+ age,,,,+ married,+ south,+ smsa,+ c_city,,
+universe_453.R,_start,+ age,,,,+ married,+ south,+ smsa,,+ ttl_exp,+ tenure
+universe_454.R,_start,+ age,,,,+ married,+ south,+ smsa,,+ ttl_exp,
+universe_455.R,_start,+ age,,,,+ married,+ south,+ smsa,,,+ tenure
+universe_456.R,_start,+ age,,,,+ married,+ south,+ smsa,,,
+universe_457.R,_start,+ age,,,,+ married,+ south,,+ c_city,+ ttl_exp,+ tenure
+universe_458.R,_start,+ age,,,,+ married,+ south,,+ c_city,+ ttl_exp,
+universe_459.R,_start,+ age,,,,+ married,+ south,,+ c_city,,+ tenure
+universe_460.R,_start,+ age,,,,+ married,+ south,,+ c_city,,
+universe_461.R,_start,+ age,,,,+ married,+ south,,,+ ttl_exp,+ tenure
+universe_462.R,_start,+ age,,,,+ married,+ south,,,+ ttl_exp,
+universe_463.R,_start,+ age,,,,+ married,+ south,,,,+ tenure
+universe_464.R,_start,+ age,,,,+ married,+ south,,,,
+universe_465.R,_start,+ age,,,,+ married,,+ smsa,+ c_city,+ ttl_exp,+ tenure
+universe_466.R,_start,+ age,,,,+ married,,+ smsa,+ c_city,+ ttl_exp,
+universe_467.R,_start,+ age,,,,+ married,,+ smsa,+ c_city,,+ tenure
+universe_468.R,_start,+ age,,,,+ married,,+ smsa,+ c_city,,
+universe_469.R,_start,+ age,,,,+ married,,+ smsa,,+ ttl_exp,+ tenure
+universe_470.R,_start,+ age,,,,+ married,,+ smsa,,+ ttl_exp,
+universe_471.R,_start,+ age,,,,+ married,,+ smsa,,,+ tenure
+universe_472.R,_start,+ age,,,,+ married,,+ smsa,,,
+universe_473.R,_start,+ age,,,,+ married,,,+ c_city,+ ttl_exp,+ tenure
+universe_474.R,_start,+ age,,,,+ married,,,+ c_city,+ ttl_exp,
+universe_475.R,_start,+ age,,,,+ married,,,+ c_city,,+ tenure
+universe_476.R,_start,+ age,,,,+ married,,,+ c_city,,
+universe_477.R,_start,+ age,,,,+ married,,,,+ ttl_exp,+ tenure
+universe_478.R,_start,+ age,,,,+ married,,,,+ ttl_exp,
+universe_479.R,_start,+ age,,,,+ married,,,,,+ tenure
+universe_480.R,_start,+ age,,,,+ married,,,,,
+universe_481.R,_start,+ age,,,,,+ south,+ smsa,+ c_city,+ ttl_exp,+ tenure
+universe_482.R,_start,+ age,,,,,+ south,+ smsa,+ c_city,+ ttl_exp,
+universe_483.R,_start,+ age,,,,,+ south,+ smsa,+ c_city,,+ tenure
+universe_484.R,_start,+ age,,,,,+ south,+ smsa,+ c_city,,
+universe_485.R,_start,+ age,,,,,+ south,+ smsa,,+ ttl_exp,+ tenure
+universe_486.R,_start,+ age,,,,,+ south,+ smsa,,+ ttl_exp,
+universe_487.R,_start,+ age,,,,,+ south,+ smsa,,,+ tenure
+universe_488.R,_start,+ age,,,,,+ south,+ smsa,,,
+universe_489.R,_start,+ age,,,,,+ south,,+ c_city,+ ttl_exp,+ tenure
+universe_490.R,_start,+ age,,,,,+ south,,+ c_city,+ ttl_exp,
+universe_491.R,_start,+ age,,,,,+ south,,+ c_city,,+ tenure
+universe_492.R,_start,+ age,,,,,+ south,,+ c_city,,
+universe_493.R,_start,+ age,,,,,+ south,,,+ ttl_exp,+ tenure
+universe_494.R,_start,+ age,,,,,+ south,,,+ ttl_exp,
+universe_495.R,_start,+ age,,,,,+ south,,,,+ tenure
+universe_496.R,_start,+ age,,,,,+ south,,,,
+universe_497.R,_start,+ age,,,,,,+ smsa,+ c_city,+ ttl_exp,+ tenure
+universe_498.R,_start,+ age,,,,,,+ smsa,+ c_city,+ ttl_exp,
+universe_499.R,_start,+ age,,,,,,+ smsa,+ c_city,,+ tenure
+universe_500.R,_start,+ age,,,,,,+ smsa,+ c_city,,
+universe_501.R,_start,+ age,,,,,,+ smsa,,+ ttl_exp,+ tenure
+universe_502.R,_start,+ age,,,,,,+ smsa,,+ ttl_exp,
+universe_503.R,_start,+ age,,,,,,+ smsa,,,+ tenure
+universe_504.R,_start,+ age,,,,,,+ smsa,,,
+universe_505.R,_start,+ age,,,,,,,+ c_city,+ ttl_exp,+ tenure
+universe_506.R,_start,+ age,,,,,,,+ c_city,+ ttl_exp,
+universe_507.R,_start,+ age,,,,,,,+ c_city,,+ tenure
+universe_508.R,_start,+ age,,,,,,,+ c_city,,
+universe_509.R,_start,+ age,,,,,,,,+ ttl_exp,+ tenure
+universe_510.R,_start,+ age,,,,,,,,+ ttl_exp,
+universe_511.R,_start,+ age,,,,,,,,,+ tenure
+universe_512.R,_start,+ age,,,,,,,,,
+universe_513.R,_start,,+ hours,+ grade,+ collgrad,+ married,+ south,+ smsa,+ c_city,+ ttl_exp,+ tenure
+universe_514.R,_start,,+ hours,+ grade,+ collgrad,+ married,+ south,+ smsa,+ c_city,+ ttl_exp,
+universe_515.R,_start,,+ hours,+ grade,+ collgrad,+ married,+ south,+ smsa,+ c_city,,+ tenure
+universe_516.R,_start,,+ hours,+ grade,+ collgrad,+ married,+ south,+ smsa,+ c_city,,
+universe_517.R,_start,,+ hours,+ grade,+ collgrad,+ married,+ south,+ smsa,,+ ttl_exp,+ tenure
+universe_518.R,_start,,+ hours,+ grade,+ collgrad,+ married,+ south,+ smsa,,+ ttl_exp,
+universe_519.R,_start,,+ hours,+ grade,+ collgrad,+ married,+ south,+ smsa,,,+ tenure
+universe_520.R,_start,,+ hours,+ grade,+ collgrad,+ married,+ south,+ smsa,,,
+universe_521.R,_start,,+ hours,+ grade,+ collgrad,+ married,+ south,,+ c_city,+ ttl_exp,+ tenure
+universe_522.R,_start,,+ hours,+ grade,+ collgrad,+ married,+ south,,+ c_city,+ ttl_exp,
+universe_523.R,_start,,+ hours,+ grade,+ collgrad,+ married,+ south,,+ c_city,,+ tenure
+universe_524.R,_start,,+ hours,+ grade,+ collgrad,+ married,+ south,,+ c_city,,
+universe_525.R,_start,,+ hours,+ grade,+ collgrad,+ married,+ south,,,+ ttl_exp,+ tenure
+universe_526.R,_start,,+ hours,+ grade,+ collgrad,+ married,+ south,,,+ ttl_exp,
+universe_527.R,_start,,+ hours,+ grade,+ collgrad,+ married,+ south,,,,+ tenure
+universe_528.R,_start,,+ hours,+ grade,+ collgrad,+ married,+ south,,,,
+universe_529.R,_start,,+ hours,+ grade,+ collgrad,+ married,,+ smsa,+ c_city,+ ttl_exp,+ tenure
+universe_530.R,_start,,+ hours,+ grade,+ collgrad,+ married,,+ smsa,+ c_city,+ ttl_exp,
+universe_531.R,_start,,+ hours,+ grade,+ collgrad,+ married,,+ smsa,+ c_city,,+ tenure
+universe_532.R,_start,,+ hours,+ grade,+ collgrad,+ married,,+ smsa,+ c_city,,
+universe_533.R,_start,,+ hours,+ grade,+ collgrad,+ married,,+ smsa,,+ ttl_exp,+ tenure
+universe_534.R,_start,,+ hours,+ grade,+ collgrad,+ married,,+ smsa,,+ ttl_exp,
+universe_535.R,_start,,+ hours,+ grade,+ collgrad,+ married,,+ smsa,,,+ tenure
+universe_536.R,_start,,+ hours,+ grade,+ collgrad,+ married,,+ smsa,,,
+universe_537.R,_start,,+ hours,+ grade,+ collgrad,+ married,,,+ c_city,+ ttl_exp,+ tenure
+universe_538.R,_start,,+ hours,+ grade,+ collgrad,+ married,,,+ c_city,+ ttl_exp,
+universe_539.R,_start,,+ hours,+ grade,+ collgrad,+ married,,,+ c_city,,+ tenure
+universe_540.R,_start,,+ hours,+ grade,+ collgrad,+ married,,,+ c_city,,
+universe_541.R,_start,,+ hours,+ grade,+ collgrad,+ married,,,,+ ttl_exp,+ tenure
+universe_542.R,_start,,+ hours,+ grade,+ collgrad,+ married,,,,+ ttl_exp,
+universe_543.R,_start,,+ hours,+ grade,+ collgrad,+ married,,,,,+ tenure
+universe_544.R,_start,,+ hours,+ grade,+ collgrad,+ married,,,,,
+universe_545.R,_start,,+ hours,+ grade,+ collgrad,,+ south,+ smsa,+ c_city,+ ttl_exp,+ tenure
+universe_546.R,_start,,+ hours,+ grade,+ collgrad,,+ south,+ smsa,+ c_city,+ ttl_exp,
+universe_547.R,_start,,+ hours,+ grade,+ collgrad,,+ south,+ smsa,+ c_city,,+ tenure
+universe_548.R,_start,,+ hours,+ grade,+ collgrad,,+ south,+ smsa,+ c_city,,
+universe_549.R,_start,,+ hours,+ grade,+ collgrad,,+ south,+ smsa,,+ ttl_exp,+ tenure
+universe_550.R,_start,,+ hours,+ grade,+ collgrad,,+ south,+ smsa,,+ ttl_exp,
+universe_551.R,_start,,+ hours,+ grade,+ collgrad,,+ south,+ smsa,,,+ tenure
+universe_552.R,_start,,+ hours,+ grade,+ collgrad,,+ south,+ smsa,,,
+universe_553.R,_start,,+ hours,+ grade,+ collgrad,,+ south,,+ c_city,+ ttl_exp,+ tenure
+universe_554.R,_start,,+ hours,+ grade,+ collgrad,,+ south,,+ c_city,+ ttl_exp,
+universe_555.R,_start,,+ hours,+ grade,+ collgrad,,+ south,,+ c_city,,+ tenure
+universe_556.R,_start,,+ hours,+ grade,+ collgrad,,+ south,,+ c_city,,
+universe_557.R,_start,,+ hours,+ grade,+ collgrad,,+ south,,,+ ttl_exp,+ tenure
+universe_558.R,_start,,+ hours,+ grade,+ collgrad,,+ south,,,+ ttl_exp,
+universe_559.R,_start,,+ hours,+ grade,+ collgrad,,+ south,,,,+ tenure
+universe_560.R,_start,,+ hours,+ grade,+ collgrad,,+ south,,,,
+universe_561.R,_start,,+ hours,+ grade,+ collgrad,,,+ smsa,+ c_city,+ ttl_exp,+ tenure
+universe_562.R,_start,,+ hours,+ grade,+ collgrad,,,+ smsa,+ c_city,+ ttl_exp,
+universe_563.R,_start,,+ hours,+ grade,+ collgrad,,,+ smsa,+ c_city,,+ tenure
+universe_564.R,_start,,+ hours,+ grade,+ collgrad,,,+ smsa,+ c_city,,
+universe_565.R,_start,,+ hours,+ grade,+ collgrad,,,+ smsa,,+ ttl_exp,+ tenure
+universe_566.R,_start,,+ hours,+ grade,+ collgrad,,,+ smsa,,+ ttl_exp,
+universe_567.R,_start,,+ hours,+ grade,+ collgrad,,,+ smsa,,,+ tenure
+universe_568.R,_start,,+ hours,+ grade,+ collgrad,,,+ smsa,,,
+universe_569.R,_start,,+ hours,+ grade,+ collgrad,,,,+ c_city,+ ttl_exp,+ tenure
+universe_570.R,_start,,+ hours,+ grade,+ collgrad,,,,+ c_city,+ ttl_exp,
+universe_571.R,_start,,+ hours,+ grade,+ collgrad,,,,+ c_city,,+ tenure
+universe_572.R,_start,,+ hours,+ grade,+ collgrad,,,,+ c_city,,
+universe_573.R,_start,,+ hours,+ grade,+ collgrad,,,,,+ ttl_exp,+ tenure
+universe_574.R,_start,,+ hours,+ grade,+ collgrad,,,,,+ ttl_exp,
+universe_575.R,_start,,+ hours,+ grade,+ collgrad,,,,,,+ tenure
+universe_576.R,_start,,+ hours,+ grade,+ collgrad,,,,,,
+universe_577.R,_start,,+ hours,+ grade,,+ married,+ south,+ smsa,+ c_city,+ ttl_exp,+ tenure
+universe_578.R,_start,,+ hours,+ grade,,+ married,+ south,+ smsa,+ c_city,+ ttl_exp,
+universe_579.R,_start,,+ hours,+ grade,,+ married,+ south,+ smsa,+ c_city,,+ tenure
+universe_580.R,_start,,+ hours,+ grade,,+ married,+ south,+ smsa,+ c_city,,
+universe_581.R,_start,,+ hours,+ grade,,+ married,+ south,+ smsa,,+ ttl_exp,+ tenure
+universe_582.R,_start,,+ hours,+ grade,,+ married,+ south,+ smsa,,+ ttl_exp,
+universe_583.R,_start,,+ hours,+ grade,,+ married,+ south,+ smsa,,,+ tenure
+universe_584.R,_start,,+ hours,+ grade,,+ married,+ south,+ smsa,,,
+universe_585.R,_start,,+ hours,+ grade,,+ married,+ south,,+ c_city,+ ttl_exp,+ tenure
+universe_586.R,_start,,+ hours,+ grade,,+ married,+ south,,+ c_city,+ ttl_exp,
+universe_587.R,_start,,+ hours,+ grade,,+ married,+ south,,+ c_city,,+ tenure
+universe_588.R,_start,,+ hours,+ grade,,+ married,+ south,,+ c_city,,
+universe_589.R,_start,,+ hours,+ grade,,+ married,+ south,,,+ ttl_exp,+ tenure
+universe_590.R,_start,,+ hours,+ grade,,+ married,+ south,,,+ ttl_exp,
+universe_591.R,_start,,+ hours,+ grade,,+ married,+ south,,,,+ tenure
+universe_592.R,_start,,+ hours,+ grade,,+ married,+ south,,,,
+universe_593.R,_start,,+ hours,+ grade,,+ married,,+ smsa,+ c_city,+ ttl_exp,+ tenure
+universe_594.R,_start,,+ hours,+ grade,,+ married,,+ smsa,+ c_city,+ ttl_exp,
+universe_595.R,_start,,+ hours,+ grade,,+ married,,+ smsa,+ c_city,,+ tenure
+universe_596.R,_start,,+ hours,+ grade,,+ married,,+ smsa,+ c_city,,
+universe_597.R,_start,,+ hours,+ grade,,+ married,,+ smsa,,+ ttl_exp,+ tenure
+universe_598.R,_start,,+ hours,+ grade,,+ married,,+ smsa,,+ ttl_exp,
+universe_599.R,_start,,+ hours,+ grade,,+ married,,+ smsa,,,+ tenure
+universe_600.R,_start,,+ hours,+ grade,,+ married,,+ smsa,,,
+universe_601.R,_start,,+ hours,+ grade,,+ married,,,+ c_city,+ ttl_exp,+ tenure
+universe_602.R,_start,,+ hours,+ grade,,+ married,,,+ c_city,+ ttl_exp,
+universe_603.R,_start,,+ hours,+ grade,,+ married,,,+ c_city,,+ tenure
+universe_604.R,_start,,+ hours,+ grade,,+ married,,,+ c_city,,
+universe_605.R,_start,,+ hours,+ grade,,+ married,,,,+ ttl_exp,+ tenure
+universe_606.R,_start,,+ hours,+ grade,,+ married,,,,+ ttl_exp,
+universe_607.R,_start,,+ hours,+ grade,,+ married,,,,,+ tenure
+universe_608.R,_start,,+ hours,+ grade,,+ married,,,,,
+universe_609.R,_start,,+ hours,+ grade,,,+ south,+ smsa,+ c_city,+ ttl_exp,+ tenure
+universe_610.R,_start,,+ hours,+ grade,,,+ south,+ smsa,+ c_city,+ ttl_exp,
+universe_611.R,_start,,+ hours,+ grade,,,+ south,+ smsa,+ c_city,,+ tenure
+universe_612.R,_start,,+ hours,+ grade,,,+ south,+ smsa,+ c_city,,
+universe_613.R,_start,,+ hours,+ grade,,,+ south,+ smsa,,+ ttl_exp,+ tenure
+universe_614.R,_start,,+ hours,+ grade,,,+ south,+ smsa,,+ ttl_exp,
+universe_615.R,_start,,+ hours,+ grade,,,+ south,+ smsa,,,+ tenure
+universe_616.R,_start,,+ hours,+ grade,,,+ south,+ smsa,,,
+universe_617.R,_start,,+ hours,+ grade,,,+ south,,+ c_city,+ ttl_exp,+ tenure
+universe_618.R,_start,,+ hours,+ grade,,,+ south,,+ c_city,+ ttl_exp,
+universe_619.R,_start,,+ hours,+ grade,,,+ south,,+ c_city,,+ tenure
+universe_620.R,_start,,+ hours,+ grade,,,+ south,,+ c_city,,
+universe_621.R,_start,,+ hours,+ grade,,,+ south,,,+ ttl_exp,+ tenure
+universe_622.R,_start,,+ hours,+ grade,,,+ south,,,+ ttl_exp,
+universe_623.R,_start,,+ hours,+ grade,,,+ south,,,,+ tenure
+universe_624.R,_start,,+ hours,+ grade,,,+ south,,,,
+universe_625.R,_start,,+ hours,+ grade,,,,+ smsa,+ c_city,+ ttl_exp,+ tenure
+universe_626.R,_start,,+ hours,+ grade,,,,+ smsa,+ c_city,+ ttl_exp,
+universe_627.R,_start,,+ hours,+ grade,,,,+ smsa,+ c_city,,+ tenure
+universe_628.R,_start,,+ hours,+ grade,,,,+ smsa,+ c_city,,
+universe_629.R,_start,,+ hours,+ grade,,,,+ smsa,,+ ttl_exp,+ tenure
+universe_630.R,_start,,+ hours,+ grade,,,,+ smsa,,+ ttl_exp,
+universe_631.R,_start,,+ hours,+ grade,,,,+ smsa,,,+ tenure
+universe_632.R,_start,,+ hours,+ grade,,,,+ smsa,,,
+universe_633.R,_start,,+ hours,+ grade,,,,,+ c_city,+ ttl_exp,+ tenure
+universe_634.R,_start,,+ hours,+ grade,,,,,+ c_city,+ ttl_exp,
+universe_635.R,_start,,+ hours,+ grade,,,,,+ c_city,,+ tenure
+universe_636.R,_start,,+ hours,+ grade,,,,,+ c_city,,
+universe_637.R,_start,,+ hours,+ grade,,,,,,+ ttl_exp,+ tenure
+universe_638.R,_start,,+ hours,+ grade,,,,,,+ ttl_exp,
+universe_639.R,_start,,+ hours,+ grade,,,,,,,+ tenure
+universe_640.R,_start,,+ hours,+ grade,,,,,,,
+universe_641.R,_start,,+ hours,,+ collgrad,+ married,+ south,+ smsa,+ c_city,+ ttl_exp,+ tenure
+universe_642.R,_start,,+ hours,,+ collgrad,+ married,+ south,+ smsa,+ c_city,+ ttl_exp,
+universe_643.R,_start,,+ hours,,+ collgrad,+ married,+ south,+ smsa,+ c_city,,+ tenure
+universe_644.R,_start,,+ hours,,+ collgrad,+ married,+ south,+ smsa,+ c_city,,
+universe_645.R,_start,,+ hours,,+ collgrad,+ married,+ south,+ smsa,,+ ttl_exp,+ tenure
+universe_646.R,_start,,+ hours,,+ collgrad,+ married,+ south,+ smsa,,+ ttl_exp,
+universe_647.R,_start,,+ hours,,+ collgrad,+ married,+ south,+ smsa,,,+ tenure
+universe_648.R,_start,,+ hours,,+ collgrad,+ married,+ south,+ smsa,,,
+universe_649.R,_start,,+ hours,,+ collgrad,+ married,+ south,,+ c_city,+ ttl_exp,+ tenure
+universe_650.R,_start,,+ hours,,+ collgrad,+ married,+ south,,+ c_city,+ ttl_exp,
+universe_651.R,_start,,+ hours,,+ collgrad,+ married,+ south,,+ c_city,,+ tenure
+universe_652.R,_start,,+ hours,,+ collgrad,+ married,+ south,,+ c_city,,
+universe_653.R,_start,,+ hours,,+ collgrad,+ married,+ south,,,+ ttl_exp,+ tenure
+universe_654.R,_start,,+ hours,,+ collgrad,+ married,+ south,,,+ ttl_exp,
+universe_655.R,_start,,+ hours,,+ collgrad,+ married,+ south,,,,+ tenure
+universe_656.R,_start,,+ hours,,+ collgrad,+ married,+ south,,,,
+universe_657.R,_start,,+ hours,,+ collgrad,+ married,,+ smsa,+ c_city,+ ttl_exp,+ tenure
+universe_658.R,_start,,+ hours,,+ collgrad,+ married,,+ smsa,+ c_city,+ ttl_exp,
+universe_659.R,_start,,+ hours,,+ collgrad,+ married,,+ smsa,+ c_city,,+ tenure
+universe_660.R,_start,,+ hours,,+ collgrad,+ married,,+ smsa,+ c_city,,
+universe_661.R,_start,,+ hours,,+ collgrad,+ married,,+ smsa,,+ ttl_exp,+ tenure
+universe_662.R,_start,,+ hours,,+ collgrad,+ married,,+ smsa,,+ ttl_exp,
+universe_663.R,_start,,+ hours,,+ collgrad,+ married,,+ smsa,,,+ tenure
+universe_664.R,_start,,+ hours,,+ collgrad,+ married,,+ smsa,,,
+universe_665.R,_start,,+ hours,,+ collgrad,+ married,,,+ c_city,+ ttl_exp,+ tenure
+universe_666.R,_start,,+ hours,,+ collgrad,+ married,,,+ c_city,+ ttl_exp,
+universe_667.R,_start,,+ hours,,+ collgrad,+ married,,,+ c_city,,+ tenure
+universe_668.R,_start,,+ hours,,+ collgrad,+ married,,,+ c_city,,
+universe_669.R,_start,,+ hours,,+ collgrad,+ married,,,,+ ttl_exp,+ tenure
+universe_670.R,_start,,+ hours,,+ collgrad,+ married,,,,+ ttl_exp,
+universe_671.R,_start,,+ hours,,+ collgrad,+ married,,,,,+ tenure
+universe_672.R,_start,,+ hours,,+ collgrad,+ married,,,,,
+universe_673.R,_start,,+ hours,,+ collgrad,,+ south,+ smsa,+ c_city,+ ttl_exp,+ tenure
+universe_674.R,_start,,+ hours,,+ collgrad,,+ south,+ smsa,+ c_city,+ ttl_exp,
+universe_675.R,_start,,+ hours,,+ collgrad,,+ south,+ smsa,+ c_city,,+ tenure
+universe_676.R,_start,,+ hours,,+ collgrad,,+ south,+ smsa,+ c_city,,
+universe_677.R,_start,,+ hours,,+ collgrad,,+ south,+ smsa,,+ ttl_exp,+ tenure
+universe_678.R,_start,,+ hours,,+ collgrad,,+ south,+ smsa,,+ ttl_exp,
+universe_679.R,_start,,+ hours,,+ collgrad,,+ south,+ smsa,,,+ tenure
+universe_680.R,_start,,+ hours,,+ collgrad,,+ south,+ smsa,,,
+universe_681.R,_start,,+ hours,,+ collgrad,,+ south,,+ c_city,+ ttl_exp,+ tenure
+universe_682.R,_start,,+ hours,,+ collgrad,,+ south,,+ c_city,+ ttl_exp,
+universe_683.R,_start,,+ hours,,+ collgrad,,+ south,,+ c_city,,+ tenure
+universe_684.R,_start,,+ hours,,+ collgrad,,+ south,,+ c_city,,
+universe_685.R,_start,,+ hours,,+ collgrad,,+ south,,,+ ttl_exp,+ tenure
+universe_686.R,_start,,+ hours,,+ collgrad,,+ south,,,+ ttl_exp,
+universe_687.R,_start,,+ hours,,+ collgrad,,+ south,,,,+ tenure
+universe_688.R,_start,,+ hours,,+ collgrad,,+ south,,,,
+universe_689.R,_start,,+ hours,,+ collgrad,,,+ smsa,+ c_city,+ ttl_exp,+ tenure
+universe_690.R,_start,,+ hours,,+ collgrad,,,+ smsa,+ c_city,+ ttl_exp,
+universe_691.R,_start,,+ hours,,+ collgrad,,,+ smsa,+ c_city,,+ tenure
+universe_692.R,_start,,+ hours,,+ collgrad,,,+ smsa,+ c_city,,
+universe_693.R,_start,,+ hours,,+ collgrad,,,+ smsa,,+ ttl_exp,+ tenure
+universe_694.R,_start,,+ hours,,+ collgrad,,,+ smsa,,+ ttl_exp,
+universe_695.R,_start,,+ hours,,+ collgrad,,,+ smsa,,,+ tenure
+universe_696.R,_start,,+ hours,,+ collgrad,,,+ smsa,,,
+universe_697.R,_start,,+ hours,,+ collgrad,,,,+ c_city,+ ttl_exp,+ tenure
+universe_698.R,_start,,+ hours,,+ collgrad,,,,+ c_city,+ ttl_exp,
+universe_699.R,_start,,+ hours,,+ collgrad,,,,+ c_city,,+ tenure
+universe_700.R,_start,,+ hours,,+ collgrad,,,,+ c_city,,
+universe_701.R,_start,,+ hours,,+ collgrad,,,,,+ ttl_exp,+ tenure
+universe_702.R,_start,,+ hours,,+ collgrad,,,,,+ ttl_exp,
+universe_703.R,_start,,+ hours,,+ collgrad,,,,,,+ tenure
+universe_704.R,_start,,+ hours,,+ collgrad,,,,,,
+universe_705.R,_start,,+ hours,,,+ married,+ south,+ smsa,+ c_city,+ ttl_exp,+ tenure
+universe_706.R,_start,,+ hours,,,+ married,+ south,+ smsa,+ c_city,+ ttl_exp,
+universe_707.R,_start,,+ hours,,,+ married,+ south,+ smsa,+ c_city,,+ tenure
+universe_708.R,_start,,+ hours,,,+ married,+ south,+ smsa,+ c_city,,
+universe_709.R,_start,,+ hours,,,+ married,+ south,+ smsa,,+ ttl_exp,+ tenure
+universe_710.R,_start,,+ hours,,,+ married,+ south,+ smsa,,+ ttl_exp,
+universe_711.R,_start,,+ hours,,,+ married,+ south,+ smsa,,,+ tenure
+universe_712.R,_start,,+ hours,,,+ married,+ south,+ smsa,,,
+universe_713.R,_start,,+ hours,,,+ married,+ south,,+ c_city,+ ttl_exp,+ tenure
+universe_714.R,_start,,+ hours,,,+ married,+ south,,+ c_city,+ ttl_exp,
+universe_715.R,_start,,+ hours,,,+ married,+ south,,+ c_city,,+ tenure
+universe_716.R,_start,,+ hours,,,+ married,+ south,,+ c_city,,
+universe_717.R,_start,,+ hours,,,+ married,+ south,,,+ ttl_exp,+ tenure
+universe_718.R,_start,,+ hours,,,+ married,+ south,,,+ ttl_exp,
+universe_719.R,_start,,+ hours,,,+ married,+ south,,,,+ tenure
+universe_720.R,_start,,+ hours,,,+ married,+ south,,,,
+universe_721.R,_start,,+ hours,,,+ married,,+ smsa,+ c_city,+ ttl_exp,+ tenure
+universe_722.R,_start,,+ hours,,,+ married,,+ smsa,+ c_city,+ ttl_exp,
+universe_723.R,_start,,+ hours,,,+ married,,+ smsa,+ c_city,,+ tenure
+universe_724.R,_start,,+ hours,,,+ married,,+ smsa,+ c_city,,
+universe_725.R,_start,,+ hours,,,+ married,,+ smsa,,+ ttl_exp,+ tenure
+universe_726.R,_start,,+ hours,,,+ married,,+ smsa,,+ ttl_exp,
+universe_727.R,_start,,+ hours,,,+ married,,+ smsa,,,+ tenure
+universe_728.R,_start,,+ hours,,,+ married,,+ smsa,,,
+universe_729.R,_start,,+ hours,,,+ married,,,+ c_city,+ ttl_exp,+ tenure
+universe_730.R,_start,,+ hours,,,+ married,,,+ c_city,+ ttl_exp,
+universe_731.R,_start,,+ hours,,,+ married,,,+ c_city,,+ tenure
+universe_732.R,_start,,+ hours,,,+ married,,,+ c_city,,
+universe_733.R,_start,,+ hours,,,+ married,,,,+ ttl_exp,+ tenure
+universe_734.R,_start,,+ hours,,,+ married,,,,+ ttl_exp,
+universe_735.R,_start,,+ hours,,,+ married,,,,,+ tenure
+universe_736.R,_start,,+ hours,,,+ married,,,,,
+universe_737.R,_start,,+ hours,,,,+ south,+ smsa,+ c_city,+ ttl_exp,+ tenure
+universe_738.R,_start,,+ hours,,,,+ south,+ smsa,+ c_city,+ ttl_exp,
+universe_739.R,_start,,+ hours,,,,+ south,+ smsa,+ c_city,,+ tenure
+universe_740.R,_start,,+ hours,,,,+ south,+ smsa,+ c_city,,
+universe_741.R,_start,,+ hours,,,,+ south,+ smsa,,+ ttl_exp,+ tenure
+universe_742.R,_start,,+ hours,,,,+ south,+ smsa,,+ ttl_exp,
+universe_743.R,_start,,+ hours,,,,+ south,+ smsa,,,+ tenure
+universe_744.R,_start,,+ hours,,,,+ south,+ smsa,,,
+universe_745.R,_start,,+ hours,,,,+ south,,+ c_city,+ ttl_exp,+ tenure
+universe_746.R,_start,,+ hours,,,,+ south,,+ c_city,+ ttl_exp,
+universe_747.R,_start,,+ hours,,,,+ south,,+ c_city,,+ tenure
+universe_748.R,_start,,+ hours,,,,+ south,,+ c_city,,
+universe_749.R,_start,,+ hours,,,,+ south,,,+ ttl_exp,+ tenure
+universe_750.R,_start,,+ hours,,,,+ south,,,+ ttl_exp,
+universe_751.R,_start,,+ hours,,,,+ south,,,,+ tenure
+universe_752.R,_start,,+ hours,,,,+ south,,,,
+universe_753.R,_start,,+ hours,,,,,+ smsa,+ c_city,+ ttl_exp,+ tenure
+universe_754.R,_start,,+ hours,,,,,+ smsa,+ c_city,+ ttl_exp,
+universe_755.R,_start,,+ hours,,,,,+ smsa,+ c_city,,+ tenure
+universe_756.R,_start,,+ hours,,,,,+ smsa,+ c_city,,
+universe_757.R,_start,,+ hours,,,,,+ smsa,,+ ttl_exp,+ tenure
+universe_758.R,_start,,+ hours,,,,,+ smsa,,+ ttl_exp,
+universe_759.R,_start,,+ hours,,,,,+ smsa,,,+ tenure
+universe_760.R,_start,,+ hours,,,,,+ smsa,,,
+universe_761.R,_start,,+ hours,,,,,,+ c_city,+ ttl_exp,+ tenure
+universe_762.R,_start,,+ hours,,,,,,+ c_city,+ ttl_exp,
+universe_763.R,_start,,+ hours,,,,,,+ c_city,,+ tenure
+universe_764.R,_start,,+ hours,,,,,,+ c_city,,
+universe_765.R,_start,,+ hours,,,,,,,+ ttl_exp,+ tenure
+universe_766.R,_start,,+ hours,,,,,,,+ ttl_exp,
+universe_767.R,_start,,+ hours,,,,,,,,+ tenure
+universe_768.R,_start,,+ hours,,,,,,,,
+universe_769.R,_start,,,+ grade,+ collgrad,+ married,+ south,+ smsa,+ c_city,+ ttl_exp,+ tenure
+universe_770.R,_start,,,+ grade,+ collgrad,+ married,+ south,+ smsa,+ c_city,+ ttl_exp,
+universe_771.R,_start,,,+ grade,+ collgrad,+ married,+ south,+ smsa,+ c_city,,+ tenure
+universe_772.R,_start,,,+ grade,+ collgrad,+ married,+ south,+ smsa,+ c_city,,
+universe_773.R,_start,,,+ grade,+ collgrad,+ married,+ south,+ smsa,,+ ttl_exp,+ tenure
+universe_774.R,_start,,,+ grade,+ collgrad,+ married,+ south,+ smsa,,+ ttl_exp,
+universe_775.R,_start,,,+ grade,+ collgrad,+ married,+ south,+ smsa,,,+ tenure
+universe_776.R,_start,,,+ grade,+ collgrad,+ married,+ south,+ smsa,,,
+universe_777.R,_start,,,+ grade,+ collgrad,+ married,+ south,,+ c_city,+ ttl_exp,+ tenure
+universe_778.R,_start,,,+ grade,+ collgrad,+ married,+ south,,+ c_city,+ ttl_exp,
+universe_779.R,_start,,,+ grade,+ collgrad,+ married,+ south,,+ c_city,,+ tenure
+universe_780.R,_start,,,+ grade,+ collgrad,+ married,+ south,,+ c_city,,
+universe_781.R,_start,,,+ grade,+ collgrad,+ married,+ south,,,+ ttl_exp,+ tenure
+universe_782.R,_start,,,+ grade,+ collgrad,+ married,+ south,,,+ ttl_exp,
+universe_783.R,_start,,,+ grade,+ collgrad,+ married,+ south,,,,+ tenure
+universe_784.R,_start,,,+ grade,+ collgrad,+ married,+ south,,,,
+universe_785.R,_start,,,+ grade,+ collgrad,+ married,,+ smsa,+ c_city,+ ttl_exp,+ tenure
+universe_786.R,_start,,,+ grade,+ collgrad,+ married,,+ smsa,+ c_city,+ ttl_exp,
+universe_787.R,_start,,,+ grade,+ collgrad,+ married,,+ smsa,+ c_city,,+ tenure
+universe_788.R,_start,,,+ grade,+ collgrad,+ married,,+ smsa,+ c_city,,
+universe_789.R,_start,,,+ grade,+ collgrad,+ married,,+ smsa,,+ ttl_exp,+ tenure
+universe_790.R,_start,,,+ grade,+ collgrad,+ married,,+ smsa,,+ ttl_exp,
+universe_791.R,_start,,,+ grade,+ collgrad,+ married,,+ smsa,,,+ tenure
+universe_792.R,_start,,,+ grade,+ collgrad,+ married,,+ smsa,,,
+universe_793.R,_start,,,+ grade,+ collgrad,+ married,,,+ c_city,+ ttl_exp,+ tenure
+universe_794.R,_start,,,+ grade,+ collgrad,+ married,,,+ c_city,+ ttl_exp,
+universe_795.R,_start,,,+ grade,+ collgrad,+ married,,,+ c_city,,+ tenure
+universe_796.R,_start,,,+ grade,+ collgrad,+ married,,,+ c_city,,
+universe_797.R,_start,,,+ grade,+ collgrad,+ married,,,,+ ttl_exp,+ tenure
+universe_798.R,_start,,,+ grade,+ collgrad,+ married,,,,+ ttl_exp,
+universe_799.R,_start,,,+ grade,+ collgrad,+ married,,,,,+ tenure
+universe_800.R,_start,,,+ grade,+ collgrad,+ married,,,,,
+universe_801.R,_start,,,+ grade,+ collgrad,,+ south,+ smsa,+ c_city,+ ttl_exp,+ tenure
+universe_802.R,_start,,,+ grade,+ collgrad,,+ south,+ smsa,+ c_city,+ ttl_exp,
+universe_803.R,_start,,,+ grade,+ collgrad,,+ south,+ smsa,+ c_city,,+ tenure
+universe_804.R,_start,,,+ grade,+ collgrad,,+ south,+ smsa,+ c_city,,
+universe_805.R,_start,,,+ grade,+ collgrad,,+ south,+ smsa,,+ ttl_exp,+ tenure
+universe_806.R,_start,,,+ grade,+ collgrad,,+ south,+ smsa,,+ ttl_exp,
+universe_807.R,_start,,,+ grade,+ collgrad,,+ south,+ smsa,,,+ tenure
+universe_808.R,_start,,,+ grade,+ collgrad,,+ south,+ smsa,,,
+universe_809.R,_start,,,+ grade,+ collgrad,,+ south,,+ c_city,+ ttl_exp,+ tenure
+universe_810.R,_start,,,+ grade,+ collgrad,,+ south,,+ c_city,+ ttl_exp,
+universe_811.R,_start,,,+ grade,+ collgrad,,+ south,,+ c_city,,+ tenure
+universe_812.R,_start,,,+ grade,+ collgrad,,+ south,,+ c_city,,
+universe_813.R,_start,,,+ grade,+ collgrad,,+ south,,,+ ttl_exp,+ tenure
+universe_814.R,_start,,,+ grade,+ collgrad,,+ south,,,+ ttl_exp,
+universe_815.R,_start,,,+ grade,+ collgrad,,+ south,,,,+ tenure
+universe_816.R,_start,,,+ grade,+ collgrad,,+ south,,,,
+universe_817.R,_start,,,+ grade,+ collgrad,,,+ smsa,+ c_city,+ ttl_exp,+ tenure
+universe_818.R,_start,,,+ grade,+ collgrad,,,+ smsa,+ c_city,+ ttl_exp,
+universe_819.R,_start,,,+ grade,+ collgrad,,,+ smsa,+ c_city,,+ tenure
+universe_820.R,_start,,,+ grade,+ collgrad,,,+ smsa,+ c_city,,
+universe_821.R,_start,,,+ grade,+ collgrad,,,+ smsa,,+ ttl_exp,+ tenure
+universe_822.R,_start,,,+ grade,+ collgrad,,,+ smsa,,+ ttl_exp,
+universe_823.R,_start,,,+ grade,+ collgrad,,,+ smsa,,,+ tenure
+universe_824.R,_start,,,+ grade,+ collgrad,,,+ smsa,,,
+universe_825.R,_start,,,+ grade,+ collgrad,,,,+ c_city,+ ttl_exp,+ tenure
+universe_826.R,_start,,,+ grade,+ collgrad,,,,+ c_city,+ ttl_exp,
+universe_827.R,_start,,,+ grade,+ collgrad,,,,+ c_city,,+ tenure
+universe_828.R,_start,,,+ grade,+ collgrad,,,,+ c_city,,
+universe_829.R,_start,,,+ grade,+ collgrad,,,,,+ ttl_exp,+ tenure
+universe_830.R,_start,,,+ grade,+ collgrad,,,,,+ ttl_exp,
+universe_831.R,_start,,,+ grade,+ collgrad,,,,,,+ tenure
+universe_832.R,_start,,,+ grade,+ collgrad,,,,,,
+universe_833.R,_start,,,+ grade,,+ married,+ south,+ smsa,+ c_city,+ ttl_exp,+ tenure
+universe_834.R,_start,,,+ grade,,+ married,+ south,+ smsa,+ c_city,+ ttl_exp,
+universe_835.R,_start,,,+ grade,,+ married,+ south,+ smsa,+ c_city,,+ tenure
+universe_836.R,_start,,,+ grade,,+ married,+ south,+ smsa,+ c_city,,
+universe_837.R,_start,,,+ grade,,+ married,+ south,+ smsa,,+ ttl_exp,+ tenure
+universe_838.R,_start,,,+ grade,,+ married,+ south,+ smsa,,+ ttl_exp,
+universe_839.R,_start,,,+ grade,,+ married,+ south,+ smsa,,,+ tenure
+universe_840.R,_start,,,+ grade,,+ married,+ south,+ smsa,,,
+universe_841.R,_start,,,+ grade,,+ married,+ south,,+ c_city,+ ttl_exp,+ tenure
+universe_842.R,_start,,,+ grade,,+ married,+ south,,+ c_city,+ ttl_exp,
+universe_843.R,_start,,,+ grade,,+ married,+ south,,+ c_city,,+ tenure
+universe_844.R,_start,,,+ grade,,+ married,+ south,,+ c_city,,
+universe_845.R,_start,,,+ grade,,+ married,+ south,,,+ ttl_exp,+ tenure
+universe_846.R,_start,,,+ grade,,+ married,+ south,,,+ ttl_exp,
+universe_847.R,_start,,,+ grade,,+ married,+ south,,,,+ tenure
+universe_848.R,_start,,,+ grade,,+ married,+ south,,,,
+universe_849.R,_start,,,+ grade,,+ married,,+ smsa,+ c_city,+ ttl_exp,+ tenure
+universe_850.R,_start,,,+ grade,,+ married,,+ smsa,+ c_city,+ ttl_exp,
+universe_851.R,_start,,,+ grade,,+ married,,+ smsa,+ c_city,,+ tenure
+universe_852.R,_start,,,+ grade,,+ married,,+ smsa,+ c_city,,
+universe_853.R,_start,,,+ grade,,+ married,,+ smsa,,+ ttl_exp,+ tenure
+universe_854.R,_start,,,+ grade,,+ married,,+ smsa,,+ ttl_exp,
+universe_855.R,_start,,,+ grade,,+ married,,+ smsa,,,+ tenure
+universe_856.R,_start,,,+ grade,,+ married,,+ smsa,,,
+universe_857.R,_start,,,+ grade,,+ married,,,+ c_city,+ ttl_exp,+ tenure
+universe_858.R,_start,,,+ grade,,+ married,,,+ c_city,+ ttl_exp,
+universe_859.R,_start,,,+ grade,,+ married,,,+ c_city,,+ tenure
+universe_860.R,_start,,,+ grade,,+ married,,,+ c_city,,
+universe_861.R,_start,,,+ grade,,+ married,,,,+ ttl_exp,+ tenure
+universe_862.R,_start,,,+ grade,,+ married,,,,+ ttl_exp,
+universe_863.R,_start,,,+ grade,,+ married,,,,,+ tenure
+universe_864.R,_start,,,+ grade,,+ married,,,,,
+universe_865.R,_start,,,+ grade,,,+ south,+ smsa,+ c_city,+ ttl_exp,+ tenure
+universe_866.R,_start,,,+ grade,,,+ south,+ smsa,+ c_city,+ ttl_exp,
+universe_867.R,_start,,,+ grade,,,+ south,+ smsa,+ c_city,,+ tenure
+universe_868.R,_start,,,+ grade,,,+ south,+ smsa,+ c_city,,
+universe_869.R,_start,,,+ grade,,,+ south,+ smsa,,+ ttl_exp,+ tenure
+universe_870.R,_start,,,+ grade,,,+ south,+ smsa,,+ ttl_exp,
+universe_871.R,_start,,,+ grade,,,+ south,+ smsa,,,+ tenure
+universe_872.R,_start,,,+ grade,,,+ south,+ smsa,,,
+universe_873.R,_start,,,+ grade,,,+ south,,+ c_city,+ ttl_exp,+ tenure
+universe_874.R,_start,,,+ grade,,,+ south,,+ c_city,+ ttl_exp,
+universe_875.R,_start,,,+ grade,,,+ south,,+ c_city,,+ tenure
+universe_876.R,_start,,,+ grade,,,+ south,,+ c_city,,
+universe_877.R,_start,,,+ grade,,,+ south,,,+ ttl_exp,+ tenure
+universe_878.R,_start,,,+ grade,,,+ south,,,+ ttl_exp,
+universe_879.R,_start,,,+ grade,,,+ south,,,,+ tenure
+universe_880.R,_start,,,+ grade,,,+ south,,,,
+universe_881.R,_start,,,+ grade,,,,+ smsa,+ c_city,+ ttl_exp,+ tenure
+universe_882.R,_start,,,+ grade,,,,+ smsa,+ c_city,+ ttl_exp,
+universe_883.R,_start,,,+ grade,,,,+ smsa,+ c_city,,+ tenure
+universe_884.R,_start,,,+ grade,,,,+ smsa,+ c_city,,
+universe_885.R,_start,,,+ grade,,,,+ smsa,,+ ttl_exp,+ tenure
+universe_886.R,_start,,,+ grade,,,,+ smsa,,+ ttl_exp,
+universe_887.R,_start,,,+ grade,,,,+ smsa,,,+ tenure
+universe_888.R,_start,,,+ grade,,,,+ smsa,,,
+universe_889.R,_start,,,+ grade,,,,,+ c_city,+ ttl_exp,+ tenure
+universe_890.R,_start,,,+ grade,,,,,+ c_city,+ ttl_exp,
+universe_891.R,_start,,,+ grade,,,,,+ c_city,,+ tenure
+universe_892.R,_start,,,+ grade,,,,,+ c_city,,
+universe_893.R,_start,,,+ grade,,,,,,+ ttl_exp,+ tenure
+universe_894.R,_start,,,+ grade,,,,,,+ ttl_exp,
+universe_895.R,_start,,,+ grade,,,,,,,+ tenure
+universe_896.R,_start,,,+ grade,,,,,,,
+universe_897.R,_start,,,,+ collgrad,+ married,+ south,+ smsa,+ c_city,+ ttl_exp,+ tenure
+universe_898.R,_start,,,,+ collgrad,+ married,+ south,+ smsa,+ c_city,+ ttl_exp,
+universe_899.R,_start,,,,+ collgrad,+ married,+ south,+ smsa,+ c_city,,+ tenure
+universe_900.R,_start,,,,+ collgrad,+ married,+ south,+ smsa,+ c_city,,
+universe_901.R,_start,,,,+ collgrad,+ married,+ south,+ smsa,,+ ttl_exp,+ tenure
+universe_902.R,_start,,,,+ collgrad,+ married,+ south,+ smsa,,+ ttl_exp,
+universe_903.R,_start,,,,+ collgrad,+ married,+ south,+ smsa,,,+ tenure
+universe_904.R,_start,,,,+ collgrad,+ married,+ south,+ smsa,,,
+universe_905.R,_start,,,,+ collgrad,+ married,+ south,,+ c_city,+ ttl_exp,+ tenure
+universe_906.R,_start,,,,+ collgrad,+ married,+ south,,+ c_city,+ ttl_exp,
+universe_907.R,_start,,,,+ collgrad,+ married,+ south,,+ c_city,,+ tenure
+universe_908.R,_start,,,,+ collgrad,+ married,+ south,,+ c_city,,
+universe_909.R,_start,,,,+ collgrad,+ married,+ south,,,+ ttl_exp,+ tenure
+universe_910.R,_start,,,,+ collgrad,+ married,+ south,,,+ ttl_exp,
+universe_911.R,_start,,,,+ collgrad,+ married,+ south,,,,+ tenure
+universe_912.R,_start,,,,+ collgrad,+ married,+ south,,,,
+universe_913.R,_start,,,,+ collgrad,+ married,,+ smsa,+ c_city,+ ttl_exp,+ tenure
+universe_914.R,_start,,,,+ collgrad,+ married,,+ smsa,+ c_city,+ ttl_exp,
+universe_915.R,_start,,,,+ collgrad,+ married,,+ smsa,+ c_city,,+ tenure
+universe_916.R,_start,,,,+ collgrad,+ married,,+ smsa,+ c_city,,
+universe_917.R,_start,,,,+ collgrad,+ married,,+ smsa,,+ ttl_exp,+ tenure
+universe_918.R,_start,,,,+ collgrad,+ married,,+ smsa,,+ ttl_exp,
+universe_919.R,_start,,,,+ collgrad,+ married,,+ smsa,,,+ tenure
+universe_920.R,_start,,,,+ collgrad,+ married,,+ smsa,,,
+universe_921.R,_start,,,,+ collgrad,+ married,,,+ c_city,+ ttl_exp,+ tenure
+universe_922.R,_start,,,,+ collgrad,+ married,,,+ c_city,+ ttl_exp,
+universe_923.R,_start,,,,+ collgrad,+ married,,,+ c_city,,+ tenure
+universe_924.R,_start,,,,+ collgrad,+ married,,,+ c_city,,
+universe_925.R,_start,,,,+ collgrad,+ married,,,,+ ttl_exp,+ tenure
+universe_926.R,_start,,,,+ collgrad,+ married,,,,+ ttl_exp,
+universe_927.R,_start,,,,+ collgrad,+ married,,,,,+ tenure
+universe_928.R,_start,,,,+ collgrad,+ married,,,,,
+universe_929.R,_start,,,,+ collgrad,,+ south,+ smsa,+ c_city,+ ttl_exp,+ tenure
+universe_930.R,_start,,,,+ collgrad,,+ south,+ smsa,+ c_city,+ ttl_exp,
+universe_931.R,_start,,,,+ collgrad,,+ south,+ smsa,+ c_city,,+ tenure
+universe_932.R,_start,,,,+ collgrad,,+ south,+ smsa,+ c_city,,
+universe_933.R,_start,,,,+ collgrad,,+ south,+ smsa,,+ ttl_exp,+ tenure
+universe_934.R,_start,,,,+ collgrad,,+ south,+ smsa,,+ ttl_exp,
+universe_935.R,_start,,,,+ collgrad,,+ south,+ smsa,,,+ tenure
+universe_936.R,_start,,,,+ collgrad,,+ south,+ smsa,,,
+universe_937.R,_start,,,,+ collgrad,,+ south,,+ c_city,+ ttl_exp,+ tenure
+universe_938.R,_start,,,,+ collgrad,,+ south,,+ c_city,+ ttl_exp,
+universe_939.R,_start,,,,+ collgrad,,+ south,,+ c_city,,+ tenure
+universe_940.R,_start,,,,+ collgrad,,+ south,,+ c_city,,
+universe_941.R,_start,,,,+ collgrad,,+ south,,,+ ttl_exp,+ tenure
+universe_942.R,_start,,,,+ collgrad,,+ south,,,+ ttl_exp,
+universe_943.R,_start,,,,+ collgrad,,+ south,,,,+ tenure
+universe_944.R,_start,,,,+ collgrad,,+ south,,,,
+universe_945.R,_start,,,,+ collgrad,,,+ smsa,+ c_city,+ ttl_exp,+ tenure
+universe_946.R,_start,,,,+ collgrad,,,+ smsa,+ c_city,+ ttl_exp,
+universe_947.R,_start,,,,+ collgrad,,,+ smsa,+ c_city,,+ tenure
+universe_948.R,_start,,,,+ collgrad,,,+ smsa,+ c_city,,
+universe_949.R,_start,,,,+ collgrad,,,+ smsa,,+ ttl_exp,+ tenure
+universe_950.R,_start,,,,+ collgrad,,,+ smsa,,+ ttl_exp,
+universe_951.R,_start,,,,+ collgrad,,,+ smsa,,,+ tenure
+universe_952.R,_start,,,,+ collgrad,,,+ smsa,,,
+universe_953.R,_start,,,,+ collgrad,,,,+ c_city,+ ttl_exp,+ tenure
+universe_954.R,_start,,,,+ collgrad,,,,+ c_city,+ ttl_exp,
+universe_955.R,_start,,,,+ collgrad,,,,+ c_city,,+ tenure
+universe_956.R,_start,,,,+ collgrad,,,,+ c_city,,
+universe_957.R,_start,,,,+ collgrad,,,,,+ ttl_exp,+ tenure
+universe_958.R,_start,,,,+ collgrad,,,,,+ ttl_exp,
+universe_959.R,_start,,,,+ collgrad,,,,,,+ tenure
+universe_960.R,_start,,,,+ collgrad,,,,,,
+universe_961.R,_start,,,,,+ married,+ south,+ smsa,+ c_city,+ ttl_exp,+ tenure
+universe_962.R,_start,,,,,+ married,+ south,+ smsa,+ c_city,+ ttl_exp,
+universe_963.R,_start,,,,,+ married,+ south,+ smsa,+ c_city,,+ tenure
+universe_964.R,_start,,,,,+ married,+ south,+ smsa,+ c_city,,
+universe_965.R,_start,,,,,+ married,+ south,+ smsa,,+ ttl_exp,+ tenure
+universe_966.R,_start,,,,,+ married,+ south,+ smsa,,+ ttl_exp,
+universe_967.R,_start,,,,,+ married,+ south,+ smsa,,,+ tenure
+universe_968.R,_start,,,,,+ married,+ south,+ smsa,,,
+universe_969.R,_start,,,,,+ married,+ south,,+ c_city,+ ttl_exp,+ tenure
+universe_970.R,_start,,,,,+ married,+ south,,+ c_city,+ ttl_exp,
+universe_971.R,_start,,,,,+ married,+ south,,+ c_city,,+ tenure
+universe_972.R,_start,,,,,+ married,+ south,,+ c_city,,
+universe_973.R,_start,,,,,+ married,+ south,,,+ ttl_exp,+ tenure
+universe_974.R,_start,,,,,+ married,+ south,,,+ ttl_exp,
+universe_975.R,_start,,,,,+ married,+ south,,,,+ tenure
+universe_976.R,_start,,,,,+ married,+ south,,,,
+universe_977.R,_start,,,,,+ married,,+ smsa,+ c_city,+ ttl_exp,+ tenure
+universe_978.R,_start,,,,,+ married,,+ smsa,+ c_city,+ ttl_exp,
+universe_979.R,_start,,,,,+ married,,+ smsa,+ c_city,,+ tenure
+universe_980.R,_start,,,,,+ married,,+ smsa,+ c_city,,
+universe_981.R,_start,,,,,+ married,,+ smsa,,+ ttl_exp,+ tenure
+universe_982.R,_start,,,,,+ married,,+ smsa,,+ ttl_exp,
+universe_983.R,_start,,,,,+ married,,+ smsa,,,+ tenure
+universe_984.R,_start,,,,,+ married,,+ smsa,,,
+universe_985.R,_start,,,,,+ married,,,+ c_city,+ ttl_exp,+ tenure
+universe_986.R,_start,,,,,+ married,,,+ c_city,+ ttl_exp,
+universe_987.R,_start,,,,,+ married,,,+ c_city,,+ tenure
+universe_988.R,_start,,,,,+ married,,,+ c_city,,
+universe_989.R,_start,,,,,+ married,,,,+ ttl_exp,+ tenure
+universe_990.R,_start,,,,,+ married,,,,+ ttl_exp,
+universe_991.R,_start,,,,,+ married,,,,,+ tenure
+universe_992.R,_start,,,,,+ married,,,,,
+universe_993.R,_start,,,,,,+ south,+ smsa,+ c_city,+ ttl_exp,+ tenure
+universe_994.R,_start,,,,,,+ south,+ smsa,+ c_city,+ ttl_exp,
+universe_995.R,_start,,,,,,+ south,+ smsa,+ c_city,,+ tenure
+universe_996.R,_start,,,,,,+ south,+ smsa,+ c_city,,
+universe_997.R,_start,,,,,,+ south,+ smsa,,+ ttl_exp,+ tenure
+universe_998.R,_start,,,,,,+ south,+ smsa,,+ ttl_exp,
+universe_999.R,_start,,,,,,+ south,+ smsa,,,+ tenure
+universe_1000.R,_start,,,,,,+ south,+ smsa,,,
+universe_1001.R,_start,,,,,,+ south,,+ c_city,+ ttl_exp,+ tenure
+universe_1002.R,_start,,,,,,+ south,,+ c_city,+ ttl_exp,
+universe_1003.R,_start,,,,,,+ south,,+ c_city,,+ tenure
+universe_1004.R,_start,,,,,,+ south,,+ c_city,,
+universe_1005.R,_start,,,,,,+ south,,,+ ttl_exp,+ tenure
+universe_1006.R,_start,,,,,,+ south,,,+ ttl_exp,
+universe_1007.R,_start,,,,,,+ south,,,,+ tenure
+universe_1008.R,_start,,,,,,+ south,,,,
+universe_1009.R,_start,,,,,,,+ smsa,+ c_city,+ ttl_exp,+ tenure
+universe_1010.R,_start,,,,,,,+ smsa,+ c_city,+ ttl_exp,
+universe_1011.R,_start,,,,,,,+ smsa,+ c_city,,+ tenure
+universe_1012.R,_start,,,,,,,+ smsa,+ c_city,,
+universe_1013.R,_start,,,,,,,+ smsa,,+ ttl_exp,+ tenure
+universe_1014.R,_start,,,,,,,+ smsa,,+ ttl_exp,
+universe_1015.R,_start,,,,,,,+ smsa,,,+ tenure
+universe_1016.R,_start,,,,,,,+ smsa,,,
+universe_1017.R,_start,,,,,,,,+ c_city,+ ttl_exp,+ tenure
+universe_1018.R,_start,,,,,,,,+ c_city,+ ttl_exp,
+universe_1019.R,_start,,,,,,,,+ c_city,,+ tenure
+universe_1020.R,_start,,,,,,,,+ c_city,,
+universe_1021.R,_start,,,,,,,,,+ ttl_exp,+ tenure
+universe_1022.R,_start,,,,,,,,,+ ttl_exp,
+universe_1023.R,_start,,,,,,,,,,+ tenure
+universe_1024.R,_start,,,,,,,,,,

@@ -1,0 +1,168 @@
+{
+  "decisions": [
+    {
+      "options": [
+        "",
+        "+ year:damage",
+        "+ post:damage"
+      ],
+      "var": "covariates"
+    },
+    {
+      "options": [
+        "c()",
+        "c('Katrina')",
+        "c('Katrina', 'Audrey')",
+        "c('Katrina', 'Audrey', 'Sandy')",
+        "c('Katrina', 'Audrey', 'Sandy', 'Andrew')",
+        "c('Katrina', 'Audrey', 'Sandy', 'Andrew', 'Donna')"
+      ],
+      "var": "outliers"
+    },
+    {
+      "options": [
+        "ols_regression",
+        "negative_binomial",
+        "anova"
+      ],
+      "var": "Model"
+    },
+    {
+      "options": [
+        "feminity * damage",
+        "feminity + damage + pressure + feminity:damage + feminity:pressure",
+        "feminity + damage + zwin + feminity:damage + feminity:zwin",
+        "feminity + damage + zcat + feminity:damage + feminity:zcat",
+        "feminity + damage + z3 + feminity:damage + feminity:z3",
+        "feminity + damage + z3"
+      ],
+      "var": "predictors"
+    },
+    {
+      "options": [
+        "female",
+        "masfem"
+      ],
+      "var": "feminity"
+    },
+    {
+      "options": [
+        "dam",
+        "log_dam"
+      ],
+      "var": "damage"
+    }
+  ],
+  "graph": {
+    "edges": [
+      {
+        "source": 3,
+        "target": 0,
+        "type": "order"
+      },
+      {
+        "source": 2,
+        "target": 3,
+        "type": "order"
+      },
+      {
+        "source": 5,
+        "target": 2,
+        "type": "order"
+      },
+      {
+        "source": 4,
+        "target": 5,
+        "type": "order"
+      },
+      {
+        "source": 1,
+        "target": 4,
+        "type": "order"
+      }
+    ],
+    "nodes": [
+      {
+        "id": 0,
+        "name": "covariates"
+      },
+      {
+        "id": 1,
+        "name": "outliers"
+      },
+      {
+        "id": 2,
+        "name": "Model"
+      },
+      {
+        "id": 3,
+        "name": "predictors"
+      },
+      {
+        "id": 4,
+        "name": "feminity"
+      },
+      {
+        "id": 5,
+        "name": "damage"
+      }
+    ]
+  },
+  "visualizer": {
+    "files": [
+      {
+        "id": "est",
+        "multi": true,
+        "path": "estimate.csv"
+      },
+      {
+        "id": "unc",
+        "path": "uncertainty.csv"
+      },
+      {
+        "id": "nul",
+        "path": "null.csv"
+      },
+      {
+        "id": "fit",
+        "multi": true,
+        "path": "results/disagg_fit_{}.csv"
+      }
+    ],
+    "labels": {
+      "dataset": "hurricane",
+      "fit_range": [
+        0,
+        1
+      ],
+      "x_axis": "Expected Deaths: Female - Male",
+      "x_axis_fit": "Log2(Death + 1)",
+      "x_range": [
+        -10,
+        50
+      ],
+      "x_range_outer": [
+        -120,
+        300
+      ]
+    },
+    "schema": {
+      "fit": {
+        "field": "NRMSE",
+        "file": "est"
+      },
+      "null_distribution": {
+        "field": "expected_diff",
+        "file": "nul"
+      },
+      "point_estimate": {
+        "field": "expected_diff",
+        "file": "est"
+      },
+      "prediction": {
+        "file": "fit",
+        "transform": "math.log2({} + 1)"
+      }
+    }
+  }
+}

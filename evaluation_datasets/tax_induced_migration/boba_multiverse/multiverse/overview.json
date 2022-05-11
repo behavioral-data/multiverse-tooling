@@ -1,0 +1,281 @@
+{
+  "decisions": [
+    {
+      "options": [
+        "+ wint_temp_ij",
+        ""
+      ],
+      "var": "winter_temperature"
+    },
+    {
+      "options": [
+        "+ meaninc_ij",
+        ""
+      ],
+      "var": "mean_income"
+    },
+    {
+      "options": [
+        "TF_count",
+        "all_mig_count"
+      ],
+      "var": "dataset_outcome_var"
+    },
+    {
+      "options": [
+        "+ temp_dif_ij",
+        ""
+      ],
+      "var": "temperature"
+    },
+    {
+      "options": [
+        "+ topog_ij",
+        ""
+      ],
+      "var": "landscape"
+    },
+    {
+      "options": [
+        "+ water_ij",
+        ""
+      ],
+      "var": "water"
+    },
+    {
+      "options": [
+        "+ unemp_ij",
+        ""
+      ],
+      "var": "unemployment_rate"
+    },
+    {
+      "options": [
+        "ols_regression",
+        "poisson_model",
+        "negative_binomial"
+      ],
+      "var": "Model"
+    },
+    {
+      "options": [
+        "+ prop_tax_ij",
+        ""
+      ],
+      "var": "property_tax"
+    },
+    {
+      "options": [
+        "+ state_sales_ij",
+        ""
+      ],
+      "var": "sales_tax"
+    },
+    {
+      "options": [
+        "+ contiguous",
+        ""
+      ],
+      "var": "contiguous"
+    },
+    {
+      "options": [
+        "+ humid_ij",
+        ""
+      ],
+      "var": "humid"
+    },
+    {
+      "options": [
+        "+ sun_ij",
+        ""
+      ],
+      "var": "sunshine"
+    },
+    {
+      "options": [
+        "+ log_distance_ij",
+        ""
+      ],
+      "var": "log_distance"
+    }
+  ],
+  "graph": {
+    "edges": [
+      {
+        "source": 5,
+        "target": 6,
+        "type": "order"
+      },
+      {
+        "source": 4,
+        "target": 5,
+        "type": "order"
+      },
+      {
+        "source": 3,
+        "target": 4,
+        "type": "order"
+      },
+      {
+        "source": 11,
+        "target": 3,
+        "type": "order"
+      },
+      {
+        "source": 12,
+        "target": 11,
+        "type": "order"
+      },
+      {
+        "source": 0,
+        "target": 12,
+        "type": "order"
+      },
+      {
+        "source": 1,
+        "target": 0,
+        "type": "order"
+      },
+      {
+        "source": 8,
+        "target": 1,
+        "type": "order"
+      },
+      {
+        "source": 9,
+        "target": 8,
+        "type": "order"
+      },
+      {
+        "source": 10,
+        "target": 9,
+        "type": "order"
+      },
+      {
+        "source": 13,
+        "target": 10,
+        "type": "order"
+      },
+      {
+        "source": 7,
+        "target": 13,
+        "type": "order"
+      },
+      {
+        "source": 2,
+        "target": 7,
+        "type": "order"
+      }
+    ],
+    "nodes": [
+      {
+        "id": 0,
+        "name": "winter_temperature"
+      },
+      {
+        "id": 1,
+        "name": "mean_income"
+      },
+      {
+        "id": 2,
+        "name": "dataset_outcome_var"
+      },
+      {
+        "id": 3,
+        "name": "temperature"
+      },
+      {
+        "id": 4,
+        "name": "landscape"
+      },
+      {
+        "id": 5,
+        "name": "water"
+      },
+      {
+        "id": 6,
+        "name": "unemployment_rate"
+      },
+      {
+        "id": 7,
+        "name": "Model"
+      },
+      {
+        "id": 8,
+        "name": "property_tax"
+      },
+      {
+        "id": 9,
+        "name": "sales_tax"
+      },
+      {
+        "id": 10,
+        "name": "contiguous"
+      },
+      {
+        "id": 11,
+        "name": "humid"
+      },
+      {
+        "id": 12,
+        "name": "sunshine"
+      },
+      {
+        "id": 13,
+        "name": "log_distance"
+      }
+    ]
+  },
+  "visualizer": {
+    "files": [
+      {
+        "id": "est",
+        "path": "estimate.csv"
+      },
+      {
+        "id": "unc",
+        "path": "uncertainty.csv"
+      },
+      {
+        "id": "fit",
+        "multi": true,
+        "path": "results/disagg_fit_{}.csv"
+      }
+    ],
+    "labels": {
+      "dataset": "tax induced migration",
+      "fit_range": [
+        0,
+        1
+      ],
+      "x_axis": "Coefficient on state income tax",
+      "x_axis_fit": "Approved",
+      "x_range": [
+        -3,
+        3
+      ]
+    },
+    "schema": {
+      "fit": {
+        "field": "NRMSE",
+        "file": "est"
+      },
+      "p_value": {
+        "field": "p.value",
+        "file": "est"
+      },
+      "point_estimate": {
+        "field": "estimate",
+        "file": "est"
+      },
+      "prediction": {
+        "file": "fit"
+      },
+      "uncertainty": {
+        "field": "estimate",
+        "file": "unc"
+      }
+    }
+  }
+}

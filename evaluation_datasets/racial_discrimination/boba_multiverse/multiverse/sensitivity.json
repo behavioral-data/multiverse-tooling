@@ -1,0 +1,9 @@
+{
+    "method": "ad",
+    "scores": {
+        "Adjust_Effect_Size_Model": -0.08449056108001843,
+        "Model": -0.03653856379581736,
+        "quality": 3.0348308046094603,
+        "subsample": 26.581790198294126
+    }
+}

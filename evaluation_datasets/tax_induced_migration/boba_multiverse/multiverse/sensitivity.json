@@ -1,0 +1,19 @@
+{
+    "method": "ad",
+    "scores": {
+        "Model": 5236.231601370161,
+        "contiguous": 124.77919821299876,
+        "dataset_outcome_var": 2927.832070106186,
+        "humid": 365.10550033555296,
+        "landscape": 9.762405017334798,
+        "log_distance": 42.593513087242016,
+        "mean_income": 68.7912390596265,
+        "property_tax": 34.66810907950856,
+        "sales_tax": 730.3364785953888,
+        "sunshine": 109.49675891817554,
+        "temperature": 1012.0152791483342,
+        "unemployment_rate": 140.0875858720839,
+        "water": 14.336946107556194,
+        "winter_temperature": 912.9446391233785
+    }
+}

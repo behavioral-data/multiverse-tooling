@@ -1,0 +1,1 @@
+cp ../../../union_wage.csv ./ && rm -rf results && mkdir results

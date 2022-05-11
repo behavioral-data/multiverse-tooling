@@ -1,0 +1,91 @@
+Filename,Code Path,quality,subsample,Model,Adjust_Effect_Size_Model
+universe_1.R,_start->Model->Output_Model->Adjust_Effect_Size_Model->O,qall,,probit,median_split
+universe_2.R,_start->Model->Output_Model->Adjust_Effect_Size_Model->O,qall,female == 1,probit,median_split
+universe_3.R,_start->Model->Output_Model->Adjust_Effect_Size_Model->O,qall,female == 0,probit,median_split
+universe_4.R,_start->Model->Output_Model->Adjust_Effect_Size_Model->O,qallxb,,probit,median_split
+universe_5.R,_start->Model->Output_Model->Adjust_Effect_Size_Model->O,qallxb,female == 1,probit,median_split
+universe_6.R,_start->Model->Output_Model->Adjust_Effect_Size_Model->O,qallxb,female == 0,probit,median_split
+universe_7.R,_start->Model->Output_Model->Adjust_Effect_Size_Model->O,qblack,,probit,median_split
+universe_8.R,_start->Model->Output_Model->Adjust_Effect_Size_Model->O,qblack,female == 1,probit,median_split
+universe_9.R,_start->Model->Output_Model->Adjust_Effect_Size_Model->O,qblack,female == 0,probit,median_split
+universe_10.R,_start->Model->Output_Model->Adjust_Effect_Size_Model->O,qblackxb,,probit,median_split
+universe_11.R,_start->Model->Output_Model->Adjust_Effect_Size_Model->O,qblackxb,female == 1,probit,median_split
+universe_12.R,_start->Model->Output_Model->Adjust_Effect_Size_Model->O,qblackxb,female == 0,probit,median_split
+universe_13.R,_start->Model->Output_Model->Adjust_Effect_Size_Model->O,qwhite,,probit,median_split
+universe_14.R,_start->Model->Output_Model->Adjust_Effect_Size_Model->O,qwhite,female == 1,probit,median_split
+universe_15.R,_start->Model->Output_Model->Adjust_Effect_Size_Model->O,qwhite,female == 0,probit,median_split
+universe_16.R,_start->Model->Output_Model->Adjust_Effect_Size_Model->O,qwhitexb,,probit,median_split
+universe_17.R,_start->Model->Output_Model->Adjust_Effect_Size_Model->O,qwhitexb,female == 1,probit,median_split
+universe_18.R,_start->Model->Output_Model->Adjust_Effect_Size_Model->O,qwhitexb,female == 0,probit,median_split
+universe_19.R,_start->Model->Output_Model->Adjust_Effect_Size_Model->O,h,,probit,none
+universe_20.R,_start->Model->Output_Model->Adjust_Effect_Size_Model->O,h,female == 1,probit,none
+universe_21.R,_start->Model->Output_Model->Adjust_Effect_Size_Model->O,h,female == 0,probit,none
+universe_22.R,_start->Model->Output_Model->Adjust_Effect_Size_Model->O,sumq_med,,probit,none
+universe_23.R,_start->Model->Output_Model->Adjust_Effect_Size_Model->O,sumq_med,female == 1,probit,none
+universe_24.R,_start->Model->Output_Model->Adjust_Effect_Size_Model->O,sumq_med,female == 0,probit,none
+universe_25.R,_start->Model->Output_Model->Adjust_Effect_Size_Model->O,qall_med,,probit,none
+universe_26.R,_start->Model->Output_Model->Adjust_Effect_Size_Model->O,qall_med,female == 1,probit,none
+universe_27.R,_start->Model->Output_Model->Adjust_Effect_Size_Model->O,qall_med,female == 0,probit,none
+universe_28.R,_start->Model->Output_Model->Adjust_Effect_Size_Model->O,qallxb_med,,probit,none
+universe_29.R,_start->Model->Output_Model->Adjust_Effect_Size_Model->O,qallxb_med,female == 1,probit,none
+universe_30.R,_start->Model->Output_Model->Adjust_Effect_Size_Model->O,qallxb_med,female == 0,probit,none
+universe_31.R,_start->Model->Output_Model->Adjust_Effect_Size_Model->O,qblack_med,,probit,none
+universe_32.R,_start->Model->Output_Model->Adjust_Effect_Size_Model->O,qblack_med,female == 1,probit,none
+universe_33.R,_start->Model->Output_Model->Adjust_Effect_Size_Model->O,qblack_med,female == 0,probit,none
+universe_34.R,_start->Model->Output_Model->Adjust_Effect_Size_Model->O,qblackxb_med,,probit,none
+universe_35.R,_start->Model->Output_Model->Adjust_Effect_Size_Model->O,qblackxb_med,female == 1,probit,none
+universe_36.R,_start->Model->Output_Model->Adjust_Effect_Size_Model->O,qblackxb_med,female == 0,probit,none
+universe_37.R,_start->Model->Output_Model->Adjust_Effect_Size_Model->O,qwhite_med,,probit,none
+universe_38.R,_start->Model->Output_Model->Adjust_Effect_Size_Model->O,qwhite_med,female == 1,probit,none
+universe_39.R,_start->Model->Output_Model->Adjust_Effect_Size_Model->O,qwhite_med,female == 0,probit,none
+universe_40.R,_start->Model->Output_Model->Adjust_Effect_Size_Model->O,qwhitexb_med,,probit,none
+universe_41.R,_start->Model->Output_Model->Adjust_Effect_Size_Model->O,qwhitexb_med,female == 1,probit,none
+universe_42.R,_start->Model->Output_Model->Adjust_Effect_Size_Model->O,qwhitexb_med,female == 0,probit,none
+universe_43.R,_start->Model->Output_Model->Adjust_Effect_Size_Model->O,sumq,,probit,none
+universe_44.R,_start->Model->Output_Model->Adjust_Effect_Size_Model->O,sumq,female == 1,probit,none
+universe_45.R,_start->Model->Output_Model->Adjust_Effect_Size_Model->O,sumq,female == 0,probit,none
+universe_46.R,_start->Model->Output_Model->Adjust_Effect_Size_Model->O,qall,,regression,median_split
+universe_47.R,_start->Model->Output_Model->Adjust_Effect_Size_Model->O,qall,female == 1,regression,median_split
+universe_48.R,_start->Model->Output_Model->Adjust_Effect_Size_Model->O,qall,female == 0,regression,median_split
+universe_49.R,_start->Model->Output_Model->Adjust_Effect_Size_Model->O,qallxb,,regression,median_split
+universe_50.R,_start->Model->Output_Model->Adjust_Effect_Size_Model->O,qallxb,female == 1,regression,median_split
+universe_51.R,_start->Model->Output_Model->Adjust_Effect_Size_Model->O,qallxb,female == 0,regression,median_split
+universe_52.R,_start->Model->Output_Model->Adjust_Effect_Size_Model->O,qblack,,regression,median_split
+universe_53.R,_start->Model->Output_Model->Adjust_Effect_Size_Model->O,qblack,female == 1,regression,median_split
+universe_54.R,_start->Model->Output_Model->Adjust_Effect_Size_Model->O,qblack,female == 0,regression,median_split
+universe_55.R,_start->Model->Output_Model->Adjust_Effect_Size_Model->O,qblackxb,,regression,median_split
+universe_56.R,_start->Model->Output_Model->Adjust_Effect_Size_Model->O,qblackxb,female == 1,regression,median_split
+universe_57.R,_start->Model->Output_Model->Adjust_Effect_Size_Model->O,qblackxb,female == 0,regression,median_split
+universe_58.R,_start->Model->Output_Model->Adjust_Effect_Size_Model->O,qwhite,,regression,median_split
+universe_59.R,_start->Model->Output_Model->Adjust_Effect_Size_Model->O,qwhite,female == 1,regression,median_split
+universe_60.R,_start->Model->Output_Model->Adjust_Effect_Size_Model->O,qwhite,female == 0,regression,median_split
+universe_61.R,_start->Model->Output_Model->Adjust_Effect_Size_Model->O,qwhitexb,,regression,median_split
+universe_62.R,_start->Model->Output_Model->Adjust_Effect_Size_Model->O,qwhitexb,female == 1,regression,median_split
+universe_63.R,_start->Model->Output_Model->Adjust_Effect_Size_Model->O,qwhitexb,female == 0,regression,median_split
+universe_64.R,_start->Model->Output_Model->Adjust_Effect_Size_Model->O,h,,regression,none
+universe_65.R,_start->Model->Output_Model->Adjust_Effect_Size_Model->O,h,female == 1,regression,none
+universe_66.R,_start->Model->Output_Model->Adjust_Effect_Size_Model->O,h,female == 0,regression,none
+universe_67.R,_start->Model->Output_Model->Adjust_Effect_Size_Model->O,sumq_med,,regression,none
+universe_68.R,_start->Model->Output_Model->Adjust_Effect_Size_Model->O,sumq_med,female == 1,regression,none
+universe_69.R,_start->Model->Output_Model->Adjust_Effect_Size_Model->O,sumq_med,female == 0,regression,none
+universe_70.R,_start->Model->Output_Model->Adjust_Effect_Size_Model->O,qall_med,,regression,none
+universe_71.R,_start->Model->Output_Model->Adjust_Effect_Size_Model->O,qall_med,female == 1,regression,none
+universe_72.R,_start->Model->Output_Model->Adjust_Effect_Size_Model->O,qall_med,female == 0,regression,none
+universe_73.R,_start->Model->Output_Model->Adjust_Effect_Size_Model->O,qallxb_med,,regression,none
+universe_74.R,_start->Model->Output_Model->Adjust_Effect_Size_Model->O,qallxb_med,female == 1,regression,none
+universe_75.R,_start->Model->Output_Model->Adjust_Effect_Size_Model->O,qallxb_med,female == 0,regression,none
+universe_76.R,_start->Model->Output_Model->Adjust_Effect_Size_Model->O,qblack_med,,regression,none
+universe_77.R,_start->Model->Output_Model->Adjust_Effect_Size_Model->O,qblack_med,female == 1,regression,none
+universe_78.R,_start->Model->Output_Model->Adjust_Effect_Size_Model->O,qblack_med,female == 0,regression,none
+universe_79.R,_start->Model->Output_Model->Adjust_Effect_Size_Model->O,qblackxb_med,,regression,none
+universe_80.R,_start->Model->Output_Model->Adjust_Effect_Size_Model->O,qblackxb_med,female == 1,regression,none
+universe_81.R,_start->Model->Output_Model->Adjust_Effect_Size_Model->O,qblackxb_med,female == 0,regression,none
+universe_82.R,_start->Model->Output_Model->Adjust_Effect_Size_Model->O,qwhite_med,,regression,none
+universe_83.R,_start->Model->Output_Model->Adjust_Effect_Size_Model->O,qwhite_med,female == 1,regression,none
+universe_84.R,_start->Model->Output_Model->Adjust_Effect_Size_Model->O,qwhite_med,female == 0,regression,none
+universe_85.R,_start->Model->Output_Model->Adjust_Effect_Size_Model->O,qwhitexb_med,,regression,none
+universe_86.R,_start->Model->Output_Model->Adjust_Effect_Size_Model->O,qwhitexb_med,female == 1,regression,none
+universe_87.R,_start->Model->Output_Model->Adjust_Effect_Size_Model->O,qwhitexb_med,female == 0,regression,none
+universe_88.R,_start->Model->Output_Model->Adjust_Effect_Size_Model->O,sumq,,regression,none
+universe_89.R,_start->Model->Output_Model->Adjust_Effect_Size_Model->O,sumq,female == 1,regression,none
+universe_90.R,_start->Model->Output_Model->Adjust_Effect_Size_Model->O,sumq,female == 0,regression,none

@@ -1,0 +1,2247 @@
+idcode,union,hours,age,grade,collgrad,married,south,smsa,c_city,ttl_exp,tenure,wage
+1,union,48.0,37,12.0,not college grad,single,0,SMSA,0,10.333334,5.3333335,11.739125
+2,union,40.0,37,12.0,not college grad,single,0,SMSA,1,13.621795,5.25,6.4009633
+3,,40.0,42,12.0,not college grad,single,0,SMSA,1,17.73077,1.25,5.0167227
+4,union,42.0,43,17.0,college grad,married,0,SMSA,0,13.211537,1.75,9.0338125
+6,nonunion,48.0,42,12.0,not college grad,married,0,SMSA,0,17.820513,17.75,8.083731
+7,nonunion,30.0,39,12.0,not college grad,married,0,SMSA,0,7.326923,2.25,4.6296296
+9,union,40.0,37,12.0,not college grad,single,0,SMSA,1,19.04487,19.0,10.491142
+12,nonunion,45.0,40,18.0,college grad,married,0,SMSA,0,15.557693,14.166667,17.206116
+13,nonunion,8.0,40,14.0,not college grad,married,0,SMSA,0,14.25,5.5,13.083735
+14,nonunion,50.0,40,15.0,not college grad,married,0,SMSA,0,7.3846154,2.25,7.745568
+15,union,16.0,39,16.0,college grad,married,0,SMSA,0,15.769231,8.416667,16.795479
+16,nonunion,40.0,40,15.0,not college grad,married,0,SMSA,0,16.384615,13.833333,15.48309
+18,nonunion,40.0,40,15.0,not college grad,married,0,SMSA,0,7.75,7.75,5.2334948
+19,union,40.0,40,15.0,not college grad,single,0,SMSA,0,14.211538,5.5833335,10.161026
+20,union,4.0,39,15.0,not college grad,married,0,SMSA,0,15.858974,4.6666665,9.661837
+22,nonunion,32.0,41,15.0,not college grad,married,0,SMSA,0,15.012821,3.0,9.057972
+23,nonunion,45.0,42,15.0,college grad,married,0,nonSMSA,0,15.346155,8.083333,8.05153
+24,nonunion,24.0,41,14.0,college grad,married,0,SMSA,0,16.467947,3.4166667,11.095006
+25,nonunion,40.0,42,14.0,college grad,married,0,SMSA,1,17.75,5.4166665,9.581316
+36,,40.0,37,12.0,not college grad,single,0,SMSA,0,15.935898,0.9166667,4.180602
+39,nonunion,40.0,44,16.0,college grad,single,0,SMSA,0,8.839744,7.9166665,9.790657
+44,union,35.0,41,18.0,college grad,married,0,SMSA,0,16.205128,3.5,28.45666
+45,union,38.0,35,12.0,not college grad,married,0,SMSA,0,17.25,17.25,10.185181
+46,nonunion,25.0,44,18.0,college grad,married,0,SMSA,0,5.544872,2.9166667,3.051529
+47,nonunion,40.0,35,12.0,not college grad,single,0,SMSA,0,8.737179,0.75,3.5265677
+48,,40.0,35,15.0,not college grad,single,0,SMSA,1,5.5576925,0.33333334,5.852843
+50,,45.0,36,16.0,college grad,single,0,SMSA,1,9.423077,6.4166665,35.731617
+51,nonunion,18.0,38,12.0,not college grad,married,0,SMSA,0,10.269231,3.25,4.4283414
+54,nonunion,55.0,40,12.0,not college grad,single,0,SMSA,1,10.397436,0.75,5.032206
+57,nonunion,40.0,42,12.0,not college grad,married,0,SMSA,1,12.846154,7.25,5.780996
+62,nonunion,40.0,38,10.0,not college grad,married,0,nonSMSA,0,7.3653846,5.9166665,5.1127205
+63,union,18.0,44,15.0,college grad,single,0,SMSA,1,10.384615,2.0833333,25.1606
+64,union,30.0,38,12.0,not college grad,married,0,SMSA,0,7.384615,3.3333333,4.404185
+66,nonunion,9.0,39,13.0,not college grad,married,0,SMSA,1,11.480769,9.75,4.7101436
+67,nonunion,24.0,40,15.0,not college grad,married,0,nonSMSA,0,11.038462,3.1666667,8.05153
+70,nonunion,38.0,36,13.0,not college grad,married,0,nonSMSA,0,16.083334,16.083334,16.739124
+71,nonunion,38.0,34,12.0,not college grad,married,0,nonSMSA,0,10.5,2.5,5.7246356
+72,union,40.0,36,12.0,not college grad,married,0,SMSA,0,9.442307,1.0833334,7.458193
+73,,40.0,36,14.0,not college grad,single,0,nonSMSA,0,14.442307,0.5,6.793478
+75,union,40.0,39,11.0,not college grad,single,0,nonSMSA,0,14.499999,9.333333,12.500001
+78,nonunion,35.0,40,12.0,not college grad,married,0,SMSA,1,16.326923,9.083333,17.697258
+80,nonunion,8.0,45,14.0,not college grad,married,0,SMSA,0,5.717949,0.0,12.077295
+85,,40.0,38,11.0,not college grad,single,0,SMSA,1,6.1923075,1.5,9.406354
+86,union,44.0,44,17.0,college grad,single,0,SMSA,0,16.26923,1.25,13.172291
+103,union,35.0,36,18.0,college grad,married,0,SMSA,1,9.833333,0.0,11.062799
+104,nonunion,18.0,41,17.0,college grad,married,0,SMSA,0,8.948718,2.75,3.7439594
+105,nonunion,8.0,41,16.0,college grad,married,0,SMSA,0,8.788462,5.5833335,4.025765
+106,nonunion,40.0,38,12.0,not college grad,single,1,SMSA,1,17.416666,17.416666,10.8373575
+107,union,40.0,43,8.0,not college grad,single,0,SMSA,1,7.5448713,1.0833334,4.347824
+110,union,20.0,45,12.0,not college grad,married,0,SMSA,0,6.6602564,2.5833333,4.7101436
+121,union,38.0,39,12.0,not college grad,married,0,SMSA,1,20.698719,20.666666,9.726243
+123,union,37.0,41,6.0,not college grad,single,0,SMSA,1,7.320513,0.75,2.8985493
+126,nonunion,40.0,39,12.0,not college grad,single,0,SMSA,1,19.75,19.75,10.064413
+128,nonunion,40.0,36,12.0,not college grad,married,0,SMSA,0,19.032053,19.0,8.518515
+129,nonunion,37.0,43,12.0,not college grad,single,0,SMSA,0,14.230769,10.166667,8.49436
+130,nonunion,40.0,43,12.0,not college grad,married,0,SMSA,0,6.1538463,0.6666667,5.600358
+131,union,38.0,41,12.0,not college grad,single,0,SMSA,1,12.26282,0.25,4.227053
+132,nonunion,43.0,36,10.0,not college grad,single,0,SMSA,1,10.24359,2.6666667,5.6199675
+134,nonunion,30.0,42,12.0,not college grad,married,0,SMSA,0,6.1282053,1.5,4.64573
+137,union,30.0,36,17.0,college grad,married,0,SMSA,0,9.833333,9.833333,15.48309
+139,union,35.0,44,9.0,not college grad,single,0,SMSA,1,8.5,8.5,4.830918
+141,,40.0,43,14.0,not college grad,single,0,SMSA,0,12.910256,1.1666666,40.198082
+142,union,40.0,43,18.0,college grad,married,0,SMSA,0,15.115384,5.75,15.48309
+143,nonunion,40.0,37,15.0,not college grad,married,0,SMSA,0,7.0769234,0.5833333,10.033444
+144,nonunion,40.0,43,10.0,not college grad,married,1,SMSA,0,14.326923,0.33333334,3.6231885
+147,nonunion,20.0,40,12.0,not college grad,married,0,SMSA,0,7.666667,3.0833333,9.299514
+152,union,50.0,37,18.0,college grad,married,0,SMSA,0,13.673077,4.8333335,10.217388
+159,nonunion,37.0,36,11.0,not college grad,married,0,SMSA,0,17.397436,17.333334,10.008045
+166,nonunion,4.0,38,14.0,not college grad,married,0,SMSA,0,10.602565,1.0833334,4.227053
+167,nonunion,25.0,37,13.0,not college grad,married,1,nonSMSA,0,16.980768,7.5,4.830918
+168,nonunion,40.0,41,17.0,college grad,married,1,SMSA,0,11.301282,3.8333333,7.745568
+169,union,37.0,36,16.0,college grad,single,0,SMSA,0,14.833333,14.833333,9.847019
+172,nonunion,30.0,44,15.0,college grad,married,0,SMSA,1,17.833334,3.4166667,10.869566
+173,,35.0,43,12.0,not college grad,single,0,SMSA,1,11.506411,2.9166667,3.220612
+176,union,40.0,38,12.0,not college grad,single,0,SMSA,1,12.846153,3.5,8.164251
+183,union,40.0,43,12.0,not college grad,single,0,SMSA,0,17.121796,13.25,8.454107
+184,nonunion,40.0,41,12.0,not college grad,married,0,SMSA,0,13.788462,12.083333,8.293073
+188,union,40.0,41,12.0,not college grad,married,0,SMSA,0,13.26923,8.416667,9.677936
+195,nonunion,40.0,36,12.0,not college grad,married,0,SMSA,0,12.801282,2.1666667,4.5330095
+202,,30.0,36,14.0,not college grad,single,1,nonSMSA,0,11.551282,0.25,3.3444817
+203,nonunion,24.0,41,11.0,not college grad,married,1,SMSA,1,19.00641,3.1666667,8.454107
+204,nonunion,40.0,38,10.0,not college grad,married,0,SMSA,1,5.5961537,4.0,6.0386477
+206,nonunion,18.0,37,14.0,not college grad,married,0,SMSA,1,10.333333,1.3333334,10.32206
+207,union,50.0,38,18.0,college grad,single,0,SMSA,1,13.269231,2.0833333,11.610305
+210,,40.0,37,11.0,not college grad,single,0,SMSA,0,15.641026,10.916667,5.0167227
+213,nonunion,40.0,43,10.0,not college grad,single,0,SMSA,1,16.903847,14.416667,6.441224
+215,nonunion,40.0,36,16.0,college grad,single,0,SMSA,0,15.852564,3.75,5.032206
+218,nonunion,38.0,35,12.0,not college grad,married,0,nonSMSA,0,10.115384,2.0833333,4.830918
+219,nonunion,40.0,35,13.0,not college grad,single,0,SMSA,1,16.858974,8.916667,11.070854
+221,nonunion,35.0,40,16.0,college grad,married,0,SMSA,0,9.256411,1.8333334,8.317226
+223,nonunion,40.0,37,16.0,college grad,single,0,SMSA,0,15.916667,8.75,13.083735
+224,union,40.0,38,13.0,not college grad,married,0,SMSA,0,10.788462,4.6666665,5.628018
+225,nonunion,45.0,35,16.0,college grad,single,0,SMSA,0,16.692308,15.75,12.560386
+226,nonunion,40.0,34,16.0,college grad,married,1,SMSA,0,7.6923075,6.6666665,6.682766
+227,nonunion,40.0,42,15.0,not college grad,single,1,SMSA,1,18.788462,1.3333334,5.6360707
+228,nonunion,15.0,42,16.0,college grad,married,1,SMSA,0,4.980769,0.33333334,4.025765
+231,nonunion,30.0,42,16.0,college grad,married,0,SMSA,0,10.589743,9.833333,18.067625
+233,nonunion,40.0,36,16.0,college grad,married,0,nonSMSA,0,13.923077,13.916667,5.8051524
+236,nonunion,20.0,36,18.0,college grad,married,0,SMSA,1,9.480769,3.75,24.661829
+237,union,40.0,36,17.0,college grad,single,0,SMSA,1,12.096154,1.75,7.21417
+242,union,24.0,39,12.0,not college grad,married,0,SMSA,0,15.301282,8.75,4.694041
+243,union,40.0,35,18.0,college grad,married,0,SMSA,0,17.49359,8.583333,12.697259
+244,nonunion,40.0,36,13.0,not college grad,single,1,nonSMSA,0,16.269232,11.25,9.565216
+245,nonunion,40.0,36,15.0,not college grad,married,0,SMSA,1,9.846154,1.0,6.191625
+250,nonunion,50.0,44,18.0,college grad,married,1,SMSA,0,9.064103,3.9166667,7.6811533
+254,nonunion,40.0,39,12.0,not college grad,single,1,SMSA,0,16.307692,9.75,9.806758
+255,nonunion,40.0,45,14.0,not college grad,married,0,SMSA,1,24.75,24.75,4.025765
+257,union,40.0,38,16.0,college grad,married,1,SMSA,1,11.653846,2.75,11.610305
+260,nonunion,40.0,38,12.0,not college grad,single,0,SMSA,0,10.871796,2.5,6.964568
+261,union,40.0,41,12.0,not college grad,married,0,SMSA,0,5.365384,2.8333333,4.2592573
+262,,40.0,44,14.0,not college grad,single,1,SMSA,0,14.576923,1.25,4.5088553
+265,nonunion,40.0,44,14.0,not college grad,single,1,SMSA,1,11.019231,0.75,9.227052
+269,union,14.0,40,16.0,college grad,married,0,SMSA,0,7.6538463,1.75,3.3172295
+270,union,40.0,38,16.0,college grad,married,0,SMSA,1,16.448717,10.666667,8.05153
+271,nonunion,40.0,36,11.0,not college grad,single,0,SMSA,1,11.333333,11.333333,5.1127205
+273,,20.0,42,12.0,not college grad,married,0,SMSA,0,9.019231,0.33333334,3.5535119
+275,,16.0,38,10.0,not college grad,married,0,SMSA,1,7.480769,1.0,1.0049518
+276,nonunion,22.0,35,12.0,not college grad,married,0,SMSA,1,16.166666,16.166666,7.318838
+279,,55.0,35,16.0,college grad,married,0,SMSA,0,15.557693,6.25,9.891299
+285,nonunion,50.0,38,13.0,not college grad,married,0,SMSA,0,10.102564,2.5833333,5.8856664
+287,union,15.0,41,12.0,not college grad,married,0,SMSA,0,5.519231,0.75,4.8631215
+289,,46.0,44,12.0,not college grad,married,0,nonSMSA,0,19.134615,0.75,2.801002
+291,,40.0,42,12.0,not college grad,single,0,SMSA,1,7.5961537,4.5833335,3.0518394
+294,nonunion,30.0,34,12.0,not college grad,married,0,SMSA,0,15.608974,1.75,5.6360707
+296,nonunion,32.0,44,12.0,not college grad,married,0,SMSA,0,15.230769,11.416667,8.80837
+298,nonunion,40.0,37,16.0,college grad,married,1,SMSA,1,12.070512,2.25,23.24476
+299,nonunion,38.0,41,16.0,college grad,single,0,SMSA,1,12.153846,6.75,12.222217
+301,nonunion,40.0,38,18.0,college grad,single,0,SMSA,0,14.903846,6.5,12.971002
+305,nonunion,40.0,40,16.0,college grad,married,0,SMSA,0,15.807693,15.5,15.789039
+306,nonunion,40.0,37,14.0,not college grad,married,0,SMSA,0,16.833332,13.416667,6.964568
+307,,22.0,35,12.0,not college grad,single,0,SMSA,0,13.833333,2.3333333,4.3886213
+308,,50.0,37,18.0,college grad,married,0,SMSA,0,14.173077,0.75,11.148272
+312,nonunion,16.0,36,15.0,college grad,married,0,SMSA,0,9.653846,0.6666667,9.661837
+315,nonunion,50.0,38,16.0,college grad,single,0,SMSA,0,14.884615,1.5,29.726234
+319,union,18.0,45,12.0,not college grad,married,0,SMSA,0,8.346154,2.6666667,4.492752
+322,,16.0,41,14.0,not college grad,single,0,nonSMSA,0,12.096154,0.8333333,6.6889634
+324,,25.0,44,12.0,not college grad,married,0,SMSA,0,7.3653846,0.9166667,5.852843
+325,union,60.0,34,12.0,not college grad,single,1,SMSA,0,16.115385,3.25,4.6135263
+327,nonunion,30.0,38,9.0,not college grad,single,0,SMSA,1,3.8525643,,4.025765
+329,union,40.0,42,14.0,not college grad,single,0,SMSA,1,19.076923,2.5,12.181962
+330,union,40.0,43,16.0,college grad,single,1,nonSMSA,0,16.115385,0.6666667,4.7504005
+331,union,40.0,37,15.0,not college grad,single,0,SMSA,1,13.397435,12.416667,8.05153
+332,nonunion,40.0,36,9.0,not college grad,single,0,SMSA,1,10.903846,4.75,7.4476643
+333,union,40.0,35,16.0,college grad,married,0,SMSA,1,13.769231,11.5,8.518515
+338,nonunion,18.0,41,14.0,not college grad,married,0,nonSMSA,0,9.019231,1.3333334,7.2463775
+341,nonunion,40.0,41,14.0,not college grad,married,0,SMSA,0,17.602562,6.1666665,11.97262
+345,nonunion,32.0,45,12.0,not college grad,married,0,SMSA,0,10.198718,5.0833335,8.80837
+347,nonunion,40.0,36,14.0,not college grad,married,0,SMSA,0,17.096153,17.0,11.070854
+350,nonunion,40.0,39,14.0,not college grad,married,0,SMSA,0,16.51923,2.4166667,9.677936
+352,nonunion,20.0,35,13.0,not college grad,married,0,SMSA,1,14.365385,14.166667,3.5426712
+354,nonunion,35.0,36,12.0,not college grad,single,0,nonSMSA,0,7.128205,2.5,4.420288
+356,nonunion,40.0,43,16.0,college grad,married,0,SMSA,0,10.403847,9.75,7.318838
+358,nonunion,40.0,45,12.0,not college grad,married,0,SMSA,0,24.474358,17.416666,8.05153
+359,nonunion,40.0,44,14.0,not college grad,married,0,SMSA,0,15.057693,6.0,10.8373575
+360,,40.0,37,12.0,not college grad,married,0,SMSA,1,15.243589,10.75,38.70926
+363,nonunion,36.0,41,12.0,not college grad,single,0,SMSA,0,11.602564,9.25,9.895326
+367,union,35.0,37,13.0,not college grad,married,0,nonSMSA,0,8.083333,8.083333,10.354262
+376,nonunion,42.0,41,12.0,not college grad,single,0,SMSA,0,17.50641,17.5,11.5056305
+377,nonunion,65.0,38,16.0,college grad,married,1,SMSA,1,13.564102,3.8333333,23.824474
+379,nonunion,40.0,43,13.0,not college grad,single,0,SMSA,0,21.737179,20.166666,7.5523334
+382,union,35.0,42,12.0,not college grad,single,0,SMSA,0,21.326925,1.5833334,7.962963
+384,nonunion,25.0,41,13.0,not college grad,married,0,SMSA,0,7.134616,,4.830918
+389,nonunion,15.0,40,14.0,not college grad,married,0,SMSA,0,1.75,0.083333336,5.466986
+392,union,40.0,43,8.0,not college grad,married,0,SMSA,0,8.865385,2.75,8.05153
+395,nonunion,40.0,36,16.0,college grad,single,0,nonSMSA,0,16.365385,13.75,6.5458913
+396,nonunion,32.0,37,14.0,not college grad,married,0,SMSA,0,13.711538,1.9166666,3.260869
+397,nonunion,20.0,37,13.0,not college grad,married,0,SMSA,0,12.942307,0.75,4.830918
+398,nonunion,40.0,35,16.0,college grad,married,0,SMSA,0,11.403846,6.4166665,8.413847
+399,nonunion,40.0,37,16.0,college grad,married,0,SMSA,0,16.76923,0.0,16.529789
+402,union,40.0,36,12.0,not college grad,married,0,SMSA,0,13.589743,9.25,6.175522
+403,nonunion,40.0,40,12.0,not college grad,single,0,SMSA,0,10.5,10.5,5.7326884
+406,nonunion,40.0,36,12.0,not college grad,married,0,SMSA,0,13.198718,0.5,6.280193
+407,,15.0,37,18.0,college grad,married,0,nonSMSA,0,9.307693,4.5833335,1.0322473
+409,,26.0,36,14.0,not college grad,married,0,SMSA,1,12.006411,1.6666666,5.958131
+410,nonunion,42.0,43,14.0,not college grad,single,0,nonSMSA,0,11.935898,2.5,10.185181
+414,nonunion,39.0,36,16.0,college grad,married,0,SMSA,0,15.108974,5.5,5.515297
+415,nonunion,50.0,35,15.0,not college grad,single,0,SMSA,0,9.269231,3.3333333,5.7890487
+417,nonunion,20.0,34,12.0,not college grad,married,0,SMSA,0,7.8397436,0.16666667,3.3444817
+419,nonunion,40.0,36,12.0,not college grad,married,0,SMSA,0,8.5,2.3333333,6.280193
+422,nonunion,35.0,36,11.0,not college grad,single,0,SMSA,0,12.589744,7.1666665,1.7230269
+423,nonunion,30.0,42,12.0,not college grad,single,1,nonSMSA,0,12.455128,5.1666665,3.4866207
+425,,40.0,34,12.0,not college grad,single,0,nonSMSA,0,8.807693,1.0,3.6371226
+426,nonunion,30.0,40,12.0,not college grad,married,0,SMSA,0,1.1282052,0.41666666,2.6811595
+429,nonunion,40.0,43,13.0,not college grad,married,1,SMSA,0,5.852564,3.0833333,7.745568
+431,union,38.0,36,16.0,college grad,single,0,nonSMSA,0,15.974359,8.333333,11.409016
+432,nonunion,55.0,37,12.0,not college grad,married,0,SMSA,0,9.217949,6.75,7.0370355
+433,nonunion,40.0,43,13.0,not college grad,married,0,SMSA,0,13.2756405,1.8333334,6.6586123
+434,,30.0,34,12.0,not college grad,single,0,SMSA,0,6.9166665,1.1666666,3.0518394
+436,nonunion,40.0,37,12.0,not college grad,married,0,SMSA,0,18.25,18.25,7.850241
+440,nonunion,38.0,37,11.0,not college grad,married,0,SMSA,0,13.288462,2.8333333,8.148145
+441,nonunion,16.0,42,9.0,not college grad,married,0,SMSA,0,1.923077,0.083333336,7.2463775
+443,nonunion,20.0,37,13.0,not college grad,married,0,SMSA,0,10.916667,1.75,5.6360707
+447,nonunion,37.0,39,12.0,not college grad,married,0,SMSA,0,14.185897,4.0,11.046693
+448,nonunion,45.0,38,16.0,college grad,single,0,nonSMSA,0,9.211538,4.1666665,11.626405
+449,nonunion,42.0,45,14.0,not college grad,married,0,SMSA,0,8.807693,6.9166665,8.623189
+450,nonunion,20.0,39,14.0,not college grad,married,0,nonSMSA,0,17.673077,10.75,11.25418
+451,nonunion,43.0,40,10.0,not college grad,single,0,SMSA,0,5.7756414,5.75,5.2415447
+455,nonunion,7.0,39,13.0,not college grad,married,0,SMSA,1,10.961538,2.0,9.202893
+456,,30.0,36,12.0,not college grad,married,0,SMSA,1,7.0384617,0.33333334,3.7625415
+457,,45.0,38,14.0,not college grad,married,0,SMSA,0,9.557693,2.3333333,35.731617
+459,,30.0,38,8.0,not college grad,single,0,SMSA,0,19.192308,9.666667,5.852843
+460,,3.0,42,13.0,not college grad,married,0,nonSMSA,0,6.9038463,1.5,3.0991251
+467,union,40.0,41,14.0,not college grad,single,0,nonSMSA,0,17.46154,8.333333,7.2383237
+469,nonunion,48.0,35,11.0,not college grad,single,0,nonSMSA,0,15.448718,9.916667,6.771333
+474,nonunion,20.0,35,12.0,not college grad,married,0,SMSA,0,7.275641,1.5833334,2.8582926
+477,nonunion,30.0,42,12.0,not college grad,married,0,nonSMSA,0,10.352564,2.25,3.0998378
+478,nonunion,32.0,38,12.0,not college grad,married,0,SMSA,0,5.897436,1.8333334,6.5861454
+481,union,38.0,37,12.0,not college grad,married,0,nonSMSA,0,14.5,7.3333335,8.293073
+483,nonunion,40.0,42,12.0,not college grad,married,0,nonSMSA,0,5.7564096,3.0,5.032206
+485,nonunion,40.0,35,17.0,college grad,married,1,SMSA,0,11.788462,0.083333336,3.6231885
+486,,40.0,38,18.0,college grad,single,0,SMSA,0,15.692307,6.75,11.073949
+487,,22.0,36,12.0,not college grad,single,0,nonSMSA,0,12.576923,2.0833333,6.6509566
+488,nonunion,25.0,43,16.0,college grad,married,1,SMSA,1,8.01282,1.0,12.38325
+492,nonunion,50.0,39,12.0,not college grad,married,0,SMSA,0,14.288462,3.9166667,7.2463775
+495,union,45.0,38,16.0,college grad,married,0,SMSA,0,13.666667,13.666667,8.599029
+496,nonunion,40.0,40,12.0,not college grad,married,0,SMSA,0,18.48077,11.75,12.850242
+499,,40.0,38,10.0,not college grad,single,0,SMSA,1,5.2884617,0.33333334,4.105351
+504,union,60.0,43,16.0,college grad,married,0,SMSA,0,15.057692,14.416667,10.32206
+505,union,18.0,36,14.0,not college grad,married,0,nonSMSA,0,18.583334,18.583334,6.0305943
+507,,40.0,39,12.0,not college grad,married,0,nonSMSA,0,8.423077,5.8333335,38.70926
+510,union,40.0,35,12.0,not college grad,married,0,nonSMSA,0,9.166667,7.5,7.5281787
+516,union,40.0,35,12.0,not college grad,married,0,SMSA,0,13.403846,6.9166665,3.566825
+518,nonunion,40.0,43,12.0,not college grad,married,0,nonSMSA,0,16.929487,16.916666,6.8115935
+519,union,40.0,36,12.0,not college grad,married,1,SMSA,1,12.461538,5.6666665,6.3446035
+521,nonunion,40.0,39,7.0,not college grad,single,0,nonSMSA,0,5.923077,1.0,5.9017696
+522,nonunion,40.0,41,14.0,not college grad,married,0,SMSA,1,9.576923,6.9166665,5.4508834
+524,union,20.0,38,12.0,not college grad,married,0,SMSA,1,21.75,1.0,5.289855
+526,,35.0,38,12.0,not college grad,married,0,SMSA,1,10.076923,3.1666667,7.265882
+531,nonunion,50.0,40,16.0,college grad,single,0,SMSA,0,11.826923,1.1666666,1.5458931
+533,union,40.0,35,16.0,college grad,married,0,SMSA,0,11.025641,3.8333333,5.611914
+538,,12.0,45,12.0,not college grad,single,0,SMSA,0,10.160256,0.5833333,3.5535119
+540,union,35.0,42,9.0,not college grad,married,0,SMSA,0,7.730769,4.1666665,3.454104
+541,nonunion,55.0,38,13.0,not college grad,single,1,nonSMSA,0,16.980768,13.416667,22.520117
+543,union,40.0,41,6.0,not college grad,single,0,SMSA,0,3.3461537,1.25,4.4283414
+548,,35.0,38,12.0,not college grad,married,0,SMSA,1,9.423077,1.5833334,4.7778287
+549,nonunion,30.0,43,12.0,not college grad,single,0,SMSA,0,17.01923,0.25,6.280193
+551,,24.0,36,16.0,college grad,married,1,SMSA,0,14.076923,3.0833333,9.661837
+555,nonunion,40.0,36,12.0,not college grad,married,0,SMSA,0,16.365385,1.3333334,12.584539
+558,,40.0,42,12.0,not college grad,single,0,SMSA,1,6.4166665,1.4166666,4.180602
+562,nonunion,37.0,44,12.0,not college grad,married,0,SMSA,1,8.121795,1.4166666,8.373587
+570,union,35.0,36,16.0,college grad,single,0,SMSA,1,11.461538,10.333333,20.789045
+572,union,38.0,35,14.0,not college grad,single,0,SMSA,1,7.9679484,6.3333335,7.987117
+576,nonunion,24.0,36,11.0,not college grad,single,0,SMSA,1,6.173077,3.0,2.5201283
+584,union,35.0,42,12.0,not college grad,single,0,SMSA,1,14.448718,3.5833333,11.062799
+585,union,40.0,43,12.0,not college grad,single,0,SMSA,0,17.121794,1.3333334,9.677936
+588,union,40.0,45,16.0,college grad,married,0,SMSA,0,4.25,2.0833333,8.904991
+595,nonunion,35.0,40,12.0,not college grad,married,0,SMSA,0,11.615385,1.5833334,4.21095
+604,nonunion,40.0,43,12.0,not college grad,married,0,nonSMSA,0,2.8076923,0.8333333,4.180602
+606,,35.0,42,16.0,college grad,married,0,SMSA,1,17.198717,1.0833334,1.8376268
+608,,37.0,45,16.0,college grad,married,1,SMSA,1,9.301282,1.8333334,8.691476
+609,union,40.0,38,12.0,not college grad,single,0,SMSA,0,9.557693,7.75,10.064413
+614,union,35.0,42,12.0,not college grad,single,0,SMSA,0,20.346153,20.333334,11.948467
+617,union,35.0,42,17.0,college grad,married,0,SMSA,0,14.75,14.75,19.911428
+618,nonunion,40.0,40,16.0,college grad,married,1,SMSA,0,4.75,2.4166667,7.938803
+624,nonunion,40.0,45,12.0,not college grad,married,0,SMSA,0,9.583333,4.8333335,10.064413
+635,union,35.0,40,12.0,not college grad,single,0,SMSA,1,9.692307,2.4166667,7.520126
+636,,40.0,42,12.0,not college grad,single,1,nonSMSA,0,3.3397436,0.16666667,2.7173913
+641,union,32.0,42,18.0,college grad,single,0,SMSA,1,12.089743,10.666667,18.389694
+643,nonunion,50.0,40,15.0,not college grad,single,0,SMSA,1,14.019231,2.0833333,12.697259
+644,,35.0,34,17.0,college grad,married,0,SMSA,0,13.429487,1.1666666,9.647542
+646,nonunion,20.0,42,16.0,college grad,married,0,SMSA,0,18.76923,15.666667,15.09662
+654,,40.0,44,14.0,not college grad,married,1,SMSA,0,11.25,2.3333333,7.734114
+655,,37.0,45,13.0,not college grad,single,0,nonSMSA,0,11.314103,0.5,13.906358
+656,nonunion,28.0,42,10.0,not college grad,married,0,SMSA,0,7.326923,2.0833333,5.6360707
+659,union,35.0,38,17.0,college grad,married,0,SMSA,0,10.583334,3.6666667,9.734298
+661,nonunion,35.0,44,18.0,college grad,single,0,SMSA,0,2.6153846,1.0833334,10.1771345
+664,nonunion,27.0,42,12.0,not college grad,married,0,SMSA,0,6.365385,1.5833334,3.6231885
+665,nonunion,20.0,40,8.0,not college grad,single,1,SMSA,0,14.923077,9.416667,10.064413
+670,nonunion,40.0,44,16.0,college grad,single,0,SMSA,0,20.333334,20.333334,9.677936
+671,nonunion,40.0,45,12.0,not college grad,married,1,SMSA,0,11.788462,1.6666666,5.2334948
+681,nonunion,40.0,41,12.0,not college grad,married,0,SMSA,0,11.012821,3.9166667,6.191625
+683,nonunion,40.0,45,17.0,college grad,married,0,SMSA,0,10.551283,6.5833335,12.777775
+684,nonunion,40.0,37,12.0,not college grad,single,0,SMSA,1,11.711538,3.1666667,11.610305
+688,nonunion,37.0,38,9.0,not college grad,single,0,SMSA,0,6.538462,2.25,4.355878
+689,nonunion,40.0,36,15.0,college grad,married,1,SMSA,0,7.544872,0.75,6.425121
+690,union,38.0,39,15.0,not college grad,married,0,SMSA,0,12.403846,4.75,7.4557123
+691,nonunion,38.0,45,12.0,not college grad,married,0,SMSA,0,14.769231,13.083333,16.29629
+692,nonunion,16.0,45,12.0,not college grad,married,0,SMSA,0,8.410256,3.8333333,5.032206
+693,,40.0,41,12.0,not college grad,married,0,SMSA,0,7.6858974,2.3333333,4.421789
+694,,40.0,43,14.0,not college grad,single,1,SMSA,1,11.724359,0.6666667,40.198082
+696,union,35.0,43,14.0,not college grad,married,0,SMSA,0,11.724359,6.4166665,5.6763277
+697,union,40.0,41,14.0,not college grad,married,0,SMSA,0,15.480769,1.3333334,9.057972
+699,nonunion,50.0,43,16.0,college grad,single,0,SMSA,0,11.346154,1.1666666,8.05153
+714,nonunion,40.0,36,18.0,college grad,married,0,SMSA,1,9.788462,2.0,15.869557
+716,nonunion,40.0,39,12.0,not college grad,married,0,SMSA,0,19.185896,12.833333,16.64251
+718,union,40.0,38,10.0,not college grad,single,0,SMSA,0,1.474359,0.5,3.7625415
+719,nonunion,30.0,39,11.0,not college grad,single,0,SMSA,0,2.9423077,2.0833333,5.685618
+722,nonunion,40.0,36,12.0,not college grad,married,1,SMSA,0,7.025642,0.16666667,3.3444817
+724,nonunion,43.0,35,13.0,not college grad,married,0,SMSA,0,14.006411,9.916667,7.487919
+727,nonunion,50.0,37,12.0,not college grad,single,0,SMSA,0,18.871794,1.3333334,10.185181
+730,union,60.0,44,12.0,not college grad,married,0,SMSA,0,14.205129,5.3333335,6.70692
+731,,16.0,42,12.0,not college grad,married,1,nonSMSA,0,17.5,7.0833335,2.232711
+732,union,28.0,40,16.0,college grad,single,0,SMSA,0,16.596153,6.0,4.3156176
+737,nonunion,30.0,41,17.0,college grad,married,0,SMSA,0,13.006411,6.75,9.999998
+745,nonunion,35.0,38,12.0,not college grad,married,0,nonSMSA,0,14.192307,1.4166666,13.268916
+748,union,37.0,39,12.0,not college grad,married,1,SMSA,1,19.596153,6.5,9.33172
+749,union,35.0,35,12.0,not college grad,married,0,SMSA,0,17.00641,3.4166667,11.988728
+750,nonunion,40.0,35,12.0,not college grad,married,1,SMSA,1,15.192307,4.5,4.9999995
+754,nonunion,35.0,36,12.0,not college grad,married,1,nonSMSA,0,5.1153846,1.9166666,3.220612
+757,union,45.0,42,18.0,college grad,single,0,SMSA,0,18.73077,18.583334,18.236712
+761,union,35.0,41,13.0,not college grad,married,0,SMSA,0,18.717947,18.666666,13.268916
+762,nonunion,38.0,41,13.0,not college grad,single,0,SMSA,0,17.551283,17.5,11.650559
+763,union,35.0,36,15.0,not college grad,single,0,SMSA,0,8.596154,7.9166665,8.848629
+764,nonunion,38.0,44,11.0,not college grad,married,0,SMSA,0,15.378204,7.0,8.148145
+768,nonunion,37.0,37,12.0,not college grad,married,0,SMSA,1,12.98718,5.4166665,5.2334948
+769,nonunion,10.0,41,12.0,not college grad,married,0,SMSA,0,13.269231,0.0,20.128826
+770,nonunion,21.0,40,18.0,college grad,married,0,SMSA,0,18.833334,18.833334,4.790658
+771,nonunion,40.0,38,18.0,college grad,married,0,SMSA,0,14.301283,10.833333,10.450882
+773,nonunion,40.0,37,16.0,college grad,single,1,SMSA,0,13.743589,5.9166665,9.911431
+779,union,40.0,42,18.0,college grad,single,0,SMSA,0,13.596154,4.8333335,10.064413
+781,nonunion,45.0,36,16.0,college grad,single,0,SMSA,1,14.153847,1.3333334,22.36715
+784,union,40.0,44,16.0,college grad,married,1,SMSA,1,15.076923,10.5,10.064413
+785,nonunion,40.0,45,18.0,college grad,single,1,SMSA,0,12.871794,2.8333333,8.518515
+790,,40.0,38,14.0,not college grad,married,0,SMSA,1,13.788462,1.9166666,8.779264
+792,nonunion,40.0,36,10.0,not college grad,married,0,SMSA,0,9.057693,4.0,9.847019
+793,,40.0,39,13.0,not college grad,married,0,SMSA,1,8.75,0.25,4.180602
+795,nonunion,40.0,44,10.0,not college grad,married,0,SMSA,0,15.326923,10.166667,11.610305
+796,,35.0,38,12.0,not college grad,single,0,SMSA,0,9.448719,1.75,4.389632
+798,union,40.0,38,11.0,not college grad,single,0,SMSA,1,8.532051,3.5,9.565216
+800,union,35.0,37,12.0,not college grad,married,1,nonSMSA,0,19.358974,7.8333335,11.288241
+802,nonunion,35.0,38,12.0,not college grad,married,0,nonSMSA,0,11.160257,3.5,5.9822836
+808,nonunion,38.0,39,12.0,not college grad,single,0,SMSA,0,12.942307,7.0,7.9468555
+809,union,20.0,40,12.0,not college grad,married,0,SMSA,0,11.044872,5.0,6.561992
+810,union,40.0,40,12.0,not college grad,single,0,SMSA,0,21.967947,21.916666,10.064413
+813,nonunion,40.0,34,14.0,not college grad,single,0,SMSA,0,14.583333,14.583333,15.48309
+816,,35.0,36,16.0,college grad,single,0,SMSA,0,8.282052,1.4166666,6.857069
+817,nonunion,35.0,43,11.0,not college grad,married,0,SMSA,0,5.25,0.5,4.227053
+823,nonunion,40.0,35,12.0,not college grad,single,0,SMSA,1,13.333333,13.333333,6.0386477
+824,nonunion,40.0,44,10.0,not college grad,married,0,nonSMSA,0,14.083333,14.083333,6.441224
+825,union,45.0,43,18.0,college grad,married,0,SMSA,0,18.75,18.75,13.760062
+826,nonunion,40.0,40,12.0,not college grad,married,0,SMSA,0,14.480769,11.416667,10.450882
+827,nonunion,45.0,39,14.0,not college grad,single,0,SMSA,0,18.01923,1.3333334,15.48309
+830,,37.0,40,11.0,not college grad,married,0,SMSA,1,14.217948,2.1666667,6.563544
+831,,75.0,43,12.0,not college grad,single,0,SMSA,1,14.557693,0.5,5.0167227
+834,nonunion,50.0,43,12.0,not college grad,married,1,SMSA,0,19.602564,3.75,6.191625
+836,nonunion,40.0,39,12.0,not college grad,married,1,nonSMSA,0,13.621795,11.75,6.2077284
+837,nonunion,40.0,35,12.0,not college grad,married,1,nonSMSA,0,8.326922,0.41666666,3.4219003
+839,union,40.0,39,12.0,not college grad,married,0,SMSA,0,19.75,19.75,10.064413
+842,nonunion,40.0,40,12.0,not college grad,single,0,SMSA,0,19.282051,6.0833335,12.777775
+843,,40.0,41,12.0,not college grad,single,1,SMSA,1,11.634615,1.8333334,6.6889634
+845,nonunion,20.0,44,12.0,not college grad,single,0,SMSA,0,12.442307,1.4166666,5.2334948
+846,nonunion,40.0,39,7.0,not college grad,married,0,SMSA,0,5.8269234,2.0833333,3.260869
+851,nonunion,32.0,40,12.0,not college grad,single,0,SMSA,0,17.224358,11.416667,2.769725
+855,nonunion,40.0,35,12.0,not college grad,married,0,SMSA,1,16.346153,9.25,7.624793
+856,union,40.0,38,12.0,not college grad,single,1,SMSA,1,15.673078,0.083333336,39.230736
+857,nonunion,50.0,36,12.0,not college grad,single,0,SMSA,1,18.147438,18.083334,5.6360707
+859,nonunion,15.0,36,12.0,not college grad,married,0,SMSA,0,8.801282,0.16666667,5.2334948
+860,nonunion,40.0,39,14.0,not college grad,married,0,SMSA,0,18.339743,13.416667,10.861512
+867,union,38.0,44,16.0,college grad,single,0,SMSA,1,21.833334,21.833334,13.856678
+868,nonunion,15.0,40,8.0,not college grad,married,0,nonSMSA,0,8.942307,1.3333334,4.830918
+870,union,15.0,45,10.0,not college grad,married,0,nonSMSA,0,6.3589745,2.75,4.64573
+872,,55.0,39,16.0,college grad,single,0,SMSA,0,15.942308,2.5833333,7.6010904
+874,union,40.0,41,12.0,not college grad,married,1,SMSA,1,6.49359,2.9166667,4.6859903
+877,nonunion,44.0,37,12.0,not college grad,married,0,nonSMSA,0,9.269231,1.1666666,5.515297
+878,nonunion,20.0,39,14.0,not college grad,married,0,nonSMSA,0,15.846154,4.0,6.6022515
+880,nonunion,24.0,36,12.0,not college grad,married,0,nonSMSA,0,13.589744,9.666667,9.967792
+881,union,35.0,41,17.0,college grad,married,0,SMSA,0,7.948718,7.9166665,10.619963
+882,nonunion,40.0,36,12.0,not college grad,single,1,SMSA,0,14.256411,4.3333335,7.0450883
+884,nonunion,40.0,41,12.0,not college grad,married,0,SMSA,0,11.288462,3.1666667,6.964568
+888,nonunion,40.0,37,13.0,not college grad,married,0,nonSMSA,0,5.1538463,0.5,3.220612
+889,nonunion,25.0,43,12.0,not college grad,single,0,nonSMSA,0,7.019231,0.083333336,3.2180579
+891,nonunion,40.0,38,12.0,not college grad,married,0,SMSA,0,13.878205,3.0,5.466986
+895,nonunion,30.0,38,10.0,not college grad,married,1,nonSMSA,0,10.288462,1.8333334,2.9388082
+898,nonunion,48.0,39,16.0,college grad,married,0,SMSA,0,16.333334,16.333334,8.260865
+899,nonunion,24.0,40,12.0,not college grad,married,1,nonSMSA,0,10.730769,1.5833334,3.3574865
+900,,40.0,37,12.0,not college grad,married,1,nonSMSA,0,9.660256,0.25,5.2257524
+901,union,48.0,35,12.0,not college grad,married,0,nonSMSA,0,7.2820516,2.1666667,2.6972613
+902,nonunion,24.0,38,13.0,not college grad,married,0,nonSMSA,0,4.8461537,0.33333334,2.9871168
+904,nonunion,45.0,37,12.0,not college grad,single,0,nonSMSA,0,6.3076925,4.3333335,3.5748785
+907,union,35.0,40,18.0,college grad,single,0,SMSA,0,17.833334,17.833334,16.368748
+908,nonunion,35.0,36,16.0,college grad,married,0,SMSA,0,14.166667,7.75,13.268916
+909,,16.0,35,16.0,college grad,married,0,nonSMSA,0,3.8269231,0.25,5.7636886
+910,nonunion,50.0,35,18.0,college grad,single,0,SMSA,1,9.826923,1.75,30.96618
+911,nonunion,35.0,42,12.0,not college grad,single,0,nonSMSA,0,10.551281,3.9166667,5.096617
+916,nonunion,45.0,41,18.0,college grad,married,0,SMSA,0,15.128205,4.6666665,16.17552
+920,nonunion,40.0,35,16.0,college grad,single,0,SMSA,1,10.525641,3.0,9.621575
+925,union,35.0,39,12.0,not college grad,married,0,nonSMSA,0,11.192307,1.3333334,3.3011258
+929,union,40.0,44,18.0,college grad,married,0,SMSA,1,17.455128,15.833333,11.610305
+932,union,35.0,42,12.0,not college grad,married,0,SMSA,1,18.070513,11.916667,6.36876
+933,nonunion,20.0,40,13.0,not college grad,married,0,nonSMSA,0,20.083334,8.75,7.761675
+934,nonunion,35.0,41,18.0,college grad,single,0,SMSA,1,15.089743,11.916667,11.272142
+935,nonunion,40.0,37,13.0,not college grad,single,1,SMSA,1,15.858974,10.583333,5.8051524
+938,nonunion,50.0,43,16.0,college grad,single,1,SMSA,1,14.467949,3.25,13.003217
+940,union,35.0,44,11.0,not college grad,married,0,nonSMSA,0,20.346153,20.333334,6.634459
+942,nonunion,20.0,45,12.0,not college grad,married,0,SMSA,0,15.923077,14.916667,4.025765
+943,,32.0,45,12.0,not college grad,married,1,nonSMSA,0,9.615385,2.5833333,6.1674714
+947,,60.0,41,17.0,college grad,married,1,SMSA,0,16.967949,15.75,9.111565
+948,,40.0,40,14.0,not college grad,married,1,SMSA,0,13.288462,3.5833333,7.878824
+949,nonunion,40.0,41,13.0,not college grad,married,0,nonSMSA,0,5.4423075,3.8333333,4.146536
+950,union,40.0,39,9.0,not college grad,married,0,nonSMSA,0,15.282051,10.666667,6.441224
+951,union,40.0,40,11.0,not college grad,married,1,nonSMSA,0,8.75,2.8333333,5.032206
+953,nonunion,50.0,40,12.0,not college grad,single,0,SMSA,0,12.923077,1.5,6.191625
+955,union,40.0,37,12.0,not college grad,married,0,SMSA,0,4.4038463,2.6666667,5.2656984
+956,union,20.0,41,10.0,not college grad,married,0,nonSMSA,0,5.5961537,0.75,7.0048285
+957,nonunion,12.0,39,12.0,not college grad,married,0,nonSMSA,0,12.326923,1.75,3.3574865
+958,nonunion,15.0,36,12.0,not college grad,married,0,nonSMSA,0,14.846154,0.75,3.6231885
+960,union,38.0,40,14.0,not college grad,married,0,nonSMSA,0,15.038462,0.41666666,10.017915
+961,,40.0,40,13.0,not college grad,married,0,nonSMSA,0,15.769231,,7.0450883
+964,nonunion,40.0,37,13.0,not college grad,married,0,nonSMSA,0,15.038462,10.0,9.138485
+965,nonunion,45.0,44,13.0,not college grad,married,0,nonSMSA,0,15.429488,13.5,6.8840547
+966,,40.0,39,7.0,not college grad,married,0,nonSMSA,0,5.980769,0.16666667,3.0465944
+968,nonunion,50.0,39,12.0,not college grad,single,0,nonSMSA,0,18.134615,11.916667,7.2463775
+969,nonunion,40.0,42,12.0,not college grad,married,1,SMSA,0,13.846154,1.9166666,10.450882
+972,,50.0,35,13.0,college grad,single,0,SMSA,0,12.519231,6.0833335,30.967405
+975,union,40.0,39,17.0,college grad,married,0,nonSMSA,0,15.833333,15.833333,11.610305
+977,nonunion,35.0,44,18.0,college grad,married,0,nonSMSA,0,10.358974,0.0,11.5056305
+978,union,40.0,44,10.0,not college grad,married,0,nonSMSA,0,9.153846,7.5833335,5.032206
+979,nonunion,20.0,37,16.0,college grad,married,0,SMSA,0,11.698717,1.75,3.0998378
+980,nonunion,30.0,36,14.0,not college grad,married,0,SMSA,0,12.557692,6.5,9.661837
+981,,23.0,44,12.0,not college grad,single,0,nonSMSA,0,12.3910265,2.6666667,4.765884
+983,nonunion,50.0,42,18.0,college grad,single,0,nonSMSA,0,17.634615,3.75,1.859903
+984,nonunion,37.0,39,13.0,not college grad,single,0,nonSMSA,0,15.076923,3.9166667,5.2334948
+987,nonunion,40.0,37,12.0,not college grad,married,1,nonSMSA,0,10.794872,9.083333,8.6553955
+988,,23.0,35,12.0,not college grad,single,0,nonSMSA,0,5.4871798,2.4166667,2.801002
+989,nonunion,38.0,39,16.0,college grad,married,0,nonSMSA,0,18.153847,17.416666,9.339773
+990,,40.0,40,14.0,not college grad,married,0,nonSMSA,0,17.26923,,7.0450883
+991,union,40.0,41,15.0,not college grad,married,0,nonSMSA,0,20.205128,20.166666,11.513684
+993,union,40.0,41,15.0,college grad,married,0,nonSMSA,0,20.801281,20.75,14.033811
+994,nonunion,60.0,41,12.0,not college grad,single,0,nonSMSA,0,4.1346154,0.6666667,12.195121
+996,union,67.0,38,18.0,college grad,married,0,SMSA,0,9.923077,0.8333333,6.932361
+998,,40.0,41,12.0,not college grad,married,0,SMSA,0,4.769231,0.25,5.936454
+999,nonunion,35.0,40,10.0,not college grad,single,0,nonSMSA,0,6.8397436,2.6666667,6.0386477
+1001,,40.0,45,12.0,not college grad,married,0,nonSMSA,0,11.192307,4.0833335,4.389632
+1006,nonunion,40.0,38,14.0,not college grad,single,0,nonSMSA,0,19.916666,19.916666,7.0450883
+1007,nonunion,40.0,40,12.0,not college grad,single,0,SMSA,0,11.782051,1.0833334,5.072463
+1009,union,40.0,37,18.0,college grad,married,0,SMSA,0,10.044872,3.4166667,11.996774
+1011,nonunion,44.0,37,14.0,not college grad,married,0,SMSA,0,18.608974,8.25,14.291465
+1013,nonunion,45.0,40,13.0,not college grad,married,0,SMSA,0,12.615385,5.0,4.025765
+1014,nonunion,40.0,45,13.0,not college grad,married,0,SMSA,0,13.846154,1.0,8.558774
+1015,union,20.0,43,12.0,not college grad,single,0,SMSA,0,8.301282,7.5833335,5.032206
+1016,nonunion,25.0,41,16.0,college grad,married,0,SMSA,0,11.615385,1.75,5.032206
+1017,nonunion,28.0,44,13.0,not college grad,married,0,SMSA,1,17.185896,3.4166667,7.0450883
+1018,,40.0,43,12.0,not college grad,married,0,SMSA,1,1.9166667,0.0,4.4314375
+1021,,40.0,34,12.0,not college grad,single,0,SMSA,0,7.3269234,0.41666666,3.3444817
+1023,nonunion,45.0,43,14.0,not college grad,married,0,SMSA,0,16.769232,3.9166667,10.966179
+1025,nonunion,50.0,37,12.0,not college grad,single,0,SMSA,1,15.666667,15.666667,10.483089
+1026,union,20.0,38,14.0,not college grad,single,0,SMSA,1,15.352564,15.166667,27.890488
+1028,nonunion,20.0,39,12.0,not college grad,married,0,SMSA,0,16.692308,1.6666666,5.6360707
+1029,nonunion,45.0,38,16.0,college grad,single,1,SMSA,1,14.192307,2.0833333,11.698873
+1030,nonunion,55.0,36,16.0,college grad,single,1,SMSA,1,16.49359,1.3333334,6.170566
+1033,union,40.0,37,18.0,college grad,married,0,SMSA,1,16.179487,16.166666,11.223828
+1034,nonunion,40.0,45,12.0,not college grad,married,0,SMSA,1,12.884615,9.166667,5.6360707
+1037,nonunion,40.0,36,12.0,not college grad,married,0,nonSMSA,0,17.166668,8.916667,6.8438005
+1038,nonunion,38.0,40,16.0,college grad,married,1,nonSMSA,0,13.0,1.9166666,9.782605
+1040,,60.0,36,8.0,not college grad,single,0,SMSA,0,3.621795,1.4166666,26.798721
+1041,nonunion,40.0,41,12.0,not college grad,married,1,SMSA,1,14.666667,14.666667,5.032206
+1044,nonunion,40.0,42,15.0,not college grad,single,0,SMSA,0,20.00641,20.0,18.58292
+1045,nonunion,47.0,44,16.0,college grad,married,0,SMSA,0,12.711538,9.0,15.813202
+1048,union,40.0,40,11.0,not college grad,married,0,SMSA,0,10.756411,6.6666665,9.677936
+1051,nonunion,24.0,40,14.0,not college grad,married,0,SMSA,0,13.826923,12.25,11.030594
+1055,nonunion,15.0,44,17.0,college grad,married,0,SMSA,1,11.576923,7.3333335,3.0998378
+1056,nonunion,40.0,36,12.0,not college grad,married,0,SMSA,0,15.076923,7.5,6.8438005
+1058,nonunion,50.0,43,17.0,college grad,single,0,SMSA,0,16.173077,1.9166666,12.38325
+1060,nonunion,40.0,40,12.0,not college grad,married,0,SMSA,1,13.384615,1.3333334,8.977451
+1062,nonunion,50.0,43,12.0,not college grad,single,0,SMSA,1,20.333334,20.333334,6.1352654
+1065,nonunion,40.0,39,16.0,college grad,single,0,SMSA,1,14.346154,1.5,18.58292
+1066,nonunion,26.0,43,16.0,college grad,married,0,SMSA,1,3.4166667,3.4166667,5.8373594
+1067,nonunion,32.0,39,17.0,college grad,married,0,SMSA,1,13.288462,1.0,7.254424
+1071,,20.0,42,12.0,not college grad,single,0,SMSA,0,18.211538,0.16666667,3.220612
+1072,nonunion,40.0,37,14.0,not college grad,married,0,SMSA,0,10.160255,2.9166667,8.373587
+1075,,25.0,39,12.0,not college grad,married,0,SMSA,0,11.365385,1.5833334,7.337156
+1076,nonunion,40.0,41,16.0,college grad,married,0,nonSMSA,0,11.807693,,6.964568
+1077,nonunion,16.0,36,13.0,not college grad,married,0,SMSA,0,14.2756405,1.0833334,5.032206
+1078,union,40.0,43,12.0,not college grad,married,0,SMSA,0,14.134616,9.416667,6.0386477
+1084,nonunion,30.0,41,14.0,not college grad,married,0,SMSA,1,6.6346154,2.0833333,2.6811595
+1085,nonunion,24.0,40,14.0,not college grad,married,0,SMSA,0,19.416666,19.416666,11.674717
+1086,,40.0,35,12.0,not college grad,married,0,nonSMSA,0,16.878204,4.0833335,4.8274837
+1087,union,20.0,44,12.0,not college grad,married,0,SMSA,0,14.7756405,10.416667,11.11916
+1091,nonunion,40.0,41,15.0,not college grad,married,1,SMSA,0,19.5,9.083333,9.677936
+1092,nonunion,35.0,38,12.0,not college grad,single,0,SMSA,1,9.666667,9.666667,4.5974226
+1095,nonunion,42.0,37,14.0,not college grad,single,0,SMSA,0,16.660257,6.5833335,18.067625
+1099,nonunion,20.0,37,12.0,not college grad,married,0,SMSA,1,12.557693,8.083333,5.6360707
+1101,union,60.0,39,16.0,college grad,married,0,SMSA,0,16.75,16.75,6.70692
+1105,union,50.0,37,16.0,college grad,married,0,SMSA,0,14.692307,13.75,8.357487
+1106,nonunion,42.0,44,12.0,not college grad,single,0,SMSA,1,12.891025,2.9166667,3.3574865
+1113,nonunion,40.0,40,13.0,not college grad,single,0,SMSA,0,14.108974,3.0833333,10.450882
+1115,nonunion,40.0,41,12.0,not college grad,single,0,SMSA,0,10.788462,3.6666667,5.032206
+1116,,36.0,39,12.0,not college grad,married,0,nonSMSA,0,16.916666,1.5833334,5.0167227
+1118,nonunion,5.0,36,12.0,not college grad,married,0,SMSA,0,5.8653846,4.1666665,4.4283414
+1119,nonunion,40.0,44,12.0,not college grad,married,0,SMSA,0,11.378206,5.0,2.3268917
+1120,nonunion,41.0,36,16.0,college grad,married,1,SMSA,1,13.865385,1.6666666,4.2673106
+1122,nonunion,40.0,38,16.0,college grad,single,0,SMSA,1,18.378206,14.75,6.755233
+1123,union,38.0,39,12.0,not college grad,married,0,SMSA,0,19.115383,3.3333333,8.47826
+1125,nonunion,40.0,46,12.0,not college grad,single,0,SMSA,0,20.384615,20.333334,19.355871
+1131,,10.0,41,12.0,not college grad,married,0,SMSA,0,4.6538463,0.5,4.180602
+1132,union,40.0,35,12.0,not college grad,single,0,SMSA,0,16.27564,15.75,8.22866
+1133,,25.0,39,12.0,not college grad,married,0,SMSA,0,8.141026,3.4166667,4.598662
+1134,nonunion,8.0,38,14.0,not college grad,married,0,SMSA,0,4.7884617,1.75,4.4283414
+1140,nonunion,50.0,40,18.0,college grad,single,0,SMSA,0,19.397434,3.4166667,7.745568
+1141,union,20.0,37,12.0,not college grad,married,0,SMSA,0,16.711538,10.25,6.964568
+1143,nonunion,40.0,38,12.0,not college grad,single,0,SMSA,0,20.115385,20.083334,15.09662
+1147,,40.0,42,10.0,not college grad,married,0,nonSMSA,0,9.435898,0.8333333,5.0167227
+1148,nonunion,40.0,40,12.0,not college grad,single,0,SMSA,0,17.262821,17.166666,13.325271
+1150,union,40.0,43,12.0,not college grad,married,0,SMSA,1,12.134615,3.1666667,7.9307556
+1154,nonunion,40.0,38,13.0,not college grad,single,0,SMSA,1,15.339744,10.083333,6.972622
+1155,union,40.0,37,,not college grad,married,0,SMSA,1,15.916667,15.916667,7.0450883
+1157,nonunion,40.0,38,10.0,not college grad,married,0,SMSA,1,2.4166667,2.4166667,3.220612
+1159,union,40.0,41,11.0,not college grad,single,1,nonSMSA,0,12.03205,3.5833333,5.8776164
+1162,nonunion,35.0,40,12.0,not college grad,married,0,SMSA,0,16.416666,16.416666,4.758454
+1164,union,53.0,36,10.0,not college grad,single,0,SMSA,1,5.2115383,1.4166666,5.6843777
+1169,nonunion,24.0,38,12.0,not college grad,married,0,SMSA,0,15.423077,2.3333333,11.835748
+1171,nonunion,40.0,44,13.0,not college grad,single,0,SMSA,1,26.538462,14.416667,8.132044
+1174,union,40.0,37,14.0,not college grad,single,0,SMSA,1,9.333333,9.333333,12.077295
+1177,nonunion,40.0,39,12.0,not college grad,married,0,SMSA,1,9.826922,5.4166665,6.239936
+1181,union,40.0,39,13.0,not college grad,single,0,SMSA,1,13.538462,3.75,7.9307556
+1186,nonunion,40.0,37,11.0,not college grad,married,0,SMSA,1,7.865385,,3.5265677
+1188,nonunion,32.0,35,12.0,not college grad,single,0,SMSA,0,7.307692,3.0833333,4.025765
+1196,,50.0,36,18.0,college grad,married,0,SMSA,0,13.3589735,3.0,32.15846
+1198,nonunion,40.0,37,12.0,not college grad,married,0,SMSA,0,14.807693,5.9166665,7.4315586
+1201,nonunion,50.0,37,14.0,not college grad,married,0,SMSA,0,8.147436,2.5,6.191625
+1203,,40.0,36,12.0,not college grad,married,0,SMSA,0,14.0,0.33333334,6.793478
+1204,union,42.0,36,13.0,not college grad,married,0,SMSA,1,12.602564,12.333333,10.466988
+1209,nonunion,36.0,40,12.0,not college grad,married,0,SMSA,0,19.153847,4.9166665,25.805145
+1213,nonunion,40.0,40,16.0,college grad,single,1,SMSA,0,7.3076925,1.0833334,4.025765
+1217,nonunion,35.0,37,12.0,not college grad,single,1,SMSA,0,5.6153846,4.3333335,2.8743958
+1218,nonunion,26.0,41,12.0,not college grad,married,0,SMSA,0,6.730769,1.5833334,4.4283414
+1219,nonunion,40.0,39,12.0,not college grad,single,0,SMSA,0,20.307692,20.25,15.09662
+1222,nonunion,40.0,41,13.0,not college grad,single,0,SMSA,1,12.980769,0.0,6.8438005
+1224,nonunion,38.0,41,15.0,not college grad,married,0,SMSA,1,2.5705128,0.75,6.5136847
+1227,nonunion,40.0,36,12.0,not college grad,married,0,SMSA,1,9.576923,1.0833334,5.072463
+1228,nonunion,40.0,39,11.0,not college grad,single,0,SMSA,1,3.282051,2.3333333,4.830918
+1233,nonunion,37.0,34,15.0,not college grad,single,0,SMSA,0,9.557693,2.75,4.355878
+1238,,10.0,43,16.0,college grad,married,0,SMSA,1,5.9423075,1.5,13.016325
+1241,nonunion,40.0,45,14.0,not college grad,single,0,SMSA,1,9.692307,2.75,9.677936
+1242,nonunion,40.0,37,13.0,not college grad,married,1,SMSA,0,7.0384617,4.1666665,6.8438005
+1243,,2.0,44,16.0,college grad,single,0,SMSA,1,14.288462,2.5,5.627731
+1247,nonunion,30.0,35,18.0,college grad,married,1,SMSA,1,14.365385,2.5,17.544281
+1248,union,36.0,41,18.0,college grad,married,0,SMSA,1,10.692307,5.75,10.845407
+1250,nonunion,40.0,35,17.0,college grad,single,0,SMSA,1,11.346154,3.6666667,6.964568
+1257,nonunion,38.0,41,12.0,not college grad,single,0,SMSA,1,20.833334,20.833334,9.533008
+1259,,40.0,42,12.0,not college grad,married,0,SMSA,0,6.25,1.9166666,8.528425
+1263,nonunion,40.0,42,12.0,not college grad,married,0,nonSMSA,0,8.692307,1.5833334,3.5024142
+1264,nonunion,60.0,44,14.0,not college grad,single,0,SMSA,1,19.211538,0.0,5.418679
+1266,nonunion,40.0,38,12.0,not college grad,married,0,SMSA,1,16.78846,13.333333,7.6086926
+1269,nonunion,40.0,36,12.0,not college grad,married,0,SMSA,0,16.98077,13.75,7.3993516
+1271,nonunion,5.0,42,12.0,not college grad,married,0,SMSA,0,6.7884617,0.75,3.7625415
+1273,nonunion,40.0,39,12.0,not college grad,single,0,nonSMSA,0,1.3141025,0.25,3.220612
+1275,union,40.0,42,12.0,not college grad,married,0,SMSA,1,16.48077,11.5,8.558774
+1276,union,40.0,38,13.0,not college grad,single,0,SMSA,1,16.51923,15.0,7.3510447
+1280,nonunion,40.0,35,12.0,not college grad,single,0,SMSA,1,8.378205,1.4166666,3.4219003
+1283,union,40.0,42,17.0,college grad,single,0,SMSA,1,17.416666,17.416666,11.070854
+1284,union,40.0,34,11.0,not college grad,married,0,SMSA,0,12.269231,9.416667,5.716585
+1288,union,50.0,39,18.0,college grad,married,0,SMSA,0,16.916666,16.916666,8.671494
+1289,nonunion,48.0,38,16.0,college grad,single,0,SMSA,0,12.410256,9.416667,10.719064
+1292,nonunion,40.0,43,12.0,not college grad,single,0,SMSA,1,8.955129,0.16666667,4.025765
+1304,nonunion,45.0,43,15.0,not college grad,married,0,SMSA,0,9.615385,6.25,5.5072436
+1309,nonunion,20.0,42,16.0,college grad,married,0,nonSMSA,0,12.903847,3.25,3.904991
+1313,nonunion,40.0,41,18.0,college grad,single,0,SMSA,0,10.076923,1.6666666,12.777775
+1320,,3.0,43,12.0,not college grad,married,0,SMSA,0,2.5192308,0.0,4.025765
+1322,nonunion,40.0,35,14.0,not college grad,married,1,nonSMSA,0,11.0,0.33333334,7.4476643
+1325,nonunion,40.0,35,12.0,not college grad,single,0,SMSA,0,8.326923,0.16666667,4.1867933
+1330,nonunion,40.0,41,12.0,not college grad,single,0,SMSA,0,10.980769,9.416667,6.964568
+1339,nonunion,30.0,41,12.0,not college grad,married,0,SMSA,0,13.884615,10.666667,8.05153
+1340,,28.0,43,12.0,not college grad,married,0,SMSA,0,4.576923,1.0,5.852843
+1345,,70.0,36,12.0,not college grad,single,0,SMSA,0,11.179486,4.5,22.970337
+1349,union,44.0,37,14.0,not college grad,single,0,SMSA,1,7.5961537,5.75,9.017712
+1355,nonunion,40.0,35,15.0,not college grad,married,0,SMSA,0,15.833333,15.833333,9.29146
+1358,nonunion,60.0,42,12.0,not college grad,married,0,nonSMSA,0,12.1410265,2.0833333,10.32206
+1361,nonunion,40.0,41,17.0,college grad,married,0,SMSA,0,17.884615,2.1666667,17.02898
+1362,nonunion,16.0,38,14.0,not college grad,married,0,SMSA,0,5.2628202,1.0,3.220612
+1364,nonunion,50.0,39,16.0,college grad,married,0,SMSA,1,17.153847,3.0,13.937197
+1366,,33.0,42,12.0,not college grad,married,0,SMSA,0,14.339743,1.3333334,3.3444817
+1367,nonunion,40.0,43,15.0,not college grad,married,0,nonSMSA,0,13.666667,13.666667,4.025765
+1370,nonunion,40.0,34,15.0,not college grad,single,0,SMSA,0,11.288462,11.25,8.904991
+1371,nonunion,35.0,36,14.0,not college grad,married,0,SMSA,0,10.5,10.5,8.856684
+1373,union,40.0,43,11.0,not college grad,married,0,SMSA,1,14.1410265,6.8333335,12.753378
+1376,,40.0,39,12.0,not college grad,single,0,SMSA,0,13.217948,0.33333334,5.434783
+1379,nonunion,40.0,43,12.0,not college grad,single,0,SMSA,1,16.442307,10.916667,10.12882
+1380,union,40.0,37,11.0,not college grad,single,0,SMSA,1,15.346154,9.75,8.011269
+1381,union,40.0,44,12.0,not college grad,married,0,SMSA,0,21.0,20.916666,11.272142
+1384,nonunion,20.0,43,12.0,not college grad,married,0,SMSA,0,5.173077,2.3333333,3.220612
+1385,nonunion,60.0,38,15.0,not college grad,single,0,SMSA,0,12.955129,0.6666667,6.1996756
+1386,,32.0,35,11.0,not college grad,married,0,SMSA,0,4.4423075,0.16666667,3.7625415
+1389,,40.0,37,11.0,not college grad,married,1,nonSMSA,0,5.8076925,0.5833333,3.0518394
+1394,union,44.0,42,18.0,college grad,single,0,SMSA,0,15.903846,15.083333,9.500801
+1396,union,40.0,41,18.0,college grad,married,0,SMSA,0,18.833334,18.833334,16.25603
+1398,nonunion,50.0,36,17.0,college grad,single,0,SMSA,1,15.615385,12.833333,11.457324
+1408,union,34.0,37,16.0,college grad,married,0,SMSA,1,12.935898,5.8333335,14.573262
+1411,nonunion,30.0,40,12.0,not college grad,married,1,SMSA,0,16.089743,1.8333334,3.220612
+1415,,8.0,38,16.0,college grad,married,0,SMSA,1,11.692307,3.9166667,9.677936
+1418,nonunion,40.0,40,12.0,not college grad,married,0,SMSA,0,8.814103,3.75,5.925924
+1420,union,40.0,40,12.0,not college grad,single,0,SMSA,1,17.403847,15.083333,8.816422
+1426,nonunion,40.0,37,12.0,not college grad,single,1,SMSA,1,5.185898,3.0,4.830918
+1427,nonunion,40.0,36,12.0,not college grad,married,0,SMSA,1,10.621796,3.0,4.58132
+1428,union,40.0,42,18.0,college grad,single,0,SMSA,1,15.634616,7.25,19.434166
+1434,,24.0,42,11.0,not college grad,single,1,nonSMSA,0,2.4294872,0.25,3.0017905
+1435,nonunion,40.0,44,15.0,not college grad,married,1,SMSA,0,13.698718,2.25,8.904991
+1436,nonunion,40.0,43,16.0,college grad,single,1,SMSA,0,7.7051277,0.9166667,4.2592573
+1437,union,50.0,44,18.0,college grad,single,0,SMSA,0,8.711538,4.8333335,13.003217
+1441,nonunion,42.0,39,13.0,not college grad,single,1,SMSA,1,15.923077,2.5,5.6360707
+1448,union,40.0,37,12.0,not college grad,married,0,SMSA,0,7.5384617,2.8333333,3.6634455
+1453,,40.0,39,12.0,not college grad,single,0,SMSA,0,10.089744,2.75,38.70926
+1462,nonunion,50.0,42,16.0,college grad,single,0,SMSA,0,15.557693,4.3333335,8.671494
+1465,,40.0,35,12.0,not college grad,single,0,SMSA,0,15.012821,1.25,6.336553
+1469,,15.0,39,12.0,not college grad,married,0,SMSA,1,16.846153,0.6666667,4.180602
+1470,nonunion,50.0,36,18.0,college grad,single,0,SMSA,1,11.442307,1.5,8.05153
+1471,nonunion,25.0,35,17.0,college grad,married,0,SMSA,0,15.064102,12.75,11.723026
+1475,nonunion,40.0,36,18.0,college grad,married,1,SMSA,0,13.820513,0.0,7.745568
+1478,,40.0,38,8.0,not college grad,married,0,SMSA,1,5.6538463,1.1666666,3.3444817
+1479,nonunion,35.0,43,16.0,college grad,married,0,SMSA,1,14.852565,13.666667,6.634459
+1480,nonunion,45.0,41,16.0,college grad,single,0,SMSA,1,19.051281,9.0,20.64412
+1482,nonunion,23.0,38,12.0,not college grad,married,0,SMSA,1,9.9423065,4.0,5.1046667
+1484,nonunion,40.0,36,17.0,college grad,married,0,SMSA,0,13.903846,7.0833335,16.25603
+1486,nonunion,32.0,40,12.0,not college grad,single,0,SMSA,0,13.538462,6.4166665,4.782608
+1490,union,40.0,39,18.0,college grad,single,0,nonSMSA,0,16.01923,1.9166666,13.164245
+1492,union,40.0,39,12.0,not college grad,single,0,nonSMSA,0,14.403846,0.33333334,12.007685
+1494,union,40.0,38,12.0,not college grad,married,0,SMSA,0,16.134615,16.0,8.05153
+1499,,40.0,35,12.0,not college grad,married,0,SMSA,0,13.519231,3.8333333,4.9114323
+1500,,40.0,35,12.0,not college grad,married,1,SMSA,1,11.929487,1.9166666,2.801002
+1505,nonunion,40.0,43,16.0,college grad,single,0,SMSA,1,18.038462,9.5,8.518515
+1506,nonunion,40.0,38,13.0,not college grad,married,1,SMSA,1,6.628205,1.25,5.2818017
+1507,nonunion,40.0,40,18.0,college grad,single,1,nonSMSA,0,14.288462,11.083333,10.217388
+1508,nonunion,40.0,35,17.0,college grad,married,0,SMSA,1,14.564102,13.0,10.942026
+1515,union,25.0,44,16.0,college grad,married,0,SMSA,0,4.4038463,2.1666667,6.231882
+1519,,40.0,44,16.0,college grad,married,0,nonSMSA,0,8.576923,0.9166667,4.598662
+1520,nonunion,43.0,41,12.0,not college grad,married,1,SMSA,1,18.423077,7.1666665,11.884054
+1522,,15.0,36,12.0,not college grad,married,0,SMSA,1,5.230769,0.25,5.434783
+1523,nonunion,40.0,36,12.0,not college grad,married,0,SMSA,1,15.878206,12.833333,6.441224
+1525,,35.0,43,12.0,not college grad,married,0,SMSA,0,7.769231,0.75,4.4137006
+1526,nonunion,30.0,42,11.0,not college grad,married,0,SMSA,0,2.121795,0.75,3.3011258
+1529,nonunion,40.0,38,13.0,not college grad,married,0,SMSA,1,17.134615,5.0,5.9983873
+1530,nonunion,28.0,38,10.0,not college grad,single,0,SMSA,1,6.6346154,4.0,11.195651
+1531,nonunion,35.0,36,10.0,not college grad,married,0,SMSA,1,4.076923,1.4166666,2.3027365
+1540,,16.0,39,12.0,not college grad,married,1,SMSA,1,14.057693,5.5833335,9.197324
+1542,nonunion,40.0,43,12.0,not college grad,married,0,SMSA,1,14.916666,4.4166665,4.3880816
+1543,union,40.0,43,18.0,college grad,married,0,nonSMSA,0,7.064102,3.8333333,10.450882
+1545,nonunion,7.0,38,16.0,college grad,married,0,SMSA,1,11.038462,1.3333334,4.420288
+1557,nonunion,40.0,39,12.0,not college grad,married,0,nonSMSA,0,13.865385,0.75,5.611914
+1558,nonunion,40.0,36,12.0,not college grad,married,1,SMSA,1,13.0,5.8333335,4.8872786
+1559,union,40.0,35,12.0,not college grad,married,0,SMSA,0,17.487177,9.583333,6.714973
+1561,nonunion,40.0,35,14.0,not college grad,married,0,SMSA,0,11.076923,10.583333,7.801928
+1562,nonunion,55.0,42,14.0,not college grad,married,1,SMSA,1,16.442308,4.25,6.223832
+1563,union,60.0,39,18.0,college grad,married,0,SMSA,1,13.435897,2.75,6.70692
+1564,nonunion,40.0,41,16.0,college grad,single,1,SMSA,1,12.576923,6.9166665,6.159419
+1565,nonunion,45.0,39,13.0,not college grad,single,0,SMSA,0,15.192307,1.4166666,12.38325
+1566,nonunion,40.0,39,14.0,not college grad,single,0,nonSMSA,0,11.128204,3.75,4.025765
+1572,,40.0,40,12.0,not college grad,single,0,nonSMSA,0,16.48077,9.166667,4.8274837
+1577,nonunion,24.0,41,15.0,not college grad,married,0,SMSA,1,6.2307696,,3.2850225
+1578,,40.0,37,14.0,not college grad,single,1,SMSA,1,12.538461,1.5833334,38.70926
+1580,,50.0,38,12.0,not college grad,married,0,nonSMSA,0,4.4615383,1.25,5.852843
+1582,union,40.0,40,18.0,college grad,married,0,SMSA,1,14.166666,8.75,15.09662
+1583,nonunion,35.0,39,17.0,college grad,married,0,SMSA,1,16.173077,9.75,6.634459
+1585,,40.0,36,12.0,not college grad,married,0,SMSA,0,7.5833335,0.6666667,4.703177
+1588,nonunion,24.0,43,13.0,not college grad,married,0,nonSMSA,0,10.083334,0.16666667,4.025765
+1591,nonunion,42.0,36,14.0,not college grad,single,0,SMSA,0,8.942307,1.5833334,6.2640896
+1595,nonunion,38.0,41,14.0,not college grad,married,0,SMSA,0,14.980769,7.4166665,7.536226
+1596,nonunion,32.0,39,12.0,not college grad,married,0,SMSA,1,20.596153,20.583334,5.410626
+1598,nonunion,36.0,44,12.0,not college grad,single,0,SMSA,0,7.5641026,2.0833333,3.3977435
+1599,nonunion,50.0,42,16.0,college grad,married,1,SMSA,0,18.429485,11.166667,12.38325
+1600,nonunion,53.0,42,11.0,not college grad,married,0,SMSA,0,15.198717,3.4166667,3.6231885
+1603,nonunion,38.0,45,7.0,not college grad,married,0,nonSMSA,0,3.9102564,1.75,3.711753
+1604,nonunion,40.0,37,12.0,not college grad,married,0,SMSA,1,7.0384617,3.5833333,3.7037024
+1607,nonunion,38.0,39,14.0,not college grad,married,0,nonSMSA,0,16.346153,1.3333334,8.05153
+1613,nonunion,20.0,38,12.0,not college grad,married,0,nonSMSA,0,8.782051,2.8333333,4.6698866
+1614,nonunion,40.0,42,12.0,not college grad,married,1,SMSA,1,3.3910255,1.0,3.3444817
+1616,nonunion,22.0,40,15.0,not college grad,married,0,nonSMSA,0,10.423077,6.4166665,7.0048285
+1618,nonunion,40.0,34,12.0,not college grad,married,0,nonSMSA,0,10.134616,9.583333,4.7504005
+1620,,5.0,45,12.0,not college grad,single,0,nonSMSA,0,9.288462,,2.4916961
+1622,union,20.0,37,16.0,college grad,married,0,nonSMSA,0,14.038462,1.5833334,3.3091762
+1623,nonunion,40.0,41,12.0,not college grad,married,0,nonSMSA,0,9.615385,6.0,4.5491123
+1624,nonunion,15.0,39,16.0,college grad,married,0,nonSMSA,0,10.576923,2.4166667,10.732684
+1625,nonunion,40.0,37,16.0,college grad,married,0,nonSMSA,0,8.570513,0.8333333,6.086955
+1626,nonunion,45.0,35,12.0,not college grad,single,0,nonSMSA,0,15.923077,10.25,3.9855046
+1628,union,10.0,35,12.0,not college grad,single,0,SMSA,0,7.980769,2.0,6.6889634
+1630,,3.0,39,12.0,not college grad,single,0,nonSMSA,0,12.134615,5.0,3.3444817
+1631,nonunion,32.0,39,13.0,not college grad,married,0,SMSA,0,10.615384,3.6666667,4.227053
+1635,nonunion,24.0,44,12.0,not college grad,single,0,nonSMSA,0,8.070513,2.6666667,3.220612
+1636,nonunion,8.0,40,12.0,not college grad,married,0,nonSMSA,0,9.76282,0.5833333,4.227053
+1638,nonunion,26.0,41,13.0,not college grad,married,0,nonSMSA,0,7.647436,4.3333335,3.872784
+1641,,15.0,36,16.0,college grad,married,0,SMSA,1,10.980769,0.9166667,3.0518394
+1644,nonunion,38.0,36,16.0,college grad,married,0,nonSMSA,0,18.26923,14.833333,9.371979
+1645,nonunion,40.0,35,12.0,not college grad,married,0,nonSMSA,0,10.692307,4.6666665,3.7198057
+1646,nonunion,35.0,37,12.0,not college grad,single,0,nonSMSA,0,11.288462,3.4166667,2.657004
+1647,nonunion,20.0,37,12.0,not college grad,married,0,SMSA,0,6.923077,3.75,3.9855046
+1648,union,40.0,35,16.0,college grad,married,0,nonSMSA,0,14.826922,8.833333,8.904991
+1649,,36.0,42,16.0,college grad,married,1,SMSA,0,16.038462,2.6666667,13.377926
+1650,nonunion,40.0,40,11.0,not college grad,single,0,nonSMSA,0,2.6730769,0.16666667,2.8582926
+1651,,20.0,41,15.0,not college grad,married,0,nonSMSA,0,12.660256,0.33333334,5.3511686
+1653,nonunion,50.0,35,12.0,not college grad,married,0,SMSA,0,16.070513,10.5,9.734298
+1654,nonunion,50.0,38,16.0,college grad,married,1,SMSA,0,16.833334,3.0,10.217388
+1655,union,45.0,40,13.0,not college grad,married,0,SMSA,0,19.551283,19.5,13.969397
+1656,union,40.0,40,12.0,not college grad,single,0,SMSA,1,19.666666,19.666666,6.779387
+1659,nonunion,40.0,41,17.0,college grad,single,0,SMSA,1,16.320513,4.5,12.971002
+1664,nonunion,60.0,38,17.0,college grad,married,0,SMSA,1,13.467948,8.333333,20.64412
+1669,nonunion,36.0,35,14.0,not college grad,married,0,nonSMSA,0,16.064102,13.416667,10.104667
+1671,nonunion,32.0,35,9.0,not college grad,single,0,nonSMSA,0,1.3269231,0.083333336,3.3444817
+1674,nonunion,40.0,42,12.0,not college grad,married,0,SMSA,1,15.173077,3.75,6.5780983
+1675,nonunion,40.0,42,12.0,not college grad,single,0,nonSMSA,0,10.826923,9.833333,4.830918
+1683,nonunion,2.0,35,17.0,college grad,married,0,SMSA,0,11.8076935,3.3333333,18.19645
+1686,nonunion,2.0,35,14.0,not college grad,married,0,nonSMSA,0,8.692307,6.0833335,6.441224
+1688,,32.0,36,12.0,not college grad,single,0,nonSMSA,0,9.192307,3.5,5.0167227
+1689,,40.0,39,12.0,not college grad,single,0,nonSMSA,0,13.75,0.41666666,2.801002
+1690,,30.0,37,12.0,not college grad,married,0,nonSMSA,0,12.115385,2.8333333,3.3444817
+1691,nonunion,38.0,35,12.0,not college grad,married,0,nonSMSA,0,18.73077,11.75,5.917873
+1693,nonunion,30.0,40,12.0,not college grad,married,0,nonSMSA,0,8.756411,1.75,5.072463
+1697,,60.0,37,12.0,not college grad,married,0,nonSMSA,0,14.448719,1.75,3.0991251
+1701,nonunion,40.0,36,11.0,not college grad,married,0,SMSA,0,10.153846,0.75,5.2334948
+1702,,30.0,35,12.0,not college grad,married,0,nonSMSA,0,6.5769234,0.16666667,2.801002
+1703,nonunion,40.0,45,13.0,not college grad,single,0,SMSA,1,12.961538,1.75,4.8792253
+1707,nonunion,39.0,38,9.0,not college grad,married,0,nonSMSA,0,11.461538,4.4166665,7.149757
+1710,nonunion,45.0,40,18.0,college grad,single,0,nonSMSA,0,14.833333,14.833333,8.599029
+1712,nonunion,40.0,40,13.0,not college grad,married,0,nonSMSA,0,8.826923,2.4166667,3.6634455
+1713,,40.0,38,8.0,not college grad,married,0,SMSA,1,6.3461537,1.5833334,6.0386477
+1714,,40.0,35,14.0,not college grad,married,0,nonSMSA,0,13.173077,6.9166665,5.7483277
+1716,,40.0,35,16.0,college grad,married,0,SMSA,1,14.9743595,7.8333335,6.6889634
+1719,nonunion,50.0,39,14.0,not college grad,married,0,SMSA,0,18.25,15.833333,11.9243145
+1721,nonunion,42.0,40,13.0,not college grad,married,0,nonSMSA,0,17.358974,5.0,4.5088553
+1724,nonunion,38.0,40,18.0,college grad,married,0,SMSA,0,17.673077,9.25,12.222217
+1725,nonunion,40.0,42,16.0,college grad,married,0,SMSA,0,19.442307,6.3333335,15.48309
+1729,nonunion,40.0,38,15.0,not college grad,married,0,nonSMSA,0,11.884616,4.0833335,3.8244765
+1732,,32.0,34,12.0,not college grad,single,0,nonSMSA,0,6.532051,0.33333334,2.8180354
+1737,nonunion,37.0,41,12.0,not college grad,single,0,nonSMSA,0,15.557693,10.416667,4.7504005
+1738,nonunion,20.0,40,12.0,not college grad,married,0,nonSMSA,0,14.910255,1.75,3.5829282
+1740,nonunion,15.0,44,12.0,not college grad,married,0,nonSMSA,0,13.461538,5.8333335,3.6231885
+1742,,20.0,39,18.0,college grad,single,0,SMSA,0,15.378205,0.9166667,8.361203
+1743,nonunion,55.0,41,12.0,not college grad,married,1,SMSA,0,16.826923,3.75,8.446053
+1746,nonunion,40.0,42,12.0,not college grad,single,0,SMSA,0,18.23077,5.25,17.665049
+1748,union,50.0,43,16.0,college grad,single,0,nonSMSA,0,20.333334,20.333334,8.357487
+1749,nonunion,23.0,36,12.0,not college grad,married,0,SMSA,0,4.480769,2.75,5.2495947
+1750,nonunion,45.0,44,12.0,not college grad,married,0,SMSA,0,4.9358974,1.5,6.8840547
+1752,,20.0,34,14.0,not college grad,married,0,SMSA,0,7.1217947,0.75,4.830918
+1754,nonunion,35.0,42,16.0,college grad,married,1,SMSA,0,12.942307,5.0833335,10.483089
+1755,nonunion,40.0,35,12.0,not college grad,married,0,nonSMSA,0,11.192307,8.833333,5.6360707
+1758,nonunion,40.0,40,12.0,not college grad,married,1,SMSA,1,12.538462,5.8333335,7.3510447
+1759,nonunion,50.0,40,12.0,not college grad,married,0,nonSMSA,0,8.2756405,4.25,5.2737517
+1760,nonunion,40.0,36,16.0,college grad,married,0,nonSMSA,0,11.769231,0.5,8.988295
+1761,union,55.0,36,17.0,college grad,single,0,nonSMSA,0,13.916667,13.916667,4.9033785
+1762,nonunion,35.0,38,12.0,not college grad,single,0,nonSMSA,0,7.884615,2.6666667,3.79227
+1763,nonunion,20.0,39,18.0,college grad,single,0,SMSA,0,16.634615,0.0,4.025765
+1764,union,40.0,38,12.0,not college grad,married,0,nonSMSA,0,13.038462,4.1666665,11.151368
+1765,nonunion,32.0,43,12.0,not college grad,married,0,nonSMSA,0,12.211538,8.75,4.6698866
+1767,nonunion,16.0,36,17.0,college grad,married,0,SMSA,0,6.160257,3.25,3.0193238
+1769,nonunion,40.0,38,14.0,not college grad,single,0,nonSMSA,0,20.833334,20.833334,12.38325
+1770,union,40.0,37,12.0,not college grad,married,0,nonSMSA,0,17.903847,17.75,5.8615127
+1776,,40.0,38,15.0,not college grad,married,0,nonSMSA,0,15.711538,7.1666665,40.198082
+1777,union,40.0,40,11.0,not college grad,married,0,nonSMSA,0,16.583334,16.583334,13.550715
+1778,union,48.0,44,12.0,not college grad,married,0,nonSMSA,0,19.833334,19.833334,10.628017
+1779,nonunion,30.0,38,16.0,college grad,married,0,nonSMSA,0,14.75,14.75,5.6763277
+1780,union,48.0,43,12.0,not college grad,married,0,nonSMSA,0,20.391026,16.5,11.851846
+1784,nonunion,40.0,35,14.0,not college grad,single,0,SMSA,0,14.519232,4.4166665,9.677936
+1785,nonunion,40.0,39,11.0,not college grad,single,0,nonSMSA,0,15.647435,7.6666665,4.227053
+1786,nonunion,40.0,43,12.0,not college grad,married,0,SMSA,0,7.7179484,1.9166666,4.790658
+1787,nonunion,35.0,38,12.0,not college grad,married,0,SMSA,0,7.826923,1.5,4.7262473
+1788,nonunion,20.0,37,12.0,not college grad,married,0,nonSMSA,0,5.3525643,0.75,2.777777
+1790,,15.0,40,12.0,not college grad,married,0,SMSA,0,8.089744,0.5833333,3.5842295
+1791,,40.0,34,12.0,not college grad,single,0,SMSA,0,13.551281,7.1666665,2.090301
+1792,nonunion,26.0,35,12.0,not college grad,single,0,SMSA,0,6.0576925,1.8333334,3.260869
+1796,nonunion,40.0,36,12.0,not college grad,married,0,SMSA,0,8.692307,1.3333334,3.0193238
+1801,nonunion,24.0,39,12.0,not college grad,married,0,nonSMSA,0,17.02564,0.0,7.21417
+1802,nonunion,46.0,36,12.0,not college grad,married,0,nonSMSA,0,18.846153,13.666667,6.481478
+1804,,40.0,41,13.0,not college grad,married,0,nonSMSA,0,10.198719,2.1666667,40.198082
+1805,nonunion,35.0,40,16.0,college grad,married,0,nonSMSA,0,15.993589,0.0,10.7729435
+1807,union,40.0,38,16.0,college grad,married,0,nonSMSA,0,16.576923,3.75,10.257647
+1810,nonunion,24.0,36,15.0,college grad,married,0,nonSMSA,0,15.0256405,15.0,10.958127
+1814,nonunion,40.0,42,13.0,not college grad,married,1,SMSA,0,7.788461,4.8333335,8.28502
+1815,nonunion,45.0,45,12.0,not college grad,single,0,SMSA,1,13.25,2.1666667,6.191625
+1817,union,40.0,36,12.0,not college grad,married,0,SMSA,1,17.75,17.75,7.5281787
+1818,nonunion,40.0,41,12.0,not college grad,single,0,nonSMSA,0,10.134615,6.9166665,5.418679
+1819,union,40.0,43,12.0,not college grad,single,0,SMSA,1,13.884615,13.833333,5.6360707
+1822,nonunion,40.0,45,14.0,not college grad,single,0,SMSA,1,21.083334,21.083334,8.904991
+1823,nonunion,40.0,36,16.0,college grad,married,0,SMSA,0,11.384615,8.833333,9.85507
+1825,nonunion,33.0,44,12.0,not college grad,married,0,SMSA,1,9.076923,0.083333336,3.220612
+1826,nonunion,40.0,39,12.0,not college grad,married,0,SMSA,0,11.532051,4.5833335,5.418679
+1827,union,40.0,38,18.0,college grad,married,0,SMSA,0,10.897436,3.8333333,9.299514
+1828,nonunion,44.0,37,12.0,not college grad,married,0,SMSA,0,15.903846,15.833333,9.613523
+1829,nonunion,8.0,41,12.0,not college grad,married,0,SMSA,0,6.0576925,1.4166666,5.8051524
+1830,union,48.0,39,18.0,college grad,married,0,SMSA,0,16.98077,8.583333,10.644117
+1831,,30.0,41,12.0,not college grad,single,1,nonSMSA,0,6.5769234,1.5833334,1.6806006
+1833,nonunion,48.0,38,13.0,not college grad,single,0,SMSA,0,17.75,6.1666665,10.483089
+1842,nonunion,40.0,44,12.0,not college grad,married,0,SMSA,1,16.326923,8.666667,6.988722
+1843,nonunion,40.0,43,12.0,not college grad,single,0,SMSA,0,18.801283,13.5,5.032206
+1845,nonunion,44.0,40,11.0,not college grad,married,0,SMSA,0,8.512821,1.25,4.227053
+1847,nonunion,40.0,40,11.0,not college grad,single,0,SMSA,0,3.4615383,0.6666667,2.777777
+1853,nonunion,50.0,36,11.0,not college grad,married,1,SMSA,1,8.929487,8.916667,7.737515
+1854,nonunion,30.0,35,14.0,not college grad,married,1,SMSA,0,3.3653846,0.6666667,3.0100322
+1856,union,40.0,35,12.0,not college grad,married,0,SMSA,0,9.679487,4.4166665,11.537839
+1857,nonunion,40.0,44,9.0,not college grad,single,0,SMSA,0,5.8782053,3.0833333,3.0595808
+1858,nonunion,35.0,40,12.0,not college grad,married,0,SMSA,0,14.673077,4.8333335,3.6231885
+1860,nonunion,45.0,35,14.0,not college grad,married,0,SMSA,0,17.557692,1.75,16.529789
+1863,union,30.0,39,12.0,not college grad,married,0,nonSMSA,0,17.083334,17.083334,20.64412
+1864,nonunion,40.0,39,12.0,not college grad,single,0,nonSMSA,0,15.653846,10.416667,6.8035407
+1865,union,50.0,40,17.0,college grad,married,1,SMSA,1,15.602563,0.8333333,6.6908193
+1866,nonunion,32.0,37,15.0,not college grad,married,0,SMSA,1,15.666667,15.666667,13.405793
+1867,nonunion,32.0,35,11.0,not college grad,single,0,nonSMSA,0,16.448717,16.416666,5.016103
+1868,nonunion,5.0,43,6.0,not college grad,single,0,nonSMSA,0,18.961536,3.3333333,2.777777
+1872,nonunion,40.0,40,9.0,not college grad,single,0,nonSMSA,0,4.9038463,0.083333336,3.220612
+1873,nonunion,25.0,43,12.0,not college grad,married,0,nonSMSA,0,18.423077,4.1666665,2.0128825
+1875,nonunion,27.0,41,13.0,not college grad,married,0,nonSMSA,0,8.0,3.1666667,2.294685
+1876,nonunion,40.0,37,15.0,not college grad,married,1,SMSA,0,14.192307,0.5,10.466988
+1878,nonunion,40.0,41,18.0,college grad,married,1,SMSA,0,11.596154,1.6666666,11.223828
+1879,nonunion,12.0,35,16.0,college grad,married,0,SMSA,0,6.724359,0.33333334,2.801002
+1880,nonunion,20.0,37,14.0,not college grad,married,0,SMSA,0,9.961538,3.25,10.2657
+1881,,40.0,37,12.0,not college grad,married,0,SMSA,0,19.775639,7.0833335,5.434783
+1882,nonunion,40.0,40,12.0,not college grad,married,0,SMSA,0,15.814102,2.0833333,9.677936
+1883,nonunion,32.0,42,9.0,not college grad,single,0,SMSA,0,12.134616,7.4166665,3.0434775
+1884,nonunion,38.0,44,16.0,college grad,married,0,SMSA,0,12.980769,4.1666665,5.8695626
+1886,nonunion,30.0,36,12.0,not college grad,single,0,SMSA,0,7.6153846,2.3333333,8.05153
+1890,nonunion,40.0,35,12.0,not college grad,single,0,SMSA,0,15.371796,11.25,11.610305
+1891,union,40.0,40,12.0,not college grad,married,0,SMSA,0,19.0,6.0833335,8.05153
+1892,,15.0,41,12.0,not college grad,married,0,SMSA,0,14.346154,4.6666665,6.6889634
+1894,nonunion,40.0,39,13.0,not college grad,married,0,SMSA,0,16.942308,11.666667,8.429946
+1895,nonunion,48.0,39,12.0,not college grad,single,0,SMSA,0,17.999998,5.4166665,10.998388
+1896,nonunion,40.0,36,13.0,not college grad,married,0,SMSA,0,14.423077,0.083333336,4.5088553
+1899,union,60.0,41,17.0,college grad,married,0,SMSA,0,11.442307,1.8333334,5.161031
+1905,union,50.0,44,18.0,college grad,married,0,nonSMSA,0,14.384615,2.8333333,6.191625
+1910,union,50.0,39,17.0,college grad,married,0,nonSMSA,0,16.01923,15.833333,6.5056314
+1911,nonunion,40.0,38,12.0,not college grad,married,1,nonSMSA,0,10.301281,6.8333335,5.555554
+1915,nonunion,40.0,40,18.0,college grad,married,0,SMSA,0,17.288462,11.833333,11.996774
+1918,nonunion,22.0,44,12.0,not college grad,married,0,SMSA,0,18.846153,18.833334,6.76328
+1921,,40.0,44,12.0,not college grad,single,0,SMSA,0,26.846151,20.5,40.198082
+1925,union,38.0,34,12.0,not college grad,married,0,SMSA,0,13.884616,9.333333,6.5056314
+1926,nonunion,30.0,41,12.0,not college grad,married,1,SMSA,0,10.173077,1.75,5.6360707
+1927,,8.0,38,12.0,not college grad,married,0,SMSA,0,13.108974,1.9166666,13.687601
+1928,union,40.0,45,17.0,college grad,single,0,SMSA,0,18.833334,18.833334,17.02898
+1929,union,55.0,36,16.0,college grad,married,0,SMSA,0,15.865385,14.833333,7.1578097
+1930,nonunion,40.0,41,16.0,college grad,married,0,SMSA,0,12.878205,6.75,10.8373575
+1932,,56.0,45,12.0,not college grad,single,0,SMSA,0,14.673077,3.25,7.178227
+1934,nonunion,30.0,40,13.0,not college grad,married,0,nonSMSA,0,7.9615383,0.16666667,11.669997
+1939,,30.0,39,12.0,not college grad,single,0,SMSA,1,10.929487,7.4166665,3.6231885
+1941,nonunion,40.0,34,12.0,not college grad,married,0,SMSA,1,12.743589,7.4166665,2.7858286
+1944,nonunion,40.0,37,11.0,not college grad,single,0,SMSA,1,10.833333,10.833333,5.53945
+1949,nonunion,15.0,40,12.0,not college grad,single,0,SMSA,1,11.217949,3.3333333,3.864734
+1951,,25.0,42,10.0,not college grad,single,0,SMSA,0,12.0,0.0,3.3602147
+1953,nonunion,7.0,35,12.0,not college grad,single,0,SMSA,1,0.40384614,0.16666667,1.610306
+1957,nonunion,40.0,37,12.0,not college grad,married,0,SMSA,0,8.025641,5.5,3.872784
+1958,union,40.0,35,12.0,not college grad,married,0,SMSA,0,10.538462,4.9166665,12.077295
+1959,nonunion,24.0,41,12.0,not college grad,single,0,SMSA,1,4.801282,2.3333333,3.5426712
+1962,,15.0,45,13.0,not college grad,married,0,SMSA,0,14.429487,14.166667,2.7616735
+1964,,50.0,45,12.0,not college grad,married,0,nonSMSA,0,18.096153,14.083333,5.434783
+1965,,40.0,35,12.0,not college grad,married,0,SMSA,1,18.211538,1.0,40.198082
+1967,union,50.0,40,18.0,college grad,single,1,SMSA,1,15.762821,3.0,11.457324
+1968,union,40.0,35,16.0,college grad,married,1,nonSMSA,0,11.423077,8.833333,9.29146
+1970,nonunion,20.0,44,12.0,not college grad,married,0,nonSMSA,0,9.262821,3.4166667,2.7858286
+1973,,40.0,36,12.0,not college grad,single,0,nonSMSA,0,7.9358974,6.6666665,7.734114
+1974,union,45.0,34,17.0,college grad,married,0,SMSA,0,11.429486,0.75,8.260865
+1982,nonunion,40.0,37,16.0,college grad,single,0,SMSA,1,17.211538,9.333333,12.479871
+1988,,23.0,42,14.0,not college grad,single,0,nonSMSA,0,15.858975,4.4166665,5.6360707
+1989,,20.0,43,12.0,not college grad,married,1,SMSA,0,0.9679487,0.16666667,8.361203
+1990,nonunion,40.0,39,12.0,not college grad,married,0,SMSA,0,15.538462,0.0,5.0241528
+1994,nonunion,25.0,38,12.0,not college grad,married,0,nonSMSA,0,10.461538,3.9166667,3.6231885
+1995,nonunion,40.0,37,11.0,not college grad,married,0,SMSA,1,6.8782053,3.8333333,4.5088553
+1996,nonunion,39.0,45,12.0,not college grad,married,0,SMSA,0,13.339743,2.8333333,7.286631
+1998,nonunion,22.0,37,14.0,not college grad,married,0,SMSA,0,11.615385,6.6666665,4.219
+1999,nonunion,24.0,35,12.0,not college grad,married,0,SMSA,0,14.3589735,13.333333,5.8695626
+2000,nonunion,40.0,40,12.0,not college grad,married,0,SMSA,0,20.673077,5.5,7.2463775
+2001,union,38.0,40,18.0,college grad,single,0,SMSA,0,17.173077,8.75,10.185181
+2005,union,47.0,36,12.0,not college grad,married,0,SMSA,1,11.070513,0.0,5.9983873
+2009,nonunion,50.0,39,12.0,not college grad,married,0,SMSA,0,18.826923,17.0,7.028982
+2012,,40.0,39,16.0,college grad,single,0,SMSA,0,14.942308,10.75,7.734114
+2013,nonunion,45.0,37,13.0,not college grad,single,0,SMSA,0,18.923077,15.25,15.136867
+2015,union,40.0,36,15.0,not college grad,single,0,SMSA,0,12.0,11.416667,7.906601
+2016,nonunion,40.0,36,17.0,college grad,single,0,SMSA,1,14.083333,12.833333,11.996774
+2022,union,40.0,42,12.0,not college grad,married,0,SMSA,0,15.128206,13.0,6.0386477
+2023,,40.0,35,13.0,not college grad,single,0,SMSA,1,14.5,6.75,38.70926
+2024,nonunion,13.0,40,8.0,not college grad,single,0,nonSMSA,0,12.243589,8.833333,3.4219003
+2025,union,50.0,35,16.0,college grad,married,0,SMSA,0,13.173077,2.75,5.571657
+2026,nonunion,20.0,38,12.0,not college grad,married,0,nonSMSA,0,8.461538,0.5833333,4.4283414
+2028,,55.0,37,12.0,not college grad,single,0,SMSA,0,12.365385,0.41666666,3.510896
+2031,nonunion,40.0,40,12.0,not college grad,married,0,SMSA,1,15.038462,8.75,5.032206
+2033,union,45.0,35,18.0,college grad,single,0,nonSMSA,0,12.9743595,8.75,6.779387
+2034,nonunion,50.0,36,12.0,not college grad,married,0,nonSMSA,0,16.961538,3.9166667,10.8373575
+2036,nonunion,37.0,36,12.0,not college grad,single,0,nonSMSA,0,8.339744,1.9166666,3.260869
+2041,union,2.0,35,12.0,not college grad,married,1,SMSA,0,5.9615383,1.4166666,5.917873
+2042,nonunion,5.0,42,12.0,not college grad,single,0,nonSMSA,0,6.525641,4.8333335,2.8180354
+2045,union,36.0,43,12.0,not college grad,single,0,SMSA,1,18.211538,16.833334,6.70692
+2046,union,40.0,38,12.0,not college grad,married,0,SMSA,0,18.839745,18.833334,7.922703
+2047,nonunion,36.0,35,16.0,college grad,single,0,SMSA,1,13.916667,13.916667,11.183575
+2048,nonunion,45.0,40,14.0,not college grad,married,0,SMSA,0,11.217948,5.75,12.045089
+2049,,52.0,37,13.0,not college grad,single,0,SMSA,0,16.923077,4.75,30.921606
+2051,nonunion,20.0,44,17.0,college grad,married,0,nonSMSA,0,16.22436,8.75,12.056854
+2055,union,40.0,46,16.0,college grad,single,0,nonSMSA,0,20.403847,20.333334,13.550715
+2056,nonunion,40.0,38,12.0,not college grad,married,0,SMSA,0,16.00641,3.8333333,8.067631
+2057,nonunion,50.0,41,9.0,not college grad,single,0,nonSMSA,0,15.230769,7.6666665,6.32045
+2058,,40.0,39,16.0,college grad,married,0,nonSMSA,0,13.673077,11.0,8.193976
+2059,nonunion,20.0,37,16.0,college grad,married,0,SMSA,1,9.576922,3.8333333,5.6360707
+2062,nonunion,7.0,37,12.0,not college grad,married,0,nonSMSA,0,1.6153847,1.3333334,4.025765
+2065,nonunion,40.0,38,12.0,not college grad,married,0,nonSMSA,0,1.5769231,0.083333336,3.0518394
+2066,union,40.0,36,12.0,not college grad,single,0,nonSMSA,0,11.384615,0.6666667,2.8582926
+2068,union,46.0,35,12.0,not college grad,married,0,nonSMSA,0,14.76282,3.0,4.63768
+2073,nonunion,40.0,35,8.0,not college grad,married,0,SMSA,0,13.948719,3.0,3.341383
+2074,union,20.0,35,12.0,not college grad,married,0,SMSA,1,10.807693,2.75,4.025765
+2077,,54.0,35,10.0,not college grad,single,0,SMSA,1,11.538462,3.0833333,4.8458266
+2079,nonunion,38.0,43,12.0,not college grad,married,0,SMSA,0,21.128206,2.4166667,5.3784194
+2085,nonunion,40.0,41,14.0,not college grad,married,0,SMSA,0,17.403847,14.666667,9.29146
+2086,,45.0,44,10.0,not college grad,married,1,nonSMSA,0,9.102564,4.0,4.6451116
+2087,nonunion,20.0,44,16.0,college grad,married,0,nonSMSA,0,18.108973,10.083333,5.8051524
+2088,union,40.0,37,18.0,college grad,married,0,SMSA,1,10.519231,0.75,7.8985486
+2089,nonunion,40.0,37,16.0,college grad,married,0,nonSMSA,0,16.096153,5.4166665,6.972622
+2092,nonunion,3.0,36,16.0,college grad,married,0,nonSMSA,0,13.134616,5.6666665,3.6231885
+2095,union,20.0,44,12.0,not college grad,married,0,SMSA,0,3.3205128,0.41666666,3.6371226
+2096,nonunion,38.0,43,12.0,not college grad,married,0,SMSA,1,5.673077,2.0833333,4.2351036
+2099,nonunion,45.0,45,11.0,not college grad,single,1,SMSA,1,1.6602564,0.8333333,3.220612
+2104,nonunion,10.0,44,12.0,not college grad,married,0,SMSA,0,3.5641026,1.4166666,3.4219003
+2105,nonunion,40.0,42,11.0,not college grad,married,0,SMSA,0,14.403846,3.4166667,5.8051524
+2106,nonunion,50.0,35,16.0,college grad,married,0,nonSMSA,0,17.294872,0.0,17.02898
+2109,nonunion,33.0,37,12.0,not college grad,single,0,SMSA,1,5.288461,0.41666666,3.2930727
+2111,,30.0,35,10.0,not college grad,married,1,SMSA,1,8.461538,3.0833333,3.0657744
+2112,union,40.0,39,16.0,college grad,married,1,SMSA,0,15.75,13.833333,9.871171
+2113,nonunion,36.0,38,13.0,not college grad,single,0,SMSA,0,17.5,17.5,9.4605465
+2119,union,40.0,37,12.0,not college grad,married,0,SMSA,0,18.083334,18.083334,7.9468555
+2121,nonunion,48.0,35,15.0,not college grad,married,0,SMSA,0,13.673077,3.5833333,11.288241
+2125,union,33.0,38,17.0,college grad,married,0,nonSMSA,0,14.935898,3.3333333,13.14009
+2127,nonunion,32.0,37,13.0,not college grad,married,0,nonSMSA,0,11.756411,2.3333333,3.6473422
+2129,union,48.0,39,12.0,not college grad,single,0,SMSA,0,15.75,9.0,10.4025755
+2132,union,35.0,39,17.0,college grad,married,0,nonSMSA,0,16.75,16.75,12.648954
+2136,nonunion,20.0,36,13.0,not college grad,married,0,SMSA,0,17.442308,6.3333335,4.830918
+2139,union,40.0,35,10.0,not college grad,single,0,nonSMSA,0,2.7884617,0.9166667,4.58937
+2140,union,48.0,41,12.0,not college grad,single,0,nonSMSA,0,16.076923,0.0,8.067631
+2141,,40.0,41,13.0,not college grad,married,0,SMSA,0,15.711537,1.4166666,1.5719831
+2142,nonunion,40.0,35,12.0,not college grad,married,0,SMSA,0,6.769231,5.9166665,7.1175494
+2143,union,40.0,40,12.0,not college grad,married,1,SMSA,0,6.6602564,0.33333334,4.4766483
+2146,nonunion,24.0,41,12.0,not college grad,single,0,nonSMSA,0,18.442308,12.166667,4.4283414
+2147,nonunion,25.0,44,8.0,not college grad,married,0,SMSA,1,8.25,6.3333335,11.159413
+2148,nonunion,40.0,42,12.0,not college grad,married,0,nonSMSA,0,18.371794,2.3333333,5.032206
+2149,nonunion,60.0,38,18.0,college grad,single,0,SMSA,0,15.038462,6.75,2.479871
+2151,nonunion,40.0,44,16.0,college grad,married,0,SMSA,0,5.5,1.75,5.611914
+2152,union,40.0,37,11.0,not college grad,married,0,nonSMSA,0,8.282051,7.3333335,3.7037024
+2154,nonunion,40.0,35,12.0,not college grad,single,1,nonSMSA,0,5.051282,2.1666667,2.0128825
+2157,nonunion,40.0,40,13.0,not college grad,married,0,nonSMSA,0,8.326923,2.6666667,6.9243145
+2163,nonunion,40.0,42,12.0,not college grad,single,0,nonSMSA,0,18.01923,14.916667,7.745568
+2164,nonunion,15.0,35,13.0,not college grad,married,0,nonSMSA,0,12.788462,9.0,7.4396124
+2165,nonunion,40.0,36,14.0,not college grad,married,0,SMSA,0,14.076923,1.75,5.4347825
+2168,union,33.0,36,16.0,college grad,married,0,SMSA,0,5.0576925,1.1666666,4.6296296
+2170,nonunion,32.0,35,12.0,not college grad,married,0,nonSMSA,0,12.788462,6.4166665,5.185184
+2171,,40.0,37,15.0,not college grad,married,1,SMSA,0,16.22436,0.75,10.869566
+2172,,40.0,34,12.0,not college grad,married,0,SMSA,0,15.711538,2.9166667,38.70926
+2173,nonunion,40.0,39,13.0,not college grad,married,0,nonSMSA,0,16.391026,6.3333335,7.906601
+2175,nonunion,40.0,38,11.0,not college grad,single,0,SMSA,0,14.038462,1.8333334,5.8615127
+2178,nonunion,40.0,36,12.0,not college grad,single,0,nonSMSA,0,7.5,1.8333334,5.032206
+2179,nonunion,43.0,43,14.0,not college grad,married,0,nonSMSA,0,10.166667,10.166667,5.6199675
+2180,nonunion,40.0,38,12.0,not college grad,married,0,SMSA,0,16.685896,2.3333333,5.032206
+2181,nonunion,40.0,36,12.0,not college grad,married,0,SMSA,0,15.25,3.6666667,9.057972
+2183,nonunion,30.0,39,12.0,not college grad,married,0,nonSMSA,0,3.5641026,0.5833333,4.1706896
+2186,nonunion,40.0,38,12.0,not college grad,married,0,SMSA,1,18.48077,9.916667,8.687595
+2187,,29.0,39,12.0,not college grad,married,0,nonSMSA,0,1.5769231,0.25,2.801002
+2188,nonunion,40.0,43,13.0,not college grad,married,0,nonSMSA,0,18.602562,0.0,17.77777
+2189,,4.0,39,12.0,not college grad,married,0,SMSA,0,13.461538,4.75,6.6387954
+2192,nonunion,38.0,36,13.0,not college grad,married,0,SMSA,0,12.134616,0.0,4.830918
+2193,nonunion,50.0,42,12.0,not college grad,single,0,SMSA,0,13.807693,6.0833335,6.8438005
+2196,nonunion,45.0,37,12.0,not college grad,single,0,nonSMSA,0,12.243589,3.5,6.481478
+2197,union,40.0,37,12.0,not college grad,married,0,nonSMSA,0,21.051281,21.0,6.247986
+2202,nonunion,40.0,35,12.0,not college grad,married,0,SMSA,1,13.615385,7.0,6.191625
+2204,nonunion,40.0,37,12.0,not college grad,married,0,SMSA,0,18.75,18.75,8.615135
+2206,nonunion,38.0,35,12.0,not college grad,married,0,SMSA,1,11.807693,0.083333336,8.34138
+2207,nonunion,40.0,38,12.0,not college grad,married,0,nonSMSA,0,16.923077,9.833333,5.5072436
+2209,nonunion,35.0,41,18.0,college grad,single,1,SMSA,0,9.980769,3.8333333,6.634459
+2211,union,39.0,38,16.0,college grad,married,0,SMSA,1,8.480769,4.75,5.152977
+2212,nonunion,25.0,38,12.0,not college grad,married,0,nonSMSA,0,7.294872,3.25,4.58937
+2218,nonunion,40.0,39,12.0,not college grad,single,0,nonSMSA,0,18.923077,18.916666,7.914649
+2221,nonunion,66.0,43,8.0,not college grad,single,1,SMSA,0,16.089745,0.25,3.3574865
+2222,nonunion,30.0,44,12.0,not college grad,married,0,nonSMSA,0,8.570513,1.8333334,3.341383
+2223,nonunion,40.0,40,12.0,not college grad,single,0,SMSA,0,13.057693,7.75,5.8051524
+2224,nonunion,40.0,36,15.0,not college grad,married,0,SMSA,0,16.846153,10.916667,9.259259
+2226,nonunion,50.0,36,12.0,not college grad,married,0,SMSA,0,13.910257,4.0,4.830918
+2227,union,40.0,41,12.0,not college grad,married,0,SMSA,0,22.48077,22.333334,9.251205
+2228,nonunion,40.0,38,14.0,not college grad,married,0,SMSA,0,16.217949,16.166666,5.032206
+2229,nonunion,45.0,41,16.0,college grad,single,0,SMSA,0,13.955128,1.4166666,6.610305
+2230,,40.0,42,12.0,not college grad,married,0,SMSA,1,16.429487,3.9166667,5.828724
+2231,nonunion,40.0,36,12.0,not college grad,married,0,SMSA,0,9.269231,7.5,8.904991
+2232,nonunion,40.0,42,14.0,not college grad,single,0,SMSA,1,20.333334,20.333334,7.914649
+2235,union,45.0,35,17.0,college grad,single,0,SMSA,1,6.128205,2.8333333,7.5684333
+2237,nonunion,40.0,35,12.0,not college grad,married,0,SMSA,0,16.044872,15.916667,15.297906
+2238,,35.0,43,17.0,college grad,married,1,SMSA,0,8.589744,0.6666667,4.180602
+2241,union,38.0,36,13.0,not college grad,single,0,SMSA,0,17.685896,15.5,7.3429914
+2242,,35.0,35,12.0,not college grad,married,0,SMSA,0,12.365385,0.41666666,3.3102753
+2244,,40.0,44,11.0,not college grad,married,0,nonSMSA,0,11.596154,2.5,2.962962
+2249,,45.0,40,16.0,college grad,married,0,SMSA,0,14.429487,2.4166667,35.731617
+2251,,75.0,40,16.0,college grad,single,0,SMSA,1,16.692308,10.583333,12.617055
+2252,,16.0,38,16.0,college grad,married,0,nonSMSA,0,16.166666,1.4166666,9.949827
+2254,,40.0,36,13.0,not college grad,single,0,nonSMSA,0,16.76923,2.1666667,4.648688
+2255,,30.0,36,12.0,not college grad,married,0,nonSMSA,0,7.8269234,0.5833333,4.180602
+2256,,70.0,35,18.0,college grad,married,1,SMSA,1,13.153847,1.75,11.485168
+2257,nonunion,50.0,40,13.0,not college grad,married,0,nonSMSA,0,6.6538463,3.5,9.138485
+2260,,40.0,37,10.0,not college grad,married,0,nonSMSA,0,2.5384617,1.9166666,2.801002
+2262,union,40.0,41,12.0,not college grad,married,0,nonSMSA,0,13.942308,5.1666665,5.2737517
+2265,nonunion,21.0,44,13.0,not college grad,married,1,nonSMSA,0,13.25,1.75,3.1803534
+2266,nonunion,40.0,36,18.0,college grad,single,0,SMSA,1,9.288462,0.083333336,4.307567
+2267,nonunion,55.0,35,16.0,college grad,married,0,SMSA,1,14.743589,1.75,25.338152
+2271,,24.0,36,12.0,not college grad,married,0,nonSMSA,0,14.897436,3.5,4.096988
+2272,nonunion,15.0,35,12.0,not college grad,married,0,nonSMSA,0,5.2115383,1.6666666,5.5797076
+2275,nonunion,40.0,37,12.0,not college grad,married,0,SMSA,0,13.269231,7.5,10.217388
+2278,nonunion,45.0,36,12.0,not college grad,single,0,nonSMSA,0,12.115384,8.166667,5.595811
+2279,nonunion,40.0,38,12.0,not college grad,married,0,SMSA,0,19.391026,10.333333,10.780999
+2280,nonunion,40.0,39,12.0,not college grad,married,0,nonSMSA,0,19.21795,14.5,7.616746
+2284,,40.0,39,10.0,not college grad,married,0,nonSMSA,0,9.480769,0.33333334,3.3444817
+2285,,15.0,36,16.0,college grad,married,0,SMSA,0,8.923077,0.33333334,1.5017979
+2286,nonunion,20.0,35,13.0,not college grad,married,0,SMSA,0,4.429487,3.1666667,5.418679
+2291,nonunion,39.0,42,12.0,not college grad,married,0,nonSMSA,0,14.211538,4.0833335,3.7681134
+2292,union,15.0,36,12.0,not college grad,married,0,SMSA,1,14.141027,4.75,3.7842166
+2294,nonunion,40.0,44,17.0,college grad,single,1,SMSA,1,18.326921,17.916666,8.719802
+2299,nonunion,2.0,43,12.0,not college grad,married,0,SMSA,1,16.038462,5.0833335,12.882448
+2302,,30.0,38,12.0,not college grad,single,0,SMSA,1,4.532051,3.3333333,4.6618333
+2303,,40.0,37,7.0,not college grad,single,0,SMSA,1,8.467949,0.25,3.0193238
+2319,nonunion,40.0,35,14.0,not college grad,single,1,nonSMSA,0,11.929487,1.75,6.441224
+2320,nonunion,30.0,41,16.0,college grad,married,1,SMSA,0,6.769231,3.4166667,3.8244765
+2321,nonunion,40.0,36,14.0,not college grad,married,1,SMSA,0,4.480769,0.75,5.829306
+2323,nonunion,40.0,41,15.0,not college grad,single,0,SMSA,0,17.762821,10.666667,16.25603
+2327,,40.0,35,12.0,not college grad,single,0,SMSA,1,14.858975,6.25,5.0167227
+2328,nonunion,48.0,40,11.0,not college grad,single,0,SMSA,0,13.884615,8.5,5.2495947
+2333,,40.0,43,6.0,not college grad,single,0,SMSA,1,4.3333335,4.3333335,4.025765
+2334,nonunion,40.0,38,13.0,not college grad,single,0,SMSA,1,18.493591,3.4166667,8.357487
+2335,nonunion,44.0,36,12.0,not college grad,single,0,SMSA,1,10.551283,2.0,5.032206
+2336,nonunion,40.0,45,12.0,not college grad,single,0,SMSA,1,15.807693,8.666667,6.280193
+2338,nonunion,40.0,43,12.0,not college grad,married,1,SMSA,0,10.557693,3.1666667,5.2334948
+2340,,20.0,41,12.0,not college grad,single,1,SMSA,1,9.807693,0.25,6.2709026
+2341,union,40.0,34,16.0,college grad,married,0,SMSA,1,14.262821,4.5,10.0483055
+2342,union,40.0,43,9.0,not college grad,married,0,SMSA,0,13.557693,4.3333335,7.1658564
+2343,nonunion,45.0,45,12.0,not college grad,single,0,SMSA,0,6.230769,1.0,3.5748785
+2344,nonunion,45.0,35,14.0,not college grad,married,1,SMSA,1,12.096154,0.9166667,6.1996756
+2348,union,37.0,39,18.0,college grad,married,0,SMSA,1,15.673077,6.9166665,14.645722
+2353,,10.0,36,16.0,college grad,married,0,SMSA,0,8.961538,1.6666666,4.634385
+2356,nonunion,40.0,41,16.0,college grad,married,0,SMSA,0,6.4423075,0.9166667,9.677936
+2360,,40.0,36,12.0,not college grad,single,1,nonSMSA,0,8.307693,0.9166667,5.0167227
+2363,,40.0,35,14.0,not college grad,married,0,SMSA,0,15.826923,10.0,40.198082
+2365,,5.0,40,16.0,college grad,married,0,SMSA,0,14.038462,1.6666666,4.648688
+2367,nonunion,40.0,38,16.0,college grad,single,1,SMSA,0,13.185899,1.0,15.442828
+2368,,45.0,37,13.0,not college grad,married,1,SMSA,1,8.942307,0.9166667,8.593085
+2370,nonunion,35.0,39,11.0,not college grad,married,0,SMSA,0,9.692307,0.0,7.962963
+2371,,45.0,41,16.0,college grad,married,0,SMSA,0,1.974359,0.33333334,6.2709026
+2372,nonunion,40.0,42,14.0,not college grad,married,1,SMSA,0,16.76282,7.25,9.677936
+2373,nonunion,40.0,35,12.0,not college grad,married,0,SMSA,0,14.269231,0.0,5.8373594
+2375,nonunion,38.0,39,11.0,not college grad,married,1,SMSA,0,19.192308,10.0,6.352657
+2377,,40.0,37,12.0,not college grad,single,0,SMSA,1,9.980769,1.9166666,5.2257524
+2379,,40.0,39,12.0,not college grad,single,0,SMSA,0,16.615385,3.1666667,3.0193238
+2381,nonunion,35.0,43,10.0,not college grad,married,0,SMSA,0,11.480769,7.75,3.5535119
+2384,nonunion,38.0,39,14.0,college grad,married,0,SMSA,0,13.365384,8.666667,7.8260818
+2385,,50.0,41,14.0,not college grad,single,0,SMSA,0,7.423077,1.4166666,2.8961813
+2387,nonunion,45.0,40,18.0,college grad,married,0,SMSA,0,13.852564,13.833333,9.637676
+2388,nonunion,40.0,36,13.0,not college grad,married,0,SMSA,1,12.557693,4.25,5.032206
+2390,nonunion,40.0,35,13.0,not college grad,single,0,SMSA,0,14.730769,14.25,7.0370355
+2391,nonunion,36.0,44,10.0,not college grad,married,1,SMSA,1,16.173077,3.1666667,2.769725
+2392,nonunion,40.0,40,17.0,college grad,married,1,SMSA,1,17.833334,17.833334,10.064413
+2393,union,37.0,37,13.0,not college grad,married,0,SMSA,0,17.429487,8.916667,11.714972
+2394,nonunion,40.0,39,8.0,not college grad,single,1,SMSA,1,10.717949,0.25,3.5426712
+2396,union,40.0,40,12.0,not college grad,single,0,SMSA,0,16.615385,2.6666667,8.856684
+2400,nonunion,38.0,36,13.0,not college grad,married,1,SMSA,1,14.198719,3.8333333,5.708532
+2411,union,40.0,45,6.0,not college grad,single,1,SMSA,1,14.211538,8.416667,4.6296296
+2412,nonunion,40.0,41,10.0,not college grad,married,1,SMSA,1,17.596153,0.5833333,4.227053
+2415,nonunion,40.0,35,12.0,not college grad,married,1,SMSA,1,15.846154,2.1666667,7.906601
+2418,nonunion,40.0,36,12.0,not college grad,single,1,SMSA,1,14.891026,7.1666665,10.8373575
+2419,nonunion,40.0,40,12.0,not college grad,married,1,SMSA,0,16.769232,15.583333,14.597416
+2422,nonunion,35.0,39,12.0,not college grad,single,1,SMSA,1,13.371794,7.5,4.8872786
+2427,union,40.0,38,17.0,college grad,married,1,SMSA,0,15.423077,9.916667,9.7584505
+2428,union,40.0,37,16.0,college grad,single,1,SMSA,1,16.634615,1.3333334,5.225441
+2430,nonunion,20.0,41,15.0,not college grad,married,0,SMSA,1,7.4038463,0.25,8.05153
+2431,union,40.0,35,18.0,college grad,married,0,SMSA,0,11.326923,2.5,11.610305
+2432,nonunion,50.0,38,17.0,college grad,married,1,SMSA,1,11.903846,1.3333334,15.48309
+2434,,40.0,41,10.0,not college grad,single,1,SMSA,1,14.01923,0.5,3.083194
+2439,nonunion,40.0,35,11.0,not college grad,single,1,SMSA,1,16.0,16.0,5.032206
+2442,nonunion,32.0,40,12.0,not college grad,married,1,SMSA,0,10.596154,3.3333333,8.856684
+2443,nonunion,35.0,40,12.0,not college grad,married,1,SMSA,0,6.1923075,1.8333334,5.4750395
+2445,nonunion,40.0,38,12.0,not college grad,single,1,SMSA,0,4.8589745,1.6666666,4.830918
+2446,,15.0,35,12.0,not college grad,married,1,SMSA,0,2.5769231,0.16666667,3.4460845
+2448,nonunion,40.0,37,11.0,not college grad,married,1,SMSA,1,8.788462,1.3333334,5.032206
+2449,union,35.0,36,12.0,not college grad,married,0,SMSA,1,1.9230769,1.8333334,4.5088553
+2450,nonunion,47.0,39,13.0,not college grad,married,0,nonSMSA,0,9.923077,3.6666667,5.5636067
+2453,nonunion,40.0,41,14.0,not college grad,single,1,SMSA,0,11.884616,1.8333334,7.801928
+2454,union,40.0,38,12.0,not college grad,married,1,SMSA,1,16.397436,16.333334,9.259259
+2457,nonunion,3.0,36,12.0,not college grad,married,1,SMSA,1,3.5,3.5,2.0128825
+2458,nonunion,30.0,40,16.0,college grad,married,1,SMSA,1,4.8076925,4.25,6.191625
+2461,nonunion,18.0,37,4.0,not college grad,single,1,SMSA,1,15.410255,12.333333,3.260869
+2466,nonunion,20.0,37,16.0,college grad,married,1,SMSA,1,9.596153,3.1666667,6.191625
+2469,,40.0,37,12.0,not college grad,married,0,SMSA,0,14.711538,13.833333,10.451505
+2476,union,38.0,37,12.0,not college grad,married,1,SMSA,1,15.339744,3.25,7.745568
+2479,union,40.0,37,15.0,not college grad,married,1,SMSA,0,18.685896,11.0,15.09662
+2480,nonunion,45.0,45,12.0,not college grad,married,1,SMSA,1,18.993591,3.4166667,10.32206
+2484,nonunion,20.0,43,12.0,not college grad,single,1,SMSA,1,5.019231,0.6666667,5.022486
+2486,union,40.0,43,9.0,not college grad,married,1,SMSA,1,18.641027,9.916667,11.070854
+2487,nonunion,40.0,36,12.0,not college grad,single,1,SMSA,0,14.076922,0.16666667,7.1070237
+2491,union,40.0,36,12.0,not college grad,single,1,SMSA,0,17.717949,3.4166667,7.318838
+2494,,40.0,36,12.0,not college grad,single,1,SMSA,1,1.9038461,0.9166667,3.5535119
+2503,nonunion,35.0,45,12.0,not college grad,married,1,SMSA,0,18.384615,0.0,6.8438005
+2504,nonunion,45.0,37,13.0,not college grad,single,1,SMSA,1,17.051283,7.25,8.260865
+2506,nonunion,40.0,41,12.0,not college grad,married,0,SMSA,0,16.653847,0.5833333,11.618352
+2510,union,40.0,37,11.0,not college grad,married,1,nonSMSA,0,7.269231,5.75,4.8499985
+2514,nonunion,40.0,40,12.0,not college grad,married,1,SMSA,1,13.8076935,10.583333,8.132044
+2517,nonunion,40.0,45,14.0,not college grad,single,1,SMSA,1,17.22436,3.5,6.441224
+2518,nonunion,15.0,36,12.0,not college grad,married,1,SMSA,0,10.493589,3.75,7.4396124
+2520,,20.0,45,14.0,not college grad,single,1,SMSA,1,11.410257,0.41666666,3.7625415
+2522,nonunion,35.0,39,16.0,college grad,single,1,SMSA,1,13.057693,1.5,2.8985493
+2523,nonunion,40.0,35,16.0,college grad,married,1,SMSA,0,15.064103,2.4166667,6.0386477
+2526,union,40.0,38,18.0,college grad,single,1,SMSA,1,15.833333,15.833333,10.22544
+2528,nonunion,40.0,41,15.0,not college grad,single,1,SMSA,1,12.423077,2.0,4.2892957
+2529,,60.0,38,11.0,not college grad,married,1,SMSA,0,12.846154,1.4166666,4.180602
+2532,,35.0,35,8.0,not college grad,married,1,SMSA,0,11.884615,0.5833333,6.229095
+2535,,50.0,35,12.0,not college grad,single,1,SMSA,1,10.480769,3.3333333,3.7189493
+2537,,40.0,36,12.0,not college grad,married,1,SMSA,1,16.75641,2.4166667,4.8274837
+2538,nonunion,60.0,37,18.0,college grad,married,0,SMSA,0,14.519231,2.9166667,8.365539
+2541,nonunion,45.0,42,18.0,college grad,single,0,SMSA,0,13.5,4.5,15.48309
+2544,,40.0,36,15.0,not college grad,married,1,SMSA,1,15.307693,5.8333335,4.8274837
+2545,,50.0,35,13.0,not college grad,married,0,SMSA,0,11.0,2.0833333,32.15846
+2546,nonunion,40.0,38,16.0,college grad,married,1,nonSMSA,0,18.897436,13.5,8.05153
+2548,nonunion,40.0,35,16.0,college grad,married,1,SMSA,1,15.006411,7.25,17.41545
+2552,union,40.0,38,17.0,college grad,married,1,SMSA,1,16.365385,8.333333,10.450882
+2554,,40.0,39,16.0,college grad,married,0,SMSA,0,15.211538,10.083333,40.198082
+2555,nonunion,35.0,40,16.0,college grad,single,0,SMSA,1,15.647436,13.583333,10.064413
+2556,nonunion,40.0,37,12.0,not college grad,married,1,SMSA,0,11.75,4.75,4.2592573
+2557,nonunion,40.0,40,12.0,not college grad,married,1,SMSA,0,5.826923,3.8333333,5.5797076
+2559,union,40.0,41,13.0,not college grad,married,1,SMSA,1,17.737179,17.666666,9.645729
+2560,union,40.0,39,12.0,not college grad,married,1,SMSA,1,16.173077,1.6666666,5.8051524
+2564,,36.0,45,18.0,college grad,single,1,SMSA,0,18.891024,0.41666666,12.541805
+2569,union,35.0,43,16.0,college grad,single,1,SMSA,1,7.339744,3.4166667,8.075683
+2571,nonunion,40.0,40,18.0,college grad,single,1,SMSA,1,10.826923,4.9166665,24.001608
+2575,union,40.0,40,7.0,not college grad,single,1,SMSA,1,3.3333333,3.3333333,6.078904
+2579,nonunion,40.0,37,18.0,college grad,single,1,SMSA,1,13.173077,8.583333,19.742342
+2580,nonunion,35.0,45,11.0,not college grad,married,1,SMSA,0,4.5,0.33333334,5.7487917
+2582,nonunion,40.0,40,12.0,not college grad,married,1,SMSA,0,7.8653846,1.5,4.830918
+2583,,,40,12.0,not college grad,single,1,SMSA,1,7.9038463,0.6666667,2.875546
+2586,nonunion,35.0,40,17.0,college grad,single,1,SMSA,1,18.153847,3.4166667,13.268916
+2590,nonunion,40.0,45,10.0,not college grad,single,1,SMSA,1,4.2115383,1.9166666,3.3011258
+2593,nonunion,40.0,41,12.0,not college grad,married,0,nonSMSA,0,19.750002,0.41666666,4.025765
+2594,nonunion,20.0,42,10.0,not college grad,married,1,SMSA,0,12.173077,1.5,5.2334948
+2596,union,40.0,42,12.0,not college grad,married,1,SMSA,1,20.403847,20.333334,6.4009633
+2597,nonunion,32.0,37,12.0,not college grad,married,1,SMSA,1,14.884616,7.1666665,6.441224
+2598,nonunion,40.0,35,14.0,not college grad,single,1,SMSA,1,14.326923,7.75,7.5523334
+2605,,40.0,44,14.0,not college grad,single,1,nonSMSA,0,11.782052,0.25,4.180602
+2606,union,25.0,43,12.0,not college grad,married,0,SMSA,1,9.897435,,3.9613514
+2607,nonunion,40.0,44,12.0,not college grad,married,1,nonSMSA,0,15.814102,3.3333333,6.964568
+2608,nonunion,20.0,43,16.0,college grad,married,1,SMSA,0,18.057692,13.166667,10.451505
+2610,nonunion,20.0,45,13.0,not college grad,married,1,SMSA,0,6.698718,0.0,5.917873
+2611,union,50.0,39,18.0,college grad,single,1,SMSA,1,16.942308,16.916666,11.151368
+2612,,53.0,35,18.0,college grad,married,1,SMSA,1,10.615385,1.5,30.338171
+2613,,38.0,39,15.0,college grad,married,1,SMSA,0,10.692307,1.5,40.74659
+2615,,40.0,35,14.0,not college grad,single,0,SMSA,1,15.01282,10.0,14.514425
+2617,union,40.0,44,16.0,college grad,married,1,SMSA,0,7.6666665,3.25,2.5201283
+2619,nonunion,12.0,41,10.0,not college grad,single,0,SMSA,1,8.615385,2.9166667,2.6811595
+2623,union,40.0,41,9.0,not college grad,single,1,SMSA,1,11.538462,3.25,3.3011258
+2624,union,40.0,36,8.0,not college grad,single,1,SMSA,1,7.50641,6.1666665,3.8083735
+2625,nonunion,20.0,44,12.0,not college grad,married,1,SMSA,0,11.448718,2.4166667,4.025765
+2627,nonunion,40.0,44,12.0,not college grad,single,1,SMSA,1,7.230769,2.4166667,6.191625
+2628,nonunion,40.0,39,13.0,not college grad,married,1,SMSA,0,15.807693,9.25,7.745568
+2636,nonunion,50.0,43,12.0,not college grad,married,1,SMSA,0,14.538462,13.5,8.05153
+2640,nonunion,48.0,41,13.0,college grad,single,1,SMSA,0,15.153847,6.0,9.355874
+2642,nonunion,40.0,37,14.0,not college grad,married,1,SMSA,0,12.397437,11.333333,12.777775
+2644,nonunion,40.0,38,16.0,college grad,single,1,SMSA,1,16.0,16.0,8.904991
+2647,union,60.0,40,11.0,not college grad,single,1,SMSA,1,12.25,12.25,5.9822836
+2654,union,38.0,35,12.0,not college grad,single,1,SMSA,0,13.115385,2.6666667,10.59581
+2655,,24.0,36,12.0,not college grad,single,1,SMSA,0,4.9423075,0.33333334,8.570235
+2658,,6.0,36,12.0,not college grad,single,1,SMSA,1,0.9166667,0.9166667,3.0017905
+2659,union,40.0,35,14.0,not college grad,single,1,SMSA,1,9.923077,9.916667,11.610305
+2661,union,40.0,35,12.0,not college grad,married,0,SMSA,0,5.2884617,2.0,11.980676
+2662,nonunion,40.0,37,11.0,not college grad,single,1,SMSA,1,14.865385,14.833333,5.354265
+2663,nonunion,4.0,42,12.0,not college grad,married,1,SMSA,0,8.038462,1.4166666,4.025765
+2664,nonunion,45.0,38,18.0,college grad,single,0,SMSA,1,13.75,6.4166665,15.48309
+2666,union,60.0,37,18.0,college grad,married,1,nonSMSA,0,6.7115383,3.0,6.4492707
+2669,nonunion,60.0,40,17.0,college grad,single,1,SMSA,0,18.384617,7.8333335,16.771326
+2670,union,16.0,36,16.0,college grad,married,0,nonSMSA,0,13.326923,2.6666667,10.064413
+2671,union,46.0,39,18.0,college grad,single,1,SMSA,0,16.192308,9.666667,12.117548
+2674,nonunion,45.0,37,14.0,college grad,single,1,SMSA,0,17.788462,11.833333,6.8840547
+2675,nonunion,40.0,44,16.0,college grad,single,1,SMSA,0,18.134615,8.166667,16.25603
+2677,,15.0,35,12.0,not college grad,single,1,SMSA,1,7.1410255,0.41666666,2.7870672
+2678,nonunion,30.0,41,9.0,not college grad,married,1,SMSA,0,4.673077,3.1666667,4.4283414
+2679,nonunion,38.0,44,12.0,not college grad,married,1,SMSA,0,16.615385,14.583333,10.185181
+2680,nonunion,40.0,39,12.0,not college grad,married,1,SMSA,0,16.153847,15.5,12.2785845
+2681,,50.0,36,15.0,college grad,single,1,SMSA,1,4.74359,0.75,4.389632
+2685,,60.0,36,15.0,not college grad,married,1,SMSA,1,16.121794,7.1666665,8.575592
+2701,,40.0,45,12.0,not college grad,married,0,SMSA,0,17.576923,1.4166666,4.025765
+2704,nonunion,40.0,41,18.0,college grad,married,1,SMSA,0,14.730769,2.0833333,9.677936
+2707,nonunion,40.0,35,12.0,not college grad,married,1,SMSA,1,14.698717,14.666667,7.665055
+2708,union,40.0,40,12.0,not college grad,single,1,SMSA,1,16.634615,11.75,6.610305
+2709,nonunion,40.0,37,13.0,not college grad,married,1,SMSA,1,16.378204,7.5,13.550715
+2710,nonunion,40.0,35,12.0,not college grad,married,1,SMSA,1,11.288462,5.5833335,5.297905
+2711,nonunion,35.0,38,12.0,not college grad,married,1,SMSA,1,13.294871,12.25,6.8760014
+2712,nonunion,32.0,37,12.0,not college grad,single,1,SMSA,1,8.442307,0.75,4.025765
+2713,nonunion,25.0,34,6.0,not college grad,married,1,SMSA,1,5.788461,3.25,3.1078897
+2715,nonunion,20.0,41,14.0,not college grad,married,1,SMSA,1,16.173077,3.0,5.2334948
+2716,union,42.0,39,17.0,college grad,single,1,SMSA,1,18.891026,18.833334,14.009657
+2717,nonunion,40.0,37,12.0,not college grad,married,1,SMSA,1,13.480769,11.0,5.990337
+2719,nonunion,36.0,43,12.0,not college grad,married,1,nonSMSA,0,18.557692,11.083333,7.230271
+2722,union,40.0,38,13.0,not college grad,single,1,SMSA,1,9.23718,1.4166666,5.6602244
+2723,nonunion,44.0,37,11.0,not college grad,single,1,SMSA,1,16.583332,10.0,4.3478236
+2724,nonunion,40.0,43,17.0,college grad,single,1,SMSA,1,16.865385,16.833334,10.056358
+2725,nonunion,40.0,40,14.0,not college grad,married,1,SMSA,1,18.038462,4.75,9.42834
+2730,nonunion,15.0,39,12.0,not college grad,married,1,SMSA,1,7.7884617,3.3333333,2.6972613
+2734,nonunion,45.0,36,16.0,college grad,married,1,SMSA,1,15.410256,7.5833335,11.352655
+2735,nonunion,38.0,34,17.0,college grad,married,1,SMSA,1,12.147436,6.3333335,10.636071
+2737,,40.0,36,12.0,not college grad,single,0,SMSA,0,12.115385,2.1666667,40.198082
+2739,union,40.0,41,15.0,not college grad,married,1,SMSA,1,13.5,9.916667,4.8389683
+2741,nonunion,45.0,39,17.0,college grad,married,1,SMSA,0,14.583333,3.4166667,9.090172
+2742,,18.0,41,11.0,not college grad,married,1,SMSA,1,13.653847,0.33333334,2.801002
+2743,union,40.0,38,13.0,not college grad,single,1,SMSA,1,8.185898,7.6666665,3.9452477
+2745,nonunion,40.0,41,12.0,not college grad,married,1,SMSA,1,18.596153,14.0,6.988722
+2746,nonunion,40.0,36,12.0,not college grad,single,1,SMSA,1,15.839743,1.4166666,6.441224
+2752,nonunion,30.0,44,18.0,college grad,married,1,SMSA,1,14.942308,6.9166665,5.9017696
+2753,nonunion,50.0,38,18.0,college grad,single,1,SMSA,1,18.391026,13.75,12.077295
+2757,union,38.0,36,12.0,not college grad,single,1,SMSA,1,14.653846,3.6666667,4.339774
+2760,nonunion,2.0,34,12.0,not college grad,married,1,SMSA,0,9.391025,1.3333334,8.05153
+2761,nonunion,48.0,36,17.0,college grad,single,1,SMSA,1,15.653846,2.0833333,9.999998
+2762,nonunion,32.0,36,14.0,not college grad,single,1,SMSA,1,14.365385,1.5833334,7.262477
+2764,nonunion,24.0,43,12.0,not college grad,married,1,SMSA,1,12.519231,7.5,7.584539
+2769,nonunion,45.0,34,12.0,not college grad,single,1,SMSA,1,3.3653846,0.8333333,5.370369
+2771,nonunion,40.0,39,12.0,not college grad,single,1,SMSA,1,13.891026,10.25,6.1191616
+2772,nonunion,40.0,37,11.0,not college grad,single,1,SMSA,1,10.660256,1.25,4.830918
+2777,nonunion,40.0,37,12.0,not college grad,single,1,SMSA,1,15.564102,1.6666666,4.307567
+2780,nonunion,40.0,44,12.0,not college grad,single,1,SMSA,1,13.679488,3.75,3.3011258
+2782,,15.0,39,16.0,college grad,married,1,SMSA,1,6.1153846,1.0833334,2.4792998
+2786,nonunion,40.0,35,12.0,not college grad,married,1,SMSA,1,12.070513,11.666667,7.2705307
+2787,nonunion,55.0,39,17.0,college grad,married,0,SMSA,0,17.26923,4.0833335,15.201282
+2790,union,35.0,40,12.0,not college grad,married,1,SMSA,0,18.692307,8.416667,9.420287
+2792,nonunion,10.0,43,16.0,college grad,married,1,SMSA,0,14.961538,1.3333334,30.19324
+2794,nonunion,40.0,36,16.0,college grad,married,1,SMSA,0,14.128205,11.583333,10.193234
+2796,nonunion,40.0,44,12.0,not college grad,single,1,nonSMSA,0,19.038462,4.9166665,6.4009633
+2801,nonunion,40.0,37,17.0,college grad,single,0,SMSA,0,14.51282,7.8333335,6.9243145
+2806,nonunion,40.0,35,12.0,not college grad,married,1,nonSMSA,0,9.121796,3.3333333,4.830918
+2815,union,50.0,36,17.0,college grad,single,1,SMSA,0,11.942307,8.833333,10.217388
+2816,nonunion,40.0,39,12.0,not college grad,married,0,SMSA,0,21.333334,21.333334,8.856684
+2818,union,39.0,41,15.0,not college grad,single,0,SMSA,1,10.423077,3.6666667,5.458936
+2820,nonunion,40.0,35,12.0,not college grad,single,0,SMSA,0,16.48077,14.0,11.755233
+2823,union,50.0,39,18.0,college grad,married,1,SMSA,1,16.326923,8.916667,9.597424
+2825,nonunion,38.0,40,14.0,not college grad,single,1,SMSA,0,15.128205,11.083333,8.148145
+2826,nonunion,40.0,35,12.0,not college grad,married,1,SMSA,0,0.6923077,0.6666667,1.8679547
+2830,,35.0,38,12.0,not college grad,single,1,SMSA,0,14.134615,0.33333334,3.7625415
+2831,nonunion,40.0,37,8.0,not college grad,single,1,SMSA,0,3.2564104,1.8333334,2.6972613
+2834,nonunion,35.0,37,12.0,not college grad,single,1,SMSA,0,2.346154,0.0,2.6972613
+2835,nonunion,40.0,40,12.0,not college grad,married,1,SMSA,0,17.788462,3.4166667,7.5523334
+2845,nonunion,38.0,36,14.0,not college grad,single,1,SMSA,1,11.634615,3.9166667,7.745568
+2846,nonunion,40.0,37,9.0,not college grad,single,1,SMSA,0,9.673077,7.5833335,4.9355855
+2848,nonunion,38.0,41,16.0,college grad,single,1,SMSA,1,17.692308,17.416666,14.2592535
+2849,,45.0,43,12.0,not college grad,married,1,SMSA,1,16.75,1.0833334,2.7870672
+2853,nonunion,20.0,45,9.0,not college grad,married,1,SMSA,1,11.615385,1.25,4.227053
+2857,nonunion,40.0,41,12.0,not college grad,single,1,SMSA,1,17.98077,2.4166667,3.5829282
+2858,nonunion,40.0,41,11.0,not college grad,single,1,SMSA,0,11.288462,2.9166667,6.36876
+2864,union,40.0,45,18.0,college grad,married,1,SMSA,1,17.98077,15.75,11.618352
+2865,nonunion,25.0,38,12.0,not college grad,single,1,SMSA,1,7.75,1.6666666,2.1578088
+2868,nonunion,40.0,34,14.0,not college grad,single,1,nonSMSA,0,14.903846,10.5,6.932361
+2869,nonunion,40.0,35,16.0,college grad,single,1,SMSA,1,7.6666665,7.6666665,15.09662
+2870,union,40.0,37,10.0,not college grad,married,1,SMSA,1,17.012821,3.5,3.9452477
+2872,nonunion,45.0,35,18.0,college grad,single,0,SMSA,1,12.916666,3.8333333,12.045089
+2874,nonunion,35.0,35,6.0,not college grad,single,1,SMSA,1,5.423077,3.5,3.1078897
+2875,nonunion,40.0,34,7.0,not college grad,single,1,SMSA,0,6.7179484,0.0,5.6360707
+2876,nonunion,52.0,44,8.0,not college grad,married,1,SMSA,1,10.8910265,3.4166667,3.5265677
+2877,union,40.0,43,9.0,not college grad,married,1,SMSA,1,16.653847,3.5,3.9291444
+2878,nonunion,40.0,45,11.0,not college grad,single,0,SMSA,0,15.096154,3.8333333,6.32045
+2880,,40.0,40,8.0,not college grad,married,1,nonSMSA,0,8.564103,2.0833333,2.9264214
+2883,nonunion,40.0,35,11.0,not college grad,married,1,SMSA,1,6.5961537,3.5,4.830918
+2886,union,40.0,38,17.0,college grad,married,1,SMSA,1,13.365384,9.833333,10.974233
+2892,nonunion,40.0,35,12.0,not college grad,married,1,SMSA,1,12.583333,12.583333,4.798711
+2893,nonunion,40.0,36,18.0,college grad,married,1,SMSA,1,13.685898,11.583333,8.904991
+2894,union,40.0,34,12.0,not college grad,single,1,SMSA,1,7.6346154,3.6666667,5.032206
+2895,union,38.0,42,12.0,not college grad,single,0,SMSA,1,6.666667,3.1666667,9.388082
+2896,nonunion,45.0,35,12.0,not college grad,married,1,SMSA,1,16.166666,16.166666,11.52979
+2899,nonunion,45.0,37,17.0,college grad,married,1,SMSA,0,13.846153,13.5,14.106273
+2900,,40.0,42,12.0,not college grad,single,1,SMSA,0,14.717949,13.25,7.7099943
+2901,union,20.0,40,13.0,not college grad,single,0,nonSMSA,0,10.923078,9.083333,4.830918
+2904,nonunion,35.0,42,16.0,college grad,married,1,nonSMSA,0,14.942307,2.0833333,5.4347825
+2905,nonunion,45.0,37,17.0,college grad,married,0,SMSA,1,13.903846,8.916667,17.206116
+2908,nonunion,35.0,36,12.0,not college grad,single,1,SMSA,0,16.865385,0.16666667,5.7487917
+2910,,40.0,39,14.0,not college grad,single,0,nonSMSA,0,14.352564,1.6666666,8.361203
+2911,,40.0,40,15.0,not college grad,married,0,SMSA,0,14.679486,3.0833333,9.567145
+2912,nonunion,25.0,37,12.0,not college grad,married,0,nonSMSA,0,13.788462,10.416667,8.856684
+2913,nonunion,45.0,36,13.0,not college grad,single,1,SMSA,0,13.923077,13.75,12.045089
+2914,nonunion,35.0,41,12.0,not college grad,married,1,SMSA,0,17.192308,1.5833334,11.062799
+2915,,50.0,42,18.0,college grad,married,1,SMSA,1,15.326923,6.1666665,14.471302
+2917,union,8.0,42,16.0,college grad,married,1,SMSA,0,9.596154,2.6666667,7.2463775
+2918,,10.0,40,14.0,not college grad,married,0,SMSA,0,6.3461537,0.5,3.938519
+2919,nonunion,24.0,44,12.0,not college grad,married,1,SMSA,1,7.243589,0.083333336,4.830918
+2921,nonunion,40.0,40,14.0,not college grad,married,1,SMSA,0,9.871795,1.75,7.745568
+2925,nonunion,30.0,40,0.0,not college grad,single,1,SMSA,0,5.269231,1.3333334,2.8180354
+2927,,22.0,39,17.0,college grad,married,0,SMSA,0,13.410256,7.0833335,6.272401
+2932,nonunion,40.0,38,16.0,college grad,single,1,SMSA,0,14.25,4.6666665,12.38325
+2934,union,40.0,37,14.0,not college grad,single,0,SMSA,0,17.948719,6.9166665,11.610305
+2936,nonunion,45.0,37,18.0,college grad,single,0,SMSA,0,17.634615,7.9166665,10.32206
+2939,nonunion,37.0,45,12.0,not college grad,married,1,SMSA,0,14.673077,10.5,11.553946
+2940,nonunion,40.0,41,12.0,not college grad,married,1,SMSA,0,17.115385,6.3333335,12.38325
+2942,nonunion,32.0,36,12.0,not college grad,married,1,SMSA,1,11.724359,0.33333334,17.344109
+2943,union,38.0,39,17.0,college grad,single,1,nonSMSA,0,11.833333,11.833333,8.558774
+2945,nonunion,40.0,40,12.0,not college grad,married,1,nonSMSA,0,10.961538,2.75,3.2689192
+2946,,56.0,44,11.0,not college grad,married,1,SMSA,0,5.6474357,1.1666666,4.479214
+2949,nonunion,40.0,38,12.0,not college grad,married,1,nonSMSA,0,26.03846,16.0,4.5088553
+2951,union,35.0,34,12.0,not college grad,married,1,nonSMSA,0,7.7371798,3.75,4.420288
+2954,nonunion,40.0,44,12.0,not college grad,married,1,nonSMSA,0,13.801282,12.166667,4.227053
+2955,nonunion,35.0,36,14.0,not college grad,single,1,nonSMSA,0,12.352564,11.166667,7.149757
+2957,nonunion,70.0,40,11.0,not college grad,married,1,nonSMSA,0,5.8461537,,2.415459
+2958,nonunion,30.0,41,12.0,not college grad,married,1,nonSMSA,0,12.448718,1.8333334,4.025765
+2960,nonunion,40.0,45,12.0,not college grad,married,1,nonSMSA,0,21.160255,18.5,6.360707
+2967,nonunion,40.0,45,13.0,not college grad,married,1,nonSMSA,0,18.76923,5.9166665,10.8373575
+2969,nonunion,20.0,36,16.0,college grad,married,1,SMSA,0,13.923077,0.083333336,6.0386477
+2971,nonunion,44.0,42,12.0,not college grad,single,1,nonSMSA,0,13.75,2.5833333,4.8953285
+2972,nonunion,40.0,36,12.0,not college grad,married,1,nonSMSA,0,12.5,6.3333335,5.217391
+2973,nonunion,40.0,35,13.0,not college grad,married,1,nonSMSA,0,13.679487,3.6666667,5.418679
+2976,nonunion,40.0,35,12.0,not college grad,single,1,nonSMSA,0,2.7051282,1.25,3.220612
+2977,,48.0,40,12.0,not college grad,married,1,nonSMSA,0,10.884615,0.9166667,33.4984
+2978,nonunion,40.0,39,12.0,not college grad,single,1,nonSMSA,0,16.634615,4.6666665,5.8615127
+2979,nonunion,40.0,38,12.0,not college grad,single,1,nonSMSA,0,17.102564,3.3333333,3.6231885
+2984,union,70.0,44,9.0,not college grad,single,0,SMSA,1,18.653847,1.4166666,8.872785
+2985,nonunion,36.0,44,12.0,not college grad,married,1,nonSMSA,0,8.884616,7.8333335,4.951689
+2988,union,40.0,35,18.0,college grad,married,1,nonSMSA,0,11.673078,3.9166667,9.29146
+2998,nonunion,8.0,35,12.0,not college grad,married,0,SMSA,0,4.826923,1.75,4.227053
+2999,nonunion,40.0,37,13.0,not college grad,married,1,SMSA,0,9.576923,4.8333335,8.05153
+3000,nonunion,48.0,42,12.0,not college grad,single,1,SMSA,0,17.346153,17.333334,5.4347825
+3001,union,40.0,41,12.0,not college grad,married,1,SMSA,0,17.788462,14.166667,7.745568
+3004,nonunion,40.0,38,8.0,not college grad,single,1,nonSMSA,0,14.75641,8.416667,4.830918
+3008,nonunion,40.0,39,9.0,not college grad,married,1,nonSMSA,0,15.0,10.916667,3.1400964
+3015,nonunion,40.0,37,12.0,not college grad,married,0,SMSA,0,18.75,18.75,10.032206
+3016,nonunion,40.0,38,16.0,college grad,married,1,SMSA,0,13.942307,10.416667,14.710137
+3020,nonunion,35.0,35,16.0,college grad,single,1,nonSMSA,0,14.865385,10.916667,10.619963
+3023,nonunion,40.0,39,18.0,college grad,married,1,nonSMSA,0,8.634615,2.9166667,6.3848605
+3026,nonunion,40.0,36,10.0,not college grad,single,1,nonSMSA,0,18.076923,0.0,2.6972613
+3027,,20.0,35,17.0,college grad,single,1,nonSMSA,0,6.5384617,,2.9388082
+3028,nonunion,40.0,41,12.0,not college grad,married,1,nonSMSA,0,13.442308,9.833333,2.7858286
+3035,nonunion,60.0,42,17.0,college grad,married,1,SMSA,1,7.8653846,7.75,5.2656984
+3036,nonunion,40.0,39,18.0,college grad,married,1,SMSA,0,12.788462,8.75,12.777775
+3037,nonunion,1.0,35,18.0,college grad,married,1,SMSA,1,6.0128207,0.6666667,4.64573
+3038,,20.0,39,12.0,not college grad,married,0,SMSA,0,6.75,0.41666666,5.852843
+3040,,40.0,39,10.0,not college grad,single,1,SMSA,0,15.429487,15.0,3.5024142
+3042,nonunion,40.0,39,12.0,not college grad,single,1,SMSA,0,16.51282,14.0,4.830918
+3043,union,40.0,37,12.0,not college grad,single,1,SMSA,0,19.423077,8.5,16.47676
+3044,nonunion,48.0,44,12.0,not college grad,married,1,SMSA,0,22.51282,22.5,6.771333
+3045,nonunion,48.0,43,11.0,not college grad,married,1,SMSA,0,19.583332,5.5,5.53945
+3046,,35.0,44,12.0,not college grad,single,1,SMSA,0,12.519231,9.416667,4.4137006
+3047,nonunion,40.0,35,14.0,not college grad,single,1,SMSA,0,13.916667,13.916667,8.904991
+3048,union,40.0,38,11.0,not college grad,single,1,SMSA,0,11.788462,9.833333,2.6972613
+3049,nonunion,33.0,39,16.0,college grad,married,1,SMSA,1,14.961538,3.0833333,11.030594
+3050,nonunion,40.0,42,10.0,not college grad,married,1,SMSA,0,16.25641,0.0,5.53945
+3052,nonunion,40.0,39,12.0,not college grad,married,1,SMSA,0,12.326923,2.8333333,4.64573
+3056,union,45.0,45,9.0,not college grad,single,1,SMSA,1,17.326923,0.0,14.121402
+3058,nonunion,40.0,37,12.0,not college grad,married,1,SMSA,0,11.557693,1.3333334,5.917873
+3059,nonunion,7.0,40,17.0,college grad,married,1,SMSA,1,13.929487,1.3333334,10.628017
+3060,nonunion,30.0,42,8.0,not college grad,married,1,nonSMSA,0,10.25,10.25,2.777777
+3061,nonunion,42.0,42,16.0,college grad,married,1,SMSA,0,9.243589,6.8333335,7.0048285
+3062,nonunion,40.0,35,12.0,not college grad,single,1,SMSA,1,17.653845,1.3333334,5.8373594
+3063,nonunion,40.0,36,18.0,college grad,married,1,nonSMSA,0,10.384615,0.9166667,6.5780983
+3065,nonunion,55.0,34,13.0,not college grad,single,1,SMSA,0,12.512821,5.8333335,5.06441
+3066,nonunion,40.0,44,16.0,college grad,married,1,nonSMSA,0,15.75,11.416667,10.257647
+3069,,28.0,36,12.0,not college grad,married,1,SMSA,0,9.480769,1.5833334,5.972288
+3070,,20.0,35,12.0,not college grad,married,1,SMSA,1,14.115384,2.5833333,3.7189493
+3072,,18.0,41,12.0,not college grad,married,1,nonSMSA,0,14.442307,2.0833333,2.6282961
+3073,nonunion,37.0,36,7.0,not college grad,married,1,nonSMSA,0,11.429487,5.1666665,4.066022
+3078,union,35.0,45,17.0,college grad,married,0,SMSA,0,12.416667,8.416667,16.497578
+3079,nonunion,40.0,35,12.0,not college grad,single,1,nonSMSA,0,13.762821,13.75,3.2930727
+3090,nonunion,22.0,38,12.0,not college grad,single,1,nonSMSA,0,6.7692304,0.16666667,2.8846145
+3095,nonunion,40.0,38,6.0,not college grad,married,1,nonSMSA,0,13.442308,3.4166667,4.6215763
+3096,nonunion,35.0,35,11.0,not college grad,married,1,nonSMSA,0,10.166667,8.666667,3.9855046
+3097,nonunion,37.0,42,8.0,not college grad,married,1,nonSMSA,0,6.9358974,4.0,2.3832521
+3098,,24.0,37,12.0,not college grad,married,1,nonSMSA,0,11.365385,2.5,4.222408
+3099,nonunion,35.0,44,8.0,not college grad,single,1,nonSMSA,0,9.557693,3.8333333,3.679549
+3106,nonunion,30.0,39,12.0,not college grad,single,1,SMSA,1,15.782052,10.333333,4.025765
+3107,nonunion,40.0,36,9.0,not college grad,single,1,SMSA,1,11.0,11.0,5.06441
+3108,union,45.0,39,18.0,college grad,married,1,SMSA,1,16.833334,16.833334,8.599029
+3111,,40.0,35,12.0,not college grad,single,1,SMSA,1,2.25,0.33333334,4.3227663
+3114,union,40.0,43,14.0,not college grad,single,0,SMSA,1,15.519231,6.5833335,9.066018
+3115,nonunion,40.0,41,12.0,not college grad,married,1,SMSA,0,18.621794,18.333334,3.7439594
+3116,,65.0,39,12.0,not college grad,married,0,SMSA,0,5.5961537,2.1666667,7.5250835
+3118,union,40.0,43,9.0,not college grad,married,1,SMSA,0,18.685896,18.666666,7.713361
+3119,nonunion,40.0,41,13.0,not college grad,married,1,SMSA,0,27.192305,8.333333,9.7584505
+3120,nonunion,40.0,41,9.0,not college grad,single,1,nonSMSA,0,5.1538463,0.25,3.220612
+3122,nonunion,40.0,44,18.0,college grad,married,1,nonSMSA,0,21.416666,21.416666,8.518515
+3127,nonunion,45.0,38,18.0,college grad,married,1,SMSA,1,19.51282,2.9166667,10.668277
+3132,nonunion,41.0,35,16.0,college grad,single,1,nonSMSA,0,17.0,17.0,9.444442
+3133,nonunion,40.0,36,14.0,not college grad,married,1,nonSMSA,0,17.79487,3.5,8.236711
+3135,nonunion,40.0,39,12.0,not college grad,married,1,SMSA,1,14.0,14.0,6.223832
+3138,union,60.0,45,16.0,college grad,married,1,SMSA,1,10.416667,10.416667,4.516906
+3144,nonunion,32.0,37,12.0,not college grad,single,1,SMSA,1,14.762821,14.666667,5.032206
+3145,nonunion,40.0,36,12.0,not college grad,married,1,SMSA,1,15.00641,15.0,4.8389683
+3148,nonunion,40.0,37,12.0,not college grad,single,1,SMSA,1,8.948718,5.3333335,2.8180354
+3151,nonunion,42.0,41,12.0,not college grad,single,1,SMSA,1,17.121794,3.4166667,4.694041
+3156,nonunion,40.0,42,12.0,not college grad,single,1,SMSA,1,10.0,3.75,4.64573
+3157,nonunion,40.0,40,12.0,not college grad,single,1,SMSA,0,18.403847,17.166666,5.048307
+3158,nonunion,40.0,38,12.0,not college grad,single,1,nonSMSA,0,9.865385,1.0833334,4.025765
+3159,union,40.0,43,18.0,college grad,married,0,SMSA,0,12.019231,5.4166665,13.019322
+3164,nonunion,40.0,35,18.0,college grad,married,0,SMSA,0,13.647436,11.833333,11.223828
+3166,nonunion,12.0,44,10.0,not college grad,married,1,SMSA,0,11.346154,0.0,2.9388082
+3169,nonunion,37.0,35,12.0,not college grad,married,1,SMSA,0,14.576923,4.0,5.442833
+3170,nonunion,55.0,39,9.0,not college grad,single,1,nonSMSA,0,14.288461,2.8333333,3.6634455
+3171,nonunion,43.0,40,12.0,not college grad,single,1,nonSMSA,0,17.923077,12.833333,6.8438005
+3172,nonunion,35.0,40,12.0,not college grad,single,0,SMSA,0,19.083334,19.083334,15.48309
+3173,nonunion,40.0,43,10.0,not college grad,single,1,SMSA,0,8.910256,8.5,5.990337
+3174,,20.0,40,12.0,not college grad,married,0,SMSA,0,13.076923,1.6666666,4.180602
+3175,nonunion,40.0,40,16.0,college grad,single,0,SMSA,1,15.647436,13.666667,11.030594
+3179,nonunion,40.0,34,12.0,not college grad,married,1,nonSMSA,0,15.012821,4.0833335,8.05153
+3181,nonunion,35.0,36,17.0,college grad,married,1,nonSMSA,0,12.557693,9.833333,11.062799
+3182,nonunion,40.0,43,12.0,not college grad,married,1,nonSMSA,0,20.378204,16.333334,6.0386477
+3185,,40.0,35,12.0,not college grad,married,1,nonSMSA,0,9.211537,0.75,7.357856
+3186,union,45.0,37,12.0,not college grad,married,1,SMSA,1,13.134616,11.166667,6.5378385
+3188,union,40.0,42,13.0,not college grad,single,1,nonSMSA,0,16.967947,10.333333,3.4219003
+3189,nonunion,48.0,37,12.0,not college grad,married,1,nonSMSA,0,11.179488,3.4166667,6.6264057
+3191,nonunion,40.0,35,9.0,not college grad,married,1,SMSA,1,14.46795,11.916667,7.2463775
+3195,nonunion,42.0,44,12.0,not college grad,single,1,nonSMSA,0,18.673077,16.166666,4.790658
+3197,,24.0,37,11.0,not college grad,married,1,nonSMSA,0,13.089744,10.333333,2.090301
+3198,nonunion,8.0,40,9.0,not college grad,married,1,nonSMSA,0,9.75,0.9166667,3.5265677
+3199,nonunion,35.0,37,12.0,not college grad,single,1,nonSMSA,0,3.5,,1.1513683
+3200,nonunion,15.0,40,12.0,not college grad,married,1,nonSMSA,0,7.692308,2.5,6.1996756
+3202,nonunion,45.0,38,15.0,not college grad,single,1,nonSMSA,0,15.378205,0.9166667,8.57859
+3203,nonunion,48.0,38,11.0,not college grad,married,1,nonSMSA,0,13.788462,12.416667,5.4347825
+3204,nonunion,40.0,45,18.0,college grad,single,1,nonSMSA,0,17.75,17.75,11.610305
+3205,nonunion,40.0,38,9.0,not college grad,married,1,nonSMSA,0,14.108974,4.75,4.227053
+3208,nonunion,40.0,40,12.0,not college grad,married,1,SMSA,0,13.429487,13.416667,5.2334948
+3209,nonunion,25.0,36,12.0,not college grad,single,1,nonSMSA,0,8.980769,1.75,2.415459
+3211,nonunion,43.0,36,8.0,not college grad,married,1,nonSMSA,0,10.102564,2.9166667,4.1867933
+3212,union,30.0,42,10.0,not college grad,married,1,nonSMSA,0,13.730769,8.5,4.025765
+3214,nonunion,40.0,42,12.0,not college grad,single,1,SMSA,1,16.865385,,5.072463
+3215,nonunion,20.0,44,12.0,not college grad,married,1,nonSMSA,0,8.916667,8.916667,3.8879578
+3217,union,20.0,37,13.0,not college grad,single,1,SMSA,1,6.442308,3.0,8.132044
+3218,nonunion,40.0,41,12.0,not college grad,single,1,SMSA,0,16.788462,8.833333,5.3462152
+3219,nonunion,50.0,38,18.0,college grad,married,0,SMSA,1,12.967948,5.1666665,11.771334
+3222,nonunion,52.0,44,17.0,college grad,single,1,nonSMSA,0,20.333334,20.333334,8.937197
+3227,,12.0,39,9.0,not college grad,single,1,nonSMSA,0,10.064102,2.75,2.9264214
+3228,union,38.0,36,12.0,not college grad,single,1,nonSMSA,0,14.666667,14.666667,2.7375197
+3229,nonunion,40.0,44,10.0,not college grad,married,1,nonSMSA,0,2.3333335,0.8333333,2.8985493
+3231,nonunion,30.0,40,12.0,not college grad,married,1,nonSMSA,0,9.833333,9.833333,2.9871168
+3232,nonunion,45.0,35,10.0,not college grad,married,1,nonSMSA,0,17.083334,12.583333,5.161031
+3235,nonunion,40.0,43,12.0,not college grad,married,1,nonSMSA,0,17.346153,16.833334,7.801928
+3236,nonunion,40.0,43,10.0,not college grad,married,1,nonSMSA,0,14.519231,7.3333335,2.8180354
+3238,,40.0,39,12.0,not college grad,married,1,nonSMSA,0,13.429485,2.5833333,1.9309927
+3239,nonunion,40.0,36,11.0,not college grad,single,1,nonSMSA,0,8.307693,1.0833334,3.5024142
+3240,nonunion,40.0,38,10.0,not college grad,single,1,nonSMSA,0,8.673077,3.6666667,3.0193238
+3243,nonunion,40.0,35,12.0,not college grad,married,1,nonSMSA,0,16.97436,7.4166665,6.191625
+3245,nonunion,35.0,34,12.0,not college grad,married,1,SMSA,1,8.608974,2.6666667,2.8743958
+3246,nonunion,40.0,43,12.0,not college grad,single,1,nonSMSA,0,6.198718,2.1666667,3.0756843
+3247,nonunion,23.0,41,12.0,not college grad,married,1,nonSMSA,0,9.0256405,0.16666667,3.6231885
+3248,nonunion,25.0,45,12.0,not college grad,married,1,nonSMSA,0,4.320513,1.5833334,3.0998378
+3250,,40.0,36,9.0,not college grad,single,0,nonSMSA,0,3.6666665,1.8333334,40.198082
+3252,nonunion,28.0,40,9.0,not college grad,married,1,nonSMSA,0,3.2435896,0.9166667,1.8921083
+3253,,40.0,36,12.0,not college grad,married,1,nonSMSA,0,14.871796,3.4166667,40.198082
+3255,union,50.0,42,17.0,college grad,married,1,SMSA,0,14.423077,8.916667,7.0692425
+3256,nonunion,45.0,39,12.0,not college grad,married,1,SMSA,0,11.692307,7.4166665,4.1304326
+3258,union,50.0,38,16.0,college grad,married,1,SMSA,1,17.442308,5.8333335,6.8115935
+3259,nonunion,40.0,35,12.0,not college grad,married,1,SMSA,1,7.070513,4.5,6.972622
+3260,nonunion,10.0,38,12.0,not college grad,single,1,nonSMSA,0,5.2884617,1.4166666,2.9264214
+3263,nonunion,40.0,36,16.0,college grad,married,1,SMSA,0,14.128205,11.666667,4.1143293
+3264,nonunion,40.0,36,10.0,not college grad,married,1,nonSMSA,0,9.807692,7.3333335,4.3961344
+3266,nonunion,28.0,39,12.0,not college grad,single,1,nonSMSA,0,5.769231,1.25,2.8582926
+3268,union,40.0,40,10.0,not college grad,married,0,SMSA,1,7.1538463,2.6666667,10.769998
+3270,,40.0,37,13.0,not college grad,married,1,SMSA,0,14.782051,7.0,5.1735396
+3276,nonunion,40.0,42,15.0,not college grad,married,1,SMSA,1,19.057692,1.3333334,11.352655
+3277,nonunion,40.0,36,16.0,college grad,single,1,SMSA,1,12.730769,0.6666667,5.8051524
+3278,nonunion,40.0,39,12.0,not college grad,single,1,SMSA,1,9.519231,1.8333334,4.5491123
+3280,union,40.0,36,11.0,not college grad,single,1,SMSA,1,6.474359,2.25,4.9758425
+3281,,40.0,35,16.0,college grad,married,1,SMSA,0,10.134615,0.33333334,8.361203
+3282,union,50.0,34,17.0,college grad,single,1,SMSA,1,5.730769,1.6666666,4.025765
+3289,nonunion,40.0,36,12.0,not college grad,married,1,SMSA,0,11.910257,7.5833335,5.8051524
+3290,nonunion,45.0,44,13.0,not college grad,single,1,SMSA,0,16.23077,3.0,8.945245
+3291,nonunion,45.0,42,16.0,college grad,married,1,SMSA,0,15.230769,13.833333,10.152974
+3292,nonunion,40.0,40,12.0,not college grad,married,1,SMSA,0,17.76923,5.5,6.191625
+3293,nonunion,40.0,37,12.0,not college grad,married,1,SMSA,0,16.833334,16.833334,5.6360707
+3294,nonunion,20.0,43,13.0,not college grad,married,1,SMSA,0,13.423077,5.75,5.6360707
+3300,nonunion,16.0,41,16.0,college grad,married,1,SMSA,0,11.6923065,3.5,12.584539
+3303,,48.0,40,14.0,not college grad,married,1,nonSMSA,0,6.6282053,0.16666667,4.180602
+3305,nonunion,15.0,45,12.0,not college grad,married,1,SMSA,0,16.5,1.4166666,7.0209293
+3312,,40.0,37,12.0,not college grad,single,1,SMSA,1,8.903846,4.9166665,3.1354513
+3316,nonunion,40.0,41,12.0,not college grad,married,1,SMSA,1,9.923077,2.6666667,5.5797076
+3317,nonunion,38.0,44,15.0,not college grad,married,1,SMSA,0,16.961538,16.333334,9.782605
+3318,nonunion,,42,17.0,college grad,single,1,SMSA,1,16.307692,13.25,4.331721
+3319,,40.0,36,12.0,not college grad,single,1,SMSA,1,9.961538,0.8333333,40.198082
+3320,nonunion,30.0,34,12.0,not college grad,married,1,SMSA,1,13.769231,3.6666667,3.8879578
+3325,nonunion,40.0,41,18.0,college grad,married,1,SMSA,0,17.538462,3.4166667,12.584539
+3326,,32.0,40,12.0,not college grad,married,1,SMSA,1,14.429487,0.0,2.6128764
+3328,nonunion,40.0,41,14.0,not college grad,single,1,SMSA,1,12.166666,3.0,5.8373594
+3332,nonunion,40.0,35,12.0,not college grad,single,1,SMSA,0,11.76282,9.833333,10.064413
+3333,nonunion,50.0,42,18.0,college grad,married,1,nonSMSA,0,16.833334,16.833334,7.809981
+3337,nonunion,50.0,44,12.0,not college grad,single,1,SMSA,0,10.769231,1.75,2.415459
+3342,union,30.0,39,12.0,not college grad,single,1,SMSA,1,16.083334,16.083334,4.0740724
+3344,union,40.0,41,12.0,not college grad,single,1,SMSA,1,18.198717,0.0,6.771333
+3346,nonunion,40.0,41,15.0,not college grad,married,0,SMSA,0,8.602565,2.5,7.0450883
+3347,nonunion,40.0,41,12.0,not college grad,married,1,SMSA,1,8.333333,8.333333,4.025765
+3353,nonunion,60.0,44,18.0,college grad,married,1,SMSA,0,14.846154,14.833333,10.8373575
+3355,nonunion,40.0,39,18.0,college grad,married,1,SMSA,0,13.621796,12.833333,10.450882
+3356,,15.0,40,12.0,not college grad,married,1,nonSMSA,0,12.391026,0.33333334,3.0017905
+3357,nonunion,35.0,41,12.0,not college grad,single,0,SMSA,1,20.198717,20.083334,11.5056305
+3359,nonunion,20.0,43,12.0,not college grad,married,1,SMSA,1,14.134615,3.4166667,1.8115942
+3362,nonunion,35.0,40,12.0,not college grad,single,1,SMSA,1,13.423077,6.6666665,4.8520045
+3366,nonunion,40.0,44,14.0,not college grad,married,0,SMSA,0,10.826923,9.166667,7.2463775
+3368,nonunion,50.0,44,12.0,not college grad,single,1,SMSA,0,11.826923,3.6666667,5.2334948
+3372,nonunion,40.0,42,13.0,not college grad,single,1,SMSA,0,9.634615,1.5833334,4.227053
+3374,nonunion,45.0,44,12.0,not college grad,married,1,SMSA,1,19.192308,16.083334,8.260865
+3376,union,53.0,35,18.0,college grad,married,1,SMSA,0,7.3589745,5.9166665,5.611914
+3378,nonunion,30.0,42,8.0,not college grad,married,1,SMSA,0,4.0384617,0.083333336,2.6972613
+3381,nonunion,35.0,39,16.0,college grad,single,0,SMSA,1,13.788462,1.25,11.5056305
+3382,union,40.0,35,12.0,not college grad,married,1,SMSA,1,10.429488,0.33333334,4.227053
+3386,nonunion,40.0,39,12.0,not college grad,married,1,SMSA,0,13.961538,11.25,7.801928
+3387,nonunion,35.0,37,12.0,not college grad,single,0,SMSA,1,17.897436,6.0,8.582928
+3389,union,40.0,44,12.0,not college grad,married,1,SMSA,1,15.019231,0.0,4.025765
+3391,nonunion,55.0,39,12.0,not college grad,married,1,SMSA,0,16.01923,11.75,4.283414
+3392,nonunion,40.0,38,14.0,not college grad,single,1,SMSA,1,15.653846,0.0,5.032206
+3393,nonunion,40.0,35,16.0,college grad,married,1,SMSA,0,6.916667,0.0,10.8373575
+3394,nonunion,40.0,36,16.0,college grad,single,1,SMSA,0,16.878204,8.416667,11.610305
+3399,,40.0,34,12.0,not college grad,married,1,SMSA,1,10.788462,1.75,3.0518394
+3400,nonunion,40.0,36,14.0,not college grad,married,1,SMSA,0,12.820513,4.6666665,3.872784
+3402,nonunion,40.0,41,9.0,not college grad,single,1,SMSA,0,16.173077,9.916667,5.096617
+3403,nonunion,40.0,37,12.0,not college grad,married,1,SMSA,0,16.134615,3.9166667,6.441224
+3406,nonunion,40.0,42,11.0,not college grad,married,1,SMSA,0,20.333334,20.333334,6.4492707
+3407,nonunion,46.0,38,12.0,not college grad,married,1,SMSA,0,7.480769,3.1666667,4.1223826
+3408,nonunion,32.0,41,12.0,not college grad,married,0,SMSA,0,5.2884617,1.75,4.8792253
+3410,nonunion,40.0,41,15.0,not college grad,single,1,nonSMSA,0,17.134615,9.166667,6.7874336
+3411,union,40.0,35,13.0,not college grad,single,1,SMSA,1,3.5448718,1.5833334,9.057972
+3412,,40.0,43,12.0,not college grad,married,1,nonSMSA,0,9.115385,6.25,2.6167471
+3413,nonunion,40.0,42,12.0,not college grad,single,1,SMSA,0,9.134615,7.6666665,5.829306
+3414,,12.0,38,18.0,college grad,married,1,SMSA,1,8.326923,1.5833334,8.709585
+3416,union,40.0,40,13.0,not college grad,single,1,SMSA,1,10.333333,6.9166665,7.0450883
+3418,union,40.0,35,16.0,college grad,married,1,SMSA,1,10.801282,3.0833333,7.745568
+3419,union,35.0,37,12.0,not college grad,married,1,SMSA,0,10.846154,0.41666666,4.8387074
+3423,nonunion,20.0,42,10.0,not college grad,single,1,SMSA,1,4.7179484,0.33333334,2.415459
+3424,,40.0,38,12.0,not college grad,married,1,SMSA,1,15.134616,0.75,4.180602
+3429,nonunion,15.0,39,12.0,not college grad,married,1,SMSA,1,8.884615,0.5,3.486311
+3431,nonunion,17.0,41,11.0,not college grad,single,1,SMSA,1,3.5128205,1.9166666,4.452495
+3434,nonunion,40.0,37,9.0,not college grad,married,1,nonSMSA,0,15.038462,8.583333,4.412238
+3435,union,40.0,41,8.0,not college grad,single,0,SMSA,1,16.166666,16.166666,10.708532
+3439,nonunion,40.0,35,12.0,not college grad,married,1,nonSMSA,0,16.02564,15.916667,4.991946
+3441,nonunion,40.0,39,12.0,not college grad,married,0,SMSA,1,18.070515,18.0,5.6360707
+3442,nonunion,40.0,37,13.0,not college grad,single,0,SMSA,1,18.384615,18.333334,6.352657
+3443,nonunion,40.0,43,14.0,not college grad,single,1,nonSMSA,0,20.384615,1.3333334,3.6231885
+3445,union,40.0,39,12.0,not college grad,single,0,SMSA,1,18.948717,3.25,7.3429914
+3448,nonunion,40.0,37,16.0,college grad,married,1,nonSMSA,0,14.596154,11.416667,7.745568
+3449,union,38.0,35,11.0,not college grad,married,0,SMSA,1,13.980769,13.166667,10.185181
+3450,nonunion,40.0,42,16.0,college grad,single,1,SMSA,1,3.8461537,0.9166667,2.0933967
+3455,nonunion,44.0,37,11.0,not college grad,single,1,nonSMSA,0,11.98718,7.4166665,6.8438005
+3456,union,17.0,39,15.0,not college grad,married,0,SMSA,1,6.179487,6.1666665,6.814376
+3457,nonunion,40.0,43,12.0,not college grad,married,1,nonSMSA,0,7.6666665,3.9166667,3.3494363
+3462,,40.0,34,12.0,not college grad,single,1,nonSMSA,0,14.262821,13.333333,4.389632
+3463,nonunion,40.0,36,14.0,not college grad,married,1,nonSMSA,0,11.179487,6.0,5.0805135
+3464,nonunion,24.0,43,16.0,college grad,married,1,nonSMSA,0,20.782051,20.75,3.9371977
+3466,nonunion,40.0,38,12.0,not college grad,married,1,nonSMSA,0,12.064102,4.75,4.307567
+3468,nonunion,32.0,45,9.0,not college grad,single,0,SMSA,1,5.282051,3.75,3.8083735
+3477,nonunion,40.0,40,12.0,not college grad,single,1,SMSA,0,19.076921,2.0,5.032206
+3479,nonunion,40.0,44,12.0,not college grad,single,1,SMSA,1,17.98077,0.083333336,4.025765
+3483,nonunion,25.0,43,12.0,not college grad,married,1,SMSA,0,9.0,0.5,3.0193238
+3484,nonunion,42.0,43,14.0,not college grad,married,1,SMSA,1,4.6089745,4.4166665,8.623189
+3487,nonunion,70.0,42,18.0,college grad,single,0,nonSMSA,0,18.916666,1.4166666,4.2028966
+3490,nonunion,30.0,35,12.0,not college grad,married,1,SMSA,0,9.525641,5.4166665,8.05153
+3491,,40.0,36,13.0,not college grad,married,1,SMSA,0,13.679487,10.916667,7.0346656
+3492,nonunion,40.0,43,9.0,not college grad,single,1,nonSMSA,0,13.0,3.8333333,5.6360707
+3493,union,45.0,35,16.0,college grad,married,1,nonSMSA,0,13.519231,12.833333,8.566828
+3494,nonunion,40.0,42,12.0,not college grad,single,1,nonSMSA,0,19.01923,8.416667,25.161034
+3497,,24.0,43,11.0,not college grad,married,1,nonSMSA,0,3.1602564,0.9166667,2.801002
+3501,nonunion,40.0,36,6.0,not college grad,married,1,SMSA,1,20.192308,2.6666667,5.06441
+3502,union,40.0,34,10.0,not college grad,married,1,SMSA,1,11.955128,8.583333,7.0450883
+3505,,30.0,43,12.0,not college grad,married,1,SMSA,0,6.7564106,1.4166666,3.3444817
+3506,nonunion,40.0,38,11.0,not college grad,married,1,SMSA,1,4.5897436,1.0,2.3268917
+3507,,40.0,42,18.0,college grad,single,1,nonSMSA,0,15.230769,3.3333333,40.198082
+3511,nonunion,30.0,36,10.0,not college grad,married,1,SMSA,0,3.8846154,1.1666666,7.2463775
+3512,nonunion,38.0,38,14.0,not college grad,single,0,SMSA,0,13.371796,3.4166667,6.360707
+3515,union,40.0,44,17.0,college grad,single,0,SMSA,1,14.5,9.333333,15.338156
+3516,nonunion,40.0,39,14.0,not college grad,single,1,SMSA,1,18.448717,18.416666,13.083735
+3526,nonunion,38.0,41,12.0,not college grad,married,1,nonSMSA,0,12.942307,8.416667,6.1111083
+3529,nonunion,40.0,39,12.0,not college grad,married,1,nonSMSA,0,6.070513,2.0833333,4.025765
+3530,,50.0,39,18.0,college grad,single,0,SMSA,1,12.0,0.8333333,3.8619854
+3532,nonunion,40.0,35,16.0,college grad,single,1,SMSA,1,13.153847,7.25,12.38325
+3534,nonunion,12.0,37,16.0,college grad,married,0,nonSMSA,0,12.057693,2.9166667,8.679548
+3536,union,35.0,44,12.0,not college grad,married,0,SMSA,0,10.839744,0.6666667,3.904991
+3538,nonunion,40.0,35,12.0,not college grad,married,1,SMSA,0,14.878204,9.166667,12.777775
+3540,,60.0,36,11.0,not college grad,married,1,SMSA,0,5.173077,1.25,3.0991251
+3542,nonunion,40.0,35,11.0,not college grad,married,0,nonSMSA,0,21.692307,1.9166666,5.225441
+3546,nonunion,43.0,39,18.0,college grad,married,1,SMSA,0,16.711538,3.1666667,10.442829
+3549,union,40.0,43,18.0,college grad,married,0,nonSMSA,0,19.916666,19.916666,9.186791
+3551,nonunion,10.0,38,12.0,not college grad,married,1,SMSA,0,12.589744,0.0,7.745568
+3552,nonunion,24.0,38,16.0,college grad,married,0,SMSA,0,15.320513,13.833333,15.297906
+3553,nonunion,35.0,36,16.0,college grad,married,1,SMSA,0,16.442308,15.166667,7.1658564
+3555,nonunion,50.0,41,12.0,not college grad,married,0,SMSA,0,13.615385,2.8333333,5.571657
+3558,nonunion,25.0,40,12.0,not college grad,married,0,SMSA,0,14.096154,3.0833333,9.661837
+3563,union,40.0,41,12.0,not college grad,married,0,SMSA,1,11.230769,3.0,10.466988
+3566,nonunion,20.0,41,17.0,college grad,married,0,SMSA,1,12.282051,0.8333333,10.064413
+3569,nonunion,35.0,41,17.0,college grad,married,0,SMSA,0,7.5384617,1.0,7.962963
+3570,nonunion,50.0,38,14.0,not college grad,married,0,SMSA,0,11.596154,1.4166666,18.59098
+3571,nonunion,80.0,42,15.0,not college grad,single,0,SMSA,0,18.839745,1.6666666,4.64573
+3573,union,40.0,38,8.0,not college grad,single,0,nonSMSA,0,12.243589,5.0,9.653782
+3584,union,45.0,42,14.0,not college grad,married,0,SMSA,1,12.865384,9.0,8.856684
+3589,nonunion,60.0,37,14.0,college grad,single,1,SMSA,1,8.320513,0.083333336,3.7198057
+3590,nonunion,40.0,44,13.0,not college grad,single,1,SMSA,1,11.923077,3.3333333,6.0386477
+3593,nonunion,40.0,44,12.0,not college grad,married,0,SMSA,0,16.576923,1.4166666,6.964568
+3595,union,46.0,35,14.0,not college grad,single,0,SMSA,0,7.25,2.6666667,10.917872
+3602,union,40.0,39,12.0,not college grad,single,1,SMSA,1,13.788462,5.25,7.4396124
+3603,union,40.0,38,16.0,college grad,single,0,SMSA,1,17.634615,2.25,9.090172
+3604,union,48.0,43,12.0,not college grad,single,0,SMSA,1,17.333334,17.333334,6.288243
+3611,union,40.0,39,12.0,not college grad,married,0,SMSA,0,16.608974,6.25,7.1578097
+3612,nonunion,26.0,35,13.0,not college grad,married,0,SMSA,0,5.1538463,3.0833333,3.9694011
+3624,nonunion,20.0,43,12.0,not college grad,married,0,SMSA,0,19.249998,3.5,8.05153
+3626,nonunion,40.0,38,15.0,not college grad,married,0,SMSA,1,16.26282,2.8333333,7.4396124
+3627,nonunion,24.0,40,15.0,not college grad,married,0,SMSA,0,12.461538,7.25,11.497585
+3630,nonunion,40.0,44,12.0,not college grad,married,0,SMSA,0,20.608976,3.4166667,6.0386477
+3631,nonunion,45.0,41,16.0,college grad,married,0,SMSA,0,18.75641,18.75,17.206116
+3634,nonunion,40.0,35,9.0,not college grad,married,1,nonSMSA,0,12.935897,1.8333334,3.7037024
+3636,nonunion,15.0,43,12.0,not college grad,single,0,SMSA,0,4.6153846,3.5833333,2.6328492
+3637,,25.0,40,12.0,not college grad,married,0,SMSA,1,6.3846154,6.3333335,3.220612
+3640,union,15.0,36,13.0,not college grad,married,0,nonSMSA,0,9.557693,0.8333333,4.339774
+3641,nonunion,40.0,39,12.0,not college grad,single,0,SMSA,0,11.576923,0.8333333,7.2785773
+3642,,29.0,45,17.0,college grad,married,1,nonSMSA,0,14.615383,0.5833333,3.3444817
+3643,nonunion,40.0,43,12.0,not college grad,married,1,SMSA,0,7.4358974,2.6666667,5.152977
+3648,,40.0,36,11.0,not college grad,married,0,SMSA,0,5.320513,1.25,40.198082
+3651,union,40.0,44,13.0,not college grad,married,0,SMSA,1,21.794872,21.75,12.077295
+3658,nonunion,40.0,35,12.0,not college grad,married,0,SMSA,0,13.846153,4.0833335,5.5797076
+3659,,40.0,35,13.0,not college grad,single,0,SMSA,0,15.673077,0.25,7.5250835
+3660,,15.0,40,12.0,not college grad,married,0,SMSA,0,7.8076925,4.8333335,4.7240787
+3661,union,38.0,34,12.0,not college grad,married,0,SMSA,0,14.865385,14.833333,10.933973
+3664,nonunion,40.0,37,12.0,not college grad,married,0,SMSA,0,16.5,1.5,8.663441
+3665,union,50.0,39,12.0,not college grad,single,0,SMSA,0,14.326923,5.1666665,11.650559
+3666,union,40.0,44,14.0,not college grad,single,0,nonSMSA,0,19.26923,18.666666,10.22544
+3667,nonunion,25.0,38,15.0,not college grad,married,0,SMSA,1,19.833334,19.833334,8.454107
+3669,nonunion,36.0,45,16.0,college grad,married,0,nonSMSA,0,5.0384617,1.5,3.0112722
+3670,,20.0,41,13.0,not college grad,single,1,SMSA,0,14.903847,0.083333336,5.145711
+3672,union,28.0,45,12.0,not college grad,single,0,SMSA,0,6.173077,1.5833334,6.1996756
+3674,nonunion,20.0,45,18.0,college grad,married,0,SMSA,0,20.320513,0.8333333,11.159413
+3675,nonunion,40.0,41,13.0,not college grad,single,0,SMSA,0,5.269231,0.0,8.454107
+3678,nonunion,40.0,39,14.0,not college grad,married,0,nonSMSA,0,12.134616,0.33333334,13.5681305
+3681,nonunion,40.0,36,13.0,not college grad,single,0,SMSA,1,14.576923,13.833333,11.610305
+3688,nonunion,40.0,43,14.0,not college grad,married,0,SMSA,0,18.211538,0.9166667,17.665049
+3689,nonunion,24.0,40,12.0,not college grad,single,0,SMSA,0,9.006411,4.3333335,6.441224
+3691,nonunion,40.0,39,4.0,not college grad,married,0,SMSA,0,8.608974,0.5,2.6167471
+3692,,10.0,35,13.0,not college grad,married,0,SMSA,0,15.512821,15.0,2.9264214
+3695,nonunion,45.0,37,12.0,not college grad,single,0,SMSA,0,10.333333,6.4166665,5.6360707
+3699,,40.0,43,18.0,college grad,single,0,SMSA,0,18.121796,0.25,9.197324
+3701,nonunion,55.0,44,15.0,not college grad,single,0,SMSA,0,10.75,7.5833335,11.264089
+3702,nonunion,40.0,43,15.0,not college grad,married,0,nonSMSA,0,20.211536,0.0,13.269226
+3704,union,40.0,43,16.0,college grad,married,0,SMSA,1,18.557692,8.5,8.365539
+3705,,40.0,44,13.0,not college grad,married,0,SMSA,0,17.923077,10.916667,4.8274837
+3706,union,62.0,43,18.0,college grad,single,0,SMSA,1,10.75,10.75,7.793876
+3709,union,40.0,44,10.0,not college grad,married,0,SMSA,0,13.551283,12.75,13.164245
+3711,,30.0,42,12.0,not college grad,married,0,SMSA,1,8.25,8.083333,6.4366446
+3716,,40.0,42,12.0,not college grad,married,0,SMSA,0,9.256411,6.4166665,7.2157164
+3718,union,40.0,41,16.0,college grad,married,0,nonSMSA,0,9.019231,7.1666665,6.231882
+3724,nonunion,40.0,39,14.0,not college grad,married,0,SMSA,0,17.884615,2.8333333,6.76328
+3726,union,40.0,40,14.0,not college grad,single,0,SMSA,1,13.346154,2.9166667,8.856684
+3728,union,40.0,35,15.0,not college grad,married,0,SMSA,0,17.410255,11.25,9.114332
+3731,union,40.0,39,12.0,not college grad,single,0,SMSA,1,21.666666,21.666666,14.710137
+3732,nonunion,40.0,36,13.0,not college grad,single,0,SMSA,1,17.865385,6.75,7.979064
+3733,nonunion,40.0,41,12.0,not college grad,married,0,SMSA,0,10.115385,9.75,8.518515
+3734,nonunion,25.0,37,12.0,not college grad,married,0,SMSA,0,15.666667,15.666667,18.58292
+3735,union,45.0,45,11.0,not college grad,married,1,nonSMSA,0,13.980769,5.4166665,9.462362
+3737,union,40.0,44,13.0,not college grad,married,0,SMSA,0,25.98718,25.916666,12.077295
+3739,nonunion,42.0,43,12.0,not college grad,married,1,nonSMSA,0,13.410255,6.3333335,4.6698866
+3744,,40.0,37,18.0,college grad,single,0,SMSA,0,14.788462,0.8333333,11.705686
+3745,nonunion,33.0,41,12.0,not college grad,married,0,SMSA,0,13.096153,11.333333,6.7230268
+3746,union,40.0,39,12.0,not college grad,married,0,SMSA,1,13.057693,1.6666666,8.220612
+3748,union,40.0,39,11.0,not college grad,married,0,SMSA,0,10.358974,1.4166666,5.8373594
+3751,union,40.0,38,17.0,college grad,single,0,nonSMSA,0,16.711538,8.833333,7.5684333
+3752,nonunion,40.0,38,16.0,college grad,married,0,SMSA,0,12.839745,2.0833333,12.286632
+3753,nonunion,40.0,41,15.0,not college grad,married,0,SMSA,0,19.5,3.25,9.057972
+3757,union,35.0,34,12.0,not college grad,single,0,SMSA,0,7.7115383,5.4166665,10.466988
+3758,nonunion,27.0,38,18.0,college grad,single,0,SMSA,1,10.192307,9.916667,14.911425
+3760,nonunion,35.0,43,13.0,not college grad,married,0,SMSA,0,7.5320516,1.6666666,4.516906
+3763,union,60.0,37,18.0,college grad,married,0,SMSA,0,12.602564,1.8333334,6.964568
+3766,union,40.0,41,17.0,college grad,married,0,SMSA,1,14.615385,5.4166665,14.323667
+3770,,40.0,45,5.0,not college grad,married,0,SMSA,0,9.442308,0.5,4.180602
+3773,nonunion,40.0,44,18.0,college grad,married,0,SMSA,1,14.692307,1.75,8.904991
+3774,union,40.0,37,12.0,not college grad,married,0,SMSA,0,13.25,11.416667,12.85829
+3778,nonunion,35.0,43,16.0,college grad,married,1,SMSA,0,2.121795,1.75,7.479866
+3779,nonunion,55.0,41,14.0,not college grad,single,0,SMSA,0,15.7243595,2.1666667,10.064413
+3780,nonunion,40.0,39,12.0,not college grad,married,0,SMSA,1,14.391026,3.4166667,7.938803
+3782,union,40.0,39,15.0,not college grad,single,0,SMSA,1,20.833334,20.833334,9.29146
+3783,union,40.0,37,15.0,not college grad,married,0,SMSA,1,18.076923,13.25,8.091784
+3786,union,40.0,41,15.0,not college grad,single,0,SMSA,0,14.865385,7.6666665,8.904991
+3790,nonunion,50.0,43,14.0,not college grad,single,0,SMSA,1,2.0576923,1.5833334,8.671494
+3794,,20.0,37,16.0,college grad,married,0,SMSA,1,8.769231,0.25,16.722406
+3798,nonunion,40.0,35,11.0,not college grad,married,0,nonSMSA,0,12.596154,11.333333,5.458936
+3799,union,25.0,44,13.0,not college grad,married,0,SMSA,1,4.230769,3.75,5.2334948
+3801,nonunion,40.0,34,12.0,not college grad,married,0,nonSMSA,0,15.25,3.3333333,8.05153
+3803,,55.0,41,14.0,not college grad,married,1,SMSA,0,15.3076935,4.5,28.152193
+3804,nonunion,40.0,39,16.0,college grad,single,0,SMSA,0,14.564103,1.0,5.225441
+3806,nonunion,30.0,35,12.0,not college grad,married,0,SMSA,1,5.929487,4.75,3.7842166
+3807,nonunion,26.0,38,13.0,not college grad,married,0,SMSA,1,15.326923,0.33333334,3.1400964
+3811,nonunion,40.0,38,12.0,not college grad,married,0,SMSA,1,17.01923,16.833334,8.856684
+3812,nonunion,40.0,42,12.0,not college grad,married,0,SMSA,1,15.314102,5.1666665,5.259195
+3813,nonunion,40.0,42,12.0,not college grad,single,0,SMSA,0,9.288462,1.25,4.830918
+3814,,40.0,40,12.0,not college grad,married,0,SMSA,0,5.230769,1.0,3.6231885
+3815,union,40.0,37,12.0,not college grad,married,0,SMSA,0,16.794872,16.75,12.681161
+3816,nonunion,40.0,34,13.0,not college grad,married,0,SMSA,0,16.044872,0.16666667,11.618352
+3820,,40.0,37,10.0,not college grad,single,0,SMSA,0,14.903847,14.5,4.648688
+3821,nonunion,40.0,35,12.0,not college grad,married,0,SMSA,0,7.1346154,0.8333333,5.2257524
+3822,union,11.0,44,16.0,college grad,married,0,SMSA,0,6.3461537,1.25,9.581316
+3823,nonunion,50.0,42,18.0,college grad,married,0,SMSA,0,9.557693,9.333333,17.02898
+3828,,50.0,35,14.0,not college grad,single,0,SMSA,0,11.967949,3.6666667,32.15846
+3832,nonunion,15.0,36,12.0,not college grad,married,0,SMSA,0,11.0,2.5833333,3.220612
+3836,nonunion,20.0,41,12.0,not college grad,married,0,nonSMSA,0,13.50641,11.666667,5.1771307
+3844,union,16.0,40,11.0,not college grad,married,0,SMSA,0,4.025641,0.0,3.1723018
+3845,nonunion,40.0,41,10.0,not college grad,married,1,nonSMSA,0,5.1153846,3.5833333,4.025765
+3848,nonunion,40.0,36,11.0,not college grad,married,0,SMSA,0,10.525641,5.5833335,6.964568
+3850,nonunion,40.0,38,12.0,not college grad,married,0,SMSA,0,14.826923,13.5,8.832524
+3852,nonunion,40.0,37,12.0,not college grad,married,0,SMSA,0,8.557693,0.41666666,9.7584505
+3856,nonunion,50.0,35,15.0,not college grad,single,0,SMSA,1,12.743589,4.5833335,7.4396124
+3858,nonunion,45.0,36,14.0,not college grad,married,0,SMSA,0,15.0,1.4166666,10.32206
+3861,,40.0,38,16.0,college grad,single,0,SMSA,1,13.333334,1.25,4.8274837
+3863,nonunion,40.0,37,17.0,college grad,single,0,SMSA,0,13.192308,1.4166666,12.777775
+3864,nonunion,50.0,42,16.0,college grad,married,0,SMSA,0,14.096153,8.0,9.597424
+3865,union,40.0,43,13.0,not college grad,married,0,SMSA,0,21.217949,21.166666,7.761675
+3873,nonunion,60.0,35,18.0,college grad,married,0,SMSA,1,14.057693,6.75,25.805145
+3876,nonunion,15.0,44,12.0,not college grad,married,0,SMSA,0,8.839744,8.75,3.220612
+3878,union,40.0,43,16.0,college grad,married,0,SMSA,0,18.442308,10.0,9.7584505
+3880,,40.0,44,14.0,not college grad,single,0,SMSA,0,13.076922,1.75,4.648688
+3881,nonunion,40.0,35,12.0,not college grad,single,0,SMSA,0,8.147436,1.5833334,4.227053
+3882,nonunion,33.0,41,14.0,not college grad,married,0,nonSMSA,0,12.615385,9.75,9.001606
+3886,union,40.0,41,13.0,not college grad,single,0,nonSMSA,0,13.192307,4.0,7.4396124
+3891,nonunion,40.0,42,18.0,college grad,single,0,SMSA,0,12.750001,2.6666667,10.668277
+3893,nonunion,50.0,38,18.0,college grad,single,1,SMSA,0,14.826923,9.916667,15.48309
+3899,nonunion,38.0,45,12.0,not college grad,single,0,SMSA,1,9.538462,1.75,7.689208
+3900,nonunion,40.0,38,16.0,college grad,married,0,nonSMSA,0,4.570513,0.9166667,3.4219003
+3903,union,40.0,38,12.0,not college grad,married,0,SMSA,1,17.288462,17.25,10.064413
+3905,nonunion,60.0,36,14.0,not college grad,married,0,SMSA,1,9.75,1.5,4.339774
+3910,,36.0,42,12.0,not college grad,married,0,SMSA,0,13.333333,12.666667,5.0167227
+3911,nonunion,48.0,43,11.0,not college grad,single,0,SMSA,1,11.416666,1.75,5.426729
+3915,,50.0,38,12.0,not college grad,single,0,SMSA,1,12.320513,1.0,5.8132024
+3918,nonunion,42.0,38,16.0,college grad,married,0,SMSA,0,8.461538,1.9166666,10.32206
+3919,nonunion,40.0,40,14.0,not college grad,married,0,SMSA,0,16.326923,8.333333,11.537839
+3922,union,40.0,35,17.0,college grad,single,0,SMSA,1,14.211538,10.916667,11.610305
+3923,nonunion,40.0,35,12.0,not college grad,single,0,SMSA,0,7.8076925,5.25,5.8615127
+3929,nonunion,45.0,39,14.0,college grad,married,0,SMSA,0,19.391026,19.333334,6.8840547
+3930,,40.0,38,12.0,not college grad,single,0,SMSA,0,18.51923,3.0833333,8.361203
+3933,union,25.0,39,12.0,not college grad,married,0,SMSA,0,7.1538467,3.5833333,9.29146
+3934,nonunion,40.0,38,15.0,not college grad,married,0,SMSA,0,15.2243595,13.583333,10.1771345
+3935,nonunion,45.0,39,12.0,not college grad,married,0,SMSA,0,9.166667,7.4166665,11.014487
+3937,union,20.0,44,12.0,not college grad,married,1,SMSA,1,5.5,5.5,21.384863
+3941,nonunion,40.0,43,11.0,not college grad,single,0,SMSA,1,7.878205,6.8333335,7.4476643
+3945,union,20.0,37,12.0,not college grad,married,0,SMSA,0,13.076922,9.916667,6.8438005
+3946,nonunion,40.0,37,10.0,not college grad,married,0,SMSA,0,13.0,12.416667,6.7391267
+3952,nonunion,40.0,41,12.0,not college grad,single,0,SMSA,0,16.096155,4.75,10.668277
+3953,union,30.0,38,15.0,not college grad,married,1,SMSA,1,17.115385,7.0,25.805145
+3955,nonunion,40.0,35,16.0,college grad,married,0,SMSA,0,15.75,12.0,12.850242
+3956,nonunion,35.0,41,16.0,college grad,married,0,SMSA,1,13.115385,5.4166665,6.634459
+3962,,55.0,36,14.0,not college grad,married,1,SMSA,0,10.653846,1.3333334,3.510896
+3963,,40.0,34,14.0,not college grad,married,0,SMSA,1,12.538462,2.5,4.8274837
+3964,union,15.0,37,14.0,not college grad,married,0,SMSA,0,7.557692,1.4166666,5.1690807
+3968,nonunion,47.0,36,18.0,college grad,married,0,SMSA,0,16.692307,1.1666666,10.539451
+3972,union,40.0,38,14.0,not college grad,single,0,SMSA,1,3.7628202,1.0833334,3.341383
+3974,nonunion,45.0,43,13.0,not college grad,married,0,SMSA,0,17.147436,15.583333,13.776157
+3977,nonunion,38.0,38,14.0,not college grad,single,0,SMSA,0,10.782051,6.8333335,10.273749
+3978,nonunion,50.0,35,14.0,not college grad,married,0,SMSA,0,13.26923,4.0,7.4315586
+3983,nonunion,40.0,43,12.0,not college grad,married,0,SMSA,0,16.057692,3.0,20.494751
+3984,,40.0,45,11.0,not college grad,single,0,SMSA,0,6.467949,2.1666667,4.344736
+3985,nonunion,40.0,40,12.0,not college grad,single,1,SMSA,0,13.173077,4.4166665,6.280193
+3988,nonunion,45.0,45,12.0,not college grad,single,0,nonSMSA,0,21.166666,21.166666,10.217388
+3990,union,40.0,45,11.0,not college grad,married,0,nonSMSA,0,9.294872,8.166667,7.1578097
+3991,nonunion,35.0,41,12.0,not college grad,single,0,nonSMSA,0,19.679485,19.583334,3.7198057
+3994,nonunion,40.0,34,12.0,not college grad,married,0,nonSMSA,0,4.423077,0.16666667,3.5024142
+3996,,40.0,37,12.0,not college grad,married,1,nonSMSA,0,8.576923,2.4166667,40.198082
+3997,nonunion,40.0,35,12.0,not college grad,married,1,SMSA,1,11.596154,6.1666665,6.5458913
+3998,nonunion,40.0,37,18.0,college grad,married,1,SMSA,1,14.564102,1.5,13.550715
+3999,nonunion,40.0,35,16.0,college grad,married,0,SMSA,0,11.544871,4.5,19.355871
+4001,nonunion,20.0,43,14.0,not college grad,married,0,SMSA,1,11.461538,3.75,6.5056314
+4003,nonunion,50.0,35,11.0,not college grad,married,0,SMSA,0,13.967949,4.4166665,7.809981
+4007,nonunion,40.0,43,16.0,college grad,married,1,SMSA,0,8.884616,3.8333333,9.7584505
+4008,nonunion,40.0,39,12.0,not college grad,married,0,nonSMSA,0,20.04487,2.9166667,6.972622
+4009,,40.0,39,12.0,not college grad,single,0,nonSMSA,0,11.288462,4.9166665,2.6972613
+4011,nonunion,45.0,40,13.0,not college grad,single,0,nonSMSA,0,28.884615,23.083334,12.399351
+4013,nonunion,36.0,45,13.0,not college grad,married,0,nonSMSA,0,7.6217947,7.0833335,6.4009633
+4014,nonunion,50.0,35,12.0,not college grad,married,0,nonSMSA,0,11.846154,4.4166665,11.151368
+4015,,20.0,37,12.0,not college grad,married,1,SMSA,0,10.903846,0.8333333,2.9264214
+4017,nonunion,40.0,40,12.0,not college grad,married,1,SMSA,0,12.846153,3.6666667,6.972622
+4021,,40.0,35,12.0,not college grad,married,0,nonSMSA,0,14.788461,10.0,4.8274837
+4023,nonunion,40.0,35,12.0,not college grad,single,0,nonSMSA,0,13.442307,2.8333333,6.0466976
+4024,nonunion,30.0,42,12.0,not college grad,married,0,nonSMSA,0,11.673077,10.916667,5.515297
+4026,union,36.0,40,10.0,not college grad,married,0,nonSMSA,0,10.596154,1.4166666,5.0241528
+4031,nonunion,40.0,43,12.0,not college grad,married,0,nonSMSA,0,18.75,1.5833334,4.7745543
+4037,nonunion,28.0,40,12.0,not college grad,married,0,SMSA,0,4.0576925,1.3333334,2.9849496
+4038,nonunion,40.0,43,10.0,not college grad,married,1,SMSA,1,6.519231,0.75,5.9983873
+4040,,20.0,38,16.0,college grad,single,0,nonSMSA,0,15.410256,0.5,3.8619854
+4041,nonunion,40.0,41,14.0,not college grad,single,0,SMSA,1,13.628205,2.9166667,6.0305943
+4043,,40.0,35,10.0,not college grad,single,0,nonSMSA,0,13.057693,1.25,3.7189493
+4045,union,32.0,36,18.0,college grad,married,0,SMSA,1,14.083333,14.083333,19.355871
+4048,nonunion,35.0,38,12.0,not college grad,married,0,SMSA,0,7.99359,4.8333335,4.9114323
+4050,nonunion,48.0,38,14.0,not college grad,married,0,SMSA,0,16.673077,1.3333334,9.677936
+4051,nonunion,40.0,43,12.0,not college grad,single,0,SMSA,1,16.544872,8.583333,6.5056314
+4053,nonunion,50.0,41,12.0,not college grad,married,0,SMSA,1,18.705128,12.666667,11.159413
+4055,nonunion,40.0,39,12.0,not college grad,single,0,SMSA,0,10.467949,6.75,7.745568
+4056,nonunion,40.0,41,13.0,not college grad,single,0,SMSA,1,8.865385,3.0833333,6.972622
+4057,union,40.0,37,15.0,not college grad,single,0,SMSA,1,15.980769,12.5,10.909819
+4064,union,60.0,44,18.0,college grad,single,0,SMSA,1,20.416666,20.416666,9.0338125
+4068,nonunion,40.0,36,16.0,college grad,single,0,SMSA,0,13.576923,7.4166665,8.05153
+4069,nonunion,33.0,36,11.0,not college grad,married,0,SMSA,1,9.416667,9.416667,6.76328
+4070,nonunion,2.0,35,14.0,not college grad,married,1,SMSA,1,7.7564106,1.6666666,4.025765
+4071,union,40.0,43,17.0,college grad,married,0,SMSA,0,7.9615383,3.9166667,7.745568
+4075,nonunion,40.0,40,14.0,not college grad,married,0,SMSA,1,16.647436,13.583333,8.904991
+4079,union,25.0,43,15.0,not college grad,single,0,SMSA,0,14.198719,5.3333335,8.816422
+4083,nonunion,40.0,39,13.0,not college grad,married,0,SMSA,1,16.711538,8.333333,8.856684
+4084,union,40.0,45,12.0,not college grad,married,0,SMSA,1,8.160256,5.0833335,6.409017
+4087,union,64.0,43,12.0,not college grad,married,0,SMSA,0,3.0833333,3.0833333,6.914713
+4091,union,40.0,36,12.0,not college grad,married,0,nonSMSA,0,9.269231,1.3333334,8.929144
+4094,union,20.0,38,14.0,not college grad,married,0,SMSA,0,4.064102,1.4166666,8.558774
+4096,union,40.0,43,12.0,not college grad,single,0,SMSA,1,5.5,5.5,6.7874336
+4099,,40.0,37,16.0,college grad,married,0,SMSA,0,4.6538463,0.75,3.8619854
+4102,union,40.0,38,12.0,not college grad,married,0,SMSA,0,9.365385,2.25,5.2334948
+4107,nonunion,42.0,37,12.0,not college grad,married,0,nonSMSA,0,9.519231,0.16666667,5.2334948
+4108,nonunion,40.0,42,12.0,not college grad,married,0,nonSMSA,0,13.916666,10.25,7.938803
+4110,union,60.0,37,18.0,college grad,single,0,SMSA,0,14.916667,14.916667,8.260865
+4116,nonunion,30.0,39,13.0,not college grad,single,0,nonSMSA,0,8.115385,3.8333333,5.6360707
+4118,union,40.0,41,12.0,not college grad,single,0,nonSMSA,0,22.198719,22.166666,9.677936
+4120,nonunion,30.0,45,12.0,not college grad,married,0,SMSA,0,14.820513,1.0,8.776163
+4121,,29.0,37,12.0,not college grad,single,0,SMSA,0,11.615384,0.6666667,6.658599
+4124,,38.0,39,12.0,not college grad,single,0,SMSA,1,16.134615,1.0,6.050869
+4125,nonunion,40.0,42,16.0,college grad,single,0,SMSA,1,17.711538,15.333333,12.391304
+4126,,32.0,40,12.0,not college grad,married,0,SMSA,0,2.7884614,1.3333334,3.7625415
+4127,union,40.0,41,12.0,not college grad,married,0,SMSA,0,18.192307,15.833333,8.236711
+4128,nonunion,10.0,41,12.0,not college grad,married,0,SMSA,0,12.711538,11.833333,6.5056314
+4129,nonunion,40.0,42,12.0,not college grad,married,1,SMSA,1,8.269231,1.0,6.642512
+4130,,40.0,44,18.0,college grad,single,0,SMSA,0,12.903846,2.6666667,38.70926
+4131,union,40.0,42,14.0,college grad,married,0,nonSMSA,0,2.4807692,0.16666667,1.8060199
+4132,union,52.0,40,14.0,not college grad,single,0,SMSA,0,17.512821,12.833333,12.5120735
+4133,union,40.0,39,17.0,college grad,married,0,nonSMSA,0,12.903846,0.5,22.584532
+4135,nonunion,40.0,38,12.0,not college grad,married,1,nonSMSA,0,12.762821,9.916667,5.53945
+4136,union,40.0,41,17.0,college grad,married,0,SMSA,0,15.596154,5.5,12.206116
+4142,union,40.0,42,17.0,college grad,married,0,SMSA,1,12.019231,5.25,10.466988
+4145,nonunion,40.0,37,11.0,not college grad,single,0,SMSA,1,12.333333,6.1666665,12.077295
+4147,nonunion,40.0,35,12.0,not college grad,single,0,SMSA,1,15.423077,3.4166667,11.030594
+4148,nonunion,40.0,40,10.0,not college grad,married,0,nonSMSA,0,13.115385,11.5,3.8083735
+4149,nonunion,30.0,40,12.0,not college grad,married,0,nonSMSA,0,7.4038467,2.75,4.830918
+4156,,12.0,36,13.0,not college grad,married,0,nonSMSA,0,5.602564,0.41666666,6.2709026
+4157,nonunion,45.0,36,12.0,not college grad,married,0,nonSMSA,0,1.6025641,0.33333334,4.389632
+4160,nonunion,50.0,36,11.0,not college grad,married,0,SMSA,1,11.961538,5.3333335,6.32045
+4163,nonunion,30.0,38,12.0,not college grad,single,0,nonSMSA,0,4.692308,1.5,3.220612
+4167,union,30.0,35,14.0,not college grad,married,0,nonSMSA,0,9.442307,4.6666665,5.829306
+4168,,15.0,41,12.0,not college grad,married,0,nonSMSA,0,17.788462,0.25,6.6889634
+4169,,40.0,36,11.0,not college grad,married,0,nonSMSA,0,8.134616,2.6666667,5.032206
+4171,union,10.0,37,13.0,not college grad,single,0,nonSMSA,0,3.2692308,0.6666667,7.6811533
+4172,nonunion,40.0,36,12.0,not college grad,married,0,nonSMSA,0,18.211538,8.666667,5.3462152
+4173,nonunion,37.0,35,12.0,not college grad,married,0,SMSA,0,16.865385,3.3333333,14.227051
+4176,union,20.0,39,10.0,not college grad,married,0,nonSMSA,0,7.4423075,3.5,5.016103
+4180,,50.0,43,13.0,not college grad,married,0,nonSMSA,0,16.102564,1.4166666,2.7033908
+4182,nonunion,16.0,35,14.0,not college grad,married,0,nonSMSA,0,5.871795,0.5,2.3268917
+4184,nonunion,40.0,40,12.0,not college grad,married,0,nonSMSA,0,17.717949,17.666666,12.38325
+4186,nonunion,40.0,39,13.0,not college grad,married,0,SMSA,0,20.070513,7.75,8.132044
+4189,union,38.0,44,10.0,not college grad,married,0,SMSA,0,16.5,16.5,7.2785773
+4191,union,40.0,41,12.0,not college grad,married,0,nonSMSA,0,15.25,10.75,3.486311
+4192,union,20.0,39,16.0,college grad,married,0,SMSA,0,4.3589745,2.6666667,5.6360707
+4193,nonunion,40.0,35,15.0,not college grad,single,0,SMSA,0,13.647436,6.3333335,12.777775
+4195,union,50.0,36,17.0,college grad,married,0,nonSMSA,0,10.717949,6.8333335,6.5056314
+4196,union,40.0,35,18.0,college grad,single,1,SMSA,0,9.576923,2.9166667,9.790657
+4198,nonunion,4.0,39,10.0,not college grad,married,0,nonSMSA,0,4.269231,1.4166666,4.180602
+4199,nonunion,40.0,36,13.0,not college grad,married,1,SMSA,1,7.6153846,5.75,9.29146
+4202,union,44.0,44,17.0,college grad,married,0,SMSA,1,18.326923,15.833333,11.964567
+4204,nonunion,40.0,44,7.0,not college grad,single,1,nonSMSA,0,21.102564,6.5,2.6972613
+4206,,20.0,43,17.0,college grad,single,0,SMSA,1,9.858974,0.6666667,3.177257
+4208,nonunion,40.0,41,13.0,not college grad,married,0,nonSMSA,0,8.365385,8.333333,5.418679
+4213,,45.0,39,14.0,not college grad,single,0,SMSA,0,16.012821,3.0833333,35.731617
+4214,union,45.0,35,17.0,college grad,married,0,SMSA,1,15.192307,8.666667,11.272142
+4215,,50.0,36,16.0,college grad,married,0,nonSMSA,0,7.826923,0.41666666,3.8619854
+4221,union,40.0,38,13.0,not college grad,married,0,SMSA,1,10.217948,2.9166667,6.296296
+4222,nonunion,40.0,36,12.0,not college grad,single,0,SMSA,1,18.057692,3.25,1.9726238
+4223,union,40.0,37,12.0,not college grad,married,0,SMSA,1,5.0833335,5.0833335,6.191625
+4225,nonunion,40.0,39,16.0,college grad,single,0,SMSA,1,11.358975,3.0833333,6.0466976
+4229,union,40.0,41,18.0,college grad,single,0,SMSA,0,18.833334,18.833334,13.019322
+4230,nonunion,24.0,41,11.0,not college grad,married,0,SMSA,0,2.2884614,2.1666667,4.227053
+4231,,16.0,45,12.0,not college grad,single,0,SMSA,0,2.8333335,0.8333333,3.3444817
+4233,nonunion,20.0,42,14.0,not college grad,married,0,SMSA,0,9.615385,1.75,4.1867933
+4237,,32.0,38,9.0,not college grad,married,0,SMSA,0,10.294871,1.1666666,3.9193144
+4239,nonunion,16.0,35,13.0,not college grad,married,0,SMSA,0,2.8012822,0.083333336,4.025765
+4240,nonunion,40.0,41,12.0,not college grad,single,0,SMSA,1,12.096154,10.416667,6.3768106
+4242,union,40.0,38,12.0,not college grad,single,0,SMSA,1,12.211538,3.75,7.3107843
+4244,union,40.0,37,13.0,not college grad,married,0,SMSA,0,13.980769,4.5,9.629628
+4245,union,40.0,42,15.0,not college grad,single,0,nonSMSA,0,18.846153,18.416666,10.466988
+4246,union,40.0,41,17.0,college grad,single,0,nonSMSA,0,3.8269231,1.75,10.22544
+4247,nonunion,45.0,40,12.0,not college grad,married,0,SMSA,0,14.884615,0.75,8.945245
+4248,,10.0,36,16.0,college grad,single,0,SMSA,0,11.826923,0.16666667,2.7892132
+4250,,40.0,39,12.0,not college grad,married,0,SMSA,0,14.192307,3.5,10.064413
+4251,nonunion,40.0,35,13.0,not college grad,married,0,nonSMSA,0,7.5961537,2.0833333,6.0466976
+4252,nonunion,40.0,41,9.0,not college grad,married,1,SMSA,0,13.75,13.75,5.032206
+4253,union,40.0,43,12.0,not college grad,married,1,SMSA,0,12.224359,3.0,9.363928
+4255,,40.0,36,14.0,not college grad,married,0,SMSA,0,6.269231,1.1666666,4.7342973
+4256,union,40.0,41,12.0,not college grad,single,1,SMSA,0,6.698718,5.5,6.5458913
+4258,union,40.0,36,15.0,not college grad,single,1,SMSA,0,13.801282,3.75,11.070854
+4259,nonunion,40.0,43,10.0,not college grad,single,1,SMSA,0,17.75,3.0833333,6.5780983
+4260,,40.0,38,11.0,not college grad,married,1,SMSA,0,7.314103,1.5,6.0386477
+4268,nonunion,35.0,37,12.0,not college grad,single,1,SMSA,0,0.115384616,0.083333336,4.138486
+4269,nonunion,40.0,44,9.0,not college grad,married,1,nonSMSA,0,14.980768,10.0,3.7625415
+4270,nonunion,25.0,41,16.0,college grad,single,1,nonSMSA,0,17.198717,3.4166667,8.05153
+4278,nonunion,40.0,41,10.0,not college grad,single,0,SMSA,0,4.032051,1.0,3.8486302
+4279,union,40.0,35,8.0,not college grad,married,1,nonSMSA,0,9.346154,3.5833333,4.025765
+4280,nonunion,40.0,35,12.0,not college grad,married,1,nonSMSA,0,12.820513,3.5,4.2592573
+4281,nonunion,40.0,41,12.0,not college grad,married,1,nonSMSA,0,16.20513,3.4166667,3.6231885
+4282,nonunion,40.0,36,13.0,not college grad,married,1,nonSMSA,0,13.839744,3.4166667,5.032206
+4283,union,40.0,41,10.0,not college grad,married,1,nonSMSA,0,18.762821,3.25,6.441224
+4287,union,40.0,40,12.0,not college grad,married,1,nonSMSA,0,18.538462,17.916666,10.22544
+4291,nonunion,40.0,44,12.0,not college grad,married,1,nonSMSA,0,18.166666,18.166666,4.830918
+4292,nonunion,40.0,38,11.0,not college grad,married,0,SMSA,1,8.455129,2.0,5.152977
+4293,union,35.0,39,16.0,college grad,married,0,SMSA,1,12.801283,12.75,8.848629
+4294,union,35.0,36,12.0,not college grad,single,0,SMSA,0,8.7243595,1.25,3.454104
+4296,nonunion,54.0,38,12.0,not college grad,married,1,nonSMSA,0,8.083333,8.083333,2.6086955
+4298,nonunion,40.0,37,12.0,not college grad,married,0,SMSA,1,7.570513,1.75,4.21095
+4299,union,40.0,37,12.0,not college grad,single,0,SMSA,1,14.519231,13.416667,5.8051524
+4305,nonunion,40.0,35,18.0,college grad,married,1,nonSMSA,0,10.5,3.8333333,6.191625
+4306,nonunion,40.0,37,13.0,not college grad,married,1,SMSA,1,14.557693,7.6666665,6.642512
+4309,nonunion,25.0,37,10.0,not college grad,married,1,SMSA,1,10.4743595,3.75,4.0901756
+4310,nonunion,40.0,39,14.0,not college grad,married,1,SMSA,1,11.99359,0.0,7.914649
+4311,nonunion,40.0,38,13.0,not college grad,single,1,nonSMSA,0,9.294872,8.25,6.2721395
+4316,nonunion,20.0,34,16.0,college grad,married,0,SMSA,0,9.576923,0.5833333,3.711753
+4318,union,35.0,41,12.0,not college grad,single,1,SMSA,1,10.589744,4.75,3.4782605
+4319,,30.0,36,12.0,not college grad,single,1,SMSA,0,3.7371793,0.25,2.7591965
+4323,,40.0,44,11.0,not college grad,single,1,SMSA,1,10.333333,0.0,4.742351
+4324,,,41,10.0,not college grad,single,1,SMSA,1,9.461538,0.9166667,1.5926099
+4327,,20.0,35,12.0,not college grad,single,1,SMSA,0,7.5897436,0.75,3.3444817
+4330,union,40.0,42,12.0,not college grad,single,1,SMSA,0,17.423077,14.5,5.2334948
+4334,nonunion,40.0,41,15.0,college grad,married,1,SMSA,0,16.967949,14.25,6.191625
+4335,nonunion,40.0,35,11.0,not college grad,married,1,SMSA,1,7.4038463,1.0833334,5.53945
+4338,nonunion,40.0,42,9.0,not college grad,married,1,SMSA,1,14.942307,8.666667,5.6682744
+4340,nonunion,40.0,44,10.0,not college grad,single,1,SMSA,1,20.839743,1.4166666,3.37359
+4342,nonunion,42.0,40,16.0,college grad,single,1,SMSA,0,14.884616,8.083333,14.750395
+4343,nonunion,37.0,41,4.0,not college grad,single,1,SMSA,1,8.051281,1.9166666,3.156198
+4345,nonunion,38.0,36,12.0,not college grad,married,0,SMSA,0,14.173077,11.333333,8.96135
+4346,nonunion,45.0,45,18.0,college grad,single,1,SMSA,1,16.583334,15.833333,10.32206
+4350,nonunion,50.0,35,16.0,college grad,married,1,SMSA,1,13.538462,12.833333,10.531395
+4351,nonunion,40.0,40,12.0,not college grad,married,1,SMSA,0,17.27564,17.25,7.1980634
+4352,nonunion,45.0,42,12.0,not college grad,married,1,SMSA,1,12.487179,1.3333334,3.7198057
+4354,,40.0,35,16.0,college grad,single,1,SMSA,1,14.326923,4.9166665,38.70926
+4356,nonunion,40.0,43,12.0,not college grad,married,1,SMSA,1,19.615385,19.583334,12.431557
+4357,nonunion,40.0,38,14.0,not college grad,married,1,SMSA,1,19.301283,1.4166666,11.030594
+4360,union,40.0,42,12.0,not college grad,single,1,SMSA,1,20.365385,1.3333334,8.05153
+4361,nonunion,40.0,45,9.0,not college grad,married,1,SMSA,0,15.211538,12.5,6.8438005
+4363,nonunion,40.0,39,17.0,college grad,married,1,nonSMSA,0,12.01282,6.8333335,9.29146
+4364,nonunion,45.0,37,14.0,not college grad,married,1,SMSA,0,11.980769,1.5833334,2.3107882
+4365,nonunion,45.0,42,12.0,not college grad,married,1,SMSA,1,8.173077,0.0,4.959742
+4367,nonunion,40.0,38,12.0,not college grad,married,1,nonSMSA,0,14.211538,9.666667,6.972622
+4369,nonunion,4.0,40,12.0,not college grad,married,1,nonSMSA,0,8.974359,4.75,8.05153
+4376,nonunion,40.0,35,12.0,not college grad,married,1,SMSA,0,13.429487,1.5833334,4.5330095
+4378,nonunion,40.0,42,16.0,college grad,single,1,nonSMSA,0,17.923077,6.5,9.7584505
+4381,nonunion,40.0,43,15.0,not college grad,married,1,nonSMSA,0,12.108974,6.9166665,8.518515
+4382,union,40.0,42,9.0,not college grad,single,1,nonSMSA,0,17.423077,11.75,5.7246356
+4383,union,40.0,38,14.0,not college grad,single,1,nonSMSA,0,15.794871,15.75,5.53945
+4384,nonunion,58.0,41,10.0,not college grad,single,1,nonSMSA,0,9.833334,0.0,2.6972613
+4386,nonunion,40.0,43,12.0,not college grad,single,1,nonSMSA,0,21.070513,11.083333,8.379888
+4388,union,40.0,37,11.0,not college grad,married,0,SMSA,0,12.435898,7.4166665,4.055183
+4389,nonunion,40.0,41,14.0,not college grad,married,1,nonSMSA,0,13.865385,13.666667,5.523347
+4393,nonunion,40.0,39,15.0,not college grad,married,1,nonSMSA,0,15.288462,9.25,3.5024142
+4394,nonunion,38.0,36,12.0,not college grad,married,1,nonSMSA,0,11.551282,,2.2141707
+4395,nonunion,40.0,41,12.0,not college grad,married,1,nonSMSA,0,4.442308,0.41666666,2.0128825
+4397,,40.0,40,18.0,college grad,married,0,SMSA,1,16.070515,2.0,3.4280922
+4405,,40.0,36,7.0,not college grad,married,1,nonSMSA,0,5.7884617,0.5,3.3444817
+4407,,20.0,40,11.0,not college grad,married,1,nonSMSA,0,15.057693,1.0833334,3.3444817
+4408,,40.0,38,14.0,not college grad,married,1,nonSMSA,0,9.673077,0.25,7.901336
+4409,nonunion,35.0,35,12.0,not college grad,married,1,nonSMSA,0,10.0,9.166667,4.227053
+4411,nonunion,40.0,44,8.0,not college grad,single,1,nonSMSA,0,16.99359,13.25,1.8115942
+4413,nonunion,40.0,41,12.0,not college grad,married,1,nonSMSA,0,21.0,21.0,4.919482
+4419,nonunion,40.0,36,12.0,not college grad,married,1,nonSMSA,0,10.910257,4.3333335,5.032206
+4420,nonunion,50.0,43,12.0,not college grad,married,1,SMSA,0,13.903846,5.3333335,3.0998378
+4426,,40.0,36,12.0,not college grad,married,1,nonSMSA,0,11.576923,0.5,2.801002
+4428,nonunion,40.0,39,12.0,not college grad,married,1,SMSA,1,8.532051,7.25,4.178743
+4429,nonunion,40.0,37,11.0,not college grad,married,1,SMSA,0,14.538462,9.083333,7.3510447
+4435,nonunion,50.0,35,18.0,college grad,married,1,nonSMSA,0,17.371796,9.75,7.8985486
+4437,,40.0,41,12.0,not college grad,married,1,nonSMSA,0,15.5256405,0.8333333,5.2257524
+4438,nonunion,40.0,42,12.0,not college grad,married,1,nonSMSA,0,10.871795,0.0,2.777777
+4439,union,8.0,42,12.0,not college grad,married,1,nonSMSA,0,8.692307,0.0,17.61674
+4441,union,35.0,42,6.0,not college grad,married,1,nonSMSA,0,6.403846,1.0833334,3.454104
+4442,nonunion,40.0,40,7.0,not college grad,married,1,nonSMSA,0,7.5,1.25,3.0434775
+4443,nonunion,40.0,39,9.0,not college grad,married,1,nonSMSA,0,5.8653846,1.0,3.0193238
+4445,nonunion,40.0,35,8.0,not college grad,single,1,nonSMSA,0,3.6153848,1.0833334,2.6972613
+4446,nonunion,80.0,43,12.0,not college grad,married,1,nonSMSA,0,12.25,1.5833334,1.3929143
+4450,union,35.0,38,12.0,not college grad,married,0,SMSA,0,16.423077,13.25,7.407406
+4454,nonunion,35.0,39,12.0,not college grad,married,1,nonSMSA,0,7.788461,0.5,2.9307563
+4458,nonunion,34.0,44,7.0,not college grad,married,1,nonSMSA,0,17.993591,15.833333,4.025765
+4460,nonunion,40.0,36,12.0,not college grad,single,0,SMSA,1,14.230769,5.75,4.5330095
+4461,,40.0,35,12.0,not college grad,single,0,SMSA,1,3.2884614,0.8333333,5.779567
+4462,nonunion,38.0,39,12.0,not college grad,single,1,nonSMSA,0,15.384615,2.9166667,3.091786
+4464,,20.0,34,13.0,not college grad,married,1,SMSA,0,8.423077,0.5,7.648953
+4465,nonunion,40.0,43,7.0,not college grad,single,1,nonSMSA,0,22.891027,1.4166666,2.6972613
+4466,,40.0,44,12.0,not college grad,single,1,nonSMSA,0,15.243589,1.25,1.7976586
+4470,nonunion,60.0,37,12.0,not college grad,married,1,nonSMSA,0,11.942307,1.9166666,2.8180354
+4473,nonunion,40.0,43,14.0,not college grad,single,1,nonSMSA,0,11.525642,4.8333335,6.2709026
+4474,nonunion,40.0,34,15.0,not college grad,married,1,SMSA,1,10.153847,0.083333336,4.025765
+4478,nonunion,60.0,39,17.0,college grad,married,1,SMSA,0,18.01923,9.833333,7.479866
+4480,nonunion,62.0,39,11.0,not college grad,single,1,nonSMSA,0,6.0576925,2.25,3.3091762
+4481,nonunion,60.0,38,7.0,not college grad,married,1,nonSMSA,0,3.1666667,0.083333336,2.0531394
+4484,,15.0,37,14.0,not college grad,single,0,SMSA,1,13.423077,0.41666666,4.025765
+4485,union,52.0,35,13.0,not college grad,married,0,SMSA,0,13.230769,5.0833335,12.230271
+4488,nonunion,40.0,37,12.0,not college grad,single,1,nonSMSA,0,14.858974,9.333333,6.8438005
+4490,nonunion,40.0,43,15.0,not college grad,single,0,SMSA,1,21.77564,21.75,25.161034
+4492,nonunion,40.0,41,12.0,not college grad,married,1,nonSMSA,0,8.698718,1.6666666,4.033815
+4494,nonunion,40.0,35,12.0,not college grad,married,1,nonSMSA,0,11.358974,3.25,6.086955
+4501,nonunion,60.0,40,12.0,not college grad,single,0,SMSA,0,15.903846,1.9166666,4.339774
+4502,,40.0,44,13.0,not college grad,married,1,SMSA,0,6.2115383,4.0,5.032206
+4508,nonunion,30.0,35,12.0,not college grad,married,1,SMSA,0,6.173077,0.8333333,3.220612
+4510,union,40.0,34,12.0,not college grad,single,1,SMSA,0,12.205129,9.416667,14.516907
+4512,nonunion,60.0,43,10.0,not college grad,married,1,nonSMSA,0,4.9038463,1.6666666,2.6972613
+4513,nonunion,30.0,39,13.0,not college grad,single,1,nonSMSA,0,16.5,1.8333334,3.3574865
+4518,nonunion,38.0,40,14.0,not college grad,single,1,nonSMSA,0,16.01923,13.25,6.352657
+4519,,40.0,40,12.0,not college grad,married,1,SMSA,1,12.038462,7.25,7.648953
+4520,nonunion,40.0,39,6.0,not college grad,married,1,nonSMSA,0,12.410255,8.5,6.0386477
+4527,nonunion,40.0,35,12.0,not college grad,married,0,SMSA,0,6.25,1.8333334,2.8985493
+4530,nonunion,50.0,37,12.0,not college grad,married,0,SMSA,0,12.23718,8.416667,9.29146
+4531,,36.0,37,12.0,not college grad,married,1,nonSMSA,0,7.3653846,1.3333334,2.801002
+4532,nonunion,40.0,40,12.0,not college grad,married,1,SMSA,0,15.564102,0.083333336,5.53945
+4533,nonunion,40.0,42,12.0,not college grad,single,1,SMSA,0,18.179487,8.416667,7.745568
+4536,nonunion,45.0,43,17.0,college grad,married,1,nonSMSA,0,17.634615,13.583333,9.806758
+4538,nonunion,40.0,39,9.0,not college grad,married,0,SMSA,0,4.3653846,2.8333333,3.9855046
+4539,nonunion,40.0,43,0.0,not college grad,married,1,nonSMSA,0,5.4615383,0.9166667,2.9264214
+4541,nonunion,60.0,40,13.0,not college grad,married,0,SMSA,0,11.75,0.25,6.5056314
+4542,,40.0,39,12.0,not college grad,married,0,SMSA,0,15.243589,2.75,4.8274837
+4543,nonunion,40.0,37,12.0,not college grad,single,0,SMSA,0,13.557693,1.1666666,13.550715
+4544,,60.0,38,16.0,college grad,married,0,nonSMSA,0,7.4038463,0.083333336,2.7173913
+4545,,40.0,36,11.0,not college grad,single,0,SMSA,0,16.24359,2.3333333,8.709587
+4546,nonunion,40.0,44,11.0,not college grad,married,1,SMSA,0,14.730769,6.0833335,5.7970986
+4547,nonunion,40.0,39,11.0,not college grad,single,0,SMSA,0,14.897436,1.0833334,6.0386477
+4548,nonunion,40.0,35,9.0,not college grad,married,1,SMSA,1,10.423077,5.8333335,2.801932
+4549,nonunion,40.0,41,15.0,not college grad,married,1,nonSMSA,0,15.576923,0.75,11.10854
+4550,nonunion,23.0,44,10.0,not college grad,married,1,nonSMSA,0,1.7948719,0.25,2.9790654
+4551,union,40.0,45,18.0,college grad,single,1,SMSA,0,19.673077,3.4166667,15.09662
+4553,nonunion,40.0,44,12.0,not college grad,married,1,nonSMSA,0,15.480769,1.8333334,4.6296296
+4555,nonunion,40.0,34,17.0,college grad,married,1,SMSA,1,12.032051,2.8333333,14.1304245
+4556,nonunion,38.0,41,12.0,not college grad,married,1,nonSMSA,0,19.423075,17.166666,8.711756
+4562,nonunion,10.0,43,13.0,not college grad,married,1,nonSMSA,0,10.628205,5.3333335,4.025765
+4564,,40.0,39,12.0,not college grad,single,1,SMSA,0,14.730769,1.75,3.3444817
+4567,nonunion,50.0,40,11.0,not college grad,married,1,nonSMSA,0,12.012821,5.8333335,6.5056314
+4569,nonunion,38.0,42,12.0,not college grad,married,1,nonSMSA,0,11.730769,10.416667,5.1207705
+4571,nonunion,40.0,38,18.0,college grad,single,1,nonSMSA,0,14.596154,13.916667,11.610305
+4573,union,40.0,41,13.0,not college grad,married,1,nonSMSA,0,18.782053,18.75,6.0305943
+4574,nonunion,40.0,37,12.0,not college grad,single,1,nonSMSA,0,14.865384,9.916667,6.223832
+4577,nonunion,40.0,39,9.0,not college grad,married,1,nonSMSA,0,8.038462,5.0,5.032206
+4578,,24.0,41,16.0,college grad,married,1,nonSMSA,0,10.25,1.5,3.8739052
+4580,,38.0,38,12.0,not college grad,single,1,nonSMSA,0,13.557693,7.0833335,3.904991
+4583,nonunion,40.0,44,12.0,not college grad,married,1,nonSMSA,0,13.884615,13.833333,5.6360707
+4586,nonunion,50.0,38,17.0,college grad,married,0,SMSA,1,17.75,10.666667,16.739124
+4589,union,40.0,34,12.0,not college grad,married,0,SMSA,0,9.685898,0.25,3.7625415
+4590,nonunion,58.0,41,12.0,not college grad,married,1,SMSA,0,9.442307,2.0,11.215775
+4591,nonunion,40.0,40,14.0,not college grad,single,0,SMSA,0,8.141026,4.25,9.782605
+4592,union,46.0,39,12.0,not college grad,married,1,nonSMSA,0,11.692307,10.083333,10.942026
+4597,union,38.0,38,13.0,not college grad,single,1,SMSA,0,18.916666,18.916666,9.959739
+4599,union,30.0,44,10.0,not college grad,married,0,SMSA,0,5.423077,5.0,4.3961344
+4600,nonunion,56.0,41,11.0,not college grad,single,1,nonSMSA,0,9.903846,1.6666666,4.3156176
+4601,nonunion,40.0,42,18.0,college grad,single,1,SMSA,1,15.230768,9.5,28.647333
+4602,nonunion,35.0,36,18.0,college grad,married,0,SMSA,0,12.397437,5.5,9.188963
+4603,,40.0,41,8.0,not college grad,married,1,nonSMSA,0,11.346153,0.16666667,4.180602
+4604,,24.0,38,16.0,college grad,married,1,nonSMSA,0,16.391026,10.5,4.3547926
+4606,union,40.0,35,12.0,not college grad,married,1,SMSA,1,10.192307,0.25,5.032206
+4607,union,45.0,41,11.0,not college grad,married,1,nonSMSA,0,15.25,2.0833333,8.945245
+4611,nonunion,40.0,36,12.0,not college grad,married,1,nonSMSA,0,6.0128207,4.25,5.5314
+4613,,30.0,39,12.0,not college grad,single,1,nonSMSA,0,5.3269234,4.9166665,2.6838422
+4614,union,40.0,40,12.0,not college grad,single,1,nonSMSA,0,14.929487,8.583333,7.558137
+4620,nonunion,40.0,40,12.0,not college grad,married,0,SMSA,1,10.384615,2.8333333,5.6360707
+4621,union,40.0,38,12.0,not college grad,single,1,nonSMSA,0,14.044871,2.0833333,4.7342973
+4625,nonunion,40.0,40,12.0,not college grad,single,1,SMSA,1,17.967949,5.5,6.2721395
+4628,,40.0,42,10.0,not college grad,married,0,SMSA,1,13.153846,5.25,3.2399664
+4629,nonunion,40.0,35,16.0,college grad,single,1,nonSMSA,0,13.307693,10.583333,7.938803
+4632,nonunion,40.0,42,13.0,not college grad,married,1,nonSMSA,0,14.807693,10.833333,4.066022
+4634,nonunion,40.0,35,15.0,not college grad,single,1,SMSA,1,15.083333,15.083333,10.064413
+4639,nonunion,40.0,39,18.0,college grad,married,1,SMSA,1,14.73718,1.4166666,7.745568
+4642,nonunion,45.0,42,10.0,not college grad,married,1,nonSMSA,0,16.423077,15.666667,4.4283414
+4647,union,40.0,42,7.0,not college grad,single,0,SMSA,1,8.269231,3.4166667,4.8953285
+4651,,40.0,37,14.0,not college grad,single,1,SMSA,1,4.75,0.6666667,3.3444817
+4652,nonunion,38.0,36,11.0,not college grad,married,1,nonSMSA,0,4.423077,0.5,2.801002
+4653,nonunion,50.0,36,13.0,not college grad,married,1,nonSMSA,0,9.634616,1.75,1.9323668
+4655,nonunion,48.0,36,12.0,not college grad,married,1,nonSMSA,0,14.384616,12.25,2.9388082
+4657,,40.0,36,12.0,not college grad,single,1,nonSMSA,0,6.794872,5.8333335,1.985786
+4658,union,40.0,39,12.0,not college grad,married,0,SMSA,1,15.448718,9.416667,7.0450883
+4659,,40.0,36,16.0,college grad,married,0,SMSA,0,15.22436,1.75,40.198082
+4663,,35.0,35,11.0,not college grad,married,1,SMSA,0,11.602564,2.6666667,4.180602
+4664,nonunion,12.0,40,8.0,not college grad,married,1,nonSMSA,0,7.2499995,1.6666666,1.3446048
+4672,nonunion,38.0,38,12.0,not college grad,married,1,nonSMSA,0,19.833334,19.833334,3.6634455
+4674,nonunion,40.0,36,16.0,college grad,single,0,SMSA,1,9.858974,8.666667,14.492755
+4675,nonunion,21.0,35,10.0,not college grad,married,1,nonSMSA,0,3.0769231,1.25,2.9468596
+4677,nonunion,48.0,35,16.0,college grad,married,1,nonSMSA,0,12.442308,11.916667,6.4492707
+4678,nonunion,32.0,44,12.0,not college grad,married,1,nonSMSA,0,18.647436,9.833333,3.5024142
+4680,union,36.0,38,12.0,not college grad,single,0,SMSA,1,8.576923,5.4166665,6.70692
+4681,nonunion,40.0,37,10.0,not college grad,married,1,SMSA,0,4.6538463,4.3333335,7.1256027
+4682,nonunion,42.0,35,14.0,not college grad,married,1,nonSMSA,0,12.326923,2.5,4.0740724
+4683,nonunion,40.0,42,12.0,not college grad,married,1,nonSMSA,0,19.038464,6.0833335,4.3880816
+4685,nonunion,40.0,35,16.0,college grad,married,1,SMSA,1,14.346154,6.4166665,6.191625
+4686,nonunion,34.0,36,12.0,not college grad,married,1,SMSA,1,12.435897,7.0,2.8985493
+4687,nonunion,45.0,35,12.0,not college grad,married,1,nonSMSA,0,15.333334,0.41666666,5.5599976
+4688,nonunion,40.0,40,13.0,not college grad,single,1,nonSMSA,0,18.442308,15.166667,5.9983873
+4696,nonunion,40.0,44,10.0,not college grad,married,1,nonSMSA,0,13.0,13.0,4.6296296
+4699,nonunion,47.0,37,17.0,college grad,married,1,SMSA,1,14.621795,8.333333,14.822856
+4704,nonunion,40.0,44,12.0,not college grad,married,1,SMSA,1,18.134615,18.083334,8.904991
+4705,nonunion,9.0,39,16.0,college grad,married,1,SMSA,0,11.442307,2.8333333,7.230271
+4707,,30.0,44,6.0,not college grad,single,1,nonSMSA,0,11.903846,6.0833335,2.7870672
+4711,,45.0,38,17.0,college grad,married,1,nonSMSA,0,9.660257,1.8333334,35.731617
+4713,nonunion,32.0,44,12.0,not college grad,married,1,nonSMSA,0,17.48077,8.583333,4.355878
+4718,nonunion,25.0,37,12.0,not college grad,single,1,nonSMSA,0,9.679487,1.1666666,1.859903
+4721,nonunion,40.0,44,15.0,college grad,single,1,nonSMSA,0,18.173077,17.333334,10.861512
+4724,nonunion,40.0,40,12.0,not college grad,married,1,nonSMSA,0,11.0,1.9166666,4.412238
+4725,nonunion,40.0,35,14.0,not college grad,married,0,SMSA,0,12.134615,5.75,5.8132024
+4726,nonunion,25.0,37,16.0,college grad,single,1,nonSMSA,0,8.634616,0.8333333,2.7375197
+4728,,9.0,39,9.0,not college grad,married,1,nonSMSA,0,13.474359,11.0,5.202526
+4729,,25.0,43,8.0,not college grad,married,1,nonSMSA,0,2.3205128,0.33333334,3.0518394
+4733,nonunion,25.0,41,13.0,not college grad,married,1,nonSMSA,0,11.519231,2.75,2.9388082
+4734,nonunion,40.0,39,12.0,not college grad,married,1,nonSMSA,0,13.826923,2.4166667,4.6215763
+4736,,30.0,35,12.0,not college grad,married,0,nonSMSA,0,6.9935894,1.3333334,4.180602
+4739,,40.0,43,13.0,not college grad,married,0,SMSA,0,18.0,11.583333,38.70926
+4742,nonunion,40.0,40,10.0,not college grad,married,1,nonSMSA,0,13.99359,9.833333,5.297905
+4746,,40.0,37,12.0,not college grad,single,1,nonSMSA,0,10.923077,0.25,4.389632
+4749,,40.0,35,12.0,not college grad,married,0,SMSA,0,11.23077,3.5,5.8063903
+4750,nonunion,40.0,40,17.0,college grad,married,1,nonSMSA,0,11.076922,1.1666666,2.7858286
+4751,union,14.0,37,12.0,not college grad,single,1,nonSMSA,0,12.365385,12.333333,11.578098
+4757,nonunion,30.0,38,10.0,not college grad,married,0,SMSA,1,2.7884617,0.5,3.1400964
+4759,union,40.0,39,18.0,college grad,married,1,nonSMSA,0,17.858976,9.833333,10.104667
+4762,nonunion,40.0,39,18.0,college grad,married,1,SMSA,0,17.916666,17.916666,9.066018
+4763,nonunion,36.0,40,12.0,not college grad,married,1,SMSA,0,12.48077,1.5,2.5684369
+4766,nonunion,48.0,39,16.0,college grad,married,1,nonSMSA,0,17.916666,17.916666,11.618352
+4767,nonunion,40.0,36,16.0,college grad,married,1,nonSMSA,0,13.044871,4.8333335,6.964568
+4769,nonunion,32.0,34,12.0,not college grad,single,1,SMSA,0,13.391026,6.3333335,3.3977435
+4771,nonunion,30.0,35,13.0,not college grad,married,1,SMSA,0,7.423077,1.3333334,5.716585
+4772,union,40.0,39,18.0,college grad,single,1,SMSA,1,15.134616,13.083333,10.869566
+4780,nonunion,35.0,37,12.0,not college grad,married,1,SMSA,0,8.608974,2.0,4.138486
+4784,nonunion,18.0,44,12.0,not college grad,married,1,SMSA,0,6.25,6.25,5.845409
+4785,nonunion,40.0,38,12.0,not college grad,married,1,SMSA,0,10.660256,0.33333334,4.025765
+4788,nonunion,35.0,37,12.0,not college grad,married,1,SMSA,0,9.730769,1.9166666,4.420288
+4790,,35.0,36,11.0,not college grad,married,1,SMSA,0,11.50641,8.416667,5.312786
+4798,nonunion,40.0,36,18.0,college grad,single,1,SMSA,1,12.192307,6.5,9.046823
+4799,nonunion,50.0,44,12.0,not college grad,married,1,SMSA,0,14.929487,1.6666666,5.917873
+4801,,40.0,36,13.0,not college grad,married,1,SMSA,1,14.365385,2.5833333,38.70926
+4806,nonunion,35.0,40,12.0,not college grad,married,1,nonSMSA,0,11.346154,6.0,7.0692425
+4808,nonunion,42.0,40,13.0,not college grad,single,1,nonSMSA,0,18.371794,8.166667,4.5088553
+4810,,40.0,44,12.0,not college grad,married,1,nonSMSA,0,9.057693,7.8333335,3.3444817
+4813,nonunion,40.0,37,12.0,not college grad,married,1,nonSMSA,0,16.192308,5.4166665,3.0193238
+4814,nonunion,40.0,44,11.0,not college grad,married,1,nonSMSA,0,16.48077,4.75,4.1867933
+4815,nonunion,40.0,36,14.0,not college grad,married,1,nonSMSA,0,7.967949,0.0,3.260869
+4816,nonunion,33.0,36,12.0,not college grad,married,0,SMSA,1,10.019231,9.666667,4.219
+4817,nonunion,15.0,37,16.0,college grad,married,1,SMSA,1,4.7371793,1.6666666,4.025765
+4819,union,35.0,37,18.0,college grad,single,1,SMSA,1,14.807693,11.833333,12.826082
+4823,nonunion,45.0,44,12.0,not college grad,married,1,nonSMSA,0,18.48077,6.5,6.795487
+4824,nonunion,39.0,42,12.0,not college grad,married,0,SMSA,0,12.75,2.3333333,5.370369
+4825,nonunion,55.0,44,17.0,college grad,single,1,SMSA,1,16.97436,15.833333,7.4959726
+4835,union,40.0,37,12.0,not college grad,married,0,SMSA,1,7.1410255,7.0833335,10.064413
+4838,,50.0,34,17.0,college grad,single,1,nonSMSA,0,3.5769231,0.41666666,2.508361
+4841,nonunion,40.0,43,14.0,not college grad,single,1,nonSMSA,0,15.935898,1.0833334,3.5265677
+4842,union,40.0,37,7.0,not college grad,single,1,nonSMSA,0,9.416667,9.416667,4.025765
+4845,nonunion,40.0,35,12.0,not college grad,married,1,SMSA,1,12.897436,3.5,5.032206
+4846,nonunion,40.0,41,12.0,not college grad,single,1,SMSA,1,17.294872,0.0,3.6634455
+4847,nonunion,40.0,39,12.0,not college grad,married,1,SMSA,1,10.166666,0.0,3.220612
+4848,,40.0,35,11.0,not college grad,married,1,SMSA,0,9.423077,1.75,4.1638794
+4849,nonunion,40.0,36,12.0,not college grad,married,1,nonSMSA,0,10.519231,5.3333335,5.032206
+4850,,40.0,42,11.0,not college grad,single,1,nonSMSA,0,16.942308,10.583333,3.6231885
+4852,nonunion,40.0,35,12.0,not college grad,single,1,nonSMSA,0,16.397436,12.166667,6.441224
+4854,nonunion,20.0,42,12.0,not college grad,married,1,nonSMSA,0,15.833333,15.833333,3.341383
+4856,,30.0,41,12.0,not college grad,single,1,nonSMSA,0,16.083334,1.8333334,3.2051272
+4857,nonunion,38.0,43,12.0,not college grad,single,1,SMSA,0,18.5,3.4166667,6.6022515
+4858,nonunion,35.0,39,12.0,not college grad,married,1,SMSA,0,18.096153,3.4166667,5.7487917
+4861,nonunion,25.0,35,8.0,not college grad,married,1,SMSA,1,8.230769,0.0,8.05153
+4868,,40.0,44,12.0,not college grad,single,1,nonSMSA,0,11.0,1.0833334,3.0518394
+4870,nonunion,40.0,38,12.0,not college grad,married,1,nonSMSA,0,15.403846,13.416667,4.227053
+4871,nonunion,40.0,38,12.0,not college grad,married,1,nonSMSA,0,15.371795,4.75,2.8985493
+4872,nonunion,40.0,35,9.0,not college grad,married,1,nonSMSA,0,14.75,3.9166667,5.6199675
+4874,nonunion,30.0,41,7.0,not college grad,single,1,nonSMSA,0,14.961539,2.25,2.6811595
+4876,union,40.0,41,12.0,not college grad,single,0,SMSA,1,10.365385,9.583333,7.850241
+4880,nonunion,50.0,35,12.0,not college grad,married,1,nonSMSA,0,11.641026,3.5,4.5088553
+4882,nonunion,40.0,44,12.0,not college grad,married,1,nonSMSA,0,15.5,1.75,2.6972613
+4884,nonunion,20.0,42,12.0,not college grad,married,1,SMSA,1,6.3910255,1.25,3.3444817
+4885,nonunion,33.0,38,12.0,not college grad,married,0,SMSA,1,15.230769,10.583333,4.4283414
+4890,nonunion,6.0,35,16.0,college grad,married,1,nonSMSA,0,12.826923,1.4166666,4.025765
+4897,nonunion,40.0,39,11.0,not college grad,single,1,nonSMSA,0,19.628202,14.583333,2.9790654
+4898,nonunion,40.0,35,12.0,not college grad,married,1,nonSMSA,0,11.75,11.25,5.3945227
+4900,nonunion,9.0,43,18.0,college grad,single,1,nonSMSA,0,21.75,21.75,2.6972613
+4903,nonunion,40.0,42,12.0,not college grad,married,1,nonSMSA,0,10.5,8.833333,4.025765
+4907,nonunion,40.0,37,17.0,college grad,married,1,SMSA,1,8.096154,1.9166666,3.9613514
+4909,,46.0,36,9.0,not college grad,married,1,SMSA,1,5.8333335,0.25,3.3444817
+4911,union,38.0,34,12.0,not college grad,married,1,nonSMSA,0,17.115385,17.083334,9.57327
+4912,union,40.0,42,11.0,not college grad,single,1,nonSMSA,0,13.461538,3.25,3.7439594
+4919,nonunion,40.0,43,12.0,not college grad,single,0,SMSA,1,13.993589,5.1666665,5.2334948
+4920,nonunion,70.0,37,18.0,college grad,married,1,nonSMSA,0,12.74359,9.166667,6.078904
+4921,nonunion,40.0,35,11.0,not college grad,married,1,SMSA,1,11.365385,10.166667,3.864734
+4925,nonunion,40.0,40,13.0,not college grad,married,0,SMSA,1,16.884615,1.8333334,13.460553
+4926,nonunion,40.0,36,16.0,college grad,single,1,SMSA,1,13.211538,9.833333,7.0450883
+4928,nonunion,40.0,35,18.0,college grad,married,1,nonSMSA,0,12.878207,3.75,8.72905
+4930,nonunion,40.0,38,18.0,college grad,single,1,nonSMSA,0,10.666666,5.75,7.318838
+4932,,16.0,36,11.0,not college grad,married,0,SMSA,1,6.0,6.0,2.415459
+4933,,60.0,37,12.0,not college grad,single,1,SMSA,1,9.076923,3.25,3.4219003
+4935,nonunion,40.0,40,14.0,not college grad,single,1,nonSMSA,0,13.833333,13.833333,4.2592573
+4937,nonunion,40.0,41,9.0,not college grad,married,1,nonSMSA,0,6.1025643,4.0833335,4.5330095
+4942,nonunion,40.0,42,16.0,college grad,single,1,SMSA,1,19.929485,8.75,17.02898
+4944,union,35.0,44,15.0,not college grad,married,0,SMSA,0,16.115385,3.4166667,7.520126
+4946,union,40.0,40,12.0,not college grad,single,1,nonSMSA,0,14.807693,10.25,4.6296296
+4949,nonunion,40.0,35,9.0,not college grad,single,1,SMSA,1,11.685897,5.75,5.2737517
+4952,nonunion,40.0,36,16.0,college grad,single,1,SMSA,1,16.846153,14.75,17.41545
+4953,union,40.0,38,11.0,not college grad,married,0,SMSA,1,16.820513,11.666667,7.0450883
+4954,nonunion,32.0,43,14.0,not college grad,single,0,SMSA,1,13.602565,2.0,3.220612
+4955,union,40.0,42,11.0,not college grad,married,1,SMSA,1,12.692307,1.0833334,3.2528157
+4957,nonunion,40.0,36,12.0,not college grad,single,0,SMSA,0,15.705129,0.0,9.29146
+4959,nonunion,50.0,35,12.0,not college grad,married,1,nonSMSA,0,15.416668,12.083333,14.863117
+4961,nonunion,20.0,41,13.0,not college grad,married,1,SMSA,1,8.961538,2.4166667,4.025765
+4962,nonunion,55.0,36,12.0,not college grad,single,1,SMSA,0,17.557692,11.833333,7.7777743
+4963,nonunion,40.0,35,12.0,not college grad,married,1,SMSA,0,16.423077,14.0,8.043473
+4964,union,40.0,39,12.0,not college grad,single,1,nonSMSA,0,11.705128,3.25,6.239936
+4965,nonunion,40.0,41,14.0,not college grad,married,1,SMSA,0,18.0,17.916666,11.417065
+4966,nonunion,38.0,43,12.0,not college grad,married,1,nonSMSA,0,17.596153,11.75,3.832527
+4967,nonunion,40.0,37,16.0,college grad,married,1,nonSMSA,0,8.564102,4.8333335,7.4396124
+4968,,60.0,41,13.0,not college grad,single,1,SMSA,0,14.596154,4.0,3.6928632
+4971,nonunion,40.0,39,12.0,not college grad,married,1,nonSMSA,0,18.673075,9.25,4.1867933
+4972,nonunion,45.0,39,16.0,college grad,married,1,SMSA,0,13.730769,11.916667,6.8840547
+4977,,55.0,36,11.0,not college grad,married,1,SMSA,0,10.0,3.25,3.6637263
+4978,nonunion,40.0,44,12.0,not college grad,married,1,nonSMSA,0,20.333334,20.333334,4.64573
+4983,nonunion,40.0,38,12.0,not college grad,married,1,nonSMSA,0,5.9102564,5.0,4.460545
+4987,union,40.0,37,11.0,not college grad,married,1,nonSMSA,0,13.326923,3.1666667,5.2656984
+4989,union,50.0,39,12.0,not college grad,married,1,SMSA,0,7.7371798,6.25,6.280193
+4990,union,40.0,39,12.0,not college grad,married,1,SMSA,0,7.070513,3.0,5.8051524
+4995,,26.0,40,12.0,not college grad,married,1,SMSA,0,12.461538,2.3333333,7.589398
+4996,union,58.0,35,12.0,not college grad,single,1,SMSA,1,13.698718,3.5,6.8840547
+4998,nonunion,17.0,36,13.0,not college grad,married,1,SMSA,0,0.7948718,0.33333334,2.9790654
+5001,nonunion,40.0,39,12.0,not college grad,married,1,SMSA,1,7.5320516,0.6666667,4.180602
+5002,union,40.0,39,12.0,not college grad,single,1,SMSA,0,8.608974,1.75,5.611914
+5003,nonunion,38.0,44,12.0,not college grad,single,1,SMSA,0,6.1666665,5.3333335,4.4847016
+5007,nonunion,40.0,36,12.0,not college grad,married,0,SMSA,0,17.5,16.333334,9.911431
+5008,nonunion,40.0,41,12.0,not college grad,single,0,SMSA,0,16.57051,1.4166666,10.064413
+5009,nonunion,40.0,41,12.0,not college grad,married,1,SMSA,1,10.692307,4.0,7.0450883
+5010,nonunion,50.0,43,12.0,not college grad,married,1,SMSA,0,19.948717,3.5,21.674715
+5011,nonunion,55.0,42,16.0,college grad,married,1,SMSA,1,13.576923,4.9166665,9.766504
+5013,nonunion,40.0,41,12.0,not college grad,single,1,SMSA,0,16.807692,1.75,6.1648717
+5015,nonunion,24.0,37,14.0,not college grad,married,0,SMSA,0,14.608974,0.75,12.906603
+5017,nonunion,38.0,39,12.0,not college grad,single,1,SMSA,1,16.538462,8.666667,7.624793
+5018,,40.0,41,17.0,college grad,married,1,SMSA,0,24.237179,4.9166665,5.3678913
+5019,,45.0,36,16.0,college grad,single,0,SMSA,0,14.269231,12.5,35.731617
+5021,union,40.0,42,12.0,not college grad,married,1,SMSA,1,14.525641,1.25,4.025765
+5024,nonunion,40.0,40,12.0,not college grad,single,1,SMSA,1,13.621794,2.3333333,3.486311
+5025,nonunion,40.0,39,16.0,college grad,single,1,SMSA,1,14.980769,12.416667,7.1256027
+5028,nonunion,40.0,37,17.0,college grad,married,1,nonSMSA,0,15.294872,7.8333335,5.032206
+5029,union,25.0,39,15.0,not college grad,single,1,nonSMSA,0,8.378205,2.6666667,9.307566
+5033,nonunion,40.0,37,13.0,not college grad,married,1,nonSMSA,0,15.634616,13.333333,11.070854
+5041,nonunion,40.0,38,14.0,not college grad,married,1,SMSA,1,14.301283,5.8333335,6.0386477
+5042,nonunion,40.0,42,16.0,college grad,married,1,nonSMSA,0,5.5,2.0,5.3462152
+5043,nonunion,40.0,39,17.0,college grad,single,0,nonSMSA,0,15.666666,6.5833335,17.528172
+5044,nonunion,40.0,37,13.0,not college grad,single,1,SMSA,0,16.0,9.833333,11.610305
+5045,nonunion,35.0,44,13.0,not college grad,married,1,nonSMSA,0,20.583334,20.583334,11.046693
+5046,nonunion,40.0,44,12.0,not college grad,married,1,nonSMSA,0,18.826923,8.333333,5.7890487
+5047,,40.0,42,6.0,not college grad,single,1,nonSMSA,0,4.019231,1.6666666,3.1362004
+5054,nonunion,70.0,40,11.0,not college grad,married,0,SMSA,1,2.1153846,1.9166666,1.5619965
+5057,,40.0,44,15.0,not college grad,married,0,SMSA,1,7.570513,0.6666667,4.8274837
+5059,nonunion,40.0,38,18.0,college grad,married,1,SMSA,1,15.0,1.8333334,8.711756
+5061,nonunion,40.0,38,10.0,not college grad,married,1,nonSMSA,0,7.807692,2.25,2.801002
+5063,nonunion,45.0,39,16.0,college grad,married,1,SMSA,1,6.044872,2.75,6.1996756
+5064,,40.0,45,12.0,not college grad,married,1,nonSMSA,0,12.653846,2.5833333,5.0167227
+5065,nonunion,40.0,36,7.0,not college grad,married,1,nonSMSA,0,15.807693,10.583333,3.220612
+5066,nonunion,40.0,41,14.0,not college grad,single,1,nonSMSA,0,13.846154,3.5833333,6.5056314
+5068,nonunion,40.0,40,16.0,college grad,married,0,SMSA,0,10.173077,0.0,3.872784
+5072,nonunion,5.0,41,18.0,college grad,married,1,SMSA,0,16.397436,1.75,13.019322
+5074,nonunion,40.0,38,17.0,college grad,married,1,nonSMSA,0,9.653847,5.0,7.2383237
+5077,nonunion,40.0,39,12.0,not college grad,married,1,nonSMSA,0,0.71153843,0.41666666,2.8180354
+5078,union,40.0,36,17.0,college grad,married,1,SMSA,1,14.833334,9.0,13.937197
+5079,nonunion,40.0,41,,not college grad,single,1,nonSMSA,0,15.698717,12.166667,4.146536
+5080,nonunion,40.0,35,6.0,not college grad,married,1,nonSMSA,0,9.185897,3.3333333,3.4057968
+5081,nonunion,16.0,39,12.0,not college grad,married,1,nonSMSA,0,9.185898,0.16666667,4.025765
+5084,nonunion,50.0,42,17.0,college grad,married,1,nonSMSA,0,16.711538,9.916667,5.8856664
+5086,nonunion,30.0,39,11.0,not college grad,married,1,nonSMSA,0,4.0384617,3.3333333,2.415459
+5088,nonunion,40.0,44,12.0,not college grad,single,1,nonSMSA,0,14.333333,1.3333334,4.2673106
+5089,nonunion,37.0,36,12.0,not college grad,single,1,nonSMSA,0,14.083333,5.8333335,4.871175
+5090,nonunion,20.0,36,12.0,not college grad,single,1,SMSA,0,5.5256414,0.25,2.8180354
+5091,,35.0,35,12.0,not college grad,single,0,SMSA,1,4.3653846,0.25,4.071905
+5095,nonunion,48.0,38,12.0,not college grad,married,1,nonSMSA,0,15.166667,8.833333,6.0225444
+5096,union,40.0,39,13.0,not college grad,single,1,nonSMSA,0,7.628205,3.0833333,6.0386477
+5098,,38.0,35,12.0,not college grad,married,1,nonSMSA,0,10.269231,,2.6485286
+5102,nonunion,40.0,35,16.0,college grad,single,0,SMSA,1,18.474358,6.75,11.610305
+5103,nonunion,40.0,44,9.0,not college grad,married,1,nonSMSA,0,17.429487,13.0,4.5330095
+5104,nonunion,40.0,44,12.0,not college grad,single,1,SMSA,1,14.153846,2.8333333,3.6231885
+5106,nonunion,48.0,36,10.0,not college grad,married,1,nonSMSA,0,4.3525643,0.75,2.222221
+5108,nonunion,40.0,36,12.0,not college grad,married,0,nonSMSA,0,13.660256,6.6666665,6.5780983
+5109,,40.0,38,12.0,not college grad,married,1,nonSMSA,0,6.8397436,0.083333336,2.9388082
+5111,,,35,9.0,not college grad,married,1,nonSMSA,0,5.019231,0.5,5.2833815
+5112,nonunion,60.0,43,18.0,college grad,single,1,nonSMSA,0,16.076923,2.4166667,2.479871
+5113,nonunion,45.0,40,18.0,college grad,married,1,SMSA,0,18.833334,18.833334,7.5684333
+5114,nonunion,40.0,37,12.0,not college grad,single,1,nonSMSA,0,12.833334,10.75,4.7101436
+5115,nonunion,40.0,36,12.0,not college grad,single,1,nonSMSA,0,11.057693,10.916667,4.7101436
+5117,nonunion,40.0,35,12.0,not college grad,married,1,SMSA,0,12.275641,2.6666667,9.677936
+5118,nonunion,40.0,38,12.0,not college grad,married,1,nonSMSA,0,7.0384617,3.5,4.025765
+5120,nonunion,35.0,38,10.0,not college grad,married,1,nonSMSA,0,3.8269231,1.0833334,2.5845404
+5127,union,38.0,41,7.0,not college grad,married,1,nonSMSA,0,15.961538,1.4166666,4.7504005
+5128,nonunion,40.0,36,16.0,college grad,married,1,nonSMSA,0,14.25,12.583333,13.285026
+5134,union,35.0,40,17.0,college grad,single,0,SMSA,1,13.25,13.25,15.040252
+5143,nonunion,36.0,38,12.0,not college grad,married,1,SMSA,0,0.88461536,0.16666667,2.801002
+5148,nonunion,35.0,35,12.0,not college grad,married,1,nonSMSA,0,10.24359,0.9166667,4.251207
+5152,union,40.0,35,13.0,not college grad,married,1,nonSMSA,0,14.480769,6.8333335,5.032206
+5153,,35.0,35,12.0,not college grad,single,1,SMSA,0,11.98718,2.0833333,5.517124
+5154,nonunion,40.0,44,16.0,college grad,married,1,SMSA,0,12.705128,12.166667,14.323667
+5156,nonunion,40.0,42,12.0,not college grad,married,1,nonSMSA,0,18.858974,9.583333,3.8244765
+5157,nonunion,35.0,38,12.0,not college grad,married,1,nonSMSA,0,11.160256,10.75,2.4476643
+5159,union,38.0,43,12.0,not college grad,single,1,SMSA,1,10.596154,3.4166667,7.1578097

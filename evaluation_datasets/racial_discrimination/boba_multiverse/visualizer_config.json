@@ -1,0 +1,25 @@
+{
+    "files": [
+        {
+            "id": "est",
+            "path": "estimate.csv"
+        }
+    ],
+    "schema": {
+        "point_estimate": {
+            "file": "est",
+            "field": "eblack"
+        },
+        "p_value": {
+            "file": "est",
+            "field": "pblack"
+        },
+        "fit": {
+            "file": "est",
+            "field": "rho"
+        }
+    },
+    "labels": {
+        "dataset": "racial_discrimination"
+    }
+}

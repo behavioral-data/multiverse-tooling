@@ -1,0 +1,1 @@
+cp ../data.csv ./ && rm -rf results && mkdir results

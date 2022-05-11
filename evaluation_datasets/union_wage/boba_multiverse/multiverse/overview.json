@@ -1,0 +1,216 @@
+{
+  "decisions": [
+    {
+      "options": [
+        "+ tenure",
+        ""
+      ],
+      "var": "tenure"
+    },
+    {
+      "options": [
+        "+ c_city",
+        ""
+      ],
+      "var": "c_city"
+    },
+    {
+      "options": [
+        "+ south",
+        ""
+      ],
+      "var": "south"
+    },
+    {
+      "options": [
+        "+ grade",
+        ""
+      ],
+      "var": "grade"
+    },
+    {
+      "options": [
+        "+ age",
+        ""
+      ],
+      "var": "age"
+    },
+    {
+      "options": [
+        "+ ttl_exp",
+        ""
+      ],
+      "var": "ttl_exp"
+    },
+    {
+      "options": [
+        "+ married",
+        ""
+      ],
+      "var": "married"
+    },
+    {
+      "options": [
+        "+ hours",
+        ""
+      ],
+      "var": "hours"
+    },
+    {
+      "options": [
+        "+ collgrad",
+        ""
+      ],
+      "var": "collgrad"
+    },
+    {
+      "options": [
+        "+ smsa",
+        ""
+      ],
+      "var": "smsa"
+    }
+  ],
+  "graph": {
+    "edges": [
+      {
+        "source": 5,
+        "target": 0,
+        "type": "order"
+      },
+      {
+        "source": 1,
+        "target": 5,
+        "type": "order"
+      },
+      {
+        "source": 9,
+        "target": 1,
+        "type": "order"
+      },
+      {
+        "source": 2,
+        "target": 9,
+        "type": "order"
+      },
+      {
+        "source": 6,
+        "target": 2,
+        "type": "order"
+      },
+      {
+        "source": 8,
+        "target": 6,
+        "type": "order"
+      },
+      {
+        "source": 3,
+        "target": 8,
+        "type": "order"
+      },
+      {
+        "source": 7,
+        "target": 3,
+        "type": "order"
+      },
+      {
+        "source": 4,
+        "target": 7,
+        "type": "order"
+      }
+    ],
+    "nodes": [
+      {
+        "id": 0,
+        "name": "tenure"
+      },
+      {
+        "id": 1,
+        "name": "c_city"
+      },
+      {
+        "id": 2,
+        "name": "south"
+      },
+      {
+        "id": 3,
+        "name": "grade"
+      },
+      {
+        "id": 4,
+        "name": "age"
+      },
+      {
+        "id": 5,
+        "name": "ttl_exp"
+      },
+      {
+        "id": 6,
+        "name": "married"
+      },
+      {
+        "id": 7,
+        "name": "hours"
+      },
+      {
+        "id": 8,
+        "name": "collgrad"
+      },
+      {
+        "id": 9,
+        "name": "smsa"
+      }
+    ]
+  },
+  "visualizer": {
+    "files": [
+      {
+        "id": "est",
+        "path": "estimate.csv"
+      },
+      {
+        "id": "unc",
+        "path": "uncertainty.csv"
+      },
+      {
+        "id": "fit",
+        "multi": true,
+        "path": "results/disagg_fit_{}.csv"
+      }
+    ],
+    "labels": {
+      "dataset": "union wage",
+      "fit_range": [
+        0,
+        1
+      ],
+      "x_axis": "Coefficient on union",
+      "x_axis_fit": "Approved",
+      "x_range": [
+        0,
+        20
+      ]
+    },
+    "schema": {
+      "fit": {
+        "field": "NRMSE",
+        "file": "est"
+      },
+      "p_value": {
+        "field": "p.value",
+        "file": "est"
+      },
+      "point_estimate": {
+        "field": "estimate",
+        "file": "est"
+      },
+      "prediction": {
+        "file": "fit"
+      },
+      "uncertainty": {
+        "field": "estimate",
+        "file": "unc"
+      }
+    }
+  }
+}

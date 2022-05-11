@@ -1,0 +1,1 @@
+cp ../../processed_racial_discrimination.csv ./ && rm -rf results && mkdir results

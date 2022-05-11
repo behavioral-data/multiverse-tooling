@@ -1,0 +1,116 @@
+{
+  "decisions": [
+    {
+      "options": [
+        "median_split",
+        "none"
+      ],
+      "var": "Adjust_Effect_Size_Model"
+    },
+    {
+      "options": [
+        "h",
+        "sumq_med",
+        "qall_med",
+        "qallxb_med",
+        "qblack_med",
+        "qblackxb_med",
+        "qwhite_med",
+        "qwhitexb_med",
+        "sumq",
+        "qall",
+        "qallxb",
+        "qblack",
+        "qblackxb",
+        "qwhite",
+        "qwhitexb"
+      ],
+      "var": "quality"
+    },
+    {
+      "options": [
+        "regression",
+        "probit"
+      ],
+      "var": "Model"
+    },
+    {
+      "options": [
+        "",
+        "female == 1",
+        "female == 0"
+      ],
+      "var": "subsample"
+    }
+  ],
+  "graph": {
+    "edges": [
+      {
+        "source": 1,
+        "target": 3,
+        "type": "procedural"
+      },
+      {
+        "source": 2,
+        "target": 0,
+        "type": "order"
+      },
+      {
+        "source": 3,
+        "target": 2,
+        "type": "order"
+      }
+    ],
+    "nodes": [
+      {
+        "id": 0,
+        "name": "Adjust_Effect_Size_Model"
+      },
+      {
+        "id": 1,
+        "name": "quality"
+      },
+      {
+        "id": 2,
+        "name": "Model"
+      },
+      {
+        "id": 3,
+        "name": "subsample"
+      }
+    ]
+  },
+  "visualizer": {
+    "files": [
+      {
+        "id": "est",
+        "path": "estimate.csv"
+      }
+    ],
+    "labels": {
+      "dataset": "racial_discrimination",
+      "x_range": [
+        -0.03,
+        0.0
+      ],
+      "x_range_outer": [
+        -0.07,
+        0.04
+      ]
+    },
+    "schema": {
+      "fit": {
+        "field": "rho",
+        "file": "est"
+      },
+      "p_value": {
+        "field": "pblack",
+        "file": "est"
+      },
+      "point_estimate": {
+        "field": "eblack",
+        "file": "est"
+      }
+    }
+  }
+}

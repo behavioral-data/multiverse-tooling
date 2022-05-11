@@ -1,0 +1,25 @@
+{
+  "files": [
+    {"id": "est", "path": "estimate.csv"},
+    {"id": "unc", "path": "uncertainty.csv"},
+    {"id": "nul", "path": "null.csv"},
+    {"id": "wei", "path": "weights.csv"},
+    {"id": "fit", "path": "results/disagg_fit_{}.csv", "multi": true}
+  ],
+  "schema": {
+    "point_estimate": {"file": "est", "field": "expected_diff"},
+    "fit": {"file": "est", "field": "NRMSE"},
+    "uncertainty": {"file": "unc", "field": "expected_diff"},
+    "prediction": {"file": "fit", "transform": "math.log2({} + 1)"},
+    "null_distribution": {"field": "expected_diff", "file": "nul"},
+    "stacking_weight": {"field": "weights", "file": "wei"}
+  },
+  "labels": {
+    "dataset": "hurricane",
+    "x_axis": "Expected Deaths: Female - Male",
+    "x_axis_fit": "Log2(Death + 1)",
+    "fit_range": [0, 1],
+    "x_range": [-10, 50],
+    "x_range_outer": [-120, 300]
+  }
+}
