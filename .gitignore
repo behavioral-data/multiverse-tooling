@@ -2,7 +2,10 @@
 **/multiverse/code
 **/multiverse/results
 **/multiverse/uncertainty.csv
+./
 .vscode/
 __pycache__/
 test/
 *.py[cod]
+visualizations/**
+exploration/**
