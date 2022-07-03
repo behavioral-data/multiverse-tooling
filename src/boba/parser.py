@@ -4,10 +4,10 @@ import json
 import os
 from textwrap import wrap
 from dataclasses import dataclass, field
-from typing import List
+from typing import List, Tuple
 
 from .baseparser import ParseError
-from .codeparser import CodeParser
+from .codeparser import CodeParser, Chunk
 from .graphparser import GraphParser
 from .graphanalyzer import GraphAnalyzer, InvalidGraphError
 from .decisionparser import DecisionParser
@@ -41,9 +41,20 @@ class DecRecord:
     option: str = ''
     idx: int = -1
 
-
+@dataclass
+class BlockCode:
+    dec_name: str = ''
+    opt_name: str = ''
+    code_str: str = ''
+    
+    @property
+    def code_num_lines(self) -> int:
+        return len(repr(self.code_str).split('\\n'))
+    
+    def __repr__(self):
+        return f'{self.dec_name}:{self.opt_name}' if self.dec_name != self.opt_name else self.dec_name
+    
 class Parser:
-
     """ Parse everything """
 
     def __init__(self, f1, out='.', lang=None):
@@ -67,6 +78,7 @@ class Parser:
         self._parse_graph()
         self._parse_constraints()
 
+        self.universe_to_blocks = {}
         # init helper class
         try:
             supported_langs = None
@@ -220,7 +232,15 @@ class Parser:
 
         return res
 
-    def _code_gen_recur(self, path, i, code, history):
+    def _code_gen_recur(self, 
+                        path: List[Tuple[str, Chunk]], 
+                        path_block_changes: List[Tuple[str, int, int]], 
+                        p_i: int, 
+                        pbc_i: int, 
+                        code: str, 
+                        cur_block_code: str, 
+                        history: History,
+                        block_codes: List[BlockCode]):
         """
         Generate code recursively.
 
@@ -229,16 +249,32 @@ class Parser:
         :param code: the generated code so far.
         :param history: record the choices made.
         """
-
-        if i >= len(path):
+        
+        if p_i >= len(path): #base case
             # write file
-            fn = self.wrangler.write_universe(code)
+            
+            fn, code, cur_block_code = self.wrangler.write_universe(code, cur_block_code)
 
             # record history
             history.filename = fn
             self.history.append(history)
+            block_codes.append(BlockCode(dec_name=path_block_changes[pbc_i][0].split(':')[0],
+                                         opt_name=path_block_changes[pbc_i][0].split(':')[-1],
+                                         code_str=cur_block_code
+                                        ))
+            assert ''.join([b.code_str for b in block_codes]) == code
+            self.blocks_code.append(block_codes)
         else:
-            nd, chunk = path[i]
+            if p_i == path_block_changes[pbc_i][2]:
+                block_codes = block_codes + [BlockCode(
+                    dec_name=path_block_changes[pbc_i][0].split(':')[0],
+                    opt_name=path_block_changes[pbc_i][0].split(':')[-1],
+                    code_str=cur_block_code
+                )]
+                pbc_i += 1
+                cur_block_code = ''
+            
+            nd, chunk = path[p_i]
 
             # check if the block has constraints attached to it
             names = [nd, nd.split(':')[0]]
@@ -249,7 +285,14 @@ class Parser:
                     if self.constraints[n].skip:
                         # skip the node and continue
                         history.skipped.append(nd)
-                        self._code_gen_recur(path, i + 1, code, history)
+                        self._code_gen_recur(path, 
+                                             path_block_changes,
+                                             p_i + 1, 
+                                             pbc_i,
+                                             code, 
+                                             cur_block_code, 
+                                             history,
+                                             block_codes)
                         return
                     else:
                         # abort codegen
@@ -265,7 +308,14 @@ class Parser:
                 if prev_idx is not None:
                     # use the previous value
                     snippet, opt = self.dec_parser.gen_code(chunk.code, chunk.variable, prev_idx)
-                    self._code_gen_recur(path, i+1, code+snippet, history)
+                    self._code_gen_recur(path, 
+                                         path_block_changes,
+                                         p_i + 1, 
+                                         pbc_i,
+                                         code + snippet, 
+                                         cur_block_code + snippet, 
+                                         history,
+                                         block_codes)
                 else:
                     # expand the decision
                     num_alt = self.dec_parser.get_num_alt_discrete(chunk.variable)
@@ -283,23 +333,49 @@ class Parser:
                         snippet, opt = self.dec_parser.gen_code(chunk.code, chunk.variable, k)
                         decs = [a for a in history.decisions]
                         decs.append(DecRecord(chunk.variable, opt, k))
-                        self._code_gen_recur(path, i+1, code + snippet,
-                                             History(history.path, '', decs))
+                        self._code_gen_recur(path, 
+                                             path_block_changes, 
+                                             p_i + 1, 
+                                             pbc_i,
+                                             code + snippet, 
+                                             cur_block_code + snippet,
+                                             History(history.path, '', decs),
+                                             block_codes)
             else:
                 code += chunk.code
-                self._code_gen_recur(path, i+1, code, history)
+                cur_block_code += chunk.code
+                self._code_gen_recur(path, path_block_changes, p_i+1, pbc_i, code, cur_block_code,
+                                     history, block_codes)
 
     def _code_gen(self):
         paths = self._get_code_paths()
-
+        def get_path_block_changes(paths):
+            paths_block_change_idxs = []
+            for path in paths:
+                path_block_changes = []
+                cur_block_name = path[0][0]
+                cur_block_start = 0
+                for ind, path_step in enumerate(path):
+                    if path_step[0] == cur_block_name:
+                        continue
+                    else:
+                        path_block_changes.append((cur_block_name, cur_block_start, ind))
+                        cur_block_name = path_step[0]
+                        cur_block_start = ind
+                path_block_changes.append((cur_block_name, cur_block_start, len(path)))
+                paths_block_change_idxs.append(path_block_changes)
+            return paths_block_change_idxs
+        path_block_changes = get_path_block_changes(paths)   
+            
         self.wrangler.counter = 0  # keep track of file name
         self.history = []          # keep track of choices made for each file
+        self.blocks_code = []
         self.wrangler.col = 2 + len(self.dec_parser.get_decs())\
             + len(self.code_parser.get_decisions())
 
         self.wrangler.create_dir()
-        for idx, p in enumerate(paths):
-            self._code_gen_recur(p, 0, '', History(idx))
+        for idx, (p, pbc) in enumerate(zip(paths, path_block_changes)):
+            self._code_gen_recur(p, pbc, 0, 0, '', '', History(idx), [])
 
         # write the pre and post execs to a file.
         self.wrangler.write_pre_exe()

@@ -539,10 +539,18 @@ category = "main"
 optional = false
 python-versions = "*"
 
+[[package]]
+name = "ydiff"
+version = "1.2"
+description = "View colored, incremental diff in a workspace or from stdin, with side by side and auto pager support"
+category = "main"
+optional = false
+python-versions = "*"
+
 [metadata]
 lock-version = "1.1"
 python-versions = "3.8.13"
-content-hash = "84ca9ae7eaab9afd602f9cefa6b8956a926074b931d68a836d719b1b4c0fed27"
+content-hash = "186f804edb9b2653436768a3fdc84ba82db30a91c2dc358b677409df5e45c17b"
 
 [metadata.files]
 appnope = [
@@ -1039,4 +1047,7 @@ traitlets = [
 wcwidth = [
     {file = "wcwidth-0.2.5-py2.py3-none-any.whl", hash = "sha256:beb4802a9cebb9144e99086eff703a642a13d6a0052920003a230f3294bbe784"},
     {file = "wcwidth-0.2.5.tar.gz", hash = "sha256:c4d647b99872929fdb7bdcaa4fbe7f01413ed3d98077df798530e5b04f116c83"},
+]
+ydiff = [
+    {file = "ydiff-1.2.tar.gz", hash = "sha256:f5430577ecd30974d766ee9b8333e06dc76a947b4aae36d39612a0787865a121"},
 ]

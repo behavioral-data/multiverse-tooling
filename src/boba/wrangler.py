@@ -136,7 +136,7 @@ class Wrangler:
             json.dump(self.lang.supported_langs, f)
 
 
-    def write_universe(self, code):
+    def write_universe(self, code, cur_block_code):
         """Write the generated code to a universe file."""
 
         self.counter += 1
@@ -144,16 +144,18 @@ class Wrangler:
 
         # replace the reserved keyword _n
         code = code.replace('{{_n}}', str(self.counter))
-
+        cur_block_code = cur_block_code.replace('{{_n}}', str(self.counter))
+        
         # append output code
         code += self._gen_code()
+        cur_block_code += self._gen_code()
 
         # write file
         with open(os.path.join(self.out, DIR_SCRIPT, fn), 'w') as f:
             f.write(code)
             f.flush()
 
-        return fn
+        return fn, code, cur_block_code
 
     def write_summary(self, rows):
         """Write the summary CSV file"""
