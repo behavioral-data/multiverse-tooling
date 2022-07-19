@@ -1,10 +1,12 @@
 # -*- coding: utf-8 -*-
 
+import ast
 import json
 import os
 from textwrap import wrap
 from dataclasses import dataclass, field
-from typing import List, Tuple
+from typing import List, Tuple, Dict, Tuple
+from tqdm import tqdm
 
 from .baseparser import ParseError
 from .codeparser import CodeParser, Chunk
@@ -15,8 +17,9 @@ from .constraintparser import ConstraintParser
 from .lang import LangError, Lang
 from .wrangler import Wrangler
 from .adg import ADG
-import boba.util as util
 
+import src.boba.util as util
+from src.ast_traverse import OurNodeTransformer
 
 @dataclass
 class History:
@@ -33,6 +36,10 @@ class History:
     decisions: List = field(default_factory=lambda: [])
     skipped: List = field(default_factory=lambda: [])
 
+    @property
+    def decision_dict(self) -> Dict[str, Tuple[str, int]]:
+        return {dec_record.parameter: (dec_record.option, dec_record.idx) for dec_record in self.decisions}
+        
 
 @dataclass
 class DecRecord:
@@ -55,9 +62,10 @@ class BlockCode:
         return f'{self.dec_name}:{self.opt_name}' if self.dec_name != self.opt_name else self.dec_name
     
 class Parser:
+
     """ Parse everything """
 
-    def __init__(self, f1, out='.', lang=None):
+    def __init__(self, f1, out='.', lang=None, add_paren=False):
         self.fn_script = f1
         self.parent_dir = out
         self.out = os.path.join(out, 'multiverse/')
@@ -90,11 +98,38 @@ class Parser:
 
             self.lang = Lang(f1, lang=lang, supported_langs=supported_langs)
             self.wrangler = Wrangler(self.spec, self.lang, self.out)
+          
         except LangError as e:
             self._throw(e.args[0])
         except ParseError as e:
             self._throw_spec_error(e.args[0])
+        
+        if self.lang.lang[0] == 'python':
+            self.paths_code = self.get_paths_code()
+            self.paths_ast = self.get_paths_ast()
+            self.add_paren = add_paren
+        else:
+            self.paths_code, self.paths_ast = None, None  
+            self.add_paren = False
 
+    def get_paths_ast(self) -> List[ast.AST]:
+        our_node_transformer = OurNodeTransformer()
+        paths_ast = []
+        for code_str in self.paths_code:
+            node = ast.parse(code_str)
+            paths_ast.append(our_node_transformer.visit(node))
+        return paths_ast
+            
+    
+    def get_paths_code(self) -> List[str]:
+        paths_code = []
+        for path in self.paths: 
+            strs = []
+            for block_name in path:
+                strs.append(self.code_parser.blocks[block_name].code_str)
+            paths_code.append('\n'.join(strs))
+        return paths_code
+            
     def _throw(self, msg):
         util.print_fail(msg)
         exit(1)
@@ -169,6 +204,7 @@ class Parser:
 
             # analyze the graph to get paths
             self.paths = GraphAnalyzer(nodes, edges).analyze()
+    
             # an ugly way to handle the artificial _start node
             if '_start' in self.code_parser.blocks and '_start' not in nodes:
                 for p in self.paths:
@@ -249,7 +285,7 @@ class Parser:
         :param code: the generated code so far.
         :param history: record the choices made.
         """
-        
+
         if p_i >= len(path): #base case
             # write file
             
@@ -307,7 +343,7 @@ class Parser:
 
                 if prev_idx is not None:
                     # use the previous value
-                    snippet, opt = self.dec_parser.gen_code(chunk.code, chunk.variable, prev_idx)
+                    snippet, opt = self.dec_parser.gen_code(chunk.code, chunk.variable, prev_idx, add_paren=self.add_paren)
                     self._code_gen_recur(path, 
                                          path_block_changes,
                                          p_i + 1, 
@@ -330,7 +366,7 @@ class Parser:
                             continue
 
                         # code gen
-                        snippet, opt = self.dec_parser.gen_code(chunk.code, chunk.variable, k)
+                        snippet, opt = self.dec_parser.gen_code(chunk.code, chunk.variable, k, add_paren=self.add_paren)
                         decs = [a for a in history.decisions]
                         decs.append(DecRecord(chunk.variable, opt, k))
                         self._code_gen_recur(path, 
@@ -349,7 +385,7 @@ class Parser:
 
     def _code_gen(self):
         paths = self._get_code_paths()
-        def get_path_block_changes(paths):
+        def get_path_block_changes(paths) -> List[Tuple[str, int, int]]:  
             paths_block_change_idxs = []
             for path in paths:
                 path_block_changes = []
@@ -366,7 +402,7 @@ class Parser:
                 paths_block_change_idxs.append(path_block_changes)
             return paths_block_change_idxs
         path_block_changes = get_path_block_changes(paths)   
-            
+
         self.wrangler.counter = 0  # keep track of file name
         self.history = []          # keep track of choices made for each file
         self.blocks_code = []
@@ -374,9 +410,11 @@ class Parser:
             + len(self.code_parser.get_decisions())
 
         self.wrangler.create_dir()
-        for idx, (p, pbc) in enumerate(zip(paths, path_block_changes)):
-            self._code_gen_recur(p, pbc, 0, 0, '', '', History(idx), [])
-
+        with tqdm() as pbar:
+            self.wrangler.pbar = pbar
+            for idx, (p, pbc) in enumerate(zip(paths, path_block_changes)):
+                self._code_gen_recur(p, pbc, 0, 0, '', '', History(idx), [])
+        self.wrangler.pbar = None
         # write the pre and post execs to a file.
         self.wrangler.write_pre_exe()
         self.wrangler.write_post_exe()

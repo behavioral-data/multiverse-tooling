@@ -4,8 +4,11 @@ import os
 import shutil
 import csv
 import json
+from typing import Union
 from dataclasses import dataclass
 from .baseparser import ParseError
+from tqdm import tqdm
+
 
 
 @dataclass
@@ -58,6 +61,7 @@ class Wrangler:
         self.post_exe = ''
 
         self._read_spec()
+        self.pbar = Union[None, tqdm]
 
     @staticmethod
     def _read_json_safe(obj, field):
@@ -140,6 +144,8 @@ class Wrangler:
         """Write the generated code to a universe file."""
 
         self.counter += 1
+        if self.pbar is not None:
+            self.pbar.update(1)
         fn = get_universe_script(self.counter, self.lang.get_ext())
 
         # replace the reserved keyword _n

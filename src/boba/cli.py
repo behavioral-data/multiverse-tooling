@@ -5,9 +5,9 @@ import click
 import shutil
 import os
 import pandas as pd
-from .parser import Parser
-from .output.csvmerger import CSVMerger
-from .bobarun import BobaRun
+from src.boba.parser import Parser
+from src.boba.output.csvmerger import CSVMerger
+from src.boba.bobarun import BobaRun
 
 
 @click.command()

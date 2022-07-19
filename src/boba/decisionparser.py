@@ -264,7 +264,7 @@ class DecisionParser(BaseParser):
         """Get a list of decision names."""
         return [i for i in self.decisions.keys()]
 
-    def gen_code(self, template, dec_id, i_alt):
+    def gen_code(self, template, dec_id, i_alt, add_paren=False):
         """
         Replace the placeholder variable in a template chunk.
         :param template: a chunk of code with only one placeholder
@@ -276,7 +276,10 @@ class DecisionParser(BaseParser):
 
         # assuming the placeholder var is always at the end
         # which is true given how we chop up the chunks
-        return template + str(v), str(v)
+        if add_paren:
+            return template + '(' + str(v) + ')', str(v)
+        else:
+            return template + str(v), str(v)
 
     def parse_code(self, line):
         """

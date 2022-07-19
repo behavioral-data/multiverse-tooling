@@ -3,7 +3,7 @@
 import os
 import re
 import pandas as pd
-import boba.util as util
+import src.boba.util as util
 
 STR_MAX = 1024
 

@@ -1,7 +1,8 @@
 # -*- coding: utf-8 -*-
 
+from collections import OrderedDict
 from dataclasses import dataclass, field
-from typing import List
+from typing import List, Dict
 import json
 
 from .blocksyntaxparser import BlockSyntaxParser, ParseError
@@ -22,6 +23,8 @@ class Block:
     parameter: str = ''
     option: str = ''
     chunks: List = field(default_factory=lambda: [])
+    code_str: str = ''
+    
 
 
 @dataclass
@@ -38,7 +41,7 @@ class Chunk:
 
 class CodeParser:
     def __init__(self):
-        self.blocks = {}
+        self.blocks = OrderedDict()
         self.order = []
 
         self.raw_spec = ''
@@ -48,6 +51,14 @@ class CodeParser:
         self.inline_vars = []
         self.used_vars = set()
 
+    
+        
+        
+    @property
+    def boba_var_to_decision_ind(self) -> Dict[str, int]:
+        if 'decisions' in self.spec:
+            return {d_dict['var']: i for i, d_dict in enumerate(self.spec['decisions'])}
+    
     @staticmethod
     def _get_block_name(block):
         """Get the ID of the block, ignoring options."""
@@ -63,6 +74,7 @@ class CodeParser:
             block.id = ''
             if len(self.order):
                 self.blocks[self.order[-1]].chunks += block.chunks
+                self.blocks[self.order[-1]].code_str += block.code_str 
                 return
 
         # ignore empty block
@@ -117,12 +129,14 @@ class CodeParser:
         placeholder variables inside the code."""
         code = ''
         bl = Block()
-
+        block_code_lines = []
         for line in f:
             if BlockSyntaxParser.can_parse(line):
                 # end of the previous block
                 bl.chunks.append(Chunk('', code))
+                bl.code_str = ''.join(block_code_lines)
                 code = ''
+                block_code_lines = []
                 self._add_block(bl)
 
                 # parse the metadata and create a new block
@@ -150,17 +164,29 @@ class CodeParser:
                         code = codes[-1]
                     else:
                         code += line
+                    block_code_lines.append(line)
                 except ParseError as e:
                     msg = 'At line "{}"\n\t{}'.format(line, e.args[0])
                     raise ParseError(msg)
+                
 
         # add the last block
         bl.chunks.append(Chunk('', code))
+        bl.code_str = ''.join(block_code_lines)
         self._add_block(bl)
 
         # parse the spec
         try:
             self.spec = json.loads(self.raw_spec) if self.raw_spec else {}
+            # ensure all items in decision options are str
+            for d_dict in self.spec['decisions']:
+                new_opts = []
+                for opt in d_dict['options']:
+                    if type(opt) is not str:
+                        opt = str(opt)
+                    new_opts.append(opt)
+                d_dict['options'] = new_opts
+            
         except ValueError as e:
             msg = self.raw_spec + '\n' + e.args[0]
             msg += '\nBoba config is not valid JSON'

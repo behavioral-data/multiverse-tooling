@@ -1,22 +1,21 @@
 import bisect
+from codecs import Codec
 import datetime
-from dataclasses import dataclass, field
 import difflib
 import os.path as osp
-from pprint import pprint 
 import ydiff
-import subprocess 
 
 from src.boba.parser import Parser
 from src.our_ydiff import OurHunk, OurUnifiedDiff
-    
+from src.ast_diffs import ASTDiff
+
 
 def read_file_against_template(fpath, code_blocks):
     orig_code = ''.join([b.code_str for b in code_blocks])
     with open(fpath, 'r') as f:
         changed_code = f.read()
-    orig_code_lines = repr(orig_code).split('\\n')
-    changed_code_lines = repr(changed_code).split('\\n')
+    orig_code_lines = orig_code.split('\n')
+    changed_code_lines = changed_code.split('\n')
     return orig_code_lines, changed_code_lines
 
 def get_diff(fpath: str, boba_parser: Parser):
@@ -72,16 +71,17 @@ def print_diff(diff: OurUnifiedDiff):
         print(a.decode(), end='')
             
 
-
 if __name__ == '__main__':
     import os.path as osp
     from src.utils import DATA_DIR
     import pickle 
     
-    script = osp.join(DATA_DIR, 'hurricane', 'template.R')
-    out = osp.join(DATA_DIR, 'hurricane')
+    DATASET = 'fertility'
+    EXT = 'py'
+    script = osp.join(DATA_DIR, DATASET, f'template.{EXT}')
+    out = osp.join(DATA_DIR, DATASET)
     
-    save_file = osp.join(DATA_DIR, 'hurricane_template_parser_obj.pickle')
+    save_file = osp.join(DATA_DIR, f'{DATASET}_template_parser_obj_0718.pickle')
     
     if not osp.exists(save_file):
         ps = Parser(script, out, None)
@@ -91,11 +91,22 @@ if __name__ == '__main__':
             pickle.dump(ps, f)
     with open(save_file, 'rb') as f:
         ps = pickle.load(f)
-        
+    universe_code_dir = osp.join(DATA_DIR, DATASET, 'multiverse', 'code')
     universe_num = 3
-    universe_path = osp.join(DATA_DIR, 'hurricane', 'multiverse', 'code', f'universe_{universe_num}.R')
-    
+    universe_path = osp.join(universe_code_dir, f'universe_{universe_num}.{EXT}')
+    if EXT == 'py':
+        ast_diff = ASTDiff(universe_path, ps)
+        diff = ast_diff.get_ast_boba_json_diff()
+        print_diff(diff)
     print_diff(get_diff(universe_path, ps))
+    
+    # universe_num = 5
+    # universe_path = osp.join(universe_code_dir, f'universe_{universe_num}.{EXT}')
+    # print_diff(get_diff(universe_path, ps))
+    
+    # universe_num = 7
+    # universe_path = osp.join(universe_code_dir, f'universe_{universe_num}.{EXT}')
+    # print_diff(get_diff(universe_path, ps))
     
     
 
