@@ -1,0 +1,42 @@
+from src.gumtree.main.trees.default_tree import DefaultTree
+from src.gumtree.main.matchers.mapping_store import MappingStore
+
+
+def test_mapping_store():
+    t1 = DefaultTree(node_type="foo")
+    t2 = DefaultTree(node_type="foo")
+    ms = MappingStore(t1, t2)
+    assert(0 == ms.size())
+    assert(not ms.is_src_mapped(t1))
+    assert(not ms.is_dst_mapped(t2))
+    assert(ms.get_dst_for_src(t1) is None)
+    assert(ms.get_src_for_dst(t2) is None)
+    ms.add_mapping(t1, t2)
+    assert(1 == ms.size())
+    assert(ms.is_src_mapped(t1))
+    assert(ms.is_dst_mapped(t2))
+    assert(not ms.are_both_unmapped(t1, t2))
+    t3 =DefaultTree(node_type="foo")
+    t4 =DefaultTree(node_type="foo")
+    assert(not ms.are_srcs_unmapped([t1, t3]))
+    assert(not ms.are_dsts_unmapped([t2, t4]))
+    assert(not ms.are_both_unmapped(t1, t3))
+    assert(not ms.are_both_unmapped(t3, t2))
+    assert(ms.are_both_unmapped(t3, t4))
+    m = next(iter(ms.as_set()))
+    assert(t1 == m[0])
+    assert(t2 == m[1])
+    ms.remove_mapping(t1, t2)
+    assert(0 == ms.size())
+    assert(ms.are_srcs_unmapped([t1, t3]))
+    assert(ms.are_dsts_unmapped([t2, t4]))
+    t3.set_parent_and_update_children(t1)
+    t4.set_parent_and_update_children(t2)
+    ms.add_mapping_recursively(t1, t2)
+    assert(2 == ms.size())
+    assert(ms.has(t1, t2))
+    assert(ms.has(t3, t4))
+    print("Done")
+    
+if __name__ == "__main__":
+    test_mapping_store()

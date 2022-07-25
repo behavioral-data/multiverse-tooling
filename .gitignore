@@ -10,3 +10,6 @@ test/
 visualizations/**
 exploration/**
 data/**
+gumtree/**
+*.svg
+*.lprof
