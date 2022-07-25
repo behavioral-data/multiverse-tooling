@@ -2,10 +2,16 @@ import logging
 import json
 from typing import Union
 from os.path import dirname, abspath, join
+from src.ast_viz import viz_code
+from svglib.svglib import svg2rlg
+from reportlab.graphics import renderPDF
+
 
 PROJECT_ROOT_DIR = dirname(dirname(abspath(__file__)))
 DATA_DIR = join(PROJECT_ROOT_DIR, 'data')
 SRC_DIR = join(PROJECT_ROOT_DIR, 'src')
+VIZ_DIR = join(PROJECT_ROOT_DIR, 'visualizations')
+
 
 def get_logger(name):
     logger = logging.getLogger(name)
@@ -15,6 +21,11 @@ def get_logger(name):
         level=logging.INFO
     )
     return logger
+
+def save_viz_code_pdf(code, save_path):
+    svg, graph = viz_code(code)
+    with open(save_path, 'wb') as f:
+        f.write(graph.pipe(format='pdf'))
 
 class CompactJSONEncoder(json.JSONEncoder):
     """A JSON Encoder that puts small containers on single lines."""

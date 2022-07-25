@@ -93,7 +93,6 @@ class NodeVisitor(object):
         res = self.generic_visit(node, path)
         return res
 
-
 class NodeVisitorStack(object):
     def __init__(self):
         self.stack = []
@@ -146,14 +145,23 @@ class NodeVisitorStack(object):
     
     def generic_visit(self, node):
         """Called if no explicit visitor function exists for a node."""
-        for field, value in reversed(list(iter_fields(node))):
-            if isinstance(value, AST):
-                self.stack.append(value)
-            elif isinstance(value, list):
-                for item in reversed(value):
-                    if isinstance(item, AST):
-                        self.stack.append(item)
+        self.stack.extend(reversed(self.get_children(node)))
 
+    def get_children(self, node):
+        children = []
+        for field, value in list(iter_fields(node)):
+            if isinstance(value, AST):
+                children.append(value)
+            elif isinstance(value, list):
+                for item in value:
+                    if isinstance(item, AST):
+                        children.append(item)
+        return children
+        
+    def has_children(self, node):
+        return len(self.get_children(node)) > 0
+
+        
     
 class NodeTransformer(NodeVisitor):
     """

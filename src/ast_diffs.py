@@ -33,7 +33,7 @@ def ast_parse_subnode(code_str):
 def parse_constant_for_boba_var_node(node):
     if not isinstance(node, ast.Constant):
         return None
-    s = node.value
+    s = str(node.value)
     # https://stackoverflow.com/questions/35930203/regex-get-anything-between-double-curly-braces
     regexp = re.compile('(?<=\{\{)[a-zA-Z0-9._]*?(?=\}\})')
     match = regexp.search(s)
@@ -59,6 +59,7 @@ def compare_ast(node1: Union[ast.expr, List[ast.expr]], node2: Union[ast.expr, L
         return all([compare_ast(n1, n2) for n1, n2 in zip_longest(node1, node2)])
     else:
         return node1 == node2
+
 
 
 class ASTDiff:
@@ -97,7 +98,6 @@ class ASTDiff:
             if n1.__class__ == n2.__class__ and isinstance(n1, ast.AST):
                 nv_changed.add_children_to_stack(n1)
                 nv_template.add_children_to_stack(n2)
-                continue
             else:
                 boba_var = parse_constant_for_boba_var_node(n2)
                 if boba_var is not None and boba_var in changed_code_history.decision_dict:
@@ -121,6 +121,10 @@ class ASTDiff:
                                             col_offset=n1.col_offset,
                                             end_col_offset=n1.end_col_offset)
                         no_changes[(boba_var, option_idx)].append(code_info)
+                else:
+                    pass
+                    # nv_changed.add_children_to_stack(n1)
+                    # nv_template.add_children_to_stack(n2)
         return changes, no_changes      
     
     

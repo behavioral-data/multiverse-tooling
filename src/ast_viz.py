@@ -4,7 +4,7 @@ import itertools
 import astpretty
 from functools import partial, reduce
 from IPython.display import SVG
-from src.ast_traverse import OurNodeTransformer, OurNodeVisitor
+from src.ast_traverse import OurNodeTransformer
 
 
         
@@ -24,6 +24,7 @@ def recurse_through_ast(node,
         (getattr(node, attr) for attr in node._fields)
     )
     field_results = []
+    
     for field_name, field_value in node_fields:
         if isinstance(field_value, ast.AST):
             field_results.append(handle_ast(field_value))
@@ -163,7 +164,7 @@ def render(node, settings):
         shape=settings['shape'],
     ))
 
-    return SVG(graph.pipe(format='svg'))
+    return SVG(graph.pipe(format='svg')), graph
 
 def viz_code(code):
     return render(ast.parse(code), my_settings)
