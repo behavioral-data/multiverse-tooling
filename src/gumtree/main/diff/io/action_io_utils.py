@@ -16,6 +16,10 @@ from src.gumtree.main.trees.tree import Tree
 
 from src.gumtree.main.diff.actions.delete import Delete
 
+from src.gumtree.main.diff.actions.action import Action
+
+import json
+
 class ActionFormatter(ABC):
     @abstractmethod
     def start_output(selfself):
@@ -175,9 +179,82 @@ class TextFormatter(ActionFormatter):
     def to_string(self,node: Tree):
         return str(node)
 
+class JsonFormatter(ActionFormatter):
+    
+    def __init__(self, ctx: TreeContext, writer: IOBase):
+        self.context = ctx
+        self.writer = writer
+        self.output_dict = {}
+        self.matches_dict = {}
+
+    def start_output(self):
+        pass 
+    
+    def end_output(self):
+        self.writer.write(json.dumps(self.output_dict, indent=2))
+    
+    def start_matches(self):
+        self.output_dict["matches"] = []
+    
+    def match(self, src_node: Tree, dst_node: Tree):
+        self.output_dict["matches"].append({"src": str(src_node),
+                                            "dest": str(dst_node)})
+
+    def end_matches(self):
+        pass
+    
+    def start_actions(self):
+        self.output_dict["actions"] = []
+    
+    def start(self, action: Action, src:Tree):
+        return {"action": action.get_name(), "tree": str(src)}
+        
+    def insert_root(self, action: Insert, node: Tree):
+        self.output_dict["actions"].append(self.start(action, node))
+
+    def insert_action(self, action: Insert, node: Tree, parent: Tree, index: int):
+        dic = self.start(action, node)
+        dic["parent"] = str(parent)
+        dic["at"] = index
+        self.output_dict["actions"].append(dic)
+
+    def insert_tree_action(self, action: TreeInsert, node: Tree, parent: Tree, index: int):
+        dic = self.start(action, node)
+        dic["parent"] = str(parent)
+        dic["at"] = index
+        self.output_dict["actions"].append(dic)
+
+    def move_action(self, action: Move, src: Tree, dst: Tree, index:int):
+        dic = self.start(action, src)
+        dic["parent"] = str(dst)
+        dic["at"] = index
+        self.output_dict["actions"].append(dic)
+
+    def update_action(self, action: Update, src: Tree, dst: Tree):
+        dic = self.start(action, src)
+        dic["label"] = dst.label
+        self.output_dict["actions"].append(dic)
+        
+    def delete_action(self, action: Delete, node: Tree):
+        self.output_dict["actions"].append(self.start(action, node))
+
+    def delete_tree_action(self, action: TreeDelete, node: Tree):
+        self.output_dict["actions"].append(self.start(action, node))
+
+    def end_actions(self):
+        pass
+    
 class TextActionSerializer(ActionSerializer):
     def new_formatter(self, ctx: TreeContext, writer: IOBase):
         return TextFormatter(ctx, writer)
 
 def to_text(ctx: TreeContext, actions: EditScript, mappings: MappingStore) -> ActionSerializer:
     return TextActionSerializer(ctx, mappings, actions)
+
+
+class JsonActionSerializer(ActionSerializer):
+    def new_formatter(self, ctx: TreeContext, writer: IOBase) -> ActionFormatter:
+        return JsonFormatter(ctx, writer)
+    
+def to_json(ctx: TreeContext, actions: EditScript, mappings: MappingStore) -> ActionSerializer:
+    return JsonActionSerializer(ctx, mappings, actions)
