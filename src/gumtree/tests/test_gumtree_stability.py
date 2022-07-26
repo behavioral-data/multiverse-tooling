@@ -4,7 +4,6 @@ from src.gumtree.main.trees.default_tree import DefaultTree
 from src.gumtree.main.diff.chawathe_script_generator import ChawatheScriptGenerator
 
 from src.gumtree.main.trees.tree import Tree
-# TODO 07/222 Implement Edit Script Algorithm so that we could write test program
 
 def test_stability():
     previous_script = None

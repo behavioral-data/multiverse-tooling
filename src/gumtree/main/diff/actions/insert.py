@@ -7,3 +7,4 @@ class Insert(Addition):
         
     def get_name(self):
         return "insert-node"
+    

@@ -1,4 +1,5 @@
 from abc import ABC
+from re import L
 from typing import Union
 
 from src.gumtree.main.diff.actions.tree_action import TreeAction
@@ -27,3 +28,7 @@ class TreeAddition(TreeAction, ABC):
         if not(super().__eq__(o)):
             return False
         return self.parent == o.parent and self.pos == o.pos
+    
+class TreeInsert(TreeAddition):
+    def get_name(self):
+        return "insert-tree"
