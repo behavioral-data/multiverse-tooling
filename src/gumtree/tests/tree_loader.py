@@ -1,3 +1,4 @@
+from re import X
 from typing import Tuple
 from src.gumtree.main.trees.tree_context import TreeContext
 from src.gumtree.main.trees.tree import Tree
@@ -349,3 +350,87 @@ def get_subtree_src() -> Tree:
     c2 = tc.create_tree("c", label="foo")
     c2.set_parent_and_update_children(a2)
     return tc.root
+
+
+def action_v0() -> TreeContext:
+    tc = TreeContext()
+    
+    a = tc.create_tree("0", label="a")
+    tc.root = a
+    
+    e = tc.create_tree("0", label="e")
+    e.set_parent_and_update_children(a)
+    
+    f = tc.create_tree("0", label="f")
+    f.set_parent_and_update_children(e)
+    
+    b = tc.create_tree("0", label="b")
+    b.set_parent_and_update_children(a)
+    
+    c = tc.create_tree("0", label="c")
+    c.set_parent_and_update_children(b)
+    
+    d = tc.create_tree("0", label="d")
+    d.set_parent_and_update_children(b)
+    
+    g = tc.create_tree("0", label="g")
+    g.set_parent_and_update_children(a)
+    
+    h = tc.create_tree("0", label="h")
+    h.set_parent_and_update_children(g)
+    
+    i = tc.create_tree("0", label="i")
+    i.set_parent_and_update_children(a)
+    
+    j = tc.create_tree("0", label="j")
+    j.set_parent_and_update_children(a)
+    
+    k = tc.create_tree("0", label="k")
+    k.set_parent_and_update_children(j)
+    return tc
+
+def action_v1() -> TreeContext:
+    tc = TreeContext()
+    
+    a = tc.create_tree("0", label="z")
+    tc.root = a
+    
+    b = tc.create_tree("0", label="b")
+    b.set_parent_and_update_children(a)
+    
+    c = tc.create_tree("0", label="c")
+    c.set_parent_and_update_children(b)
+    
+    d = tc.create_tree("0", label="d")
+    d.set_parent_and_update_children(b)
+    
+    h = tc.create_tree("0", label="h")
+    h.set_parent_and_update_children(a)
+    
+    e = tc.create_tree("0", label="e")
+    e.set_parent_and_update_children(h)
+    
+    y = tc.create_tree("0", label="y")
+    y.set_parent_and_update_children(e)
+
+    x = tc.create_tree("0", label="x")
+    x.set_parent_and_update_children(a)
+    
+    w = tc.create_tree("0", label="w")
+    w.set_parent_and_update_children(x)
+    
+    j = tc.create_tree("0", label="j")
+    j.set_parent_and_update_children(a)
+    
+    u = tc.create_tree("0", label="u")
+    u.set_parent_and_update_children(j)
+    
+    v = tc.create_tree("0", label="v")
+    v.set_parent_and_update_children(u)
+    
+    k = tc.create_tree("0", label="k")
+    k.set_parent_and_update_children(v)
+    return tc
+
+def get_action_pair() -> Tuple[TreeContext, TreeContext]:
+    return (action_v0(), action_v1())

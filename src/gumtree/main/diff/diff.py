@@ -1,4 +1,5 @@
 
+from tkinter import ON
 from typing import Dict
 from src.gumtree.main.trees.tree import Tree
 from src.gumtree.main.matchers.matcher import Matcher
@@ -8,6 +9,13 @@ from src.gumtree.main.diff.edit_script import EditScript
 from src.gumtree.main.gen.tree_generators import TreeGeneratorFactory
 from src.gumtree.main.matchers.composite_matchers import MatcherFactory
 from src.gumtree.main.diff.chawathe_script_generator import ChawatheScriptGenerator
+
+from src.gumtree.main.diff.actions.tree_classifier import (
+    AllNodesClassifier,
+    OnlyRootsClassifier,
+    TreeClassifier,
+)
+
 
 class Diff:
     def __init__(self, src: TreeContext, dst: TreeContext, 
@@ -42,3 +50,9 @@ class Diff:
         mappings = matcher.match(src.root, dst.root, MappingStore(src.root, dst.root))
         edit_script = ChawatheScriptGenerator.compute_actions(mappings)
         return cls(src, dst, mappings, edit_script)
+    
+    def createAllNodeClassifier(self) -> TreeClassifier:
+        return AllNodesClassifier(self)
+    
+    def createRootNodesClassifier(self) -> TreeClassifier:
+        return OnlyRootsClassifier(self)

@@ -21,7 +21,7 @@ class Action(ABC):
         pass
     
     def __eq__(self, o: Action):
-        if super().__eq__(o):
+        if id(self) == id(o):
             return True
         elif o is None:
             return False

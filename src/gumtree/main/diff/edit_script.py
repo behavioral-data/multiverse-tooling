@@ -26,6 +26,12 @@ class EditScript:
             return False
         return True
     
+    def __contains__(self, action: Action):
+        return action in self.actions
+    
+    def __len__(self):
+        return len(self.actions)
+    
     def remove_ind(self, index: int):
         return self.actions.pop(index)
     
@@ -39,5 +45,5 @@ class EditScript:
 class EditScriptGenerator(ABC):
     
     @abstractmethod
-    def compute_actions(self, mappings: MappingStore) -> EditScript:
+    def compute_actions(mappings: MappingStore) -> EditScript:
         pass

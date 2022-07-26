@@ -47,7 +47,7 @@ class ChawatheScriptGenerator(EditScriptGenerator):
         src_fake_root = FakeTree(self.cpy_src)
         dst_fake_root = FakeTree(self.orig_dst)
         self.cpy_src.parent = src_fake_root
-        self.orig_dst = dst_fake_root
+        self.orig_dst.parent = dst_fake_root
         
         self.actions = EditScript()
         self.dst_in_order = set()
@@ -61,9 +61,9 @@ class ChawatheScriptGenerator(EditScriptGenerator):
             if not self.cpy_mappings.is_dst_mapped(x):
                 k = self.find_pos(x)
                 w = FakeTree()
-                ins = Insert(x, self.copy_to_orig[z], k)
+                ins = Insert(x, self.copy_to_orig.get(z, None), k)
                 self.actions.add(ins)
-                self.copy_to_orig[w] = k
+                self.copy_to_orig[w] = x
                 self.cpy_mappings.add_mapping(w, x)
                 z.insert_child(w, k)
             else:
@@ -76,7 +76,7 @@ class ChawatheScriptGenerator(EditScriptGenerator):
                     
                     if z != v:
                         k = self.find_pos(x)
-                        mv = Move(self.copy_to_orig[w], self.copy_to_orig[z], k)
+                        mv = Move(self.copy_to_orig[w], self.copy_to_orig.get(z), k)
                         self.actions.add(mv)
                         oldk = w.position_in_parent()
                         w.parent.children.pop(oldk)
@@ -98,7 +98,7 @@ class ChawatheScriptGenerator(EditScriptGenerator):
         s1: List[Tree] = []
         for c in w.children:
             if self.cpy_mappings.is_src_mapped(c):
-                if self.cpy_mappings.get_dst_for_src(x) in x.children:
+                if self.cpy_mappings.get_dst_for_src(c) in x.children:
                     s1.append(c)
         
         s2: List[Tree] = []
@@ -168,7 +168,7 @@ class ChawatheScriptGenerator(EditScriptGenerator):
         i = 0
         j = 0
         while i < m and j < n:
-            if self.cpy_mappings.get_dst_for_src(y[j]) == x[i]:
+            if self.cpy_mappings.get_src_for_dst(y[j]) == x[i]:
                 ret.append((x[i], y[j]))
                 i += 1
                 j += 1
