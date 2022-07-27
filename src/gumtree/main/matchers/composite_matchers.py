@@ -3,7 +3,7 @@
 from typing import List
 
 from src.gumtree.main.matchers.matcher import Matcher
-from src.gumtree.main.matchers.greedy_bottomup_matcher import GreedyBottomUpMatcher
+from src.gumtree.main.matchers.greedy_bottomup_matcher import GreedyBottomUpMatcher, BobaVariableMatcher
 from src.gumtree.main.matchers.greedy_subtree_matcher import GreedySubtreeMatcher
 
 from src.gumtree.main.matchers.mapping_store import MappingStore
@@ -16,6 +16,8 @@ class MatcherFactory:
     def get_matcher(self):
         if self.matcher_name == "classic":
             return ClassicGumTree()
+        elif self.matcher_name == "boba":
+            return BobaTemplateGumTree()
         else:
             raise NotImplementedError(f"Matcher {self.matcher_name} not implemented")
 
@@ -38,3 +40,7 @@ class CompositeMatcher(Matcher):
 class ClassicGumTree(CompositeMatcher):
     def __init__(self):
         super().__init__([GreedySubtreeMatcher(), GreedyBottomUpMatcher()])
+        
+class BobaTemplateGumTree(CompositeMatcher):
+    def __init__(self):
+        super().__init__([GreedySubtreeMatcher(), BobaVariableMatcher()])

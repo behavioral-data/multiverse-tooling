@@ -65,8 +65,7 @@ class AbstractTree(Tree, ABC):
     
     @classmethod
     def init_from_ast_tree(cls, ast_node: ast.AST, parent=None):
-        nv = NodeVisitorStack()
-        children = nv.get_children(ast_node)
+        children = NodeVisitorStack.get_children(ast_node)
         node = cls(ast_node, parent)
         tree_children = [cls.init_from_ast_tree(child, node) for child in children]
         node.children = tree_children

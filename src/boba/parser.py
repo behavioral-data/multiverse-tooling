@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+from __future__ import annotations
 
 import ast
 import json
@@ -33,7 +34,7 @@ class History:
     """
     path: int
     filename: str = ''
-    decisions: List = field(default_factory=lambda: [])
+    decisions: List[DecRecord] = field(default_factory=lambda: [])
     skipped: List = field(default_factory=lambda: [])
 
     @property

@@ -147,7 +147,8 @@ class NodeVisitorStack(object):
         """Called if no explicit visitor function exists for a node."""
         self.stack.extend(reversed(self.get_children(node)))
 
-    def get_children(self, node):
+    @staticmethod
+    def get_children(node):
         children = []
         for field, value in list(iter_fields(node)):
             if isinstance(value, AST):
@@ -242,7 +243,7 @@ if __name__ == '__main__':
     code = """#!/usr/bin/env python3
 
 import numpy as np
-import pandas as pd
+import pandas as pd  
 import statsmodels.api as sm
 import statsmodels.formula.api as smf
 # --- (BOBA_CONFIG)

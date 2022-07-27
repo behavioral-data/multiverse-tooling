@@ -9,7 +9,7 @@ from src.gumtree.main.trees.tree import Tree
 
 
 class AbstractSubtreeMatcher(Matcher, ABC):
-    DEFAULT_MIN_PRIORITY = 1
+    DEFAULT_MIN_PRIORITY = 2
     DEFAULT_PRIORITY_CALCULATOR = "height"
     
     

@@ -48,7 +48,7 @@ class FullMappingComparator:
         self.position_comparator = AbsolutePositionDistanceMappingComparator()
             
     def compare(self, m1: Mapping, m2: Mapping):
-        result = self.siblings_comparator.compare(m1, m2)   
+        result = self.siblings_comparator.compare(m1, m2)  # line 20 alg 1
         if result != 0:
             return result
 
@@ -103,7 +103,6 @@ class SiblingsSimilarityMappingComparator:
             if m is not None and m in self.dst_descendents.get(dst, set()):
                 common += 1
         return common
-    
     
         
 class ParentsSimilarityMappingComparator:

@@ -1,8 +1,5 @@
 
-from tkinter import ON
-from typing import Dict
-from src.gumtree.main.trees.tree import Tree
-from src.gumtree.main.matchers.matcher import Matcher
+from typing import Dict, Union, Tuple
 from src.gumtree.main.trees.tree_context import TreeContext
 from src.gumtree.main.matchers.mapping_store import MappingStore
 from src.gumtree.main.diff.edit_script import EditScript
@@ -38,13 +35,25 @@ class Diff:
         edit_script = ChawatheScriptGenerator().compute_actions(mappings)
         return cls(src, dst, mappings, edit_script)
     
-    @classmethod
-    def compute_from_strs(cls, src_code, dst_code, tree_generator_name: str,
-                matcher_name: str, configurations: Dict=None):
-        tree_generator = TreeGeneratorFactory(tree_generator_name).get_generator()
-        src = tree_generator.generate_tree(src_code)
-        dst = tree_generator.generate_tree(dst_code)
+    @staticmethod
+    def get_src_dst_trees(src_code, dst_code, tree_generator_name: Union[str, Tuple[str, str]],
+                          configurations) -> Tuple[TreeContext, TreeContext]:
+        if type(tree_generator_name) is str:
+            tree_generator = TreeGeneratorFactory(tree_generator_name, configurations).get_generator()
+            src = tree_generator.generate_tree(src_code)
+            dst = tree_generator.generate_tree(dst_code)
+        else:
+            tree_generator_src = TreeGeneratorFactory(tree_generator_name[0], configurations).get_generator()
+            tree_generator_dst = TreeGeneratorFactory(tree_generator_name[1], configurations).get_generator()
+            src = tree_generator_src.generate_tree(src_code)
+            dst = tree_generator_dst.generate_tree(dst_code)
         
+        return src, dst
+    
+    @classmethod
+    def compute_from_strs(cls, src_code, dst_code, tree_generator_name: Union[str, Tuple[str, str]],
+                matcher_name: str, configurations: Dict=None):
+        src, dst = cls.get_src_dst_trees(src_code, dst_code, tree_generator_name, configurations)
         matcher = MatcherFactory(matcher_name).get_matcher()
         matcher.configure(configurations)
         mappings = matcher.match(src.root, dst.root, MappingStore(src.root, dst.root))

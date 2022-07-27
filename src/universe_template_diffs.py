@@ -73,24 +73,15 @@ def print_diff(diff: OurUnifiedDiff):
 
 if __name__ == '__main__':
     import os.path as osp
-    from src.utils import DATA_DIR
+    from src.utils import DATA_DIR, load_parser_example
     import pickle 
     
     DATASET = 'fertility'
     EXT = 'py'
-    script = osp.join(DATA_DIR, DATASET, f'template.{EXT}')
-    out = osp.join(DATA_DIR, DATASET)
     
     save_file = osp.join(DATA_DIR, f'{DATASET}_template_parser_obj_0718.pickle')
+    ps = load_parser_example(DATASET, EXT, save_file, run_parser_main=True)
     
-    if not osp.exists(save_file):
-        ps = Parser(script, out, None)
-        ps.main()
-    
-        with open(save_file, 'wb') as f:
-            pickle.dump(ps, f)
-    with open(save_file, 'rb') as f:
-        ps = pickle.load(f)
     universe_code_dir = osp.join(DATA_DIR, DATASET, 'multiverse', 'code')
     universe_num = 3
     universe_path = osp.join(universe_code_dir, f'universe_{universe_num}.{EXT}')

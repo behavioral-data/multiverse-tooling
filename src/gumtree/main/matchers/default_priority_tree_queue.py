@@ -49,7 +49,8 @@ class DefaultPriorityTreeQueue:
     
     def add(self, t: Tree):
         priority = self.priority_calculator(t)
-        if priority < self.minimum_priority:
+        # * temperorary custom code for Python, if want to include other languages need to generalize
+        if priority < self.minimum_priority and t.node_type in ['Load', 'Store']:  
             return
         
         if priority not in self.trees_pq:

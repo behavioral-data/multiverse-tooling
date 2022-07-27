@@ -8,8 +8,9 @@ from src.gumtree.main.trees.tree_metrics import TreeMetrics
 
   
 class Tree(ABC):
-    url_pattern = re.compile("\\d+(\\.\\d+)*")
         
+    url_pattern = re.compile("\\d+(\\.\\d+)*")
+    
     def get_child_from_url(self, url):
         if not self.url_pattern.match(url):
             raise ValueError("Wrong URL format : " + url)
@@ -25,6 +26,13 @@ class Tree(ABC):
     def __hash__(self):
         return self.tree_metrics.hashcode
 
+    @property
+    def num_child_boba_var_nodes(self) -> int: # number of boba var nodes in the child
+       return 0
+   
+    @property
+    def num_child_boba_vars(self) -> int: # number of boba var nodes in the child
+       return 0
     
     @property    
     @abstractmethod

@@ -8,7 +8,7 @@ from src.gumtree.main.matchers.zs_matcher import ZsMatcher
 from src.gumtree.main.trees.tree import Tree
 
 class AbstractBottomUpMatcher(Matcher):
-    DEFAULT_SIZE_THRESHOLD = 1000
+    DEFAULT_SIZE_THRESHOLD = 100
     DEFAULT_SIM_THRESHOLD = 0.5
     
     def __init__(self):
@@ -20,6 +20,10 @@ class AbstractBottomUpMatcher(Matcher):
         self.priority_calculator = properties.get('sim_threshold', self.DEFAULT_SIM_THRESHOLD)
         
     def get_dst_candidates(self, mappings: MappingStore, src: Tree) -> List[Tree]:
+        """
+        A node c ∈ T2 is a candidate for t1 if label(t1) = label(c), c is unmatched, and t1
+        and c have some matching descendants.
+        """
         seeds: List[Tree] = []
         for c in src.get_descendents():
             if mappings.is_src_mapped(c):
@@ -47,5 +51,4 @@ class AbstractBottomUpMatcher(Matcher):
                 dst_cand = candidate[1]
                 if mappings.is_mapping_allowed(src_cand, dst_cand):
                     mappings.add_mapping(src_cand, dst_cand)
-        # TODO see the ZsMatcher.java for impl
         

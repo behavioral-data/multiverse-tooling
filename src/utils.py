@@ -1,11 +1,12 @@
 import logging
 import json
 from typing import Union
-from os.path import dirname, abspath, join
+from os.path import dirname, abspath, join, exists
 from src.ast_viz import viz_code
 from svglib.svglib import svg2rlg
 from reportlab.graphics import renderPDF
-
+from src.boba.parser import Parser
+import pickle 
 
 PROJECT_ROOT_DIR = dirname(dirname(abspath(__file__)))
 DATA_DIR = join(PROJECT_ROOT_DIR, 'data')
@@ -26,6 +27,33 @@ def save_viz_code_pdf(code, save_path):
     svg, graph = viz_code(code)
     with open(save_path, 'wb') as f:
         f.write(graph.pipe(format='pdf'))
+
+def load_parser_example(dataset: str, ext: str, save_file=None,
+                        run_parser_main=False) -> Parser:
+    script = join(DATA_DIR, dataset, f'template.{ext}')
+    out = join(DATA_DIR, dataset)
+    ps = Parser(script, out, None)
+    
+    if save_file is None:
+        if run_parser_main:
+            ps.main()
+        return ps
+    
+    if not exists(save_file):
+        ps.main()
+        with open(save_file, 'wb') as f:
+            pickle.dump(ps, f)
+    with open(save_file, 'rb') as f:
+        ps = pickle.load(f)
+    return ps
+
+def read_universe_file(universe_num, dataset, ext='py'):
+    universe_code_dir = join(DATA_DIR, dataset, 'multiverse', 'code')
+    universe_path = join(universe_code_dir, f'universe_{universe_num}.{ext}')
+    with open(universe_path, 'r') as f:
+        universe_code = f.read()
+    return universe_code
+    
 
 class CompactJSONEncoder(json.JSONEncoder):
     """A JSON Encoder that puts small containers on single lines."""

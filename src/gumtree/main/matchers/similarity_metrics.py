@@ -23,3 +23,9 @@ def dice_coefficient(common_elements_nb: int,
                      left_elements_nb: int,
                      right_elements_nb: int):
     return 2 * common_elements_nb / (left_elements_nb + right_elements_nb)
+
+def dice_similarity_offset(src: Tree, dst: Tree, mappings: MappingStore, offset1: int, offset2: int):
+    return dice_coefficient(number_of_mapped_descendants(src, dst, mappings),
+                            len(src.get_descendents()) - offset1,
+                            len(dst.get_descendents()) - offset2)
+    

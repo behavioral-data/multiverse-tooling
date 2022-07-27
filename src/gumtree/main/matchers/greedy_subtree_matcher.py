@@ -27,8 +27,11 @@ class GreedySubtreeMatcher(AbstractSubtreeMatcher):
                 mappings.append((src, dst))
         return mappings
         
-class AmbiguousMappingComparator:
+class AmbiguousMappingComparator: 
+    """
+    Sort based on the set of trees that contain the largest size
+    """
     def compare(self, m1: Tuple[Set[Tree], Set[Tree]], m2: Tuple[Set[Tree], Set[Tree]]):
         s1 = max(m1[0], key=lambda tree: tree.tree_metrics.size).tree_metrics.size
-        s2 = max(m1[0], key=lambda tree: tree.tree_metrics.size).tree_metrics.size # unclear
+        s2 = max(m1[0], key=lambda tree: tree.tree_metrics.size).tree_metrics.size
         return compare(s2, s1)

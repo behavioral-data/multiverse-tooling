@@ -1,60 +1,13 @@
-from abc import ABC, abstractmethod
 
-from typing import Dict
-from src.gumtree.main.diff.diff import Diff
-from src.gumtree.main.diff.io.action_io_utils import to_text, to_json
 from io import StringIO
+from src.gumtree.main.client.client import Client
 from src.gumtree.main.trees.tree import Tree
-
 from src.gumtree.main.trees.tree_context import TreeContext
+ 
 
-class Client(ABC):
-    DEFAULT_MATCHER = "classic"
-    DEFAULT_GENERATOR = "python"
-    
-    def __init__(self, src_code, dst_code, configurations: Dict=None):
-        self.src_code = src_code
-        self.dst_code = dst_code
-        self.configurations = {} if configurations is None else configurations
-        self.configure()
-        
-    
-    def configure(self, configurations: Dict=None):
-        configurations = self.configurations if configurations is None else configurations
-        self.generator = configurations.get("generator", self.DEFAULT_GENERATOR)
-        self.matcher = configurations.get("matcher", self.DEFAULT_MATCHER)
-    
-    @abstractmethod
-    def run(self) -> str:
-        pass
-    
-    def get_diff(self) -> Diff:
-        return Diff.compute_from_strs(self.src_code, self.dst_code, 
-                               self.generator, self.matcher)
-        
-    def save_diff_to_file(self, save_path):
-        with open(save_path, 'w') as f:
-            f.write(self.run())
-        
-
-class TextDiff(Client):
-    
-    def __init__(self, src_code, dst_code, formatter="text"):
-        super().__init__(src_code, dst_code)
-        self.formatter = formatter
-        
-    def run(self):
-        diff: Diff = self.get_diff()
-        if self.formatter == "text":
-            diff_str = str(to_text(diff.src, diff.edit_script, diff.mappings))
-        elif self.formatter == "json":
-            diff_str = str(to_json(diff.src, diff.edit_script, diff.mappings))
-        return diff_str
-        
-    
 class DotDiff(Client):
-    def __init__(self, src_code, dst_code):
-        super().__init__(src_code, dst_code)
+    def __init__(self, src_code, dst_code, configurations=None):
+        super().__init__(src_code, dst_code, configurations)
         self.src_code = src_code
         self.dst_code = dst_code
         self.diff = self.get_diff()
@@ -70,7 +23,8 @@ class DotDiff(Client):
         writer.write("\tsubgraph cluster_dst {\n")
         self.write_tree(self.diff.dst, writer)
         writer.write("\t}\n")
-        for m in self.diff.mappings:
+        #  * 07/27/2022 we still have the boba variable mappings here which we can then use to create edit scripts for the mapped boba variables
+        for m in self.diff.mappings:  
             writer.write("\t{} -> {} [style=dashed]\n".format(
                     self.get_dot_id(self.diff.src, m[0]), self.get_dot_id(self.diff.dst, m[1])))
         writer.write("}\n")
@@ -113,11 +67,11 @@ class DotDiff(Client):
         if len(label) > 30:
             label = label[:30]
         return label
-
-        
+    
 if __name__ == "__main__":
-    from src.utils import VIZ_DIR
     import os.path as osp
+    from src.utils import VIZ_DIR
+    
     FUNC1 = """
 class Test:
     def foo(self, i):
@@ -134,14 +88,10 @@ class Test:
             return "Foo!"
     """
     
-    client = TextDiff(FUNC1, FUNC2, formatter="json")
-    s1 = client.run()
-    
     dot_client = DotDiff(FUNC1, FUNC2)
     s2 = dot_client.run()
     
     save_path = osp.join(VIZ_DIR, "test_diff.dot")
     dot_client.save_diff_to_file(save_path)
     print('here')
-    
     
