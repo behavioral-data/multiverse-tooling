@@ -49,8 +49,7 @@ class DefaultPriorityTreeQueue:
     
     def add(self, t: Tree):
         priority = self.priority_calculator(t)
-        # * temperorary custom code for Python, if want to include other languages need to generalize
-        if priority < self.minimum_priority and t.node_type in ['Load', 'Store']:  
+        if priority < self.minimum_priority:  
             return
         
         if priority not in self.trees_pq:
@@ -71,3 +70,14 @@ class DefaultPriorityTreeQueue:
             return False
         else:
             return True
+        
+class PythonPriorityTreeQueue(DefaultPriorityTreeQueue):
+    def add(self, t: Tree):
+        priority = self.priority_calculator(t)
+        # * temperorary custom code for Python, if want to include other languages need to generalize
+        if priority < self.minimum_priority and t.node_type in ['Load', 'Store']:  
+            return
+        
+        if priority not in self.trees_pq:
+            self.trees_pq.additem(priority, (priority, []))
+        self.trees_pq[priority][1].append(t)

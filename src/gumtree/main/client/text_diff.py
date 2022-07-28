@@ -40,7 +40,8 @@ if __name__ == "__main__":
         "formatter": "text",
         "generator": ("boba_python_template", "python"),
         "matcher": "boba",
-        "parser_history": ps.history[universe_num - 1]
+        "parser_history": ps.history[universe_num - 1],
+        "priority_queue": "python"
     }
     
     TEMPLATE_CODE = """
@@ -62,13 +63,13 @@ df.loc[df.relationship >= [2, 3][1],
     # save_viz_code_pdf(TEMPLATE_CODE, osp.join(VIZ_DIR, "template_ex.pdf"))
     # save_viz_code_pdf(PYTHON_CODE, osp.join(VIZ_DIR, "universe_ex.pdf"))
     
-    # diff = TextDiff(template_code, template_code, configurations=configurations)
-    # res = diff.run()
+    diff = TextDiff(template_code, universe_code, configurations=configurations)
+    res = diff.run()
     
-    dot_client = DotDiff(template_code, universe_code, configurations=configurations)
+    # dot_client = DotDiff(template_code, universe_code, configurations=configurations)
     
-    save_path = osp.join(VIZ_DIR, "diff_universe_template.dot")
-    dot_client.save_diff_to_file(save_path)
+    # save_path = osp.join(VIZ_DIR, "diff_universe_template.dot")
+    # dot_client.save_diff_to_file(save_path)
     
     FUNC1 = """
 class Test:

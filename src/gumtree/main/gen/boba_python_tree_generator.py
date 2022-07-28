@@ -2,7 +2,8 @@ import ast
 from typing import Dict
 from src.ast_traverse import NodeVisitorStack
 from src.gumtree.main.gen.python_tree_generator import PythonTreeGenerator
-from src.gumtree.main.trees.default_tree import BobaTree, BOBA_VAR
+from src.gumtree.main.trees.node_constants import BOBA_VAR
+from src.gumtree.main.trees.boba_tree import BobaTree
 
 from src.boba.parser import History
 
@@ -35,8 +36,7 @@ class BobaPythonTemplateTreeGeneator(PythonTreeGenerator):
             
             node = BobaTree(BOBA_VAR, boba_var_name, ast.Constant(raw_code))
             node.metadata = self.get_metadata(ast_node)
-            node.num_child_boba_vars = 1
-            node.num_child_boba_var_nodes = boba_var_node.tree_metrics.size - 2 # minus one for module node and minus one for expr node
+            node.num_boba_var_nodes = boba_var_node.tree_metrics.size - 2 # minus one for module node and minus one for expr node
             return node
         else:
             node = BobaTree(self.get_node_type(ast_node), self.get_node_label(ast_node),

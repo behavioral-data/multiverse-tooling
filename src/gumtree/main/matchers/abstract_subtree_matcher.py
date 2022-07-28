@@ -1,7 +1,7 @@
 from abc import ABC, abstractmethod
 from pickle import NONE
 from typing import Dict, List, Tuple, Set
-from src.gumtree.main.matchers.default_priority_tree_queue import DefaultPriorityTreeQueue
+from src.gumtree.main.matchers.default_priority_tree_queue import DefaultPriorityTreeQueue, PythonPriorityTreeQueue
 from src.gumtree.main.matchers.mapping_store import MappingStore
 from src.gumtree.main.matchers.hash_based_mapper import HashBasedMapper
 from src.gumtree.main.matchers.matcher import Matcher
@@ -15,14 +15,21 @@ class AbstractSubtreeMatcher(Matcher, ABC):
     
     def __init__(self):
         self.min_priority = self.DEFAULT_MIN_PRIORITY
-        self.priority_calculator = DefaultPriorityTreeQueue.get_priority_calculator(self.DEFAULT_PRIORITY_CALCULATOR)
         self.src: Tree = None
         self.dst: Tree = None
         self.mappings: MappingStore = None
-    
+        self.PRIORITY_QUEUE_CLS = DefaultPriorityTreeQueue
+        self.priority_calculator = self.PRIORITY_QUEUE_CLS.get_priority_calculator(self.DEFAULT_PRIORITY_CALCULATOR)
+
     def configure(self, properties: Dict):
+        priority_queue_name = properties.get('priority_queue', "default")
+        if priority_queue_name == "default":
+            self.PRIORITY_QUEUE_CLS = DefaultPriorityTreeQueue
+        elif priority_queue_name == "python":
+            self.PRIORITY_QUEUE_CLS = PythonPriorityTreeQueue
+        
         self.min_priority = properties.get('min_priority', self.DEFAULT_MIN_PRIORITY)
-        self.priority_calculator = DefaultPriorityTreeQueue.get_priority_calculator(
+        self.priority_calculator = self.PRIORITY_QUEUE_CLS.get_priority_calculator(
             properties.get('priority_calculator', self.DEFAULT_PRIORITY_CALCULATOR))
         
     def match(self, src: Tree, dst: Tree, mappings: MappingStore=None) -> MappingStore:
@@ -34,11 +41,11 @@ class AbstractSubtreeMatcher(Matcher, ABC):
         
         ambiguous_mappings: List[Tuple[Set[Tree], Set[Tree]]] = [] # A in alg 1
         
-        src_trees = DefaultPriorityTreeQueue(src, self.min_priority, self.priority_calculator)
-        dst_trees = DefaultPriorityTreeQueue(dst, self.min_priority, self.priority_calculator)
+        src_trees = self.PRIORITY_QUEUE_CLS(src, self.min_priority, self.priority_calculator)
+        dst_trees = self.PRIORITY_QUEUE_CLS(dst, self.min_priority, self.priority_calculator)
         
         
-        while DefaultPriorityTreeQueue.synchronize(src_trees, dst_trees):
+        while self.PRIORITY_QUEUE_CLS.synchronize(src_trees, dst_trees):
             local_hash_mappings = HashBasedMapper()
             local_hash_mappings.add_srcs(src_trees.pop())
             local_hash_mappings.add_dsts(dst_trees.pop())

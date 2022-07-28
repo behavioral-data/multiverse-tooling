@@ -3,8 +3,21 @@ from typing import Tuple
 from src.gumtree.main.trees.tree_context import TreeContext
 from src.gumtree.main.trees.tree import Tree
 
+from src.gumtree.main.trees.node_constants import BOBA_VAR
+
+from src.gumtree.main.trees.boba_tree import BobaTree
+
 
 def gum_tree_v0() -> TreeContext:
+    """
+    DefaultTree: 0 (a) 
+        DefaultTree: 0 (e) 
+            DefaultTree: 0 (f) 
+        DefaultTree: 0 (b) 
+            DefaultTree: 0 (c) 
+            DefaultTree: 0 (d) 
+        DefaultTree: 0 (g) 
+    """
     tc = TreeContext()
     a = tc.create_tree("0", label="a")
     tc.root = a
@@ -30,6 +43,16 @@ def gum_tree_v0() -> TreeContext:
     return tc
 
 def gum_tree_v1() -> TreeContext:
+    """
+    DefaultTree: 0 (z) 
+        DefaultTree: 0 (b) 
+            DefaultTree: 0 (c) 
+            DefaultTree: 0 (d) 
+        DefaultTree: 1 (h) 
+            DefaultTree: 0 (e) 
+                DefaultTree: 0 (y) 
+        DefaultTree: 0 (g) 
+    """
     tc = TreeContext()
     a = tc.create_tree("0", label="z")
     tc.root = a
@@ -57,6 +80,17 @@ def gum_tree_v1() -> TreeContext:
     return tc
 
 def bottom_up_v0() -> TreeContext:
+    """
+    DefaultTree: td
+        DefaultTree: md
+            DefaultTree: vis (public) 
+            DefaultTree: name (foo) 
+            DefaultTree: block
+                DefaultTree: s (s1) 
+                DefaultTree: s (s2) 
+                DefaultTree: s (s3) 
+                DefaultTree: s (s4) 
+    """
     tc = TreeContext()
     td = tc.create_tree("td")
     tc.root = td
@@ -87,6 +121,18 @@ def bottom_up_v0() -> TreeContext:
     return tc
 
 def bottom_up_v1() -> TreeContext:
+    """
+    DefaultTree: td
+        DefaultTree: md
+            DefaultTree: vis (private) 
+            DefaultTree: name (bar) 
+            DefaultTree: block
+                DefaultTree: s (s1) 
+                DefaultTree: s (s2) 
+                DefaultTree: s (s3) 
+                DefaultTree: s (s4) 
+                DefaultTree: s (s5) 
+    """
     tc = TreeContext()
     td = tc.create_tree("td")
     tc.root = td
@@ -127,6 +173,13 @@ def get_bottom_up_pair() -> Tuple[Tree, Tree]:
     return (bottom_up_v0().root, bottom_up_v1().root)
 
 def get_dummy_src() -> Tree:
+    """ 
+    DefaultTree: 0 (a) 
+        DefaultTree: 1 (b) 
+            DefaultTree: 3 (c) 
+            DefaultTree: 3 (d) 
+        DefaultTree: 2 (e) 
+    """
     tc = TreeContext()
     a = tc.create_tree("0", label="a")
     tc.root = a
@@ -146,6 +199,16 @@ def get_dummy_src() -> Tree:
     return tc.root
 
 def get_dummy_dst() -> Tree:
+    """
+    DefaultTree: 0 (a) 
+        DefaultTree: 4 (f) 
+            DefaultTree: 1 (b) 
+                DefaultTree: 3 (c) 
+                DefaultTree: 3 (d) 
+                DefaultTree: 5 (h) 
+        DefaultTree: 2 (i) 
+            DefaultTree: 2 (j) 
+    """
     tc = TreeContext()
     a = tc.create_tree("0", label="a")
     tc.root = a
@@ -175,6 +238,21 @@ def get_dummy_dst() -> Tree:
 
 
 def get_dummy_big() -> Tree:
+    """ 
+    DefaultTree: 0 (a) 
+        DefaultTree: 1 (b) 
+            DefaultTree: 2 (c) 
+            DefaultTree: 2 (d) 
+        DefaultTree: 1 (e) 
+        DefaultTree: 1 (f) 
+            DefaultTree: 2 (g) 
+                DefaultTree: 3 (h) 
+                    DefaultTree: 4 (i) 
+                    DefaultTree: 4 (j) 
+                    DefaultTree: 4 (k) 
+            DefaultTree: 2 (l) 
+                DefaultTree: 3 (m) 
+    """
     tc = TreeContext()
     a = tc.create_tree("0", label="a")
     tc.root = a
@@ -219,6 +297,15 @@ def get_dummy_big() -> Tree:
 
 
 def zs_v0() -> TreeContext:
+    """ 
+    DefaultTree: 0 (a) 
+        DefaultTree: 0 (b) 
+        DefaultTree: 0 (c) 
+            DefaultTree: 0 (d) 
+            DefaultTree: 0 (e) 
+            DefaultTree: 0 (f) 
+            DefaultTree: 0 (r1) 
+    """
     tc = TreeContext()
     a = tc.create_tree("0", label="a")
     tc.root = a
@@ -244,6 +331,16 @@ def zs_v0() -> TreeContext:
     return tc
 
 def zs_v1() -> TreeContext:
+    """ 
+    DefaultTree: 0 (z) 
+        DefaultTree: 0 (a) 
+            DefaultTree: 0 (b) 
+            DefaultTree: 0 (c) 
+                DefaultTree: 0 (d) 
+                DefaultTree: 1 (y) 
+                DefaultTree: 0 (f) 
+                DefaultTree: 0 (r2) 
+    """
     tc = TreeContext()
     
     z = tc.create_tree("0", label="z")
@@ -277,6 +374,14 @@ def get_zs_custom_pair() -> Tuple[TreeContext, TreeContext]:
 
 
 def zs_slide_v0() -> TreeContext:
+    """ 
+    DefaultTree: 0 (6) 
+        DefaultTree: 0 (5) 
+            DefaultTree: 0 (2) 
+                DefaultTree: 0 (1) 
+            DefaultTree: 0 (3) 
+            DefaultTree: 0 (4)
+    """
     tc = TreeContext()
     
     _6 = tc.create_tree("0", label="6")
@@ -299,6 +404,14 @@ def zs_slide_v0() -> TreeContext:
     return tc
 
 def zs_slide_v1() -> TreeContext:
+    """ 
+    DefaultTree: 0 (6) 
+        DefaultTree: 0 (2) 
+            DefaultTree: 0 (1) 
+        DefaultTree: 0 (4) 
+            DefaultTree: 0 (3) 
+        DefaultTree: 0 (5)
+    """
     tc = TreeContext()
     
     _6 = tc.create_tree("0", label="6")
@@ -325,6 +438,16 @@ def get_zs_slide_pair() -> Tuple[TreeContext, TreeContext]:
 
 
 def get_subtree_src() -> Tree:
+    """ 
+    DefaultTree: root
+        DefaultTree: a
+            DefaultTree: b
+            DefaultTree: c (foo) 
+        DefaultTree: d
+        DefaultTree: a
+            DefaultTree: b
+            DefaultTree: c (foo)
+    """
     tc = TreeContext()
     root = tc.create_tree("root")
     tc.root = root
@@ -353,6 +476,19 @@ def get_subtree_src() -> Tree:
 
 
 def action_v0() -> TreeContext:
+    """
+    DefaultTree: 0 (a) 
+        DefaultTree: 0 (e) 
+            DefaultTree: 0 (f) 
+        DefaultTree: 0 (b) 
+            DefaultTree: 0 (c) 
+            DefaultTree: 0 (d) 
+        DefaultTree: 0 (g) 
+            DefaultTree: 0 (h) 
+        DefaultTree: 0 (i) 
+        DefaultTree: 0 (j) 
+            DefaultTree: 0 (k) 
+    """
     tc = TreeContext()
     
     a = tc.create_tree("0", label="a")
@@ -390,6 +526,21 @@ def action_v0() -> TreeContext:
     return tc
 
 def action_v1() -> TreeContext:
+    """
+    DefaultTree: 0 (z) 
+        DefaultTree: 0 (b) 
+            DefaultTree: 0 (c) 
+            DefaultTree: 0 (d) 
+        DefaultTree: 0 (h) 
+            DefaultTree: 0 (e) 
+                DefaultTree: 0 (y) 
+        DefaultTree: 0 (x) 
+            DefaultTree: 0 (w) 
+        DefaultTree: 0 (j) 
+            DefaultTree: 0 (u) 
+                DefaultTree: 0 (v) 
+				DefaultTree: 0 (k)
+    """
     tc = TreeContext()
     
     a = tc.create_tree("0", label="z")
@@ -432,5 +583,68 @@ def action_v1() -> TreeContext:
     k.set_parent_and_update_children(v)
     return tc
 
+def get_boba_big() -> BobaTree:
+    """ 
+    BobaTree: 0 (a) 
+        BobaTree: 1 (b) 
+            BobaTree: 2 (c) 
+            BobaTree: BobaVar (d) # 5 nodes
+        BobaTree: 1 (e) 
+        BobaTree: 1 (f) 
+            BobaTree: 2 (g) 
+                BobaTree: 3 (h) 
+                    BobaTree: 4 (i) 
+                    BobaTree: BobaVar (j)   # 9 nodes
+                    BobaTree: BobaVar (k)   # 3 nodes
+            BobaTree: 2 (l) 
+                BobaTree: 3 (m) 
+    """
+    tc = TreeContext()
+    a = tc.create_boba_tree("0", label="a")
+    tc.root = a
+    
+    b = tc.create_boba_tree("1", label="b")
+    b.set_parent_and_update_children(a)
+    
+    c = tc.create_boba_tree("2", label="c")
+    c.set_parent_and_update_children(b)
+    
+    d = tc.create_boba_tree(BOBA_VAR, label="d")
+    d.num_boba_var_nodes = 5
+    d.set_parent_and_update_children(b)
+    
+    e = tc.create_boba_tree("1", label="e")
+    e.set_parent_and_update_children(a)
+    
+    f = tc.create_boba_tree("1", label="f")
+    f.set_parent_and_update_children(a)
+    
+    g = tc.create_boba_tree("2", label="g")
+    g.set_parent_and_update_children(f)
+    
+    h = tc.create_boba_tree("3", label="h")
+    h.set_parent_and_update_children(g)
+    
+    i = tc.create_boba_tree("4", label="i")
+    i.set_parent_and_update_children(h)
+    
+    j = tc.create_boba_tree(BOBA_VAR, label="j")
+    j.num_boba_var_nodes = 9
+
+    j.set_parent_and_update_children(h)
+    
+    k = tc.create_boba_tree(BOBA_VAR, label="k")
+    k.num_boba_var_nodes = 3
+    k.set_parent_and_update_children(h)
+    
+    l = tc.create_boba_tree("2", label="l")
+    l.set_parent_and_update_children(f)
+    
+    m = tc.create_boba_tree("3", label="m")
+    m.set_parent_and_update_children(l)
+    
+    return tc.root
+
 def get_action_pair() -> Tuple[TreeContext, TreeContext]:
     return (action_v0(), action_v1())
+

@@ -8,7 +8,6 @@ from typing import TYPE_CHECKING
 if TYPE_CHECKING:
     from src.gumtree.main.trees.tree import Tree
 
-
 class TreeVisitor(ABC):
     @staticmethod
     def visit_tree(root: Tree, tree_visitor: TreeVisitor,

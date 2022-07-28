@@ -1,6 +1,5 @@
 import ast
-from src.gumtree.main.trees.abstract_tree import AbstractTree
-from src.gumtree.tests.tree_loader import get_dummy_src, get_subtree_src
+from src.gumtree.tests.tree_loader import get_boba_big, get_dummy_src, get_subtree_src
 from src.gumtree.main.trees.default_tree import DefaultTree
 from src.gumtree.main.trees.fake_tree import FakeTree
 import src.gumtree.main.trees.tree_utils as tree_utils
@@ -177,9 +176,30 @@ def testIsClone():
     copy = tree.deep_copy()
     assert(tree.is_isomorphic_to(copy))
 
+def testBobaTree():
+    tree = get_boba_big()
+    # node d
+    assert(tree.get_child_from_url("0.1").num_child_boba_vars == 1)
+    assert(tree.get_child_from_url("0").num_child_boba_var_nodes == 5)
+    # node h
+    assert(tree.get_child_from_url("2.0.0").num_child_boba_vars == 2)
+    assert(tree.get_child_from_url("2.0.0").num_child_boba_var_nodes == 12) # 9 + 3
+    assert(tree.get_child_from_url("2.0.0").has_boba_var(height=1))
+    assert(not tree.get_child_from_url("2.0.0").has_boba_var(height=0))
+    # node l
+    assert(tree.get_child_from_url("2.1").num_child_boba_vars == 0)
+    assert(tree.get_child_from_url("2.1").num_child_boba_var_nodes == 0) # 9 + 3
+    # root
+    assert(tree.num_child_boba_vars == 3)
+    assert(tree.num_child_boba_var_nodes == 17)
+    assert(tree.has_boba_var(height=2))
+    assert(not tree.has_boba_var(height=1))
+    
+    
 
+    
 if __name__ == "__main__":
-    testIsostructure()
+    testBobaTree()
 
 
 

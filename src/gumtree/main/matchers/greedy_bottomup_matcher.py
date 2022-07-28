@@ -1,11 +1,13 @@
 import ast
-from typing import List, Set
+from typing import Dict, List, Set
 from src.gumtree.main.matchers.abstract_bottom_up_matcher import AbstractBottomUpMatcher
 from src.gumtree.main.matchers.mapping_store import MappingStore
 import src.gumtree.main.matchers.similarity_metrics as similarity_metrics
 from src.gumtree.main.trees.tree import Tree
 
-from src.gumtree.main.trees.default_tree import BobaTree, BOBA_VAR
+from src.gumtree.main.trees.boba_tree import BobaTree
+from src.gumtree.main.trees.node_constants import BOBA_VAR
+
 
 
 class GreedyBottomUpMatcher(AbstractBottomUpMatcher):
@@ -32,6 +34,17 @@ class GreedyBottomUpMatcher(AbstractBottomUpMatcher):
         return mappings
 
 class BobaVariableMatcher(GreedyBottomUpMatcher):
+    DEFAULT_BOBA_VAR_HEIGHT_THRESHOLD = 2
+    
+    def __init__(self):
+        self.boba_var_height_threshold = self.DEFAULT_BOBA_VAR_HEIGHT_THRESHOLD
+        super().__init__()
+        
+    def configure(self, properties: Dict):
+        self.boba_var_height_threshold = properties.get('boba_var_height_threshold', 
+                                                        self.DEFAULT_BOBA_VAR_HEIGHT_THRESHOLD)
+        super().configure()
+                
     def match(self, src: BobaTree, dst: BobaTree, mappings: MappingStore) -> MappingStore:
         for t in src.post_order(): # line 1 in alg 2
             if t.is_root():
@@ -44,7 +57,7 @@ class BobaVariableMatcher(GreedyBottomUpMatcher):
                 max_val = -1
                 for cand in candidates:
                     # if there is a boba variable in the children then let's loosen the threshold for matching
-                    if t.has_boba_var:
+                    if t.has_boba_var(self.boba_var_height_threshold):
                         sim_threshold = self.sim_threshold - 0.2
                     else:
                         sim_threshold = self.sim_threshold    
@@ -93,7 +106,7 @@ class BobaVariableMatcher(GreedyBottomUpMatcher):
         dst = mappings.get_dst_for_src(src_parents[first_ind])
         src_parent = src_parents[first_ind]
         dst_str = dst.ast_code
-        src_parent_str = src_parent.ast_code
+        src_parent_str = src_parents[0].ast_code
         dst_mapped = [mappings.is_dst_mapped(p) for p in dst.get_parents()]
         if all(map_list): # good boba mapping
             dst_children = dst.children

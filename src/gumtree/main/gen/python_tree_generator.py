@@ -2,10 +2,9 @@ import ast
 from src.ast_traverse import NodeVisitorStack
 
 from src.gumtree.main.gen.tree_generator import TreeGenerator
-from src.gumtree.main.trees.default_tree import PythonTree
 from src.gumtree.main.trees.tree import Tree
 from src.gumtree.main.trees.tree_context import TreeContext
-
+from src.gumtree.main.trees.boba_tree import PythonTree
 
 class PythonTreeGenerator(TreeGenerator):
     @staticmethod
