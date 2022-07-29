@@ -73,6 +73,11 @@ class AllNodesClassifier(TreeClassifier):
                 self.dst_mv_trees.update(set(self.diff.mappings.get_dst_for_src(a.node).get_descendents()))
 
 class OnlyRootsClassifier(TreeClassifier):
+    """
+    Partition only root (of a complete subtree) moved, inserted, 
+    updated or deleted nodes.
+
+    """
     def classify(self):
         inserted_dsts: Set[Tree] = set()
         

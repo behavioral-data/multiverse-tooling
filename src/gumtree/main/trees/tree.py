@@ -23,8 +23,6 @@ class Tree(ABC):
             node = node.children[child_pos]
         return node
     
-    def __hash__(self):
-        return self.tree_metrics.hashcode
 
     @property
     def num_child_boba_var_nodes(self) -> int: # number of boba var nodes in the child

@@ -43,7 +43,7 @@ class BobaVariableMatcher(GreedyBottomUpMatcher):
     def configure(self, properties: Dict):
         self.boba_var_height_threshold = properties.get('boba_var_height_threshold', 
                                                         self.DEFAULT_BOBA_VAR_HEIGHT_THRESHOLD)
-        super().configure()
+        super().configure(properties)
                 
     def match(self, src: BobaTree, dst: BobaTree, mappings: MappingStore) -> MappingStore:
         for t in src.post_order(): # line 1 in alg 2
@@ -99,17 +99,17 @@ class BobaVariableMatcher(GreedyBottomUpMatcher):
                 seed = parent
         return candidates
     
-    def get_boba_candidates(self, mappings: MappingStore, src: Tree) -> List[Tree]:
+    def get_boba_candidates(self, mappings: MappingStore, src: BobaTree):
         src_parents = src.get_parents() 
         map_list = [mappings.is_src_mapped(p) for p in src_parents]
         first_ind = map_list.index(True)
-        dst = mappings.get_dst_for_src(src_parents[first_ind])
+        dst_parent = mappings.get_dst_for_src(src_parents[first_ind])
         src_parent = src_parents[first_ind]
-        dst_str = dst.ast_code
+        dst_str = dst_parent.ast_code
         src_parent_str = src_parents[0].ast_code
-        dst_mapped = [mappings.is_dst_mapped(p) for p in dst.get_parents()]
+        dst_mapped = [mappings.is_dst_mapped(p) for p in dst_parent.get_parents()]
         if all(map_list): # good boba mapping
-            dst_children = dst.children
+            dst_children = dst_parent.children
             src_children = src_parents[first_ind].children
             
             src_child_pos = src_parent.get_child_position(src)
@@ -117,5 +117,11 @@ class BobaVariableMatcher(GreedyBottomUpMatcher):
                 same_children = all((dst_children[ind].has_same_type_and_label(src_children[ind])) 
                                     for ind in range(len(src_children)) if ind != src_child_pos)
                 if same_children:
-                    mappings.add_mapping(src, dst_children[src_child_pos])
+                    dst = dst_parent.children[src_child_pos]
+                    new_node = src.deep_copy()
+                    new_node.metadata = dst.metadata
+                    new_node.ast_node = dst.ast_node
+                    dst_parent.children.pop(src_child_pos)
+                    dst_parent.insert_child(new_node, src_child_pos)
+                    mappings.add_mapping(src, new_node)
             

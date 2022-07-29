@@ -17,19 +17,25 @@ class PythonTree(DefaultTree):
         super().__init__(node_type, label)
         self._num_child_boba_var_nodes = 0
         self.ast_node: ast.AST = ast_node
-        self.ast_code = ast.unparse(ast_node) if ast_node is not None else ""
+    
+    @property
     def ast_code(self):
         return ast.unparse(self.ast_node) if self.ast_node is not None else ""
     
 class BobaTree(PythonTree):
     def __init__(self, node_type: str, label: str =None,
-                ast_node: ast.AST=None):
+                ast_node: ast.AST=None, num_boba_var_nodes=0):
         super().__init__(node_type, label, ast_node)
-        self._num_boba_var_nodes = 0
+        self._num_boba_var_nodes = num_boba_var_nodes
 
     def has_boba_var(self, height=2):
         return (self.tree_metrics.height_from_child_boba_var <= height 
                 and self.tree_metrics.num_child_boba_vars > 0)
+    
+    @classmethod 
+    def init_from_other(cls, other: BobaTree) -> DefaultTree:
+        tree = cls(other.node_type, other.label, other.ast_node, other.num_boba_var_nodes)
+        return tree
     
     @property
     def num_boba_var_nodes(self) -> int: # number of boba var nodes in the child
