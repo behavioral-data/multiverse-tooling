@@ -120,7 +120,6 @@ class BobaVariableMatcher(GreedyBottomUpMatcher):
                     dst = dst_parent.children[src_child_pos]
                     new_node = src.deep_copy()
                     new_node.metadata = dst.metadata
-                    new_node.ast_node = dst.ast_node
                     dst_parent.children.pop(src_child_pos)
                     dst_parent.insert_child(new_node, src_child_pos)
                     mappings.add_mapping(src, new_node)

@@ -1,12 +1,15 @@
 from __future__ import annotations
 from abc import ABC, abstractmethod
-from re import T
+import json
 from typing import Callable
+import zlib
 from src.gumtree.main.trees.tree_metrics import TreeMetrics
 from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
     from src.gumtree.main.trees.tree import Tree
+
+hash_func = lambda x: zlib.adler32(json.dumps(x).encode("utf8"))
 
 class TreeVisitor(ABC):
     @staticmethod
@@ -130,14 +133,14 @@ class TreeMetricComputer(InnerNodesAndLeavesVisitor):
         return self.BASE ** exponent
     
     def inner_node_hash(self, tree: Tree, size: int, middle_hash: int):
-        return (hash((tree.node_type, tree.label, self.ENTER)) 
+        return (hash_func((tree.node_type, tree.label, self.ENTER)) 
                 + middle_hash 
-                + hash((tree.node_type, tree.label, self.LEAVE)) * (self.hash_factor(size)))
+                + hash_func((tree.node_type, tree.label, self.LEAVE)) * (self.hash_factor(size)))
         
     def inner_node_structure_hash(self, tree: Tree, size: int, middle_hash: int):
-        return (hash((tree.node_type, self.ENTER)) 
+        return (hash_func((tree.node_type, self.ENTER)) 
                 + middle_hash 
-                + hash((tree.node_type, self.LEAVE)) * (self.hash_factor(size)))
+                + hash_func((tree.node_type, self.LEAVE)) * (self.hash_factor(size)))
     
     def leaf_hash(self, tree: Tree):
         return self.inner_node_hash(tree, size=1, middle_hash=0)

@@ -28,7 +28,6 @@ class DotDiff(Client):
             writer.write("\t{} -> {} [style=dashed]\n".format(
                     self.get_dot_id(self.diff.src, m[0]), self.get_dot_id(self.diff.dst, m[1])))
         writer.write("}\n")
-        print(writer)
         return writer.getvalue()
     
     def write_tree(self, context: TreeContext, writer: StringIO):

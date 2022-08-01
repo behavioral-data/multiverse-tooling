@@ -803,7 +803,7 @@ python-versions = "*"
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.9"
-content-hash = "21f7dcdf58c484ea6551bdc14e718073978d49c8405a4f7d3b17a36f55b4ba29"
+content-hash = "b693e7901206a46d7c6040fdd8c5d603ce3ff3c880900689c4b55ae7c5f8d1be"
 
 [metadata.files]
 aiofiles = []

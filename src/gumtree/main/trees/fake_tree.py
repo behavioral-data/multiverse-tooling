@@ -20,7 +20,31 @@ class FakeTree(AbstractTree):
         for child in self.children:
             copy.add_child(child.deep_copy())
         return copy
-        
+    
+    @property
+    def pos(self):
+        return min(self.children, key=lambda x: x.pos).pos
+    
+    @property
+    def end_pos(self):
+        return max(self.children, key=lambda x: x.pos).end_pos
+    
+    @property
+    def length(self):
+        return self.end_pos - self.pos
+    
+    @pos.setter
+    def pos(self):
+        NotImplementedError("This method should not be called on a FakeTree")
+    
+    @end_pos.setter
+    def end_pos(self):
+        NotImplementedError("This method should not be called on a FakeTree")
+    
+    @length.setter
+    def length(self):
+        NotImplementedError("This method should not be called on a FakeTree")
+    
     @AbstractTree.label.setter
     def label(self, lbl):
         raise NotImplementedError("This method should not be called on a FakeTree")

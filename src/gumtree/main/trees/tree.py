@@ -32,6 +32,30 @@ class Tree(ABC):
     def num_child_boba_vars(self) -> int: # number of boba var nodes in the child
        return 0
     
+    @property
+    @abstractmethod
+    def pos(self) -> int:
+        pass 
+    
+    @pos.setter
+    @abstractmethod
+    def pos(self, p: int):
+        pass
+    
+    @property
+    @abstractmethod
+    def length(self) -> int:
+        pass 
+    
+    @pos.setter
+    @abstractmethod
+    def length(self, l: int):
+        pass
+    
+    @property
+    def end_pos(self):
+        return self.pos + self.length
+    
     @property    
     @abstractmethod
     def metadata(self) -> Dict:
@@ -106,6 +130,10 @@ class Tree(ABC):
     
     @abstractmethod
     def to_tree_string(self) -> str:
+        pass
+    
+    @abstractmethod
+    def viz_graph(self, save_path: str):
         pass
     
     def get_parents(self) -> List[Tree]:

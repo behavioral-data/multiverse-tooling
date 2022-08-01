@@ -4,11 +4,11 @@ import difflib
 from typing import Dict, List, Tuple
 from src.gumtree.main.client.client import Client
 
-from src.boba.parser import Parser
-from src.gumtree.main.trees.tree import Tree
+from src.boba.parser import History, Parser
 from ydiff import Hunk
-import ydiff
 from src.our_ydiff import OurUnifiedDiff, UnmatchedLineDiffMarker
+
+from src.gumtree.main.diff.diff import Diff
 
 
 @dataclass(frozen=True, eq=True)
@@ -60,19 +60,22 @@ class ProcessedHunk(Hunk):
         old_ind = 0
         new_ind = 0
         for old, new, _ in difflib._mdiff(self.old_text_str.split('\n'), self.new_text_str.split('\n')):
-            old_changed = self.old_text_lines[old_ind][1]
-            new_changed = self.new_text_lines[new_ind][1]
+
             if old[0]:
+                old_changed = self.old_text_lines[old_ind][1]
                 from_line_tup = (old_ind + 1, self.old_text_lines[old_ind][0])
                 old_ind += 1
             else:
                 from_line_tup = (None, '')
+                old_changed = False
             
             if new[0]:
+                new_changed = self.new_text_lines[new_ind][1]
                 to_line_tup = (new_ind + 1, self.new_text_lines[new_ind][0])
                 new_ind += 1
             else:
                 to_line_tup = (None, '')
+                new_changed = False
             res.append((from_line_tup, to_line_tup, old_changed, new_changed))
         return res
     
@@ -85,25 +88,13 @@ class LineDiff(Client):
     UPDATE_TAG = '\x00^'
     RESET_TAG = '\x01'
     
-    def __init__(self, ps: Parser, universe_code, universe_num):
-        self.boba_parser = ps
-        self.universe_num = universe_num
-        template_code = self.boba_parser.paths_code[ps.history[universe_num - 1].path]
-        self.default_configurations = {
-            "generator": ("boba_python_template", "python"),
-            "matcher": "boba",
-            "parser_history": ps.history[universe_num - 1],
-            "priority_queue": "python"
-        }
-    
-        super().__init__(template_code, universe_code, self.default_configurations)
-        self.diff = self.get_diff()
+    def run(self):
+        self.diff: Diff = self.get_diff()
         self.classifier = self.diff.createRootNodesClassifier()
         self.src_code_lines = self.src_code.split('\n')
         self.dst_code_lines = self.dst_code.split('\n')
-    
-    def run(self):
         self.produce()
+        self.write_code()
 
     def produce(self):
         c = self.classifier 
@@ -132,19 +123,20 @@ class LineDiff(Client):
             if t in c.get_inserted_dsts():
                 self.add_line_mark(pos, self.dst_code_lines, dst_line_to_mark, self.INSERT_TAG)
         
-        src_marks = self.process_line_marks_to_mark_list(src_line_to_mark)
-        dst_marks = self.process_line_marks_to_mark_list(dst_line_to_mark)
-        src_str_lines = self.insert_mark_list_code_str(src_marks, self.src_code_lines)
-        dst_str_lines = self.insert_mark_list_code_str(dst_marks, self.dst_code_lines)
+        self.src_marks = self.process_line_marks_to_mark_list(src_line_to_mark)
+        self.dst_marks = self.process_line_marks_to_mark_list(dst_line_to_mark)
+        self.src_str_lines = self.insert_mark_list_code_str(self.src_marks, self.src_code_lines)
+        self.dst_str_lines = self.insert_mark_list_code_str(self.dst_marks, self.dst_code_lines)
         
-        hunk = ProcessedHunk([], 'Metadata\n', src_str_lines, dst_str_lines, self.src_code, self.dst_code)
-        diff = OurUnifiedDiff([], '--- Boba Template\n', f'+++ Universe {self.universe_num} Spec\n', [hunk])
+                
+    def write_code(self):
+        hunk = ProcessedHunk([], 'Metadata\n', self.src_str_lines, self.dst_str_lines, self.src_code, self.dst_code)
+        diff = OurUnifiedDiff([], '--- Src File\n', f'+++ Dst File\n', [hunk])
         marker = UnmatchedLineDiffMarker(side_by_side=True, width=80,  wrap=True)
         color_diff = marker.markup(diff)
         for line in color_diff:
             a = line.encode('utf-8')
             print(a.decode(), end='')
-                
     
     @staticmethod
     def add_line_mark(pos: Pos, 
@@ -195,7 +187,17 @@ class LineDiff(Client):
                 ind += 1
 
             while marks_stack:
-                clear_stack(marks_stack, marks_pos)    
+                clear_stack(marks_stack, marks_pos)
+                
+            # clean marks, don't want a non-reset tag follwed by reset tag for the same column ie. [(3, x), (3, RESET_TAG)]
+            to_delete = []
+            for i in range(len(marks_pos) - 1):
+                if marks_pos[i][1] != LineDiff.RESET_TAG and marks_pos[i+1][1] == LineDiff.RESET_TAG:
+                    if marks_pos[i][0] == marks_pos[i+1][0]:
+                        to_delete.append(i)
+                        to_delete.append(i+1)
+            marks_pos = [marks_pos[i] for i in range(len(marks_pos)) if i not in to_delete]
+                
             marks[line] = marks_pos
         return marks
 
@@ -205,7 +207,7 @@ class LineDiff(Client):
         ret = []
         for i, code_line in enumerate(code_lines):
             lineno = i + 1
-            if lineno in marks:
+            if lineno in marks and len(marks[lineno]) > 0:
                 acc = 0
                 char_str = list(code_line)
                 for pos, mark in marks[lineno]:
@@ -215,26 +217,37 @@ class LineDiff(Client):
             else:
                 ret.append((code_line, False))
         return ret
-    
-    def get_dst_code_from_src(self, src):
-        t = self.diff.mappings.get_dst_for_src(src)
-        pos = Pos(t.metadata.get("lineno", -1),
-                  t.metadata.get("col_offset", -1),
-                  t.metadata.get("end_lineno", -1),
-                  t.metadata.get("end_col_offset", -1)
-        )
-        return pos
-    
-    def get_src_code_from_dst(self, dst):
-        t = self.diff.mappings.get_src_for_dst(dst)
-        pos = Pos(t.metadata.get("lineno", -1),
-                  t.metadata.get("col_offset", -1),
-                  t.metadata.get("end_lineno", -1),
-                  t.metadata.get("end_col_offset", -1)
-        )
-        return pos
 
+
+class BobaLineDiff(LineDiff):
+    DEFAULT_GENERATOR = ("boba_python_template", "python")
+    MATCHER =  "boba"
+    PRIOIRITY_QUEUE = "python"
+
+    def __init__(self, ps: Parser, universe_code: str, universe_num: int):
+        
+        self.boba_parser = ps
+        self.universe_num = universe_num
+        self.history: History = ps.history[universe_num - 1]
+        template_code = self.boba_parser.paths_code[self.history.path]
+        configurations = {
+            "generator": self.DEFAULT_GENERATOR,
+            "matcher": self.MATCHER,
+            "parser_history": self.history,
+            "priority_queue": self.PRIOIRITY_QUEUE
+        }
+        super().__init__(template_code, universe_code, configurations)
     
+    def write_code(self):
+        hunk = ProcessedHunk([], 'Metadata\n', self.src_str_lines, self.dst_str_lines, self.src_code, self.dst_code)
+        diff = OurUnifiedDiff([], '--- Template File\n', f'+++ Universe {self.universe_num} Spec\n', [hunk])
+        marker = UnmatchedLineDiffMarker(side_by_side=True, width=80,  wrap=True)
+        color_diff = marker.markup(diff)
+        for line in color_diff:
+            a = line.encode('utf-8')
+            print(a.decode(), end='')
+
+ 
 if __name__ == "__main__":
     from src.utils import load_parser_example
     
@@ -242,10 +255,14 @@ if __name__ == "__main__":
     import os.path as osp
     from src.utils import save_viz_code_pdf
     from src.gumtree.main.client.dot_diff import DotDiff
+    from src.gumtree.tests.resources.code_samples import FUNC1, FUNC2, TEMPLATE_CODE
+    
+    line_diff = LineDiff(FUNC1, FUNC2)
+    res = line_diff.run()
     dataset, ext = 'fertility', 'py'
     save_file = osp.join(DATA_DIR, f'{dataset}_template_parser_obj_0718.pickle')
     ps = load_parser_example(dataset, ext, save_file)
     universe_num = 3
     universe_code = read_universe_file(universe_num, dataset, ext)
-    line_diff = LineDiff(ps, universe_code, universe_num)
-    res = line_diff.run()
+    boba_line_diff = BobaLineDiff(ps, universe_code, universe_num)
+    res = boba_line_diff.run()

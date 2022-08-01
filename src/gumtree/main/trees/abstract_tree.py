@@ -1,6 +1,8 @@
 from abc import ABC
 import ast
+import os.path as osp
 from typing import List, Dict
+import graphviz
 
 from src.gumtree.main.trees.tree_metrics import TreeMetrics
 from src.gumtree.main.trees.tree_visitor import TreeMetricComputer, TreeVisitor
@@ -8,6 +10,8 @@ from src.ast_traverse import NodeVisitorStack
 import src.gumtree.main.diff.io.tree_io_utils as tree_io_utils
 
 from src.gumtree.main.trees.tree import Tree
+from src.gumtree.main.diff.io.tree_viz import get_graphviz_graph
+from src.utils import VIZ_DIR
 
 def get_node_label(node: ast.AST):
     labels = []
@@ -30,9 +34,9 @@ class AbstractTree(Tree, ABC):
     def __repr__(self):
         
         if self.label:
-            return f"{self.__class__.__name__}: {self.node_type} ({self.label}) "
+            return f"{self.__class__.__name__}: {self.node_type} ({self.label}) [{self.pos}, {self.end_pos}] "
         else:
-            return f"{self.__class__.__name__}: {self.node_type}"
+            return f"{self.__class__.__name__}: {self.node_type} [{self.pos}, {self.end_pos}]"
     @property    
     def metadata(self) -> Dict:
         if not hasattr(self, "_metadata"):
@@ -125,7 +129,14 @@ class AbstractTree(Tree, ABC):
         
     def to_tree_string(self):
         return str(tree_io_utils.to_short_text(self))
-        
+    
+    def viz_graph(self, save_path: str =None):
+        graph: graphviz.Graph = get_graphviz_graph(self)
+        if save_path is None:
+            save_path = osp.join(VIZ_DIR, f"temp_{self.__class__.__name__}.pdf")
+        with open(save_path, 'wb') as f:
+            f.write(graph.pipe(format='pdf'))
+        print(f'Saved graph to {save_path}')
     
 if __name__ == '__main__':
     code = """#!/usr/bin/env python3

@@ -1,7 +1,6 @@
 from __future__ import annotations
 
-import ast
-from typing import Iterable
+from typing import Iterable, Union
 from src.gumtree.main.trees.boba_tree_metrics_computer import BobaTreeMetricsComptuer
 from src.gumtree.main.trees.default_tree import DefaultTree
 from src.gumtree.main.trees.tree_metrics import BobaTreeMetrics
@@ -13,28 +12,28 @@ from src.gumtree.main.trees.node_constants import BOBA_VAR
 
 class PythonTree(DefaultTree):
     def __init__(self, node_type: str, label: str =None,
-                 ast_node: ast.AST=None):
+                 ast_code: str =None):
         super().__init__(node_type, label)
-        self._num_child_boba_var_nodes = 0
-        self.ast_node: ast.AST = ast_node
-    
-    @property
-    def ast_code(self):
-        return ast.unparse(self.ast_node) if self.ast_node is not None else ""
+        self.ast_code = ast_code
     
 class BobaTree(PythonTree):
     def __init__(self, node_type: str, label: str =None,
-                ast_node: ast.AST=None, num_boba_var_nodes=0):
-        super().__init__(node_type, label, ast_node)
-        self._num_boba_var_nodes = num_boba_var_nodes
+                 ast_code: str =None):
+        super().__init__(node_type, label, ast_code)
 
     def has_boba_var(self, height=2):
         return (self.tree_metrics.height_from_child_boba_var <= height 
                 and self.tree_metrics.num_child_boba_vars > 0)
     
     @classmethod 
-    def init_from_other(cls, other: BobaTree) -> DefaultTree:
-        tree = cls(other.node_type, other.label, other.ast_node, other.num_boba_var_nodes)
+    def init_from_other(cls, other: Union[BobaTree, PythonTree]) -> DefaultTree:
+        tree = cls(other.node_type, other.label, other.ast_code)
+        tree._num_boba_var_nodes = 0
+        tree.pos = other.pos
+        tree.length = other.length
+        tree.metadata = other.metadata
+        if type(other) == BobaTree:
+            tree.num_boba_var_nodes = other.num_boba_var_nodes 
         return tree
     
     @property
