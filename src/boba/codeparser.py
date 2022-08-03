@@ -24,9 +24,31 @@ class Block:
     option: str = ''
     chunks: List = field(default_factory=lambda: [])
     code_str: str = ''
+    block_prefix: str = ''
+
+@dataclass
+class BlockCode:
+    dec_name: str = ''
+    opt_name: str = ''
+    code_str: str = ''
+    extra_line: bool = False
+    block_prefix: str = ''
+
+    def __post_init__(self):
+        if self.opt_name == '':
+            self.opt_name = self.dec_name
+            
+    @property
+    def code_num_lines(self) -> int:
+        return len(self.code_str.split('\n')) - (0 if self.extra_line else 1)
     
-
-
+    def __repr__(self):
+        return f'{self.dec_name}:{self.opt_name}' if self.dec_name != self.opt_name else self.dec_name 
+    
+    @classmethod
+    def init_from_template_block(cls, blk: Block, extra_line=True):
+        return cls(blk.id, blk.option, blk.code_str, extra_line, blk.block_prefix)
+        
 @dataclass
 class Chunk:
     """A class for code chunks.
@@ -37,11 +59,14 @@ class Chunk:
     """
     variable: str = ''
     code: str = ''
+    start_lineno: int = -1
+    end_lineno: int = -1
 
 
 class CodeParser:
     def __init__(self):
-        self.blocks = OrderedDict()
+        self.blocks: List[Block] = OrderedDict()
+        self.all_blocks: List[BlockCode] = [] # for direct ordered block to line mapping
         self.order = []
 
         self.raw_spec = ''
@@ -50,8 +75,6 @@ class CodeParser:
         self.inline_constraints = []
         self.inline_vars = []
         self.used_vars = set()
-
-    
         
         
     @property
@@ -64,17 +87,25 @@ class CodeParser:
         """Get the ID of the block, ignoring options."""
         return block.id if block.parameter == '' else block.parameter
 
-    def _add_block(self, block):
+    def _add_block(self, block: Block):
         """Add a block to our data structure."""
         # handle config block
         if block.id == 'BOBA_CONFIG':
             self.raw_spec += block.chunks[0].code
+            self.all_blocks.append(BlockCode.init_from_template_block(block))
             return
         if block.id == 'END':
             block.id = ''
             if len(self.order):
                 self.blocks[self.order[-1]].chunks += block.chunks
-                self.blocks[self.order[-1]].code_str += block.code_str 
+                self.blocks[self.order[-1]].code_str += block.code_str
+                new_block = BlockCode(dec_name=self.blocks[self.order[-1]].id,
+                                      opt_name=self.blocks[self.order[-1]].option,
+                                      code_str=block.code_str,
+                                      extra_line=True,
+                                      block_prefix=block.block_prefix
+                                      )
+                self.all_blocks.append(new_block) 
                 return
 
         # ignore empty block
@@ -92,6 +123,8 @@ class CodeParser:
 
         # add to data structure
         self.blocks[block.id] = block
+        self.all_blocks.append(BlockCode.init_from_template_block(block,
+                                                                  extra_line=block.id!='_start'))
         bn = CodeParser._get_block_name(block)
         if bn not in self.order:
             self.order.append(bn)
@@ -130,7 +163,10 @@ class CodeParser:
         code = ''
         bl = Block()
         block_code_lines = []
-        for line in f:
+        self.blocks: List[Block] = OrderedDict()
+        self.all_blocks: List[BlockCode] = [] # for direct ordered block to line mapping
+        self.order = []
+        for i, line in enumerate(f):
             if BlockSyntaxParser.can_parse(line):
                 # end of the previous block
                 bl.chunks.append(Chunk('', code))
@@ -141,7 +177,7 @@ class CodeParser:
 
                 # parse the metadata and create a new block
                 bp_id, par, opt, cond = BlockSyntaxParser(line).parse()
-                bl = Block(bp_id, par, opt, [])
+                bl = Block(bp_id, par, opt, [], block_prefix=line)
 
                 # store inline constraints, if any
                 if cond:

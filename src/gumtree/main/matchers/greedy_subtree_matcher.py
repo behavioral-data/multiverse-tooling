@@ -1,6 +1,4 @@
-from filecmp import cmp
-from re import A
-from typing import Dict, List, Tuple, Set
+from typing import List, Tuple, Set
 from src.gumtree.main.matchers.abstract_subtree_matcher import AbstractSubtreeMatcher
 from src.gumtree.main.matchers.mapping_comparators import (
     FullMappingComparator, 

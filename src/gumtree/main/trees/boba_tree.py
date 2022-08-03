@@ -15,6 +15,14 @@ class PythonTree(DefaultTree):
                  ast_code: str =None):
         super().__init__(node_type, label)
         self.ast_code = ast_code
+        
+    @classmethod 
+    def init_from_other(cls, other: PythonTree) -> DefaultTree:
+        tree = cls(other.node_type, other.label, other.ast_code)
+        tree.pos = other.pos
+        tree.length = other.length
+        tree.metadata = other.metadata
+        return tree
     
 class BobaTree(PythonTree):
     def __init__(self, node_type: str, label: str =None,

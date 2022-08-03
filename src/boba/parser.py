@@ -8,9 +8,10 @@ from textwrap import wrap
 from dataclasses import dataclass, field
 from typing import List, Tuple, Dict, Tuple
 from tqdm import tqdm
+from src.gumtree.main.trees.tree import Tree
 
 from .baseparser import ParseError
-from .codeparser import CodeParser, Chunk
+from .codeparser import CodeParser, Chunk, BlockCode
 from .graphparser import GraphParser
 from .graphanalyzer import GraphAnalyzer, InvalidGraphError
 from .decisionparser import DecisionParser
@@ -49,19 +50,6 @@ class DecRecord:
     option: str = ''
     idx: int = -1
 
-@dataclass
-class BlockCode:
-    dec_name: str = ''
-    opt_name: str = ''
-    code_str: str = ''
-    
-    @property
-    def code_num_lines(self) -> int:
-        return len(repr(self.code_str).split('\\n'))
-    
-    def __repr__(self):
-        return f'{self.dec_name}:{self.opt_name}' if self.dec_name != self.opt_name else self.dec_name
-    
 class Parser:
 
     """ Parse everything """
@@ -86,6 +74,10 @@ class Parser:
         self._parse_decs()
         self._parse_graph()
         self._parse_constraints()
+
+        # ast related processing
+        self.template_tree: Tree = self._gen_template_ast()
+        self.template_code_blocks: List[BlockCode] = self.code_parser.all_blocks
 
         self.universe_to_blocks = {}
         # init helper class
@@ -128,7 +120,7 @@ class Parser:
             strs = []
             for block_name in path:
                 strs.append(self.code_parser.blocks[block_name].code_str)
-            paths_code.append('\n'.join(strs))
+            paths_code.append(''.join(strs))
         return paths_code
             
     def _throw(self, msg):
@@ -392,13 +384,15 @@ class Parser:
                 path_block_changes = []
                 cur_block_name = path[0][0]
                 cur_block_start = 0
-                for ind, path_step in enumerate(path):
-                    if path_step[0] == cur_block_name:
+                cur_var = path[0][1].variable
+                for ind, path_step in enumerate(path[1:]):
+                    if path_step[0] == cur_block_name and not (path_step[1].variable == '' and cur_var == ''):
                         continue
                     else:
-                        path_block_changes.append((cur_block_name, cur_block_start, ind))
+                        path_block_changes.append((cur_block_name, cur_block_start, ind+1))
                         cur_block_name = path_step[0]
-                        cur_block_start = ind
+                        cur_block_start = ind + 1
+                    cur_var = path_step[1].variable
                 path_block_changes.append((cur_block_name, cur_block_start, len(path)))
                 paths_block_change_idxs.append(path_block_changes)
             return paths_block_change_idxs
@@ -510,6 +504,13 @@ class Parser:
             if not rs.strip().lower().startswith('y'):
                 print('Aborted.')
                 exit(0)
+                
+    def _gen_template_ast(self) -> Tree:
+        from src.gumtree.main.gen.boba_python_tree_generator import BobaPythonTemplateTreeGeneator
+        generator = BobaPythonTemplateTreeGeneator()
+        tree_context = generator.generate_tree_from_file(self.fn_script)
+        return tree_context.root
+    
 
     def main(self, verbose=True):
         self._warn_size()

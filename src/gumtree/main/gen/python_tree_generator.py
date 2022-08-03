@@ -40,18 +40,6 @@ class PythonTreeGenerator(TreeGenerator):
 		return node.__class__.__name__
 	
 	def generate_tree(self, src_code: str, metadata=None) -> TreeContext:
-		ast_node = ast.parse(src_code)
-		tree = self.generate_tree_helper(ast_node)
-		tree_ctx = TreeContext()
-		tree_ctx.root = tree
-		
-		if metadata is not None and type(metadata) is dict:
-			for k, v in metadata.items():
-				tree_ctx.set_metadata(k, v)
-		return tree_ctx
-	
-	
-	def generate_tree(self, src_code: str, metadata=None) -> TreeContext:
 		self.positions = get_positions(src_code)
 		self.code_str = src_code
 		parso_ast: NodeOrLeaf = parso.parse(src_code)

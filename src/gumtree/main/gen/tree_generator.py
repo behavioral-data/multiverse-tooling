@@ -1,10 +1,6 @@
+from __future__ import annotations
 from abc import ABC, abstractmethod
-import ast
 from src.gumtree.main.trees.tree_context import TreeContext
-from src.ast_traverse import NodeVisitorStack
-from src.gumtree.main.trees.default_tree import DefaultTree
-from src.gumtree.main.trees.tree import Tree
-
 
 
 class TreeGenerator(ABC):

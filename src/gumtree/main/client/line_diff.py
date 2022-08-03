@@ -7,8 +7,8 @@ from src.gumtree.main.client.client import Client
 from src.boba.parser import History, Parser
 from ydiff import Hunk
 from src.our_ydiff import OurUnifiedDiff, UnmatchedLineDiffMarker
-
 from src.gumtree.main.diff.diff import Diff
+from src.gumtree.main.trees.tree import Tree
 
 
 @dataclass(frozen=True, eq=True)
@@ -93,44 +93,44 @@ class LineDiff(Client):
         self.classifier = self.diff.createRootNodesClassifier()
         self.src_code_lines = self.src_code.split('\n')
         self.dst_code_lines = self.dst_code.split('\n')
-        self.produce()
-        self.write_code()
+        src_str_lines, dst_str_lines = self.produce(self.src_code_lines, self.dst_code_lines, self.get_pos, self.get_pos)
+        self.write_code(src_str_lines, dst_str_lines, self.src_code, self.dst_code)
 
-    def produce(self):
+    def get_pos(self, t: Tree) -> Pos:
+        return Pos(t.metadata.get("lineno", -1),
+                   t.metadata.get("col_offset", -1),
+                   t.metadata.get("end_lineno", -1),
+                   t.metadata.get("end_col_offset", -1))
+    
+    def produce(self, src_code_lines, dst_code_lines,
+                get_src_pos, get_dst_pos):
         c = self.classifier 
         src_line_to_mark: Dict[int, List[LinePosMark]] = defaultdict(list)
         dst_line_to_mark: Dict[int, List[LinePosMark]] = defaultdict(list)
         
         for t in self.diff.src.root.pre_order():
-            pos = Pos(t.metadata.get("lineno", -1),
-                          t.metadata.get("col_offset", -1),
-                          t.metadata.get("end_lineno", -1),
-                          t.metadata.get("end_col_offset", -1)
-                )
+            pos = get_src_pos(t)
             if t in c.get_updated_srcs():
-                self.add_line_mark(pos, self.src_code_lines, src_line_to_mark, self.UPDATE_TAG)
+                self.add_line_mark(pos, src_code_lines, src_line_to_mark, self.UPDATE_TAG)
             if t in c.get_deleted_srcs():
-                self.add_line_mark(pos, self.src_code_lines, src_line_to_mark, self.DEL_TAG)
+                self.add_line_mark(pos, src_code_lines, src_line_to_mark, self.DEL_TAG)
                 
         for t in self.diff.dst.root.pre_order():
-            pos = Pos(t.metadata.get("lineno", -1),
-                          t.metadata.get("col_offset", -1),
-                          t.metadata.get("end_lineno", -1),
-                          t.metadata.get("end_col_offset", -1)
-                )
+            pos = get_dst_pos(t)
             if t in c.get_updated_dsts():
-                self.add_line_mark(pos, self.dst_code_lines, dst_line_to_mark, self.UPDATE_TAG)
+                self.add_line_mark(pos, dst_code_lines, dst_line_to_mark, self.UPDATE_TAG)
             if t in c.get_inserted_dsts():
-                self.add_line_mark(pos, self.dst_code_lines, dst_line_to_mark, self.INSERT_TAG)
+                self.add_line_mark(pos, dst_code_lines, dst_line_to_mark, self.INSERT_TAG)
         
         self.src_marks = self.process_line_marks_to_mark_list(src_line_to_mark)
         self.dst_marks = self.process_line_marks_to_mark_list(dst_line_to_mark)
-        self.src_str_lines = self.insert_mark_list_code_str(self.src_marks, self.src_code_lines)
-        self.dst_str_lines = self.insert_mark_list_code_str(self.dst_marks, self.dst_code_lines)
+        src_str_lines = self.insert_mark_list_code_str(self.src_marks, src_code_lines)
+        dst_str_lines = self.insert_mark_list_code_str(self.dst_marks, dst_code_lines)
+        return src_str_lines, dst_str_lines
         
                 
-    def write_code(self):
-        hunk = ProcessedHunk([], 'Metadata\n', self.src_str_lines, self.dst_str_lines, self.src_code, self.dst_code)
+    def write_code(self, src_str_lines, dst_str_lines, src_code, dst_code):
+        hunk = ProcessedHunk([], 'Metadata\n', src_str_lines, dst_str_lines, src_code, dst_code)
         diff = OurUnifiedDiff([], '--- Src File\n', f'+++ Dst File\n', [hunk])
         marker = UnmatchedLineDiffMarker(side_by_side=True, width=80,  wrap=True)
         color_diff = marker.markup(diff)
@@ -238,8 +238,8 @@ class BobaLineDiff(LineDiff):
         }
         super().__init__(template_code, universe_code, configurations)
     
-    def write_code(self):
-        hunk = ProcessedHunk([], 'Metadata\n', self.src_str_lines, self.dst_str_lines, self.src_code, self.dst_code)
+    def write_code(self, src_str_lines, dst_str_lines, src_code, dst_code):
+        hunk = ProcessedHunk([], 'Metadata\n', src_str_lines, dst_str_lines, src_code,dst_code)
         diff = OurUnifiedDiff([], '--- Template File\n', f'+++ Universe {self.universe_num} Spec\n', [hunk])
         marker = UnmatchedLineDiffMarker(side_by_side=True, width=80,  wrap=True)
         color_diff = marker.markup(diff)
@@ -257,10 +257,10 @@ if __name__ == "__main__":
     from src.gumtree.main.client.dot_diff import DotDiff
     from src.gumtree.tests.resources.code_samples import FUNC1, FUNC2, TEMPLATE_CODE
     
-    line_diff = LineDiff(FUNC1, FUNC2)
-    res = line_diff.run()
-    dataset, ext = 'fertility', 'py'
-    save_file = osp.join(DATA_DIR, f'{dataset}_template_parser_obj_0718.pickle')
+    # line_diff = LineDiff(FUNC1, FUNC2)
+    # res = line_diff.run()
+    dataset, ext = 'fertility2', 'py'
+    save_file = osp.join(DATA_DIR, f'{dataset}_template_parser_obj_0802.pickle')
     ps = load_parser_example(dataset, ext, save_file)
     universe_num = 3
     universe_code = read_universe_file(universe_num, dataset, ext)

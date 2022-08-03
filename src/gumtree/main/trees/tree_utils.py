@@ -82,6 +82,11 @@ class PreOrderIterator(TreeIterator):
         self.push(tree)
         return tree
     
+    def skip_descendents(self):
+        if len(self.stack) == 0:
+            raise StopIteration
+        self.stack.pop()
+    
     def push(self, tree: Tree):
         if not tree.is_leaf():
             self.stack.append(HNIterator(tree.children))
