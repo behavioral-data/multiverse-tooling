@@ -12,7 +12,7 @@ PROJECT_ROOT_DIR = dirname(dirname(abspath(__file__)))
 DATA_DIR = join(PROJECT_ROOT_DIR, 'data')
 SRC_DIR = join(PROJECT_ROOT_DIR, 'src')
 VIZ_DIR = join(PROJECT_ROOT_DIR, 'visualizations')
-
+OUTPUT_DIR = join(PROJECT_ROOT_DIR, 'output')
 
 def get_logger(name):
     logger = logging.getLogger(name)

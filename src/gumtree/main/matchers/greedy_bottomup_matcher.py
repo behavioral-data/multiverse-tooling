@@ -123,4 +123,4 @@ class BobaVariableMatcher(GreedyBottomUpMatcher):
                     dst_parent.children.pop(src_child_pos)
                     dst_parent.insert_child(new_node, src_child_pos)
                     mappings.add_mapping(src, new_node)
-            
+                    mappings.add_boba_mapping(src, dst)

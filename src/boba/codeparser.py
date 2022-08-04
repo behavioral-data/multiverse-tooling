@@ -31,7 +31,6 @@ class BlockCode:
     dec_name: str = ''
     opt_name: str = ''
     code_str: str = ''
-    extra_line: bool = False
     block_prefix: str = ''
 
     def __post_init__(self):
@@ -40,14 +39,14 @@ class BlockCode:
             
     @property
     def code_num_lines(self) -> int:
-        return len(self.code_str.split('\n')) - (0 if self.extra_line else 1)
+        return self.code_str.count('\n') + self.block_prefix.count('\n')
     
     def __repr__(self):
         return f'{self.dec_name}:{self.opt_name}' if self.dec_name != self.opt_name else self.dec_name 
     
     @classmethod
-    def init_from_template_block(cls, blk: Block, extra_line=True):
-        return cls(blk.id, blk.option, blk.code_str, extra_line, blk.block_prefix)
+    def init_from_template_block(cls, blk: Block):
+        return cls(blk.id, blk.option, blk.code_str, blk.block_prefix)
         
 @dataclass
 class Chunk:
@@ -102,7 +101,6 @@ class CodeParser:
                 new_block = BlockCode(dec_name=self.blocks[self.order[-1]].id,
                                       opt_name=self.blocks[self.order[-1]].option,
                                       code_str=block.code_str,
-                                      extra_line=True,
                                       block_prefix=block.block_prefix
                                       )
                 self.all_blocks.append(new_block) 
@@ -123,8 +121,7 @@ class CodeParser:
 
         # add to data structure
         self.blocks[block.id] = block
-        self.all_blocks.append(BlockCode.init_from_template_block(block,
-                                                                  extra_line=block.id!='_start'))
+        self.all_blocks.append(BlockCode.init_from_template_block(block))
         bn = CodeParser._get_block_name(block)
         if bn not in self.order:
             self.order.append(bn)

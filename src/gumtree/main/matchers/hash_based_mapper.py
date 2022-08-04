@@ -9,7 +9,7 @@ from src.gumtree.main.trees.tree import Tree
 
 class HashBasedMapper:
     def __init__(self) -> None:
-        self.mappings: Dict[int, ] = defaultdict(lambda: (set(), set()))
+        self.mappings: Dict[int, Tuple[Set[Tree], Set[Tree]]] = defaultdict(lambda: (set(), set()))
     
     def add_srcs(self, trees: List[Tree]):
         for tree in trees:

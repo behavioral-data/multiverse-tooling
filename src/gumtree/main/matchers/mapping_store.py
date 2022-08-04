@@ -44,6 +44,8 @@ class MappingStore:
         self.dst = dst
         self.src_to_dst: Dict[Tree, Tree] = {}
         self.dst_to_src: Dict[Tree, Tree] = {}
+        self.src_to_dst_boba_map: Dict[Tree, Tree] = {}
+        self.dst_to_src_boba_map: Dict[Tree, Tree] = {}
         
     @classmethod
     def init_from_mapping_store(cls, ms: MappingStore):
@@ -55,6 +57,10 @@ class MappingStore:
     def size(self):
         return len(self.src_to_dst)
     
+    def add_boba_mapping(self, src: Tree, dst: Tree):
+        self.src_to_dst_boba_map[src] = dst
+        self.dst_to_src_boba_map[dst] = src
+        
     def add_mapping(self, src: Tree, dst: Tree):
         self.src_to_dst[src] = dst
         self.dst_to_src[dst] = src

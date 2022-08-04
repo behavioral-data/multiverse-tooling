@@ -13,3 +13,4 @@ data/**
 gumtree/**
 *.svg
 *.lprof
+output

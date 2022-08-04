@@ -177,15 +177,15 @@ class UnmatchedLineDiffMarker(DiffMarker):
                 if changed_left or changed_right:
                     if not old[0]:
                         left = ''
-                        right = right.rstrip('\x01')
-                        if right.startswith('\x00+'):
-                            right = right[2:]
+                        # right = right.rstrip('\x01')
+                        # if right.startswith('\x00+'):
+                        #     right = right[2:]
                         right = _fit_with_marker_mix(right, 'green') #self._markup_new(right)
                     elif not new[0]:
                         right = ''
-                        left = left.rstrip('\x01')
-                        if left.startswith('\x00-'):
-                            left = left[2:]
+                        # left = left.rstrip('\x01')
+                        # if left.startswith('\x00-'):
+                        #     left = left[2:]
                         left = _fit_with_marker_mix(left, 'red') #self._markup_old(left)
                         
                     else:
