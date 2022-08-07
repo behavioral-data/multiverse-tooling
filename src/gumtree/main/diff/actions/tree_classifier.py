@@ -31,6 +31,12 @@ class TreeClassifier(ABC):
     def classify(self):
         pass 
     
+    def changed_src_tree(self, t: Tree):
+        return t in self.get_moved_srcs() or t in self.get_updated_srcs() or t in self.get_deleted_srcs()
+    
+    def changed_dst_tree(self, t: Tree):
+        return t in self.get_moved_dsts() or t in self.get_updated_dsts() or t in self.get_inserted_dsts()
+    
     def get_updated_srcs(self) -> Set[Tree]:
         return self.src_upd_trees
     

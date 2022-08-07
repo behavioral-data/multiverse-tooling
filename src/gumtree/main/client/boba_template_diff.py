@@ -14,6 +14,14 @@ from src.gumtree.main.client.template_builder import BlockInfo, CodePos, NewTemp
 
 from src.utils import OUTPUT_DIR
 from src.gumtree.main.client.boba_utils import chunk_code, clean_code_blocks, get_tree, parse_boba_var_config_ast
+from src.gumtree.main.diff.chawathe_script_generator import ChawatheScriptGenerator
+
+from src.gumtree.main.gen.python_tree_generator import PythonTreeGenerator
+from src.gumtree.main.matchers.composite_matchers import MatcherFactory
+from src.gumtree.main.trees.tree_context import TreeContext
+
+from src.gumtree.main.matchers.mapping_store import MappingStore
+
 
     
 class TemplateDiff(LineDiff):
@@ -57,24 +65,33 @@ class TemplateDiff(LineDiff):
         self.new_intermediary_tree = get_tree(self.new_intermediary_code, gen_name='boba')
         
         # generate new boba spec (need diff)
-        boba_config_tree = get_tree(self.boba_parser.code_parser.raw_spec)
-        self.boba_var_to_tree_options = parse_boba_var_config_ast(boba_config_tree)
-        mappings = self.handle_boba_vars()
+        self.template_config_tree = get_tree(self.boba_parser.code_parser.raw_spec)
+        self.boba_var_to_tree_options = parse_boba_var_config_ast(self.template_config_tree)
+        mappings, self.template_spec_tree_to_boba_choice_var = self.handle_boba_vars()
         self.new_raw_spec = chunk_code(self.boba_parser.code_parser.raw_spec, mappings)
         
         self.configure({"matcher": "classic",
                         "generator": "python",
-                        "priority_queue": "default"})
+                        "priority_queue": "python"})
         
-        self.spec_diff = Diff.compute_from_strs(self.boba_parser.code_parser.raw_spec, 
-                                                self.new_raw_spec, self.generator,
-                                                self.matcher, self.configurations)
+        self.spec_diff = self.get_spec_diff()
         self.spec_classifier = self.spec_diff.createRootNodesClassifier()
         self.template_builder = NewTemplateBuilder(self.template_code_pos,
                                                    self.new_intermediary_code,
                                                    self.new_raw_spec)
-        
+    def get_spec_diff(self):
+        src = TreeContext()
+        src.root = self.template_config_tree
+        src.root.parent = None
+        dst = PythonTreeGenerator().generate_tree(self.new_raw_spec)
+        matcher = MatcherFactory("classic").get_matcher()
+        matcher.configure({"priority_queue": "python"})
+
+        mappings = matcher.match(src.root, dst.root,  MappingStore(src.root, dst.root))
+        edit_script = ChawatheScriptGenerator.compute_actions(mappings)
+        return Diff(src, dst, mappings, edit_script)
     
+
     def handle_boba_vars(self) -> List[Tuple[str, Tree]]:
         boba_var_to_mapped_tree: Dict[str] = defaultdict(set)
         for boba_var, mapped in self.diff.mappings.src_to_dst_boba_map.items():
@@ -84,7 +101,8 @@ class TemplateDiff(LineDiff):
             else:
                 boba_var_to_mapped_tree[boba_var.label].add(mapped_tree.ast_code)
         
-        mappings = [] 
+        mappings: List[Tuple[str, Tree]] = [] 
+        tree_to_boba_choice_var = {}
         for k, v in boba_var_to_mapped_tree.items():
             if len(v) > 1:
                 print(f'Multiple values for same boba var: {k}\n{v}')
@@ -94,7 +112,8 @@ class TemplateDiff(LineDiff):
             if eval(str(json.loads(v_tree.ast_code))) == eval(replace_v):
                 continue
             mappings.append((json.dumps(json.loads(replace_v)),  v_tree))
-        return mappings
+            tree_to_boba_choice_var[v_tree] = k
+        return mappings, tree_to_boba_choice_var
 
     
     def run(self):        

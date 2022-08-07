@@ -66,7 +66,7 @@ class PreOrderIterator(TreeIterator):
         super().__init__()
         from src.gumtree.main.trees.fake_tree import FakeTree
         self.push(FakeTree(node))
-        
+        self.pushed_children = False
     def __iter__(self):
         return self
     
@@ -85,12 +85,16 @@ class PreOrderIterator(TreeIterator):
     def skip_descendents(self):
         if len(self.stack) == 0:
             raise StopIteration
-        self.stack.pop()
+        if self.pushed_children:
+            self.stack.pop()
     
     def push(self, tree: Tree):
         if not tree.is_leaf():
+            self.pushed_children = True
             self.stack.append(HNIterator(tree.children))
-            
+        else:
+            self.pushed_children = False
+                    
     def has_next(self) -> bool:
         return len(self.stack) > 0
     

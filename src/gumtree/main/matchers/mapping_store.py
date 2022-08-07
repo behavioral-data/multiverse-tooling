@@ -1,4 +1,5 @@
 from __future__ import annotations
+from collections import defaultdict
 from collections.abc import Set
 from typing import (
     Collection,
@@ -46,6 +47,8 @@ class MappingStore:
         self.dst_to_src: Dict[Tree, Tree] = {}
         self.src_to_dst_boba_map: Dict[Tree, Tree] = {}
         self.dst_to_src_boba_map: Dict[Tree, Tree] = {}
+        self.boba_var_to_dst_nodes: Dict[str, List[Tree]] = defaultdict(list)
+        
         
     @classmethod
     def init_from_mapping_store(cls, ms: MappingStore):
@@ -60,7 +63,8 @@ class MappingStore:
     def add_boba_mapping(self, src: Tree, dst: Tree):
         self.src_to_dst_boba_map[src] = dst
         self.dst_to_src_boba_map[dst] = src
-        
+        self.boba_var_to_dst_nodes[src.label].append(dst)
+                                                     
     def add_mapping(self, src: Tree, dst: Tree):
         self.src_to_dst[src] = dst
         self.dst_to_src[dst] = src

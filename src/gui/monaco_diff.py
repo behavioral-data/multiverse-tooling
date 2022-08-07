@@ -24,14 +24,51 @@ class TemplateDiffView:
                                                                              self.get_new_template_js_config(),
                                                                              self.get_templates_mapped_js_config(),
                                                                              self.get_new_universe_new_template_mapped_js_config()))
-        
+    
+    def get_boba_var_choice_tree_from_child(self, t: Tree):
+        cand_node = t.parent.parent.parent
+        path = []
+        while not(cand_node.node_type == 'dictorsetmaker' 
+                  and len(cand_node.children) == 5 
+                  and cand_node.children[3].label == '"options"'):
+            parent = t.parent
+            path.append(str(parent.get_child_position(t)))
+            t = parent
+            cand_node = t.parent.parent.parent
+        return t, '.'.join(reversed(path))
+    
+    def get_new_universe_mapped_boba_nodes_from_spec_tree(self, t: Tree) -> List[Tree]:
+        new_choice_spec_tree, child_url = self.get_boba_var_choice_tree_from_child(t)
+        old_choice_spec_tree = self.template_diff.spec_diff.mappings.get_src_for_dst(new_choice_spec_tree)
+        boba_var = self.template_diff.template_spec_tree_to_boba_choice_var[old_choice_spec_tree]
+        ret = []    
+        for dst_node in self.template_diff.diff.mappings.boba_var_to_dst_nodes[boba_var]:
+            if child_url:
+                ret.append(dst_node.get_child_from_url(child_url))
+            else:
+                ret.append(dst_node)
+        return ret
+    
     def get_new_universe_js_config(self):
         c = self.template_diff.classifier
+        c_spec = self.template_diff.spec_classifier
+
         b: List[str] = []
         b.append("{")
         b.append("url:")
         b.append('"/new_universe",')
         b.append("ranges: [")
+        for t in self.template_diff.spec_diff.dst.root.pre_order():
+            if c_spec.changed_dst_tree(t):
+                nodes = self.get_new_universe_mapped_boba_nodes_from_spec_tree(t)
+                for node in nodes:
+                    if t in c_spec.get_moved_dsts():
+                        self.append_range(b, node, kind="moved")
+                    if t in c_spec.get_updated_dsts():
+                        self.append_range(b, node, kind="updated")
+                    if t in c_spec.get_inserted_dsts():
+                        self.append_range(b, node, kind="inserted")
+
         for t in self.template_diff.diff.dst.root.pre_order():
             if t in c.get_moved_dsts():
                 self.append_range(b, t, kind="moved")
@@ -132,7 +169,17 @@ class TemplateDiffView:
     
     def get_new_universe_new_template_mapped_js_config(self):
         c = self.template_diff.classifier
+        c_spec = self.template_diff.spec_classifier
         b = ["["]
+        for t in self.template_diff.spec_diff.dst.root.pre_order():
+            if c_spec.changed_dst_tree(t):
+                nodes = self.get_new_universe_mapped_boba_nodes_from_spec_tree(t)
+                for node in nodes:
+                    b.append("[{}, {}, {}, {}],".format(node.pos,
+                                                        node.end_pos,
+                                                        t.pos,
+                                                        t.end_pos))
+                        
         for t in self.template_diff.diff.dst.root.pre_order():
             if t in c.get_moved_dsts() or t in c.get_inserted_dsts() or t in c.get_updated_dsts():
                 offset = self.new_template_code_pos.get_pos_offset(t)
