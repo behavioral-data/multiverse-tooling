@@ -15,9 +15,7 @@
 </head>
 
 <body class="h-100" style="overflow: hidden;">
-
     <div class="container-fluid h-100">
-
         <div class="row">
             <div class="col">
                 <div class="btn-toolbar justify-content-end">
@@ -32,42 +30,25 @@
                     <div class="btn-group"><a class="btn btn-default btn-sm btn-primary" href="/list">Back</a><a
                             class="btn btn-default btn-sm btn-danger" href="/quit">Quit</a></div>
                 </div>
-                <p>
-                    <button class="btn btn-primary" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#collapseWidthExample" aria-expanded="false"
-                        aria-controls="collapseWidthExample">
-                        Toggle width collapse
-                    </button>
-                </p>
-                <!-- <div style="min-height: 120px;">
-                    <div class="collapse collapse-horizontal" id="collapseWidthExample">
-                        <div class="card card-body" style="width: 300px;">
-                            This is some placeholder content for a horizontal collapse. It's hidden by default and shown when
-                            triggered.
-                        </div>
-                    </div>
-                </div> -->
             </div>
         </div>
         <div class="row h-100">
-            <div class="col-6 h-100">
-                <h5>test1.java</h5>
-                <div id="left-container" style="height: calc(100% - 80px); border:1px solid grey;"></div>
+            <div class="col-4 h-100">
+                <h5>MonacoNativeDiffView.java</h5>
+                <div id="new-universe-container" style="height: calc(100% - 80px); border:1px solid grey;"></div>
             </div>
-            <div class="col-6 h-100">
-                <h5>test2.java</h5>
-                <div id="right-container" style="height: calc(100% - 80px); border:1px solid grey;"></div>
+            <div class="col-4 h-100">
+                <h5>MonacoNativeDiffView.java</h5>
+                <div id="old-template-container" style="height: calc(100% - 80px); border:1px solid grey;"></div>
             </div>
-
-            <!-- <div class="col h-100 collapse collapse-horizontal" id="collapseWidthExample">
-                <h5>test3.java</h5>
-                    <div id="right-container" style="height: calc(100% - 80px); border:1px solid grey;"></div>
-            </div> -->
+            <div class="col-4 h-100">
+                <h5>VanillaDiffView.java</h5>
+                <div id="new-template-container" style="height: calc(100% - 80px); border:1px solid grey;"></div>
+            </div>
         </div>
     </div>
-    </div>
     <script
-        type="text/javascript">/*<![CDATA[*/config = { file: "test.py", left: { url: "/old_template", ranges: [ { from: 392, to: 394, index: 14, kind: "updated", tooltip: "testlist_comp/number", }, { from: 527, to: 539, index: 10, kind: "updated", tooltip: "testlist_comp/string", }, { from: 43, to: 63, index: 1, kind: "deleted", tooltip: "file_input/simple_stmt", }, { from: 89, to: 91, index: 4, kind: "updated", tooltip: "dotted_as_name/name", }, { from: 1302, to: 1358, index: 3, kind: "deleted", tooltip: "suite/simple_stmt", }, { from: 3104, to: 3172, index: 8, kind: "updated", tooltip: "arglist/string", }, ], }, right: { url: "/new_template", ranges: [ { from: 373, to: 375, index: 14, kind: "updated", tooltip: "testlist_comp/number", }, { from: 390, to: 391, index: 12, kind: "inserted", tooltip: "testlist_comp/operator", }, { from: 392, to: 398, index: 12, kind: "inserted", tooltip: "testlist_comp/atom", }, { from: 516, to: 524, index: 10, kind: "updated", tooltip: "testlist_comp/string", }, { from: 69, to: 72, index: 5, kind: "updated", tooltip: "dotted_as_name/name", }, { from: 883, to: 884, index: 11, kind: "inserted", tooltip: "testlist_comp/operator", }, { from: 885, to: 891, index: 11, kind: "inserted", tooltip: "testlist_comp/string", }, { from: 3040, to: 3093, index: 9, kind: "updated", tooltip: "arglist/string", }, ], }, mappings: [ [392, 394, 373, 375], [527, 539, 516, 524], [89, 91, 69, 72], [3104, 3172, 3058, 3111], ],};/*]]>*/</script>
+        type="text/javascript">/*<![CDATA[*/config = { file: "test.py", newUniverse: { url: "/new_universe", ranges: [{ from: 69, to: 72, index: 4, kind: "updated", tooltip: "dotted_as_name/name", }, { from: 365, to: 366, index: 10, kind: "inserted", tooltip: "testlist_comp/operator", }, { from: 367, to: 373, index: 10, kind: "inserted", tooltip: "testlist_comp/string", }, { from: 1997, to: 2050, index: 8, kind: "updated", tooltip: "arglist/string", },], }, oldTemplate: { url: "/old_template", ranges: [{ from: 392, to: 394, index: 14, kind: "updated", tooltip: "testlist_comp/number", }, { from: 527, to: 539, index: 10, kind: "updated", tooltip: "testlist_comp/string", }, { from: 43, to: 63, index: 1, kind: "deleted", tooltip: "file_input/simple_stmt", }, { from: 89, to: 91, index: 4, kind: "updated", tooltip: "dotted_as_name/name", }, { from: 1302, to: 1358, index: 3, kind: "deleted", tooltip: "suite/simple_stmt", }, { from: 3104, to: 3172, index: 8, kind: "updated", tooltip: "arglist/string", },], }, newTemplate: { url: "/new_template", ranges: [{ from: 373, to: 375, index: 14, kind: "updated", tooltip: "testlist_comp/number", }, { from: 390, to: 391, index: 12, kind: "inserted", tooltip: "testlist_comp/operator", }, { from: 392, to: 398, index: 12, kind: "inserted", tooltip: "testlist_comp/atom", }, { from: 516, to: 524, index: 10, kind: "updated", tooltip: "testlist_comp/string", }, { from: 69, to: 72, index: 5, kind: "updated", tooltip: "dotted_as_name/name", }, { from: 883, to: 884, index: 11, kind: "inserted", tooltip: "testlist_comp/operator", }, { from: 885, to: 891, index: 11, kind: "inserted", tooltip: "testlist_comp/string", }, { from: 3040, to: 3093, index: 9, kind: "updated", tooltip: "arglist/string", },], }, templateMappings: [[392, 394, 373, 375], [527, 539, 516, 524], [89, 91, 69, 72], [3104, 3172, 3058, 3111],], newUniTemplateMappings: [[69, 72, 69, 72], [365, 366, 883, 884], [367, 373, 885, 891], [1997, 2050, 3058, 3111],], };/*]]>*/</script>
     <script type="text/javascript" src="/web/monaco-editor/min/vs/loader.js"></script>
     <script type="text/javascript" src="/dist/monaco.js"></script>
     <script type="text/javascript" src="/dist/shortcuts.js"></script>

@@ -100,32 +100,61 @@ require.config({ paths: { 'vs': '/web/monaco-editor/min/vs' }});
 require(['vs/editor/editor.main'], function() {
     Promise.all(
         [
-            fetch(config.left.url)
+            fetch(config.newUniverse.url)
                 .then(result => result.text())
-                .then(text => monaco.editor.create(document.getElementById('left-container'), getEditorOptions(text))),
-            // fetch(config.right.url)
-            //     .then(result => result.text())
-            //     .then(text => monaco.editor.create(document.getElementById('right-container'), getEditorOptions(text))),
-            fetch(config.right.url)
+                .then(text => monaco.editor.create(document.getElementById('new-universe-container'), getEditorOptions(text))),
+            fetch(config.oldTemplate.url)
                 .then(result => result.text())
-                .then(text => monaco.editor.create(document.getElementById('right-container'), getEditorOptions(text)))
+                .then(text => monaco.editor.create(document.getElementById('old-template-container'), getEditorOptions(text))),
+            fetch(config.newTemplate.url)
+                .then(result => result.text())
+                .then(text => monaco.editor.create(document.getElementById('new-template-container'), getEditorOptions(text)))
         ]
-    ).then(([leftEditor, rightEditor]) => {
-        config.mappings = config.mappings.map(mapping =>
+    ).then(([newUniverseEditor, oldTemplateEditor, newTemplateEditor]) => {
+        config.templateMappings = config.templateMappings.map(mapping =>
             [
-                monaco.Range.fromPositions(leftEditor.getModel().getPositionAt(mapping[0]), leftEditor.getModel().getPositionAt(mapping[1])),
-                monaco.Range.fromPositions(rightEditor.getModel().getPositionAt(mapping[2]), rightEditor.getModel().getPositionAt(mapping[3])),
+                monaco.Range.fromPositions(oldTemplateEditor.getModel().getPositionAt(mapping[0]), oldTemplateEditor.getModel().getPositionAt(mapping[1])),
+                monaco.Range.fromPositions(newTemplateEditor.getModel().getPositionAt(mapping[2]), newTemplateEditor.getModel().getPositionAt(mapping[3])),
             ]);
+        config.newUniTemplateMappings = config.newUniTemplateMappings.map(mapping =>
+            [
+                monaco.Range.fromPositions(newUniverseEditor.getModel().getPositionAt(mapping[0]), newUniverseEditor.getModel().getPositionAt(mapping[1])),
+                monaco.Range.fromPositions(newTemplateEditor.getModel().getPositionAt(mapping[2]), newTemplateEditor.getModel().getPositionAt(mapping[3]))
+            ])
+        
+        const newUniverseDecorations = config.newUniverse.ranges.map(range => getDecoration(
+            range,
+            newUniverseEditor.getModel().getPositionAt(range.from),
+            newUniverseEditor.getModel().getPositionAt(range.to)
+       ));
+        newUniverseEditor.deltaDecorations([], newUniverseDecorations)
+        
+        newUniverseEditor.onMouseDown((event) => {
+            const allDecorations = newUniverseEditor.getModel().getDecorationsInRange(event.target.range, newUniverseEditor.id, true)
+            if (allDecorations.length >= 1) {
+                let activatedRange = allDecorations[0].range;
+                if (allDecorations.length > 1)  {
+                    for (let i = 1; i < allDecorations.length; i = i + 1) {
+                        const candidateRange = allDecorations[i].range;
+                        if (activatedRange.containsRange(candidateRange))
+                            activatedRange = candidateRange;
+                    }
+                }
+                const mapping = config.newUniTemplateMappings.find(mapping => mapping[0].equalsRange(activatedRange))
+                newTemplateEditor.revealRangeInCenter(mapping[1]);
+            }
+        });
 
-        const leftDecorations = config.left.ranges.map(range => getDecoration(
+
+        const oldTemplateDecorations = config.oldTemplate.ranges.map(range => getDecoration(
              range,
-             leftEditor.getModel().getPositionAt(range.from),
-             leftEditor.getModel().getPositionAt(range.to)
+             oldTemplateEditor.getModel().getPositionAt(range.from),
+             oldTemplateEditor.getModel().getPositionAt(range.to)
         ));
-        leftEditor.deltaDecorations([], leftDecorations);
+        oldTemplateEditor.deltaDecorations([], oldTemplateDecorations);
 
-        leftEditor.onMouseDown((event) => {
-            const allDecorations = leftEditor.getModel().getDecorationsInRange(event.target.range, leftEditor.id, true)
+        oldTemplateEditor.onMouseDown((event) => {
+            const allDecorations = oldTemplateEditor.getModel().getDecorationsInRange(event.target.range, oldTemplateEditor.id, true)
                 .filter(decoration => decoration.options.className == "updated" || decoration.options.className == "moved");
             if (allDecorations.length >= 1) {
                 let activatedRange = allDecorations[0].range;
@@ -136,20 +165,22 @@ require(['vs/editor/editor.main'], function() {
                             activatedRange = candidateRange;
                     }
                 }
-                const mapping = config.mappings.find(mapping => mapping[0].equalsRange(activatedRange))
-                rightEditor.revealRangeInCenter(mapping[1]);
+                const mapping = config.templateMappings.find(mapping => mapping[0].equalsRange(activatedRange))
+                newTemplateEditor.revealRangeInCenter(mapping[1]);
             }
         });
 
-        const rightDecorations = config.right.ranges.map(range => getDecoration(
+        const newTemplateDecorations = config.newTemplate.ranges.map(range => getDecoration(  
             range,
-            rightEditor.getModel().getPositionAt(range.from),
-            rightEditor.getModel().getPositionAt(range.to)
+            newTemplateEditor.getModel().getPositionAt(range.from),
+            newTemplateEditor.getModel().getPositionAt(range.to)
         ));
-        rightEditor.deltaDecorations([], rightDecorations);
-
-        rightEditor.onMouseDown((event) => {
-            const allDecorations = rightEditor.getModel().getDecorationsInRange(event.target.range, rightEditor.id, true)
+        newTemplateEditor.deltaDecorations([], newTemplateDecorations); // This part highlights the code into different colors for updated or deleted
+        // for more see https://microsoft.github.io/monaco-editor/api/index.html
+        // For saving the contents in an editor https://stackoverflow.com/questions/38086013/get-the-value-of-monaco-editor
+        // Saving a file needs to be done in html
+        newTemplateEditor.onMouseDown((event) => {  // This is the code that does the mouse click and link to the other part in the code.
+            const allDecorations = newTemplateEditor.getModel().getDecorationsInRange(event.target.range, newTemplateEditor.id, true)
                 .filter(decoration => decoration.options.className == "updated" || decoration.options.className == "moved");
             if (allDecorations.length >= 1) {
                 let activatedRange = allDecorations[0].range;
@@ -159,8 +190,8 @@ require(['vs/editor/editor.main'], function() {
                         if (activatedRange.containsRange(candidateRange)) activatedRange = candidateRange;
                     }
                 }
-                const mapping = config.mappings.find(mapping => mapping[1].equalsRange(activatedRange))
-                leftEditor.revealRangeInCenter(mapping[0]);
+                const mapping = config.templateMappings.find(mapping => mapping[1].equalsRange(activatedRange))
+                oldTemplateEditor.revealRangeInCenter(mapping[0]);
             }
         });
     });

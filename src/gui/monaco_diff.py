@@ -16,10 +16,14 @@ class TemplateDiffView:
         self.new_template_code_pos = self.template_diff.template_builder.new_template_code_pos
     
     def get_all_config(self):
-        return 'config = {{ file: "{}", left: {}, right: {}, mappings: {}}};'.format('test.py', 
-                                                                                     self.get_old_template_js_config(),
-                                                                                     self.get_new_template_js_config(),
-                                                                                     self.get_templates_mapped_js_config())
+        return ('config = {{ file: "{}", newUniverse: {}, '
+                'oldTemplate: {}, newTemplate: {}, '
+                'templateMappings: {}, newUniTemplateMappings: {}}};'.format('test.py', 
+                                                                             self.get_new_universe_js_config(),
+                                                                             self.get_old_template_js_config(),
+                                                                             self.get_new_template_js_config(),
+                                                                             self.get_templates_mapped_js_config(),
+                                                                             self.get_new_universe_new_template_mapped_js_config()))
         
     def get_new_universe_js_config(self):
         c = self.template_diff.classifier
@@ -123,8 +127,22 @@ class TemplateDiffView:
                                                    d.pos + offset_new_template,
                                                    d.end_pos + offset_new_template))
                 
+        b.append("]")
+        return " ".join(b)
+    
+    def get_new_universe_new_template_mapped_js_config(self):
+        c = self.template_diff.classifier
+        b = ["["]
+        for t in self.template_diff.diff.dst.root.pre_order():
+            if t in c.get_moved_dsts() or t in c.get_inserted_dsts() or t in c.get_updated_dsts():
+                offset = self.new_template_code_pos.get_pos_offset(t)
+                b.append("[{}, {}, {}, {}],".format(t.pos,
+                                                    t.end_pos,
+                                                    t.pos + offset,
+                                                    t.end_pos + offset))
         b.append("],")
-        return " ".join(b)        
+        return " ".join(b)
+                
             
     def append_range(self, b: List[str], t: Tree, kind: str, offset: int=None):
         if offset is None:
