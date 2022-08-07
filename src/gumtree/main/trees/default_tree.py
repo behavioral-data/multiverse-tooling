@@ -30,7 +30,7 @@ class DefaultTree(AbstractTree):
     def length(self) -> int:
         return self._length
    
-    @pos.setter
+    @length.setter
     def length(self, l: int):
         self._length = l
     

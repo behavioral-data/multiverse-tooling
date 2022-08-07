@@ -1,4 +1,5 @@
 from __future__ import annotations
+import bisect
 from copy import deepcopy
 from dataclasses import dataclass
 import difflib
@@ -11,6 +12,8 @@ from src.gumtree.main.trees.tree_utils import PreOrderIterator, preorder
 
 from src.boba.codeparser import Block, BlockCode
 
+from src.gumtree.main.gen.python_tree_generator import get_positions
+
 def cumsum(code_blocks: List[BlockCode]):
     r, s = [], 0
     for code_block in code_blocks:
@@ -19,6 +22,28 @@ def cumsum(code_blocks: List[BlockCode]):
         s += l
     return r
 
+@dataclass(frozen=True, eq=True)
+class Pos:
+    lineno: int = -1
+    col_offset: int = -1
+    end_lineno: int = -1
+    end_col_offset: int = -1
+    
+        
+    def get_code(self, code: str):
+        if self.lineno == -1:
+            return ""
+        code_lines = code.encode(encoding = 'UTF-8', errors = 'strict')
+        code_lines = code.split('\n')
+        code_lines = code_lines[self.lineno - 1 : self.end_lineno]
+        if len(code_lines) == 1:
+            return code_lines[0][self.col_offset: self.end_col_offset]
+        else:
+            code_lines[0] = code_lines[0][self.col_offset:]
+            code_lines[-1] = code_lines[-1][:self.end_col_offset]
+            return "\n".join(code_lines)
+        
+        
 class BlockInfo:
     """
     The boundaries of blocks correspond to inds and not line numbers: Inds start at 0. 
@@ -35,7 +60,7 @@ class BlockInfo:
         return self.block_start_boundaries[ind] + self.blocks[ind].block_prefix.count('\n')
     
     
-    def calculate_offset(self, other: BlockInfo):
+    def calculate_offset(self, other: BlockInfo) -> List[Tuple[str, int]]:
         assert set(self.block_to_ind.keys()).issubset(other.block_to_ind.keys()), "need to be subset of other block info"
         offsets = []
         for i, blk in enumerate(self.blocks):
@@ -44,29 +69,98 @@ class BlockInfo:
             other_blk = other.blocks[j]
             other_start_line = other.block_start_boundaries[j]
             other_prefix_cnt = other_blk.block_prefix.count('\n')
-            offsets.append((str(blk), other_start_line + other_prefix_cnt - start_line))
+            other_start_line += other_prefix_cnt
+            offsets.append((str(blk), other_start_line, start_line))
         return offsets
+
+
+
+class CodePos:    
+    def __init__(self, 
+                 u_code_str: str,
+                 template_code_str: str,
+                 u_block_info: BlockInfo,
+                 template_block_info: BlockInfo):
+        self.u_code_str = u_code_str
+        self.template_code_str = template_code_str
+        self.u_block_info = u_block_info
+        self.template_block_info = template_block_info
+        self.template_line_positions = get_positions(self.template_code_str)
+        self.u_line_positions = get_positions(self.u_code_str)
+        self.bounds = self.u_block_info.block_boundaries
+        self.block_line_offsets = self.u_block_info.calculate_offset(self.template_block_info)
+        self.block_pos_offsets = self.get_block_pos_offsets(self.block_line_offsets)
     
+    def get_block_pos_offsets(self, block_offsets):
+        ret = []
+        for block_name, template_ind, u_ind in block_offsets:
+            pos_offset = self.template_line_positions[template_ind] - self.u_line_positions[u_ind]
+            ret.append((block_name, pos_offset))
+        return ret
+    
+    def get_pos_offset(self, t: Tree) -> int:
+        ind = self.get_block_ind(t)
+        if ind == -1:
+            return -1
+        return self.block_pos_offsets[ind][1]
+    
+    def get_offset_from_line_offset(self, line_offset: int, 
+                                    line_positions: List[int]) -> int:
+        return line_positions[line_offset]
+    
+    def get_boba_config_pos_offset(self) -> int:
+        line_offset = self.template_block_info.get_block_start('BOBA_CONFIG')
+        return self.get_offset_from_line_offset(line_offset, self.template_line_positions)
+    
+    def get_block_ind(self, t: Tree):
+        lineno = t.metadata.get("lineno")
+        if lineno is None:
+            return -1
+        ind = bisect.bisect_left(self.bounds, lineno-1)
+        return ind
+    
+    def get_line_offset(self, t: Tree) -> int:
+        ind = self.get_block_ind(t)
+        if ind == -1:
+            return -1
+        line_offset = self.block_line_offsets[ind][1] - self.block_line_offsets[ind][2]
+        return line_offset
+    
+    def get_template_pos_from_u(self, t: Tree) ->  Pos:
+        line_offset = self.get_line_offset(t)
+        if line_offset == -1:
+            return Pos()
+        else:
+            return Pos(t.metadata.get("lineno", -1) + line_offset,
+                       t.metadata.get("col_offset", -1),
+                       t.metadata.get("end_lineno", -1) + line_offset,
+                       t.metadata.get("end_col_offset", -1))
+            
+    def get_template_boba_conf_pos_from_u(self, t: Tree) -> Pos:
+        if t.metadata.get("lineno") is None:
+            return -1
+        else:
+            offset = self.template_block_info.get_block_start('BOBA_CONFIG')
+            return Pos(t.metadata.get("lineno", -1) + offset,
+                   t.metadata.get("col_offset", -1),
+                   t.metadata.get("end_lineno", -1) + offset,
+                   t.metadata.get("end_col_offset", -1))
     
 class NewTemplateBuilder:
     def __init__(self,
-                 intermediary_blocks: BlockInfo,
-                 template_blocks: BlockInfo,
-                 intermediary_code_lines: List[str],
-                 new_intermediary_code_lines: List[str],
+                 template_code_pos: CodePos,
+                 new_intermediary_code: List[str],
                  new_boba_config_str: str
                  ):
-        self.intermediary_blocks = intermediary_blocks
-        self.template_blocks = template_blocks
-        self.intermediary_code_lines = intermediary_code_lines
-        self.new_intermediary_code_lines = new_intermediary_code_lines
+        self.intermediary_blocks: BlockInfo = template_code_pos.u_block_info
+        self.template_blocks: BlockInfo = template_code_pos.template_block_info
+        self.intermediary_code_lines = template_code_pos.u_code_str.split('\n')
+        self.new_intermediary_code = new_intermediary_code
+        self.new_intermediary_code_lines = new_intermediary_code.split('\n')
         self.new_boba_config_str = new_boba_config_str
         
-        self.new_template_code: str = None
-        self.new_template_blocks: BlockInfo = None
-        self.new_intermediary_blocks: BlockInfo = None
-        self.generate()
-        self.new_inter_new_template_offset = self.new_intermediary_blocks.calculate_offset(self.new_template_blocks)
+        self.new_template_code_pos: CodePos = self.generate()
+        
         
     def get_updated_block_start_boundaries(self,
                                            src_code_lines: List[str],
@@ -153,8 +247,13 @@ class NewTemplateBuilder:
                 strs.append(s)
                 cur_template_len += s.count('\n')
                         
-        self.new_template_code = ''.join(strs)[:-1]
-        self.new_template_blocks = BlockInfo(new_template_code_blocks)
-        self.new_intermediary_blocks = BlockInfo(new_intermediary_code_blocks)
+        new_template_code = ''.join(strs)[:-1]
+        new_intermediary_blocks = BlockInfo(new_intermediary_code_blocks)
+        new_template_blocks = BlockInfo(new_template_code_blocks)
 
+        new_template_code_pos = CodePos(self.new_intermediary_code,
+                                        new_template_code,
+                                        new_intermediary_blocks,
+                                        new_template_blocks)
+        return new_template_code_pos
     

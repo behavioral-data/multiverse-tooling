@@ -9,30 +9,9 @@ from ydiff import Hunk
 from src.our_ydiff import OurUnifiedDiff, UnmatchedLineDiffMarker
 from src.gumtree.main.diff.diff import Diff
 from src.gumtree.main.trees.tree import Tree
-
 from src.gumtree.main.diff.actions.tree_classifier import TreeClassifier
+from src.gumtree.main.client.template_builder import Pos
 
-
-@dataclass(frozen=True, eq=True)
-class Pos:
-    lineno: int = -1
-    col_offset: int = -1
-    end_lineno: int = -1
-    end_col_offset: int = -1
-    
-        
-    def get_code(self, code: str):
-        if self.lineno == -1:
-            return ""
-        code_lines = code.encode(encoding = 'UTF-8', errors = 'strict')
-        code_lines = code.split('\n')
-        code_lines = code_lines[self.lineno - 1 : self.end_lineno]
-        if len(code_lines) == 1:
-            return code_lines[0][self.col_offset: self.end_col_offset]
-        else:
-            code_lines[0] = code_lines[0][self.col_offset:]
-            code_lines[-1] = code_lines[-1][:self.end_col_offset]
-            return "\n".join(code_lines)
         
 @dataclass
 class LinePosMark:

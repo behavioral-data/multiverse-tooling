@@ -10,7 +10,6 @@ from src.gumtree.main.matchers.mapping_store import MappingStore
 from src.gumtree.main.trees.tree import Tree
 from src.boba.codeparser import BlockCode
 
-from src.gumtree.main.matchers.boba_template_intermediary_matcher import BobaTemplateIntermediaryMatcher
 
 class MatcherFactory:
     def __init__(self, matcher_name: str):
@@ -49,10 +48,3 @@ class ClassicGumTree(CompositeMatcher):
 class BobaVariableGumTree(CompositeMatcher):
     def __init__(self):
         super().__init__([GreedySubtreeMatcher(), BobaVariableMatcher()])
-
-class BobaTemplateMatcher(CompositeMatcher):
-    def __init__(self, 
-                 src_code_blocks: List[BlockCode],
-                 dst_code_blocks: List[BlockCode]):
-        super().__init__([BobaTemplateIntermediaryMatcher(src_code_blocks, dst_code_blocks),
-                          GreedyBottomUpMatcher()])

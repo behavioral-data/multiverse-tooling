@@ -7,16 +7,13 @@ from typing import Dict, List, Tuple
 from src.boba.parser import History, Parser
 from src.boba.codeparser import BlockCode
 from src.gumtree.main.diff.diff import Diff
-from src.gumtree.main.client.line_diff import LineDiff, LinePosMark, Pos
+from src.gumtree.main.client.line_diff import LineDiff, LinePosMark
 
 from src.gumtree.main.trees.tree import Tree
-from src.gumtree.main.client.template_builder import BlockInfo, NewTemplateBuilder
+from src.gumtree.main.client.template_builder import BlockInfo, CodePos, NewTemplateBuilder
 
 from src.utils import OUTPUT_DIR
 from src.gumtree.main.client.boba_utils import chunk_code, clean_code_blocks, get_tree, parse_boba_var_config_ast
-
-
-
 
     
 class TemplateDiff(LineDiff):
@@ -40,14 +37,14 @@ class TemplateDiff(LineDiff):
         
         intermediary_code_blocks: List[BlockCode] = clean_code_blocks(self.boba_parser.blocks_code[self.universe_num - 1])
         template_code_blocks: List[BlockCode] = clean_code_blocks(self.boba_parser.code_parser.all_blocks)
-        self.intermediary_blocks = BlockInfo(intermediary_code_blocks)
-        self.template_blocks = BlockInfo(template_code_blocks)
-        
-        
-        self.src_code_lines = self.src_code.split('\n')
-        self.dst_code_lines = self.dst_code.split('\n')
         with open(self.boba_parser.fn_script, 'r') as f:
             self.template_code = f.read()
+        self.template_code_pos = CodePos(intermediary_code,
+                                         self.template_code,
+                                         BlockInfo(intermediary_code_blocks),
+                                         BlockInfo(template_code_blocks)
+                                         )
+        
         self.template_code_lines = self.template_code.split('\n')
 
         self.diff: Diff = self.get_diff()
@@ -73,7 +70,10 @@ class TemplateDiff(LineDiff):
                                                 self.new_raw_spec, self.generator,
                                                 self.matcher, self.configurations)
         self.spec_classifier = self.spec_diff.createRootNodesClassifier()
-    
+        self.template_builder = NewTemplateBuilder(self.template_code_pos,
+                                                   self.new_intermediary_code,
+                                                   self.new_raw_spec)
+        
     
     def handle_boba_vars(self) -> List[Tuple[str, Tree]]:
         boba_var_to_mapped_tree: Dict[str] = defaultdict(set)
@@ -110,24 +110,19 @@ class TemplateDiff(LineDiff):
         We do something similar for i and t
         
         """
-        self.template_builder = NewTemplateBuilder(self.intermediary_blocks,
-                                                   self.template_blocks,
-                                                   self.src_code_lines,
-                                                   self.new_intermediary_code.split('\n'),
-                                                   self.new_raw_spec)
-                
+        new_template_code = self.template_builder.new_template_code_pos.template_code_str
         src_str_lines, dst_str_lines = self.produce(self.template_code_lines, 
-                                                    self.template_builder.new_template_code.split('\n'), 
+                                                    new_template_code.split('\n'), 
                                                     )
         
         self.write_code(src_str_lines, 
                         dst_str_lines, 
                         self.template_code, 
-                        self.template_builder.new_template_code)
+                        new_template_code)
         
         self.write_to_file(osp.join(OUTPUT_DIR, 'template.py'), 
                            osp.join(OUTPUT_DIR, 'template_changed.py'),
-                           self.template_code, self.template_builder.new_template_code) 
+                           self.template_code, new_template_code) 
         
 
     def get_line_marks(self, 
@@ -137,32 +132,18 @@ class TemplateDiff(LineDiff):
         src_line_to_mark: Dict[int, List[LinePosMark]] = defaultdict(list)
         dst_line_to_mark: Dict[int, List[LinePosMark]] = defaultdict(list)
         
-        intermediary_template_offset = self.intermediary_blocks.calculate_offset(self.template_blocks)
-        get_pos_src = partial(self.get_pos, 
-                              bounds=self.intermediary_blocks.block_boundaries,
-                              offsets=intermediary_template_offset)
-        get_pos_dst = partial(self.get_pos, 
-                              bounds=self.template_builder.new_intermediary_blocks.block_boundaries,
-                              offsets=self.template_builder.new_inter_new_template_offset)
-        
-        t_boba_conf_offset = self.template_blocks.get_block_start('BOBA_CONFIG')
-        t_prime_boba_conf_offset = self.template_builder.new_template_blocks.get_block_start('BOBA_CONFIG')
-        
-        get_pos_src_json = partial(self.get_pos_offset, offset=t_boba_conf_offset)
-        get_pos_dst_json = partial(self.get_pos_offset, offset=t_prime_boba_conf_offset)
-        
         self._get_line_marks_helper(src_code_lines,
                                    dst_code_lines,
                                    self.spec_diff,
                                    self.spec_classifier,
-                                   get_pos_src=get_pos_src_json,
-                                   get_pos_dst=get_pos_dst_json,
+                                   get_pos_src=self.template_code_pos.get_template_boba_conf_pos_from_u,
+                                   get_pos_dst=self.template_builder.new_template_code_pos.get_template_boba_conf_pos_from_u,
                                    src_line_to_mark=src_line_to_mark,
                                    dst_line_to_mark=dst_line_to_mark
                                    ) 
         
         for t in self.diff.src.root.pre_order():
-            pos = get_pos_src(t)
+            pos = self.template_code_pos.get_template_pos_from_u(t)
             if t in self.classifier.get_updated_srcs():
                 self.add_line_mark(pos, src_code_lines, src_line_to_mark, self.UPDATE_TAG)
             if t in self.classifier.get_deleted_srcs():
@@ -171,14 +152,13 @@ class TemplateDiff(LineDiff):
         i_prime_preorder = self.new_intermediary_tree.pre_order()
         for t in self.diff.dst.root.pre_order():
             i_t = next(i_prime_preorder)
-            pos = get_pos_dst(i_t)
+            pos = self.template_builder.new_template_code_pos.get_template_pos_from_u(i_t)
             if t in self.classifier.get_updated_dsts():
                 self.add_line_mark(pos, dst_code_lines, dst_line_to_mark, self.UPDATE_TAG)
             if t in self.classifier.get_inserted_dsts():
                 self.add_line_mark(pos, dst_code_lines, dst_line_to_mark, self.INSERT_TAG)
         # go through positions in changed dicionary  
         return src_line_to_mark, dst_line_to_mark
-    
     
     def write_to_file(self, f1, f2, t, t_prime):
         with open(f1, 'w') as f:
@@ -188,26 +168,6 @@ class TemplateDiff(LineDiff):
         print(f'saved to {f1}')
         print(f'saved to {f2}')
         
-        
-    def get_pos(self, t: Tree, bounds=None, offsets=None) -> Pos:
-        if bounds is None:
-            return super().get_pos(t)
-        lineno = t.metadata.get("lineno")
-        if lineno is None:
-            return super().get_pos(t)
-        ind = bisect.bisect_left(bounds, lineno-1)
-        offset = offsets[ind][1]
-        
-        return Pos(t.metadata.get("lineno", -1) + offset,
-                   t.metadata.get("col_offset", -1),
-                   t.metadata.get("end_lineno", -1) + offset,
-                   t.metadata.get("end_col_offset", -1))
-    
-    def get_pos_offset(self, t: Tree, offset:int):
-        return Pos(t.metadata.get("lineno", -1) + offset,
-                   t.metadata.get("col_offset", -1),
-                   t.metadata.get("end_lineno", -1) + offset,
-                   t.metadata.get("end_col_offset", -1))
         
         
 if __name__ == "__main__":
