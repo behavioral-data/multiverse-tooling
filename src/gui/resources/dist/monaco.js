@@ -135,6 +135,7 @@ require(['vs/editor/editor.main'], function() {
         installResizeWatcher(newTemplateContainer, newTemplateEditor.layout.bind(newTemplateEditor), 15)
         installResizeWatcher(editorContainer, editableEditor.layout.bind(editableEditor), 15)
 
+        editor = editableEditor
         config.templateMappings = config.templateMappings.map(mapping =>
             [
                 monaco.Range.fromPositions(oldTemplateEditor.getModel().getPositionAt(mapping[0]), oldTemplateEditor.getModel().getPositionAt(mapping[1])),
@@ -220,3 +221,48 @@ require(['vs/editor/editor.main'], function() {
         });
     });
 });
+
+function bootstrap_alert(elem, message, timeout) {        
+    $(elem + " .alertMessage").text(message)  
+    $(elem).show().alert()
+  
+    if (timeout || timeout === 0) {
+      setTimeout(function() { 
+        $(elem).hide();
+      }, timeout);    
+    }
+  };
+
+function sendDataToBackendAjax(event) {
+    
+    // create own form in memory
+    const formData = new FormData();
+    var editorText = editor.getValue()
+    // set values in this form
+    formData.append("editor_text", editorText)
+    fetch("/save-editor", {
+        method: "POST",
+        body: formData
+        //headers: {'Content-Type': 'application/json'},
+        //body: JSON.stringify(formData)
+    })
+    .then(function(response){
+        data = response.json();  // get result from server as JSON
+        // alert(data);
+        return data; 
+    })
+    .then(function(data){ 
+        // alert(data.info);
+        $('.toast').toast("show")
+        const toastbody = document.getElementById("toast-message")
+        toastbody.textContent = data["returnText"]
+        console.log(data);
+    })
+    .catch((error) => {
+        console.error('Error:', error);
+    });
+    
+    event.preventDefault(); // don't send in normal way and don't reload page
+}
+
+

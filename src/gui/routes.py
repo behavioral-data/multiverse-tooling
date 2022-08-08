@@ -1,5 +1,5 @@
 from . import app
-from flask import render_template
+from flask import jsonify, render_template, request
 import os.path as osp
 from src.gui.monaco_diff import TemplateDiffView
 
@@ -18,18 +18,21 @@ def index():
                            new_template_name=new_template_name,
                            js_config=diff_view.get_all_config())
     
-@app.route('/focused')
-def focused():
-    diff_view: TemplateDiffView = app.diff_view
-    univese_file_name = 'New ' + osp.basename(diff_view.dst_file)
-    template_file_name = osp.basename(diff_view.template_diff.boba_parser.fn_script)
-    old_template_name = 'Old ' + template_file_name
-    new_template_name = 'New ' + template_file_name
-    return render_template('focused.html', 
-                           new_universe_fname=univese_file_name,
-                           old_template_name=old_template_name,
-                           new_template_name=new_template_name,
-                           js_config=diff_view.get_all_config())
+@app.route('/save-editor', methods=['GET', 'POST'])
+def save_editor():
+    print(request.form)
+    if not hasattr(app, 'diff_view'):
+        print(f"Editor Text:\n{request.form.get('editor_text')}")
+        ret_text = 'Testing so nothing is saved'
+    else:
+        diff_view: TemplateDiffView = app.diff_view
+        save_path = diff_view.template_diff.boba_parser.fn_script
+        with open(save_path, 'w') as f:
+            f.write(request.form.get('editor_text'))
+        ret_text = 'Saved new template to ' + save_path
+            
+    return jsonify({'result': 'OK', 'returnText': ret_text})  
+    
 
 @app.route('/new_universe')
 def new_universe():
