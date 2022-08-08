@@ -67,8 +67,8 @@ class TemplateDiff(LineDiff):
         # generate new boba spec (need diff)
         self.template_config_tree = get_tree(self.boba_parser.code_parser.raw_spec)
         self.boba_var_to_tree_options = parse_boba_var_config_ast(self.template_config_tree)
-        mappings, self.template_spec_tree_to_boba_choice_var = self.handle_boba_vars()
-        self.new_raw_spec = chunk_code(self.boba_parser.code_parser.raw_spec, mappings)
+        self.var_tree_mappings, self.template_spec_tree_to_boba_choice_var = self.handle_boba_vars()
+        self.new_raw_spec = chunk_code(self.boba_parser.code_parser.raw_spec, self.var_tree_mappings)
         
         self.configure({"matcher": "classic",
                         "generator": "python",

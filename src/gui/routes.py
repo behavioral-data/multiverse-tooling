@@ -5,7 +5,7 @@ from src.gui.monaco_diff import TemplateDiffView
 
 @app.route('/')
 def index():
-    if not hasattr(app, 'diff_view'):
+    if not hasattr(app, 'diff_view') or app.diff_view is None:
         return app.send_static_file('monaco.html')
     diff_view: TemplateDiffView = app.diff_view
     univese_file_name = 'New ' + osp.basename(diff_view.dst_file)

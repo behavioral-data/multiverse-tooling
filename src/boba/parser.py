@@ -4,6 +4,7 @@ from __future__ import annotations
 import ast
 import json
 import os
+import pickle
 from textwrap import wrap
 from dataclasses import dataclass, field
 from typing import List, Tuple, Dict, Tuple
@@ -17,7 +18,7 @@ from .graphanalyzer import GraphAnalyzer, InvalidGraphError
 from .decisionparser import DecisionParser
 from .constraintparser import ConstraintParser
 from .lang import LangError, Lang
-from .wrangler import Wrangler
+from .wrangler import Wrangler, DIR_SCRIPT
 from .adg import ADG
 
 import src.boba.util as util
@@ -55,7 +56,7 @@ class Parser:
     """ Parse everything """
 
     def __init__(self, f1, out='.', lang=None, add_paren=False):
-        self.fn_script = f1
+        self.fn_script = os.path.abspath(f1)
         self.parent_dir = out
         self.out = os.path.join(out, 'multiverse/')
 
@@ -511,6 +512,12 @@ class Parser:
         tree_context = generator.generate_tree_from_file(self.fn_script)
         return tree_context.root
     
+    def _save_parser(self):
+        out_folder = os.path.join(self.out, DIR_SCRIPT, ".boba_parser")
+        os.makedirs(out_folder)
+        out_file = os.path.join(out_folder, 'parser.pickle')
+        with open(out_file, 'wb') as f:
+            pickle.dump(self, f)
 
     def main(self, verbose=True):
         self._warn_size()
@@ -519,3 +526,4 @@ class Parser:
         self._write_server_config()
         if verbose:
             self._print_summary()
+        self._save_parser()

@@ -42,7 +42,8 @@ class TemplateDiffView:
     
     def get_new_universe_mapped_boba_nodes_from_spec_tree(self, t: Tree) -> List[Tree]:
         new_choice_spec_tree, child_url = self.get_boba_var_choice_tree_from_child(t)
-        old_choice_spec_tree = self.template_diff.spec_diff.mappings.get_src_for_dst(new_choice_spec_tree)
+        pos_in_parent = new_choice_spec_tree.position_in_parent()
+        old_choice_spec_tree = self.template_diff.spec_diff.mappings.get_src_for_dst(new_choice_spec_tree.parent).children[pos_in_parent]
         boba_var = self.template_diff.template_spec_tree_to_boba_choice_var[old_choice_spec_tree]
         ret = []    
         for dst_node in self.template_diff.diff.mappings.boba_var_to_dst_nodes[boba_var]:
@@ -215,9 +216,21 @@ class TemplateDiffView:
 if __name__ == "__main__":
     from src.utils import load_parser_example, DATA_DIR
     import os.path as osp
-    dataset, ext = 'fertility2', 'py'
-    save_file = osp.join(DATA_DIR, f'{dataset}_template_parser_obj_0804.pickle')
-    ps = load_parser_example(dataset, ext, save_file, run_parser_main=True)
-    tdv = TemplateDiffView(ps, osp.join(DATA_DIR, dataset, 'multiverse', 'code', 'universe_3.py'))
-    s4 = tdv.get_all_config()
+    import pickle
+    def main_helper(universe_path):
+        universe_path = osp.realpath(universe_path)
+        print(universe_path)
+        dir_code = osp.dirname(universe_path)
+        parser_pickle_path = osp.join(dir_code, '.boba_parser', 'parser.pickle')
+        if not osp.exists(parser_pickle_path):
+            print('Cached boba parser does not exist. Could not run bdiff')
+            return
+        with open(parser_pickle_path, 'rb') as f:
+            ps = pickle.load(f)
+        print('Calculating Diff ...')
+        template_diff_view = TemplateDiffView(ps, universe_path)
+        return template_diff_view
+    
+    tdv = main_helper('/projects/bdata/kenqgu/Research/MultiverseProject/MultiverseTooling/multiverse-tooling/data/fertility_08082022/multiverse/code/universe_3.py')
+    tdv.get_all_config()
     print('here')

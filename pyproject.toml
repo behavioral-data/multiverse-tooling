@@ -7,6 +7,11 @@ authors = ["Ken Gu <ken.qgu@gmail.com>"]
 packages = [
 ]
 
+[tool.poetry.scripts]
+# command_name = module_for_handler : function_for_handler
+boba2 = 'src.boba.cli:main'
+bdiff = 'src.gui.webapp:main'
+
 
 [tool.poetry.dependencies]
 python = "^3.9"
@@ -28,6 +33,7 @@ strsimpy = "^0.2.1"
 pytest = "^7.1.2"
 parso = "^0.8.3"
 Flask = "^2.2.1"
+tree-sitter = "^0.20.0"
 
 [tool.poetry.dev-dependencies]
 line-profiler = "^3.5.1"

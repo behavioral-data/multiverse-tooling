@@ -28,7 +28,7 @@ class GreedyBottomUpMatcher(AbstractBottomUpMatcher):
                         best = cand
                         
                 if best is not None:
-                    self.last_chance_match(mappings, t, dst)
+                    self.last_chance_match(mappings, t, best)
                     mappings.add_mapping(t, best)
                     
         return mappings
