@@ -13,3 +13,35 @@
 .updated {
 	background-color: GoldenRod;
 }
+
+.collapsed {
+	display: block;
+}
+
+#row-main {
+	overflow-x: hidden; /* necessary to hide collapsed sidebar */
+}
+
+#sidebar-left.collapsed {
+	margin-left: -33.334%;
+			/* same width as sidebar */
+}
+
+#sidebar-right.collapsed {
+	margin-right: -25%;
+	/* same width as sidebar */
+}
+
+.content {
+	-webkit-transition: width 0.3s ease;
+	-moz-transition: width 0.3s ease;
+	-o-transition: width 0.3s ease;
+	transition: width 0.3s ease;
+}
+
+.sidebar {
+	-webkit-transition: margin 0.3s ease;
+	-moz-transition: margin 0.3s ease;
+	-o-transition: margin 0.3s ease;
+	transition: margin 0.3s ease;
+}

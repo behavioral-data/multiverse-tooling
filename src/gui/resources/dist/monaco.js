@@ -96,6 +96,22 @@ function getDecoration(range, pos, endPos) {
     };
 }
 
+const newUniverseContainer = document.getElementById('new-universe-container');
+const oldTemplateContainer = document.getElementById('old-template-container');
+const newTemplateContainer = document.getElementById('new-template-container');
+const editorContainer = document.getElementById('editor-container')
+
+function installResizeWatcher(el, fn, interval){
+    let offset = {width: el.offsetWidth, height: el.offsetHeight}
+    setInterval(()=>{
+      let newOffset = {width: el.offsetWidth, height: el.offsetHeight}
+      if(offset.height!=newOffset.height||offset.width!=newOffset.width){
+        offset = newOffset
+        fn()
+      }
+    }, interval)
+  }
+
 require.config({ paths: { 'vs': '/web/monaco-editor/min/vs' }});
 require(['vs/editor/editor.main'], function() {
     Promise.all(
@@ -108,9 +124,17 @@ require(['vs/editor/editor.main'], function() {
                 .then(text => monaco.editor.create(document.getElementById('old-template-container'), getEditorOptions(text))),
             fetch(config.newTemplate.url)
                 .then(result => result.text())
-                .then(text => monaco.editor.create(document.getElementById('new-template-container'), getEditorOptions(text)))
+                .then(text => monaco.editor.create(document.getElementById('new-template-container'), getEditorOptions(text))),
+            fetch(config.editor.url)
+                .then(result => result.text())
+                .then(text => monaco.editor.create(document.getElementById('editor-container'), getEditorEditableOptions(text)))
         ]
-    ).then(([newUniverseEditor, oldTemplateEditor, newTemplateEditor]) => {
+    ).then(([newUniverseEditor, oldTemplateEditor, newTemplateEditor, editableEditor]) => {
+        installResizeWatcher(newUniverseContainer, newUniverseEditor.layout.bind(newUniverseEditor), 15)
+        installResizeWatcher(oldTemplateContainer, oldTemplateEditor.layout.bind(oldTemplateEditor), 15)
+        installResizeWatcher(newTemplateContainer, newTemplateEditor.layout.bind(newTemplateEditor), 15)
+        installResizeWatcher(editorContainer, editableEditor.layout.bind(editableEditor), 15)
+
         config.templateMappings = config.templateMappings.map(mapping =>
             [
                 monaco.Range.fromPositions(oldTemplateEditor.getModel().getPositionAt(mapping[0]), oldTemplateEditor.getModel().getPositionAt(mapping[1])),

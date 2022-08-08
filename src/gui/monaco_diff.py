@@ -9,6 +9,7 @@ from src.gumtree.main.trees.tree import Tree
 class TemplateDiffView:
     def __init__(self, ps: Parser, dst_file: str):
         universe_num = int(osp.basename(dst_file).split('.')[0].split('_')[-1])
+        self.dst_file = dst_file
         with open(dst_file, 'r') as f:
             universe_code = f.read()
         self.template_diff: TemplateDiff = TemplateDiff(ps, universe_code, universe_num)
@@ -18,12 +19,14 @@ class TemplateDiffView:
     def get_all_config(self):
         return ('config = {{ file: "{}", newUniverse: {}, '
                 'oldTemplate: {}, newTemplate: {}, '
-                'templateMappings: {}, newUniTemplateMappings: {}}};'.format('test.py', 
-                                                                             self.get_new_universe_js_config(),
-                                                                             self.get_old_template_js_config(),
-                                                                             self.get_new_template_js_config(),
-                                                                             self.get_templates_mapped_js_config(),
-                                                                             self.get_new_universe_new_template_mapped_js_config()))
+                'templateMappings: {}, newUniTemplateMappings: {}, '
+                'editor: {}}};'.format('test.py', 
+                                       self.get_new_universe_js_config(),
+                                       self.get_old_template_js_config(),
+                                       self.get_new_template_js_config(),
+                                       self.get_templates_mapped_js_config(),
+                                       self.get_new_universe_new_template_mapped_js_config(),
+                                       '{url: "/editor"}'))
     
     def get_boba_var_choice_tree_from_child(self, t: Tree):
         cand_node = t.parent.parent.parent
@@ -187,7 +190,7 @@ class TemplateDiffView:
                                                     t.end_pos,
                                                     t.pos + offset,
                                                     t.end_pos + offset))
-        b.append("],")
+        b.append("]")
         return " ".join(b)
                 
             
