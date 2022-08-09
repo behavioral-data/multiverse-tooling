@@ -6,7 +6,7 @@ from parso.tree import NodeOrLeaf
 from src.gumtree.main.gen.tree_generator import TreeGenerator
 from src.gumtree.main.trees.tree import Tree
 from src.gumtree.main.trees.tree_context import TreeContext
-from src.gumtree.main.trees.boba_tree import PythonTree
+from src.gumtree.main.trees.boba_tree import TreeWMetaData
 
 def get_positions(src_code):
 	positions = [0]
@@ -66,7 +66,7 @@ class PythonTreeGenerator(TreeGenerator):
 		start_pos = self.positions[ast_node.start_pos[0] - 1] + ast_node.start_pos[1]
 		end_pos = self.positions[ast_node.end_pos[0] - 1] + ast_node.end_pos[1]
 		length = end_pos - start_pos
-		node = PythonTree(ast_node.type, label, ast_code=ast_node.get_code())
+		node = TreeWMetaData(ast_node.type, label, ast_code=ast_node.get_code())
 		node.pos = start_pos
 		node.length = length
 		

@@ -23,7 +23,21 @@ from src.gumtree.main.trees.tree_context import TreeContext
 from src.gumtree.main.matchers.mapping_store import MappingStore
 
 
-    
+PYTHON_CONFIGURATIONS = {
+    "generator": ("boba_python_template", "python"),
+    "matcher": "boba",
+    "min_priority": 0,
+    "priority_queue": "default"
+}
+
+R_CONFIGURATIONS = {
+    "generator": ("boba_r_template", "r"),
+    "matcher": "boba",
+    "min_priority": 0,
+    "priority_queue": "default"
+}
+
+
 class TemplateDiff(LineDiff):
     DEFAULT_GENERATOR = ("boba_python_template", "python")
     MATCHER =  "boba"
@@ -35,18 +49,16 @@ class TemplateDiff(LineDiff):
         self.universe_num = universe_num
         self.history: History = ps.history[universe_num - 1]
         intermediary_code = self.boba_parser.paths_code[self.history.path]
-        configurations = {
-            "generator": self.DEFAULT_GENERATOR,
-            "matcher": self.MATCHER,
-            "parser_history": self.history,
-            "priority_queue": self.PRIOIRITY_QUEUE
-        }
+        if self.boba_parser.lang.lang[0] == "python":
+            configurations = PYTHON_CONFIGURATIONS
+        else:
+            configurations = R_CONFIGURATIONS
+        configurations["parser_history"] = self.history
         super().__init__(intermediary_code, universe_code, configurations)
         
         intermediary_code_blocks: List[BlockCode] = clean_code_blocks(self.boba_parser.blocks_code[self.universe_num - 1])
         template_code_blocks: List[BlockCode] = clean_code_blocks(self.boba_parser.code_parser.all_blocks)
-        with open(self.boba_parser.fn_script, 'r') as f:
-            self.template_code = f.read()
+        self.template_code = self.boba_parser.template_code
         self.template_code_pos = CodePos(intermediary_code,
                                          self.template_code,
                                          BlockInfo(intermediary_code_blocks),
@@ -62,7 +74,7 @@ class TemplateDiff(LineDiff):
         self.new_intermediary_code = chunk_code(self.dst_code, 
                                                 [('{{' + t.label + '}}', v) 
                                                  for t, v in self.diff.mappings.src_to_dst_boba_map.items()])
-        self.new_intermediary_tree = get_tree(self.new_intermediary_code, gen_name='boba')
+        self.new_intermediary_tree = get_tree(self.new_intermediary_code, gen_name=f'boba_{self.boba_parser.lang.lang[0]}')
         
         # generate new boba spec (need diff)
         self.template_config_tree = get_tree(self.boba_parser.code_parser.raw_spec)
@@ -109,9 +121,13 @@ class TemplateDiff(LineDiff):
             choice_idx = self.history.decision_dict[k][1]
             v_tree = self.boba_var_to_tree_options[k][choice_idx]
             replace_v = v.pop()
-            if eval(str(json.loads(v_tree.ast_code))) == eval(replace_v):
+            if self.boba_parser.lang.lang[0] == "python":
+                var_unchanged = eval(str(json.loads(v_tree.ast_code))) == eval(replace_v)
+            else:
+                var_unchanged = str(json.loads(v_tree.ast_code)) == replace_v
+            if var_unchanged:
                 continue
-            mappings.append((json.dumps(json.loads(replace_v)),  v_tree))
+            mappings.append((json.dumps(replace_v),  v_tree))
             tree_to_boba_choice_var[v_tree] = k
         return mappings, tree_to_boba_choice_var
 
@@ -195,9 +211,9 @@ if __name__ == "__main__":
     from src.utils import load_parser_example, read_universe_file, DATA_DIR
     import os.path as osp
 
-    dataset, ext = 'fertility2', 'py'
+    dataset, ext = 'hurricane', 'R'
     save_file = osp.join(DATA_DIR, f'{dataset}_template_parser_obj_0804.pickle')
-    ps = load_parser_example(dataset, ext, save_file, run_parser_main=True)
+    ps = load_parser_example(dataset, ext, None, run_parser_main=True)
     # ps._parse_blocks()
     universe_num = 3
     universe_code = read_universe_file(universe_num, dataset, ext)

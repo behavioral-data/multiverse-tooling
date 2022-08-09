@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 from __future__ import annotations
 
-import ast
 import json
 import os
 import pickle
@@ -22,7 +21,6 @@ from .wrangler import Wrangler, DIR_SCRIPT
 from .adg import ADG
 
 import src.boba.util as util
-from src.ast_traverse import OurNodeTransformer
 
 @dataclass
 class History:
@@ -57,6 +55,8 @@ class Parser:
 
     def __init__(self, f1, out='.', lang=None, add_paren=False):
         self.fn_script = os.path.abspath(f1)
+        with open(self.fn_script, 'r') as f:
+            self.template_code = f.read()
         self.parent_dir = out
         self.out = os.path.join(out, 'multiverse/')
 
@@ -76,9 +76,7 @@ class Parser:
         self._parse_graph()
         self._parse_constraints()
 
-        # ast related processing
-        self.template_tree: Tree = self._gen_template_ast()
-        self.template_code_blocks: List[BlockCode] = self.code_parser.all_blocks
+       
 
         self.universe_to_blocks = {}
         # init helper class
@@ -98,21 +96,13 @@ class Parser:
         except ParseError as e:
             self._throw_spec_error(e.args[0])
         
-        if self.lang.lang[0] == 'python':
-            self.paths_code = self.get_paths_code()
-            self.paths_ast = self.get_paths_ast()
-            self.add_paren = add_paren
-        else:
-            self.paths_code, self.paths_ast = None, None  
-            self.add_paren = False
-
-    def get_paths_ast(self) -> List[ast.AST]:
-        our_node_transformer = OurNodeTransformer()
-        paths_ast = []
-        for code_str in self.paths_code:
-            node = ast.parse(code_str)
-            paths_ast.append(our_node_transformer.visit(node))
-        return paths_ast
+        self.paths_code = self.get_paths_code()
+        self.add_paren = add_paren
+        
+         # ast related processing
+        self.template_tree: Tree = self._gen_template_ast()
+        self.template_code_blocks: List[BlockCode] = self.code_parser.all_blocks
+        
             
     
     def get_paths_code(self) -> List[str]:
@@ -507,8 +497,11 @@ class Parser:
                 exit(0)
                 
     def _gen_template_ast(self) -> Tree:
-        from src.gumtree.main.gen.boba_python_tree_generator import BobaPythonTemplateTreeGeneator
-        generator = BobaPythonTemplateTreeGeneator()
+        from src.gumtree.main.gen.boba_tree_generator import BobaPythonTemplateTreeGeneator, BobaRTemplateGenerator
+        if self.lang.lang[0] == 'python':
+            generator = BobaPythonTemplateTreeGeneator()
+        else:
+            generator = BobaRTemplateGenerator()   
         tree_context = generator.generate_tree_from_file(self.fn_script)
         return tree_context.root
     

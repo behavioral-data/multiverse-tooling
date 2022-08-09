@@ -5,7 +5,7 @@ from typing import Dict, List, Tuple
 from src.gumtree.main.trees.tree import Tree
 
 from src.boba.codeparser import BlockCode
-from src.gumtree.main.gen.boba_python_tree_generator import BobaPythonTemplateTreeGeneator
+from src.gumtree.main.gen.boba_tree_generator import BobaPythonTemplateTreeGeneator, BobaRTemplateGenerator
 from src.gumtree.main.gen.python_tree_generator import PythonTreeGenerator
 
 
@@ -52,14 +52,16 @@ def clean_code_blocks(code_blocks: List[BlockCode]):
     count_block = defaultdict(int)
     ret = []
     for blk in code_blocks:
+        blk_dec_name = blk.dec_name.split(':')[0]
         if str(blk) in count_block:
-            new_name = blk.dec_name + f'_{count_block[str(blk)]}'
+            new_name = blk_dec_name + f'_{count_block[str(blk)]}'
             if blk.dec_name == blk.opt_name:
                 blk.opt_name = new_name
             blk.dec_name = new_name
 
         else:
             count_block[str(blk)] += 1
+            blk.dec_name = blk_dec_name
         ret.append(blk)
     return ret
 
@@ -93,7 +95,11 @@ def parse_boba_var_tree(t: Tree) -> Tuple[str, List[Tree]]:
 def get_tree(src_code, gen_name='python'):
     if gen_name == 'python':
         generator = PythonTreeGenerator()
-    else:
+    elif gen_name == "boba_python":
         generator = BobaPythonTemplateTreeGeneator()
+    elif gen_name == "boba_r":
+        generator = BobaRTemplateGenerator()
+    else:
+        raise ValueError(f'Unsupported gen_name {gen_name}')
     tree = generator.generate_tree(src_code).root
     return tree

@@ -10,21 +10,21 @@ from src.gumtree.main.trees.node_constants import BOBA_VAR
 
 
 
-class PythonTree(DefaultTree):
+class TreeWMetaData(DefaultTree):
     def __init__(self, node_type: str, label: str =None,
                  ast_code: str =None):
         super().__init__(node_type, label)
         self.ast_code = ast_code
         
     @classmethod 
-    def init_from_other(cls, other: PythonTree) -> DefaultTree:
+    def init_from_other(cls, other: TreeWMetaData) -> DefaultTree:
         tree = cls(other.node_type, other.label, other.ast_code)
         tree.pos = other.pos
         tree.length = other.length
         tree.metadata = other.metadata
         return tree
     
-class BobaTree(PythonTree):
+class BobaTree(TreeWMetaData):
     def __init__(self, node_type: str, label: str =None,
                  ast_code: str =None):
         super().__init__(node_type, label, ast_code)
@@ -34,7 +34,7 @@ class BobaTree(PythonTree):
                 and self.tree_metrics.num_child_boba_vars > 0)
     
     @classmethod 
-    def init_from_other(cls, other: Union[BobaTree, PythonTree]) -> DefaultTree:
+    def init_from_other(cls, other: Union[BobaTree, TreeWMetaData]) -> DefaultTree:
         tree = cls(other.node_type, other.label, other.ast_code)
         tree._num_boba_var_nodes = 0
         tree.pos = other.pos
