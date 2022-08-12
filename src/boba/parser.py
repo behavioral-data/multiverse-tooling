@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 from __future__ import annotations
+from copy import deepcopy
 
 import json
 import os
@@ -100,7 +101,6 @@ class Parser:
         self.add_paren = add_paren
         
          # ast related processing
-        self.template_tree: Tree = self._gen_template_ast()
         self.template_code_blocks: List[BlockCode] = self.code_parser.all_blocks
         
             
@@ -360,7 +360,7 @@ class Parser:
                                              code + snippet, 
                                              cur_block_code + snippet,
                                              History(history.path, '', decs),
-                                             block_codes)
+                                             deepcopy(block_codes))
             else:
                 code += chunk.code
                 cur_block_code += chunk.code
@@ -377,7 +377,7 @@ class Parser:
                 cur_block_start = 0
                 cur_var = path[0][1].variable
                 for ind, path_step in enumerate(path[1:]):
-                    if path_step[0] == cur_block_name and not (path_step[1].variable == '' and cur_var == ''):
+                    if path_step[0] == cur_block_name and not (cur_var == ''):
                         continue
                     else:
                         path_block_changes.append((cur_block_name, cur_block_start, ind+1))
@@ -495,15 +495,6 @@ class Parser:
             if not rs.strip().lower().startswith('y'):
                 print('Aborted.')
                 exit(0)
-                
-    def _gen_template_ast(self) -> Tree:
-        from src.gumtree.main.gen.boba_tree_generator import BobaPythonTemplateTreeGeneator, BobaRTemplateGenerator
-        if self.lang.lang[0] == 'python':
-            generator = BobaPythonTemplateTreeGeneator()
-        else:
-            generator = BobaRTemplateGenerator()   
-        tree_context = generator.generate_tree_from_file(self.fn_script)
-        return tree_context.root
     
     def _save_parser(self):
         out_folder = os.path.join(self.out, DIR_SCRIPT, ".boba_parser")
