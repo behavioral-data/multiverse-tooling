@@ -165,7 +165,7 @@ require(['vs/editor/editor.main'], function() {
                             activatedRange = candidateRange;
                     }
                 }
-                const mapping = config.newUniTemplateMappings.find(mapping => mapping[0].equalsRange(activatedRange))
+                const mapping = config.newUniTemplateMappings.find(mapping => mapping[0].containsRange(activatedRange))
                 newTemplateEditor.revealRangeInCenter(mapping[1]);
             }
         });

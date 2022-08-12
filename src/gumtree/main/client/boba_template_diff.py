@@ -68,7 +68,7 @@ class TemplateDiff(LineDiff):
 										 self.history.decision_dict)
 		mapped_boba_vars, unmapped = get_tree_chunks_from_mapping(self.diff.mappings, tc)
 		self.new_intermediary_code, self.new_boba_var_pos = chunk_code_from_pos(self.dst_code, [('{{' + mapped_var.boba_var + '}}', mapped_var) for mapped_var in mapped_boba_vars])
-
+		self.mapped_boba_vars = mapped_boba_vars
 		self.old_u_t_diff = OffsetsFromBobaVar.init_from_tree_chunks(tc)
 		self.new_u_t_diff = OffsetsFromBobaVar.init_from_mapped_vars(self.dst_code, mapped_boba_vars)
 		

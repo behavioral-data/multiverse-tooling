@@ -6,7 +6,7 @@ from src.gumtree.main.client.boba_template_diff import TemplateDiff
 from src.gumtree.main.trees.tree import Tree
 from src.gumtree.main.client.template_builder import CodePos
 
-from src.gumtree.main.trees.tree_chunk import OffsetsFromBobaVar
+from src.gumtree.main.trees.tree_chunk import MappedBobaVar, OffsetsFromBobaVar
 
 
 class TemplateDiffView:
@@ -44,17 +44,15 @@ class TemplateDiffView:
             cand_node = t.parent.parent.parent
         return t, '.'.join(reversed(path))
     
-    def get_new_universe_mapped_boba_nodes_from_spec_tree(self, t: Tree) -> List[Tree]:
+    def get_new_universe_mapped_boba_nodes_from_spec_tree(self, t: Tree) -> List[MappedBobaVar]:
         new_choice_spec_tree, child_url = self.get_boba_var_choice_tree_from_child(t)
         pos_in_parent = new_choice_spec_tree.position_in_parent()
         old_choice_spec_tree = self.template_diff.spec_diff.mappings.get_src_for_dst(new_choice_spec_tree.parent).children[pos_in_parent]
         boba_var = self.template_diff.template_spec_tree_to_boba_choice_var[old_choice_spec_tree]
-        ret = []    
-        for dst_node in self.template_diff.diff.mappings.boba_var_to_dst_nodes[boba_var]:
-            if child_url:
-                ret.append(dst_node.get_child_from_url(child_url))
-            else:
-                ret.append(dst_node)
+        ret = [] 
+        for mbv in self.template_diff.mapped_boba_vars:
+            if mbv.boba_var == boba_var and mbv.boba_opt_str != '':
+                ret.append(mbv) 
         return ret
     
     def get_new_universe_js_config(self):
@@ -66,16 +64,6 @@ class TemplateDiffView:
         b.append("url:")
         b.append('"/new_universe",')
         b.append("ranges: [")
-        for t in self.template_diff.spec_diff.dst.root.pre_order():
-            if c_spec.changed_dst_tree(t):
-                nodes = self.get_new_universe_mapped_boba_nodes_from_spec_tree(t)
-                for node in nodes:
-                    if t in c_spec.get_moved_dsts():
-                        self.append_range(b, node, kind="moved")
-                    if t in c_spec.get_updated_dsts():
-                        self.append_range(b, node, kind="updated")
-                    if t in c_spec.get_inserted_dsts():
-                        self.append_range(b, node, kind="inserted")
 
         for t in self.template_diff.diff.dst.root.pre_order():
             if t in c.get_moved_dsts():
@@ -211,10 +199,10 @@ class TemplateDiffView:
         b = ["["]
         for t in self.template_diff.spec_diff.dst.root.pre_order():
             if c_spec.changed_dst_tree(t):
-                nodes = self.get_new_universe_mapped_boba_nodes_from_spec_tree(t)
-                for node in nodes:
-                    b.append("[{}, {}, {}, {}],".format(node.pos,
-                                                        node.end_pos,
+                mapped_boba_vars = self.get_new_universe_mapped_boba_nodes_from_spec_tree(t)
+                for mbv in mapped_boba_vars:
+                    b.append("[{}, {}, {}, {}],".format(mbv.pos,
+                                                        mbv.end_pos,
                                                         t.pos,
                                                         t.end_pos))
                         
@@ -270,9 +258,9 @@ if __name__ == "__main__":
         return template_diff_view
     
     # tdv = main_helper('/projects/bdata/kenqgu/Research/MultiverseProject/MultiverseTooling/multiverse-tooling/data/hurricane/multiverse/code/universe_3.R')
-    # tdv = main_helper('/projects/bdata/kenqgu/Research/MultiverseProject/MultiverseTooling/multiverse-tooling/data/fertility/multiverse/code/universe_3.py')
+    tdv = main_helper('/projects/bdata/kenqgu/Research/MultiverseProject/MultiverseTooling/multiverse-tooling/data/fertility/multiverse/code/universe_3.py')
     # tdv = main_helper('/projects/bdata/kenqgu/Research/MultiverseProject/MultiverseTooling/multiverse-tooling/data/playing_around/multiverse/code/universe_3.R')
     # tdv = main_helper('/projects/bdata/kenqgu/Research/MultiverseProject/MultiverseTooling/multiverse-tooling/data/playing_around_r/multiverse/code/universe_10.R')
-    tdv = main_helper('/projects/bdata/kenqgu/Research/MultiverseProject/MultiverseTooling/multiverse-tooling/data/playing_around_python/multiverse/code/universe_9.py')
+    # tdv = main_helper('/projects/bdata/kenqgu/Research/MultiverseProject/MultiverseTooling/multiverse-tooling/data/playing_around_python/multiverse/code/universe_9.py')
     tdv.get_all_config()
     print('here')
