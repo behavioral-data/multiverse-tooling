@@ -1,15 +1,40 @@
 
 
 from collections import defaultdict
-from typing import Dict, List, Tuple
+from copy import deepcopy
+from typing import Dict, List, Tuple, Union
 from src.gumtree.main.trees.tree import Tree
 
-from src.boba.codeparser import BlockCode
-from src.gumtree.main.gen.boba_tree_generator import BobaPythonTemplateTreeGeneator, BobaRTemplateGenerator
-from src.gumtree.main.gen.python_tree_generator import PythonTreeGenerator
+from src.boba.codeparser import Block, BlockCode
+from src.gumtree.main.gen.python_tree_generator import PythonParsoTreeGenerator, PythonTreeGenerator
 
+from src.gumtree.main.trees.tree_chunk import MappedBobaVar
 
-def chunk_code(code: str, mappings: List[Tuple[str, Tree]]):
+def get_universe_blocks_from_template_blocks(template_blocks: Dict[str, Block], 
+                                             universe_blocks: List[BlockCode]) -> Block:
+    blocks = []
+    for k, v in template_blocks.items():
+        if any((k == str(k1)) for k1 in universe_blocks):
+            blocks.append(v)
+    return blocks
+
+def chunk_code_from_pos(code: str, mappings: List[Tuple[str, Union[Tree, MappedBobaVar]]]):
+    prev_end_pos = 0
+    chunks = []
+    updated_pos = []
+    cur_new_pos = 0
+    mappings.sort(key=lambda x: x[1].pos)
+    for s, t in mappings:
+        chunks.append(code[prev_end_pos: t.pos])
+        cur_new_pos += (t.pos - prev_end_pos)
+        chunks.append(s)
+        updated_pos.append((s, (cur_new_pos, cur_new_pos + len(s))))
+        cur_new_pos += len(s)
+        prev_end_pos = t.end_pos
+    chunks.append(code[prev_end_pos:])
+    return ''.join(chunks), updated_pos
+
+def chunk_code_from_line_and_col(code: str, mappings: List[Tuple[str, Union[Tree, MappedBobaVar]]]):
     """
     Replaces strings in code that are specified by AST Tree.
     For each s, t in mappings. We replace the code specified by t with
@@ -52,17 +77,18 @@ def clean_code_blocks(code_blocks: List[BlockCode]):
     count_block = defaultdict(int)
     ret = []
     for blk in code_blocks:
+        new_block = deepcopy(blk)
         blk_dec_name = blk.dec_name.split(':')[0]
         if str(blk) in count_block:
             new_name = blk_dec_name + f'_{count_block[str(blk)]}'
             if blk.dec_name == blk.opt_name:
-                blk.opt_name = new_name
-            blk.dec_name = new_name
+                new_block.opt_name = new_name
+            new_block.dec_name = new_name
 
         else:
             count_block[str(blk)] += 1
-            blk.dec_name = blk_dec_name
-        ret.append(blk)
+            new_block.dec_name = blk_dec_name
+        ret.append(new_block)
     return ret
 
 def parse_boba_var_config_ast(boba_config_t: Tree) -> Dict[str, List[Tree]]:
@@ -92,13 +118,11 @@ def parse_boba_var_tree(t: Tree) -> Tuple[str, List[Tree]]:
     return eval(boba_var_t.label), options_t
     
 
-def get_tree(src_code, gen_name='python'):
-    if gen_name == 'python':
+def get_tree(src_code, gen_name='python_parso'):
+    if gen_name == 'python_parso':
+        generator = PythonParsoTreeGenerator()
+    elif gen_name == 'python':
         generator = PythonTreeGenerator()
-    elif gen_name == "boba_python":
-        generator = BobaPythonTemplateTreeGeneator()
-    elif gen_name == "boba_r":
-        generator = BobaRTemplateGenerator()
     else:
         raise ValueError(f'Unsupported gen_name {gen_name}')
     tree = generator.generate_tree(src_code).root

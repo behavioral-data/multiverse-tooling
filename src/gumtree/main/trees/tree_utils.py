@@ -8,7 +8,26 @@ from collections.abc import Iterator  # since python 3.3 Iterator is here
 
 if TYPE_CHECKING:
     from src.gumtree.main.trees.tree import Tree
+
+class IteratorHandler:
+    def __init__(self, tree_iterator: TreeIterator):
+        self.trees = list(tree_iterator)
+        self.tree_to_ind = {t: i for i, t in enumerate(self.trees)}
+        
+    def get_prev(self, t: Tree):
+        ind = self.tree_to_ind[t]
+        if ind > 0:
+            return self.trees[ind - 1] 
+        else:
+            return None
     
+    def get_next(self, t: Tree):
+        ind  = self.tree_to_ind[t]
+        if ind == len(self.trees) - 1:
+            return None
+        else:
+            return self.trees[ind + 1]
+        
 class HNIterator(Iterator):  # need to subclass Iterator rather than object
     def __init__(self, it):
         self.it = iter(it)

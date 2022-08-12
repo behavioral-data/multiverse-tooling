@@ -1,7 +1,11 @@
 from abc import ABC, abstractmethod
 from pickle import NONE
 from typing import Dict, List, Tuple, Set
-from src.gumtree.main.matchers.default_priority_tree_queue import DefaultPriorityTreeQueue, PythonPriorityTreeQueue
+from src.gumtree.main.matchers.default_priority_tree_queue import (
+    DefaultPriorityTreeQueue, 
+    PythonPriorityTreeQueue, 
+    RPriorityTreeQueue
+)
 from src.gumtree.main.matchers.mapping_store import MappingStore
 from src.gumtree.main.matchers.hash_based_mapper import HashBasedMapper
 from src.gumtree.main.matchers.matcher import Matcher
@@ -27,6 +31,8 @@ class AbstractSubtreeMatcher(Matcher, ABC):
             self.PRIORITY_QUEUE_CLS = DefaultPriorityTreeQueue
         elif priority_queue_name == "python":
             self.PRIORITY_QUEUE_CLS = PythonPriorityTreeQueue
+        elif priority_queue_name == 'r':
+            self.PRIORITY_QUEUE_CLS = RPriorityTreeQueue
         
         self.min_priority = properties.get('min_priority', self.DEFAULT_MIN_PRIORITY)
         self.priority_calculator = self.PRIORITY_QUEUE_CLS.get_priority_calculator(

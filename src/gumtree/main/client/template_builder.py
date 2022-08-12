@@ -98,6 +98,14 @@ class CodePos:
             ret.append((block_name, pos_offset))
         return ret
     
+    def get_pos_offset_from_pos(self, pos):
+        line = bisect.bisect_right(self.u_line_positions, pos) + 1
+        return self.get_pos_offset_from_line(line)
+    
+    def get_pos_offset_from_line(self, lineno):
+        ind = bisect.bisect_left(self.bounds, lineno-1)
+        return self.block_pos_offsets[ind][1]
+    
     def get_pos_offset(self, t: Tree) -> int:
         ind = self.get_block_ind(t)
         if ind == -1:
@@ -118,6 +126,16 @@ class CodePos:
             return -1
         ind = bisect.bisect_left(self.bounds, lineno-1)
         return ind
+    
+    def get_u_block_starting_line(self, t: Tree):
+        ind = self.get_block_ind(t)
+        if ind == -1:
+            return ind
+        return self.block_line_offsets[ind][2] # starting line of u
+    
+    def get_u_block_starting_line_pos(self, t: Tree):
+        starting_line = self.get_u_block_starting_line(t)
+        return self.get_offset_from_line_offset(starting_line, self.u_line_positions)
     
     def get_line_offset(self, t: Tree) -> int:
         ind = self.get_block_ind(t)
@@ -161,9 +179,8 @@ class NewTemplateBuilder:
         
         self.new_template_code_pos: CodePos = self.generate()
         
-        
-    def get_updated_block_start_boundaries(self,
-                                           src_code_lines: List[str],
+    @staticmethod
+    def get_updated_block_start_boundaries(src_code_lines: List[str],
                                            dst_code_lines: List[str],
                                            src_block_starts: List[int]
                                            ):

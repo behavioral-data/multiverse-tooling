@@ -4,6 +4,9 @@ from src.boba.parser import Parser
 import os.path as osp
 from src.gumtree.main.client.boba_template_diff import TemplateDiff
 from src.gumtree.main.trees.tree import Tree
+from src.gumtree.main.client.template_builder import CodePos
+
+from src.gumtree.main.trees.tree_chunk import OffsetsFromBobaVar
 
 
 class TemplateDiffView:
@@ -14,8 +17,9 @@ class TemplateDiffView:
             universe_code = f.read()
         self.template_diff: TemplateDiff = TemplateDiff(ps, universe_code, universe_num)
         self.template_code_pos = self.template_diff.template_code_pos
-        self.new_template_code_pos = self.template_diff.template_builder.new_template_code_pos
-    
+        self.new_template_u_code_pos: CodePos = self.template_diff.new_template_u_code_pos
+        self.new_template_i_code_pos: CodePos = self.template_diff.new_template_i_code_pos
+        
     def get_all_config(self):
         return ('config = {{ file: "{}", newUniverse: {}, '
                 'oldTemplate: {}, newTemplate: {}, '
@@ -93,7 +97,7 @@ class TemplateDiffView:
         b.append('"/new_template",')
         b.append("ranges: [")
         for t in self.template_diff.spec_diff.dst.root.pre_order():
-            boba_conf_offset = self.new_template_code_pos.get_boba_config_pos_offset()
+            boba_conf_offset = self.new_template_u_code_pos.get_boba_config_pos_offset()
             if t in c_spec.get_moved_dsts():
                 self.append_range(b, t, kind="moved", offset=boba_conf_offset)
             if t in c_spec.get_updated_dsts():
@@ -101,20 +105,48 @@ class TemplateDiffView:
             if t in c_spec.get_inserted_dsts():
                 self.append_range(b, t, kind="inserted", offset=boba_conf_offset)
 
-        inter_prime_preorder = self.template_diff.new_intermediary_tree.pre_order()
-        for t in self.template_diff.diff.dst.root.pre_order():
-            inter_tree = next(inter_prime_preorder)
-            offset = self.new_template_code_pos.get_pos_offset(t)
-            if t in c.get_moved_dsts():
-                self.append_range(b, inter_tree, kind="moved", offset=offset)
-            if t in c.get_updated_dsts():
-                self.append_range(b, inter_tree, kind="updated", offset=offset)
-            if t in c.get_inserted_dsts():
-                self.append_range(b, inter_tree, kind="inserted", offset=offset)
+        for t in self.template_diff.diff.dst.root.pre_order(): # if some are not mapped to boba nodes then it will be longer
+            offsets = self.get_offset(t, self.new_template_u_code_pos, self.template_diff.new_u_t_diff)
+            if offsets is not None:
+                if t in c.get_moved_dsts():
+                    self.append_range(b, t, kind="moved",  offset=offsets[0], offset_end=offsets[1])
+                if t in c.get_updated_dsts():
+                    self.append_range(b, t, kind="updated",  offset=offsets[0], offset_end=offsets[1])
+                if t in c.get_inserted_dsts():
+                    self.append_range(b, t, kind="inserted", offset=offsets[0], offset_end=offsets[1])
+        
+        for s, (new_i_pos, new_i_end_pos) in self.template_diff.new_boba_var_pos:
+            new_t_pos = self.new_template_i_code_pos.get_pos_offset_from_pos(new_i_pos) + new_i_pos
+            new_t_end_pos = self.new_template_i_code_pos.get_pos_offset_from_pos(new_i_end_pos) + new_i_end_pos
+            b.append("{")
+            b.append(f"from: {new_t_pos},")
+            b.append(f"to: {new_t_end_pos},")
+            b.append(f"index: 2147483647,")
+            b.append(f'kind: "boba-var",')
+            b.append(f'tooltip: "",')
+            b.append("},")
+            
+                    
+        
         b.append("],")
         b.append("}")
         return " ".join(b)
-        
+    
+    def get_offset(self, 
+                   t: Tree,
+                   blk_code_pos: CodePos, 
+                   boba_var_offset: OffsetsFromBobaVar):
+        boba_var_offset_pos_end = boba_var_offset.get_offset(t.end_pos)
+        boba_var_offset_pos_start = boba_var_offset.get_offset(t.pos)
+        if boba_var_offset_pos_end is None or boba_var_offset_pos_start is None:
+            return None
+        offset_from_blks = blk_code_pos.get_pos_offset(t)
+        starting_line_pos = blk_code_pos.get_u_block_starting_line_pos(t)
+        boba_var_offset_pos_from_blks = boba_var_offset.get_offset(starting_line_pos)
+        offset_start = offset_from_blks - (boba_var_offset_pos_start - boba_var_offset_pos_from_blks)
+        offset_end = offset_from_blks - (boba_var_offset_pos_end - boba_var_offset_pos_from_blks)
+        return offset_start, offset_end
+    
     def get_old_template_js_config(self):
         c = self.template_diff.classifier
         c_spec = self.template_diff.spec_classifier
@@ -134,13 +166,14 @@ class TemplateDiffView:
 
         
         for t in self.template_diff.diff.src.root.pre_order():
-            offset = self.template_code_pos.get_pos_offset(t)
-            if t in c.get_moved_srcs():
-                self.append_range(b, t, kind="moved", offset=offset)
-            if t in c.get_updated_srcs():
-                self.append_range(b, t, kind="updated", offset=offset)
-            if t in c.get_deleted_srcs():
-                self.append_range(b, t, kind="deleted", offset=offset)
+            offsets = self.get_offset(t, self.template_code_pos, self.template_diff.old_u_t_diff)
+            if offsets is not None:
+                if t in c.get_moved_srcs():
+                    self.append_range(b, t, kind="moved", offset=offsets[0], offset_end=offsets[1])
+                if t in c.get_updated_srcs():
+                    self.append_range(b, t, kind="updated", offset=offsets[0], offset_end=offsets[1])
+                if t in c.get_deleted_srcs():
+                    self.append_range(b, t, kind="deleted", offset=offsets[0], offset_end=offsets[1])
         b.append("],")
         b.append("}")
         return " ".join(b)
@@ -153,7 +186,7 @@ class TemplateDiffView:
             if t in c_spec.get_moved_srcs() or t in c_spec.get_updated_srcs():
                 d = self.template_diff.spec_diff.mappings.get_dst_for_src(t)
                 offset_template = self.template_code_pos.get_boba_config_pos_offset()
-                offset_new_template = self.new_template_code_pos.get_boba_config_pos_offset()
+                offset_new_template = self.new_template_u_code_pos.get_boba_config_pos_offset()
                 b.append("[{}, {}, {}, {}],".format(t.pos + offset_template,
                                                    t.end_pos + offset_template,
                                                    d.pos + offset_new_template,
@@ -161,12 +194,13 @@ class TemplateDiffView:
         for t in self.template_diff.diff.src.root.pre_order():
             if t in c.get_moved_srcs() or t in c.get_updated_srcs():
                 d = self.template_diff.diff.mappings.get_dst_for_src(t)
-                offset_template = self.template_code_pos.get_pos_offset(t)
-                offset_new_template = self.new_template_code_pos.get_pos_offset(d)
-                b.append("[{}, {}, {}, {}],".format(t.pos + offset_template,
-                                                   t.end_pos + offset_template,
-                                                   d.pos + offset_new_template,
-                                                   d.end_pos + offset_new_template))
+                offset_templates = self.get_offset(t, self.template_code_pos, self.template_diff.old_u_t_diff)
+                offset_new_templates = self.get_offset(d, self.new_template_u_code_pos, self.template_diff.new_u_t_diff)
+                if offset_templates is not None and offset_new_templates is not None:
+                    b.append("[{}, {}, {}, {}],".format(t.pos + offset_templates[0],
+                                                    t.end_pos + offset_templates[1],
+                                                    d.pos + offset_new_templates[0],
+                                                    d.end_pos + offset_new_templates[1]))
                 
         b.append("]")
         return " ".join(b)
@@ -186,22 +220,25 @@ class TemplateDiffView:
                         
         for t in self.template_diff.diff.dst.root.pre_order():
             if t in c.get_moved_dsts() or t in c.get_inserted_dsts() or t in c.get_updated_dsts():
-                offset = self.new_template_code_pos.get_pos_offset(t)
-                b.append("[{}, {}, {}, {}],".format(t.pos,
-                                                    t.end_pos,
-                                                    t.pos + offset,
-                                                    t.end_pos + offset))
+                offsets = self.get_offset(t, self.new_template_u_code_pos, self.template_diff.new_u_t_diff)
+                if offsets is not None:
+                    b.append("[{}, {}, {}, {}],".format(t.pos,
+                                                        t.end_pos,
+                                                        t.pos + offsets[0],
+                                                        t.end_pos + offsets[1]))
         b.append("]")
         return " ".join(b)
                 
             
-    def append_range(self, b: List[str], t: Tree, kind: str, offset: int=None):
+    def append_range(self, b: List[str], t: Tree, kind: str, offset: int=None, offset_end: int=None):
         if offset is None:
             offset = 0
+        if offset_end is None:
+            offset_end = offset
         b.append("{")
         b.append(f"from: {t.pos + offset},")
-        b.append(f"to: {t.end_pos + offset},")
-        b.append(f"index: {t.tree_metrics.depth},")
+        b.append(f"to: {t.end_pos + offset_end},")
+        b.append(f"index: {t.tree_metrics.depth if t.node_type != 'BobaVar' else 1000000},")
         b.append(f'kind: "{kind}",')
         b.append(f'tooltip: "{self.tooltip(t)}",')
         b.append("},")
@@ -209,9 +246,10 @@ class TemplateDiffView:
 
     def tooltip(self, t: Tree):
         if t.parent is None:
-            return t.node_type
+            return t.node_type.replace('\n', '')
         else:
-            return t.parent.node_type + "/" + t.node_type
+            s =  t.parent.node_type + "/" + t.node_type
+            return s.replace('\n', '')
         
 if __name__ == "__main__":
     from src.utils import load_parser_example, DATA_DIR
@@ -231,6 +269,10 @@ if __name__ == "__main__":
         template_diff_view = TemplateDiffView(ps, universe_path)
         return template_diff_view
     
-    tdv = main_helper('/projects/bdata/kenqgu/Research/MultiverseProject/MultiverseTooling/multiverse-tooling/data/fertility_08082022/multiverse/code/universe_3.py')
+    # tdv = main_helper('/projects/bdata/kenqgu/Research/MultiverseProject/MultiverseTooling/multiverse-tooling/data/hurricane/multiverse/code/universe_3.R')
+    # tdv = main_helper('/projects/bdata/kenqgu/Research/MultiverseProject/MultiverseTooling/multiverse-tooling/data/fertility/multiverse/code/universe_3.py')
+    # tdv = main_helper('/projects/bdata/kenqgu/Research/MultiverseProject/MultiverseTooling/multiverse-tooling/data/playing_around/multiverse/code/universe_3.R')
+    # tdv = main_helper('/projects/bdata/kenqgu/Research/MultiverseProject/MultiverseTooling/multiverse-tooling/data/playing_around_r/multiverse/code/universe_10.R')
+    tdv = main_helper('/projects/bdata/kenqgu/Research/MultiverseProject/MultiverseTooling/multiverse-tooling/data/playing_around_python/multiverse/code/universe_9.py')
     tdv.get_all_config()
     print('here')

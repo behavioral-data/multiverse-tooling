@@ -3,7 +3,12 @@ from __future__ import annotations
 import re
 from typing import Iterable, List, Dict
 from abc import ABC, abstractmethod
-from src.gumtree.main.trees.tree_utils import PreOrderIterator, PostOrderIterator, preorder
+from src.gumtree.main.trees.tree_utils import (
+    PreOrderIterator, 
+    PostOrderIterator, 
+    TreeIterator, 
+    preorder
+)
 from src.gumtree.main.trees.tree_metrics import TreeMetrics
 
   
@@ -194,11 +199,11 @@ class Tree(ABC):
         trees.pop(0)
         return trees
       
-    def pre_order(self) -> Iterable[Tree]:
+    def pre_order(self) -> TreeIterator:
         iterator = PreOrderIterator(self) 
         return iterator
     
-    def post_order(self) -> Iterable[Tree]:
+    def post_order(self) -> TreeIterator:
         iterator = PostOrderIterator(self)
         return iterator
     
