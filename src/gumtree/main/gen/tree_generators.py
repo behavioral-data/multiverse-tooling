@@ -1,7 +1,6 @@
 
 from typing import Dict
 from src.gumtree.main.gen.python_tree_generator import PythonTreeGenerator
-from src.gumtree.main.gen.boba_tree_generator import BobaPythonTemplateTreeGeneator, BobaRTemplateGenerator
 
 from src.gumtree.main.gen.tree_generator import TreeGenerator
 
@@ -17,9 +16,5 @@ class TreeGeneratorFactory:
             return PythonTreeGenerator()
         elif self.gen_name == 'r':
             return RTreeGenerator()
-        elif self.gen_name == "boba_python_template":
-            return BobaPythonTemplateTreeGeneator(self.extra_data)
-        elif self.gen_name == "boba_r_template":
-            return BobaRTemplateGenerator(self.extra_data)
         else:
             raise NotImplementedError(f"generator: {self.gen_name} is not implemented")

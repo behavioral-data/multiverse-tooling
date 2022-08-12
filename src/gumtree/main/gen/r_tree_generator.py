@@ -13,15 +13,14 @@ from src.utils import SRC_DIR
 import yaml
 
 TREE_SITTER_DIR = osp.join(SRC_DIR, 'gumtree', 'tree-sitter-parser')
-BUILD_DIR = osp.join(TREE_SITTER_DIR, 'build', 'languages.so')
-EMPTY_CONFIG = {'flattened': [], 'aliased': {}, 'ignored': []}
+BUILD_DIR = osp.join(TREE_SITTER_DIR, 'build-r', 'languages.so')
 RULES_FILE = osp.join(TREE_SITTER_DIR, 'rules.yml')
 
 
 Language.build_library(BUILD_DIR,
-                       [osp.join(TREE_SITTER_DIR, 'tree-sitter-r')]
+                       [osp.join(TREE_SITTER_DIR, 'tree-sitter-r-template')]
 )
-EMPTY_CONFIG = {'flattened': [], 'aliased': {}, 'ignored': []}
+EMPTY_CONFIG = {'flattened': ["string"], 'aliased': {}, 'ignored': []}
 
 with open(RULES_FILE, "r") as stream:
   TREE_REWRITE_RULES = yaml.safe_load(stream)
