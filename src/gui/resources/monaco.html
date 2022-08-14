@@ -10,34 +10,36 @@
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script type="text/javascript"
         src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-        <link type="text/css" href="/dist/monaco.css" rel="stylesheet" />
+    <link type="text/css" href="/dist/monaco.css" rel="stylesheet" />
 </head>
 
 <body class="h-100" style="overflow: hidden;">
     <div class="container-fluid h-100">
-        
+
         <div class="row">
             <div class="col">
-                <div class="toast" role="alert" aria-live="assertive" aria-atomic="true" data-autohide="false" autohide="false" style="width: 100%; position: relative; top: 0; left: 0;">
+                <div class="toast" role="alert" aria-live="assertive" aria-atomic="true" data-autohide="false"
+                    autohide="false" style="width: 100%; position: relative; top: 0; left: 0;">
                     <div class="toast-body" id="toast-message" style="width: 100%;">
                     </div>
-                  </div>
+                </div>
             </div>
             <div class="col">
                 <div class="btn-toolbar justify-content-end">
                     <div class="btn-group mr-2" role="group" aria-label="Controls">
-                        <button type="button" class="btn btn-default btn-primary toggle-mode" id="button-toggle">View Mode</button>
+                        <button type="button" class="btn btn-default btn-primary toggle-mode" id="button-toggle">View
+                            Mode</button>
                         <form method="POST" action="/save-editor">
-                            <button type="button" class="btn btn-default btn-primary" onClick="sendDataToBackendAjax(event)">Save</button>
+                            <button type="button" class="btn btn-default btn-primary"
+                                onClick="sendDataToBackendAjax(event)">Save</button>
                         </form>
                     </div>
                     <div class="btn-group mr-2">
-                            <button class="btn btn-primary" id="legend"
-                            data-bs-container="body" data-bs-toggle="popover" data-bs-placement="bottom"
-                            data-bs-html="true"
+                        <button class="btn btn-primary" id="legend" data-bs-container="body" data-bs-toggle="popover"
+                            data-bs-placement="bottom" data-bs-html="true"
                             data-bs-content="<span class=&quot;deleted&quot;>&nbsp;&nbsp;</span> deleted<br><span class=&quot;inserted&quot;>&nbsp;&nbsp;</span> inserted<br><span class=&quot;moved&quot;>&nbsp;&nbsp;</span> moved<br><span class=&quot;updated&quot;>&nbsp;&nbsp;</span> updated<br>">
                             Legend</button>
-                            <!-- <button
+                        <!-- <button
                             class="btn btn-primary btn-sm" id="shortcuts" data-bs-toggle="popover"
                             data-bs-placement="bottom" data-bs-html="true"
                             data-bs-content="<b>q</b> quit<br><b>l</b> list<br><b>t</b> top<br><b>b</b> bottom">Shortcuts</button> -->
@@ -50,45 +52,48 @@
         <div class="row mt-3">
 
         </div>
-        <div class="row h-100" style="overflow: hidden;">
-            <div class="col-4 h-100 sidebar" id="sidebar-left">
+        <div class="row h-50" style="overflow: hidden;">
+            
+            <div class="col-6 h-100 content" id="old-template">
+                <h5>Old Template</h5>
+                <div id="old-template-container" style="height: calc(100% - 80px); border:1px solid grey;"></div>
+            </div>
+            <div class="col-6 h-100 content" id="new-template">
+                <h5>New Template</h5>
+                <div id="new-template-container" style="height: calc(100% - 80px); border:1px solid grey;"></div>
+            </div>
+        </div>
+        <div class="row h-50" style="overflow: hidden;">
+            
+            <div class="col-6 h-100 sidebar" id="sidebar-left">
                 <h5>New Universe</h5>
                 <div id="new-universe-container" style="height: calc(100% - 100px); border:1px solid grey;"></div>
             </div>
-            <div class="col-4 h-100 content" id="old-template">
-                <h5>Old Template</h5>
-                <div id="old-template-container" style="height: calc(100% - 100px); border:1px solid grey;"></div>
-            </div>
-            <div class="col-4 h-100 content" id="new-template">
-                <h5>New Template</h5>
-                <div id="new-template-container" style="height: calc(100% - 100px); border:1px solid grey;"></div>
-            </div>
-            <div class="col-4 h-100 sidebar collapsed" id="sidebar-right">
+            <div class="col-6 h-100 sidebar" id="sidebar-right">
                 <h5>Editor</h5>
                 <div id="editor-container" style="height: calc(100% - 100px); border:1px solid grey;"></div>
             </div>
         </div>
-    </div>
-    <script
-        type="text/javascript">/*<![CDATA[*/config = { file: "test.py", editor: {url: "/test_editor",}, newUniverse: { url: "/test_new_universe", ranges: [ { from: 1409, to: 1411, index: 10, kind: "updated", tooltip: "testlist_comp/number", }, { from: 1464, to: 1466, index: 10, kind: "updated", tooltip: "testlist_comp/number", }, { from: 1519, to: 1521, index: 10, kind: "updated", tooltip: "testlist_comp/number", }, { from: 1426, to: 1427, index: 8, kind: "inserted", tooltip: "testlist_comp/operator", }, { from: 1481, to: 1482, index: 8, kind: "inserted", tooltip: "testlist_comp/operator", }, { from: 1536, to: 1537, index: 8, kind: "inserted", tooltip: "testlist_comp/operator", }, { from: 1428, to: 1433, index: 8, kind: "inserted", tooltip: "testlist_comp/atom", }, { from: 1483, to: 1488, index: 8, kind: "inserted", tooltip: "testlist_comp/atom", }, { from: 1538, to: 1543, index: 8, kind: "inserted", tooltip: "testlist_comp/atom", }, { from: 1226, to: 1234, index: 10, kind: "updated", tooltip: "atom_expr/string", }, { from: 1302, to: 1310, index: 10, kind: "updated", tooltip: "atom_expr/string", }, { from: 69, to: 72, index: 4, kind: "updated", tooltip: "dotted_as_name/name", }, { from: 365, to: 366, index: 10, kind: "inserted", tooltip: "testlist_comp/operator", }, { from: 367, to: 373, index: 10, kind: "inserted", tooltip: "testlist_comp/string", }, { from: 1997, to: 2050, index: 8, kind: "updated", tooltip: "arglist/string", }, ], }, oldTemplate: { url: "/test_old_template", ranges: [ { from: 392, to: 394, index: 14, kind: "updated", tooltip: "testlist_comp/number", }, { from: 527, to: 539, index: 10, kind: "updated", tooltip: "testlist_comp/string", }, { from: 43, to: 63, index: 1, kind: "deleted", tooltip: "file_input/simple_stmt", }, { from: 89, to: 91, index: 4, kind: "updated", tooltip: "dotted_as_name/name", }, { from: 1302, to: 1358, index: 3, kind: "deleted", tooltip: "suite/simple_stmt", }, { from: 3104, to: 3172, index: 8, kind: "updated", tooltip: "arglist/string", }, ], }, newTemplate: { url: "/test_new_template", ranges: [ { from: 373, to: 375, index: 14, kind: "updated", tooltip: "testlist_comp/number", }, { from: 390, to: 391, index: 12, kind: "inserted", tooltip: "testlist_comp/operator", }, { from: 392, to: 398, index: 12, kind: "inserted", tooltip: "testlist_comp/atom", }, { from: 516, to: 524, index: 10, kind: "updated", tooltip: "testlist_comp/string", }, { from: 69, to: 72, index: 5, kind: "updated", tooltip: "dotted_as_name/name", }, { from: 883, to: 884, index: 11, kind: "inserted", tooltip: "testlist_comp/operator", }, { from: 885, to: 891, index: 11, kind: "inserted", tooltip: "testlist_comp/string", }, { from: 3040, to: 3093, index: 9, kind: "updated", tooltip: "arglist/string", }, ], }, templateMappings: [ [392, 394, 373, 375], [527, 539, 516, 524], [89, 91, 69, 72], [3104, 3172, 3058, 3111], ], newUniTemplateMappings: [ [1409, 1411, 242, 244], [1464, 1466, 242, 244], [1519, 1521, 242, 244], [1426, 1427, 259, 260], [1481, 1482, 259, 260], [1536, 1537, 259, 260], [1428, 1433, 261, 267], [1483, 1488, 261, 267], [1538, 1543, 261, 267], [1226, 1234, 385, 393], [1302, 1310, 385, 393], [69, 72, 69, 72], [365, 366, 883, 884], [367, 373, 885, 891], [1997, 2050, 3058, 3111], ],};/*]]>*/</script>
-    <script type="text/javascript" src="/web/monaco-editor/min/vs/loader.js"></script>
-    <script type="text/javascript" src="/dist/monaco.js"></script>
-    <script type="text/javascript" src="/dist/shortcuts.js"></script>
-    <script>
-        $(document).ready(function () {
-            $(".toggle-mode").click(function () {
-                var left = $("#sidebar-left"),
-                    right = $("#sidebar-right");
-                left.toggleClass("collapsed");
-                right.toggleClass("collapsed");
+        <script
+            type="text/javascript">/*<![CDATA[*/config = { file: "test.py", editor: { url: "/test_editor", }, newUniverse: { url: "/test_new_universe", ranges: [{ from: 1409, to: 1411, index: 10, kind: "updated", tooltip: "testlist_comp/number", }, { from: 1464, to: 1466, index: 10, kind: "updated", tooltip: "testlist_comp/number", }, { from: 1519, to: 1521, index: 10, kind: "updated", tooltip: "testlist_comp/number", }, { from: 1426, to: 1427, index: 8, kind: "inserted", tooltip: "testlist_comp/operator", }, { from: 1481, to: 1482, index: 8, kind: "inserted", tooltip: "testlist_comp/operator", }, { from: 1536, to: 1537, index: 8, kind: "inserted", tooltip: "testlist_comp/operator", }, { from: 1428, to: 1433, index: 8, kind: "inserted", tooltip: "testlist_comp/atom", }, { from: 1483, to: 1488, index: 8, kind: "inserted", tooltip: "testlist_comp/atom", }, { from: 1538, to: 1543, index: 8, kind: "inserted", tooltip: "testlist_comp/atom", }, { from: 1226, to: 1234, index: 10, kind: "updated", tooltip: "atom_expr/string", }, { from: 1302, to: 1310, index: 10, kind: "updated", tooltip: "atom_expr/string", }, { from: 69, to: 72, index: 4, kind: "updated", tooltip: "dotted_as_name/name", }, { from: 365, to: 366, index: 10, kind: "inserted", tooltip: "testlist_comp/operator", }, { from: 367, to: 373, index: 10, kind: "inserted", tooltip: "testlist_comp/string", }, { from: 1997, to: 2050, index: 8, kind: "updated", tooltip: "arglist/string", },], }, oldTemplate: { url: "/test_old_template", ranges: [{ from: 392, to: 394, index: 14, kind: "updated", tooltip: "testlist_comp/number", }, { from: 527, to: 539, index: 10, kind: "updated", tooltip: "testlist_comp/string", }, { from: 43, to: 63, index: 1, kind: "deleted", tooltip: "file_input/simple_stmt", }, { from: 89, to: 91, index: 4, kind: "updated", tooltip: "dotted_as_name/name", }, { from: 1302, to: 1358, index: 3, kind: "deleted", tooltip: "suite/simple_stmt", }, { from: 3104, to: 3172, index: 8, kind: "updated", tooltip: "arglist/string", },], }, newTemplate: { url: "/test_new_template", ranges: [{ from: 373, to: 375, index: 14, kind: "updated", tooltip: "testlist_comp/number", }, { from: 390, to: 391, index: 12, kind: "inserted", tooltip: "testlist_comp/operator", }, { from: 392, to: 398, index: 12, kind: "inserted", tooltip: "testlist_comp/atom", }, { from: 516, to: 524, index: 10, kind: "updated", tooltip: "testlist_comp/string", }, { from: 69, to: 72, index: 5, kind: "updated", tooltip: "dotted_as_name/name", }, { from: 883, to: 884, index: 11, kind: "inserted", tooltip: "testlist_comp/operator", }, { from: 885, to: 891, index: 11, kind: "inserted", tooltip: "testlist_comp/string", }, { from: 3040, to: 3093, index: 9, kind: "updated", tooltip: "arglist/string", },], }, templateMappings: [[392, 394, 373, 375], [527, 539, 516, 524], [89, 91, 69, 72], [3104, 3172, 3058, 3111],], newUniTemplateMappings: [[1409, 1411, 242, 244], [1464, 1466, 242, 244], [1519, 1521, 242, 244], [1426, 1427, 259, 260], [1481, 1482, 259, 260], [1536, 1537, 259, 260], [1428, 1433, 261, 267], [1483, 1488, 261, 267], [1538, 1543, 261, 267], [1226, 1234, 385, 393], [1302, 1310, 385, 393], [69, 72, 69, 72], [365, 366, 883, 884], [367, 373, 885, 891], [1997, 2050, 3058, 3111],], };/*]]>*/</script>
+        <script type="text/javascript" src="/web/monaco-editor/min/vs/loader.js"></script>
+        <script type="text/javascript" src="/dist/monaco.js"></script>
+        <script type="text/javascript" src="/dist/shortcuts.js"></script>
+        <script>
+            $(document).ready(function () {
+                $(".toggle-mode").click(function () {
+                    var left = $("#sidebar-left"),
+                        right = $("#sidebar-right");
+                    left.toggleClass("collapsed");
+                    right.toggleClass("collapsed");
 
-                var elem = document.getElementById("button-toggle");
-                if (elem.innerText=="View Mode") elem.innerText = "Edit Mode";
-                else elem.innerText = "View Mode";
-                return false;
+                    var elem = document.getElementById("button-toggle");
+                    if (elem.innerText == "View Mode") elem.innerText = "Edit Mode";
+                    else elem.innerText = "View Mode";
+                    return false;
+                });
             });
-        });
-	</script>
+        </script>
 </body>
 
 </html>

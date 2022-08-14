@@ -21,7 +21,7 @@ class OffsetsFromBobaVar:
     def get_offset(self, pos: int):
         bs_left = self.offsets[bisect.bisect_left(self.chunk_pos, pos)]
         return bs_left
-
+    
     @classmethod
     def init_from_tree_chunks(cls, tchunks: List[TreeChunk]):
         cur_pos = 0
@@ -42,9 +42,9 @@ class OffsetsFromBobaVar:
                 cur_offset += len(tc.boba_var_code_str) - len('{{' + tc.boba_var + '}}') 
                 boba_vars.append(tc.boba_var)
                 boba_var_code_strs.append(tc.boba_var_code_str)
-        
-        chunk_pos.append(cur_pos+1)
-        offsets.append(cur_offset)
+        if cur_pos != chunk_pos[-1]:
+            chunk_pos.append(cur_pos)
+            offsets.append(cur_offset)
         return cls(chunk_pos, offsets, boba_vars, boba_var_code_strs)
     
     @classmethod
@@ -62,9 +62,9 @@ class OffsetsFromBobaVar:
             cur_offset +=  mbv.length -  len('{{' + mbv.boba_var + '}}')
             boba_vars.append(mbv.boba_var)
             boba_var_code_strs.append(mbv.get_str(code_str))
-        
-        chunk_pos.append(len(code_str)+1)
-        offsets.append(cur_offset)
+        if len(code_str) != chunk_pos[-1]:
+            chunk_pos.append(len(code_str))
+            offsets.append(cur_offset)
         return cls(chunk_pos, offsets, boba_vars, boba_var_code_strs)
 
 
