@@ -9,15 +9,15 @@ packages = [
 
 [tool.poetry.scripts]
 # command_name = module_for_handler : function_for_handler
-boba2 = 'src.boba.cli:main'
-bdiff = 'src.gui.webapp:main'
+boba = 'src.boba.cli:main'
+bdebug = 'src.gui.webapp:main'
 
 
 [tool.poetry.dependencies]
-python = "^3.9"
-scipy = "^1.6.0"
+python = ">=3.9,<3.11"
+scipy = "1.9.0"
 six = "^1.12.0"
-scikit-learn = "^1.1.1"
+scikit-learn = "1.1.2"
 statsmodels = "^0.13.2"
 graphviz = "^0.20"
 ipykernel = "^6.15.0"
