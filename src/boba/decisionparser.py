@@ -290,6 +290,7 @@ class DecisionParser(BaseParser):
         """
         code = []
         res = []
+        res_boba_var = []
         j = 0
         i_start = 0
         self.i = 0
@@ -304,6 +305,19 @@ class DecisionParser(BaseParser):
 
                 # read variable identifier
                 if not self._is_id_start(self._peek_char()):
+                    id_val = self._read_while(self._is_id)
+                    self._read_while(self._is_whitespace)
+                    if not self._is_end() and self._peek_char() == '=':
+                        self._next_char()
+                        # problem: the variable value can't contain "}"
+                        df = self._read_while(lambda ch: ch != '}')
+                        self._read_while(self._is_whitespace)
+                    token = self._read_while(lambda ch: ch == '}', max_len=2)
+                    if len(token) < 2:
+                        continue
+                    res.append(id_val)
+                    code.append(line[j: i_start])
+                    j = self.i
                     continue
                 val = self._read_while(self._is_id)
                 if len(val) == 0:
@@ -325,6 +339,7 @@ class DecisionParser(BaseParser):
                 # read succeeds
                 code.append(line[j:i_start])
                 res.append(val)
+                res_boba_var.append(val)
                 j = self.i
 
                 # parse and save definition
@@ -344,4 +359,4 @@ class DecisionParser(BaseParser):
                 self._next_char()
 
         code.append(line[j:])
-        return res, code
+        return res, res_boba_var, code

@@ -47,6 +47,8 @@ class TemplateDiff(LineDiff):
 		self.history: History = ps.history[universe_num - 1]
 		intermediary_code = self.boba_parser.paths_code[self.history.path]
 		u_code = deepcopy(intermediary_code)
+		decision_dict = self.history.decision_dict
+		decision_dict['_n'] = (str(universe_num), -1)
 		for dec, (option, choice_ind) in self.history.decision_dict.items():
 			dec_str = '{{' + dec + '}}'
 			if option == '':
@@ -65,7 +67,7 @@ class TemplateDiff(LineDiff):
 														  self.boba_parser.blocks_code[self.universe_num - 1])
 		tc = get_tree_chunks_from_blocks(self.diff.src.root, 
 										 blocks,
-										 self.history.decision_dict)
+										 decision_dict)
 		mapped_boba_vars, unmapped = get_tree_chunks_from_mapping(self.diff.mappings, tc)
 		self.new_intermediary_code, self.new_boba_var_pos = chunk_code_from_pos(self.dst_code, [('{{' + mapped_var.boba_var + '}}', mapped_var) for mapped_var in mapped_boba_vars])
 		self.mapped_boba_vars = mapped_boba_vars
@@ -92,11 +94,7 @@ class TemplateDiff(LineDiff):
 		self.boba_var_to_tree_options = parse_boba_var_config_ast(self.template_config_tree)
 		self.var_tree_mappings, self.template_spec_tree_to_boba_choice_var = self.handle_boba_vars(self.dst_code, mapped_boba_vars)
 		self.new_raw_spec, _ = chunk_code_from_pos(self.boba_parser.code_parser.raw_spec, self.var_tree_mappings)
-		
-		self.configure({"matcher": "classic",
-						"generator": "python",
-						"priority_queue": "python"})
-		
+		self.old_raw_spec = self.boba_parser.code_parser.raw_spec
 		self.spec_diff = self.get_spec_diff()
 		self.spec_classifier = self.spec_diff.createRootNodesClassifier()
 		self.template_builder = NewTemplateBuilder(self.template_code_pos,
@@ -120,7 +118,7 @@ class TemplateDiff(LineDiff):
 		src.root.parent = None
 		dst = PythonParsoTreeGenerator().generate_tree(self.new_raw_spec)
 		matcher = MatcherFactory("classic").get_matcher()
-		matcher.configure({"priority_queue": "python"})
+		matcher.configure({"priority_queue": "default", "min_priority": 0})
 
 		mappings = matcher.match(src.root, dst.root,  MappingStore(src.root, dst.root))
 		edit_script = ChawatheScriptGenerator.compute_actions(mappings)
@@ -237,11 +235,15 @@ if __name__ == "__main__":
 	from src.utils import load_parser_example, read_universe_file, DATA_DIR
 	import os.path as osp
 
-	dataset, ext = 'playing_around', 'R'
+	dataset, ext = 'hurricane', 'R'
 	save_file = osp.join(DATA_DIR, f'{dataset}_template_parser_obj_0804.pickle')
+	
+	# ps = Parser('/projects/bdata/kenqgu/Research/MultiverseProject/MultiverseTooling/multiverse-tooling/data/hurricane/template.R', 
+    #          	'.', None)
+	# ps.main()
 	ps = load_parser_example(dataset, ext, None, run_parser_main=True)
-	# ps._parse_blocks()
+	# # ps._parse_blocks()
 	universe_num = 3
 	universe_code = read_universe_file(universe_num, dataset, ext)
 	line_diff = TemplateDiff(ps, universe_code, universe_num)
-	res = line_diff.run()
+	# res = line_diff.run()s

@@ -1,6 +1,6 @@
 
 from typing import Dict
-from src.gumtree.main.gen.python_tree_generator import PythonTreeGenerator
+from src.gumtree.main.gen.python_tree_generator import PythonParsoTreeGenerator, PythonTreeGenerator
 
 from src.gumtree.main.gen.tree_generator import TreeGenerator
 
@@ -14,6 +14,8 @@ class TreeGeneratorFactory:
     def get_generator(self) -> TreeGenerator:
         if self.gen_name == "python":
             return PythonTreeGenerator()
+        elif self.gen_name == "python_parso":
+            return PythonParsoTreeGenerator()
         elif self.gen_name == 'r':
             return RTreeGenerator()
         else:

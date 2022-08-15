@@ -251,7 +251,7 @@ class Parser:
             res.append(pt)
 
         return res
-
+    # @profile
     def _code_gen_recur(self, 
                         path: List[Tuple[str, Chunk]], 
                         path_block_changes: List[Tuple[str, int, int]], 
@@ -278,18 +278,19 @@ class Parser:
             # record history
             history.filename = fn
             self.history.append(history)
-            block_codes.append(BlockCode(dec_name=path_block_changes[pbc_i][0].split(':')[0],
+            block_codes  = block_codes + [BlockCode(dec_name=path_block_changes[pbc_i][0].split(':')[0],
                                          opt_name=path_block_changes[pbc_i][0].split(':')[-1],
-                                         code_str=cur_block_code
-                                        ))
-            assert ''.join([b.code_str for b in block_codes]) == code
+                                         code_length=cur_block_code.count('\n') + 1
+                                        )]
+            # block_codes[0].code_length += 1
+            assert sum(b.code_length for b in block_codes) == len(code.split('\n'))
             self.blocks_code.append(block_codes)
         else:
             if p_i == path_block_changes[pbc_i][2]:
                 block_codes = block_codes + [BlockCode(
                     dec_name=path_block_changes[pbc_i][0].split(':')[0],
                     opt_name=path_block_changes[pbc_i][0].split(':')[-1],
-                    code_str=cur_block_code
+                    code_length=cur_block_code.count('\n')
                 )]
                 pbc_i += 1
                 cur_block_code = ''
@@ -327,6 +328,16 @@ class Parser:
 
                 if prev_idx is not None:
                     # use the previous value
+                    # if chunk.variable.startswith('_'):
+                    #     snippet = chunk.code + '{{' + chunk.variable + '}}'
+                    #     self._code_gen_recur(path, 
+                    #                      path_block_changes,
+                    #                      p_i + 1, 
+                    #                      pbc_i,
+                    #                      code + snippet, 
+                    #                      cur_block_code + snippet, 
+                    #                      history,
+                    #                      block_codes)
                     snippet, opt = self.dec_parser.gen_code(chunk.code, chunk.variable, prev_idx, add_paren=self.add_paren)
                     self._code_gen_recur(path, 
                                          path_block_changes,
@@ -338,29 +349,43 @@ class Parser:
                                          block_codes)
                 else:
                     # expand the decision
-                    num_alt = self.dec_parser.get_num_alt_discrete(chunk.variable)
-                    for k in range(num_alt):
-                        # check if the option has constraints attached to it
-                        # always check by index, rather than actual value
-                        v = ConstraintParser.make_index_var(chunk.variable)
-                        v = '{}:{}'.format(v, k)
-                        if v in self.constraints and \
-                                not self._eval_constraint(history, v):
-                            # constraint met, abort
-                            continue
-
-                        # code gen
-                        snippet, opt = self.dec_parser.gen_code(chunk.code, chunk.variable, k, add_paren=self.add_paren)
-                        decs = [a for a in history.decisions]
-                        decs.append(DecRecord(chunk.variable, opt, k))
-                        self._code_gen_recur(path, 
-                                             path_block_changes, 
-                                             p_i + 1, 
+                    if chunk.variable.startswith('_'):
+                        snippet = chunk.code + '{{' + chunk.variable + '}}'
+                        # decs = [a for a in history.decisions]
+                        # decs.append(DecRecord(chunk.variable, -1, -1))
+                        self._code_gen_recur(path,
+                                             path_block_changes,
+                                             p_i + 1,
                                              pbc_i,
-                                             code + snippet, 
+                                             code + snippet,
                                              cur_block_code + snippet,
-                                             History(history.path, '', decs),
-                                             deepcopy(block_codes))
+                                             history,
+                                             deepcopy(block_codes)
+                                             )
+                    else:
+                        num_alt = self.dec_parser.get_num_alt_discrete(chunk.variable)
+                        for k in range(num_alt):
+                            # check if the option has constraints attached to it
+                            # always check by index, rather than actual value
+                            v = ConstraintParser.make_index_var(chunk.variable)
+                            v = '{}:{}'.format(v, k)
+                            if v in self.constraints and \
+                                    not self._eval_constraint(history, v):
+                                # constraint met, abort
+                                continue
+
+                            # code gen
+                            snippet, opt = self.dec_parser.gen_code(chunk.code, chunk.variable, k, add_paren=self.add_paren)
+                            decs = [a for a in history.decisions]
+                            decs.append(DecRecord(chunk.variable, opt, k))
+                            self._code_gen_recur(path, 
+                                                path_block_changes, 
+                                                p_i + 1, 
+                                                pbc_i,
+                                                code + snippet, 
+                                                cur_block_code + snippet,
+                                                History(history.path, '', decs),
+                                                deepcopy(block_codes))
             else:
                 code += chunk.code
                 cur_block_code += chunk.code

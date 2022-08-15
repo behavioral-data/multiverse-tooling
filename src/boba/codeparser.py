@@ -30,23 +30,28 @@ class Block:
 class BlockCode:
     dec_name: str = ''
     opt_name: str = ''
-    code_str: str = ''
     block_prefix: str = ''
-
+    code_length: int = -1
+    code_str: str = ''
+    
     def __post_init__(self):
         if self.opt_name == '':
             self.opt_name = self.dec_name
-            
     @property
     def code_num_lines(self) -> int:
-        return self.code_str.count('\n') + self.block_prefix.count('\n')
+        if self.code_length == -1:
+            code_length = self.code_str.count('\n')
+        else:
+            code_length = self.code_length
+        
+        return code_length + self.block_prefix.count('\n')
     
     def __repr__(self):
         return f'{self.dec_name}:{self.opt_name}' if self.dec_name != self.opt_name else self.dec_name 
     
     @classmethod
     def init_from_template_block(cls, blk: Block):
-        return cls(blk.id, blk.option, blk.code_str, blk.block_prefix)
+        return cls(blk.id, blk.option, blk.block_prefix, blk.code_str.count('\n'), code_str=blk.code_str)
         
 @dataclass
 class Chunk:
@@ -100,8 +105,9 @@ class CodeParser:
                 self.blocks[self.order[-1]].code_str += block.code_str
                 new_block = BlockCode(dec_name=self.blocks[self.order[-1]].id,
                                       opt_name=self.blocks[self.order[-1]].option,
+                                      block_prefix=block.block_prefix,
+                                      code_length=block.code_str.count('\n'),
                                       code_str=block.code_str,
-                                      block_prefix=block.block_prefix
                                       )
                 self.all_blocks.append(new_block) 
                 return
@@ -182,10 +188,10 @@ class CodeParser:
             else:
                 # match decision variables
                 try:
-                    vs, codes = dec_parser.parse_code(line)
+                    vs, boba_vars, codes = dec_parser.parse_code(line)
                     if len(vs):
                         # store inline variables
-                        self.used_vars.update(vs)
+                        self.used_vars.update(boba_vars)
 
                         # chop into more chunks
                         # combine first chunk with previous code

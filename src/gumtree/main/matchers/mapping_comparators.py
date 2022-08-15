@@ -45,6 +45,7 @@ class FullMappingComparator:
         self.siblings_comparator = SiblingsSimilarityMappingComparator(ms)
         self.parents_comparator = ParentsSimilarityMappingComparator()
         self.parents_position_comparator = PositionInParentsSimilarityMappingComparator()
+        self.textual_position_comparator = TextualPositionDistanceMappingComparator()
         self.position_comparator = AbsolutePositionDistanceMappingComparator()
             
     def compare(self, m1: Mapping, m2: Mapping):
@@ -57,6 +58,10 @@ class FullMappingComparator:
             return result
         
         result = self.parents_position_comparator.compare(m1, m2)
+        if result != 0:
+            return result
+        
+        result = self.textual_position_comparator.compare(m1, m2)
         if result != 0:
             return result
         
@@ -171,7 +176,13 @@ class PositionInParentsSimilarityMappingComparator:
         return posvector
 
 class TextualPositionDistanceMappingComparator:
-    pass
+    def compare(self, m1: Mapping, m2: Mapping):
+        m1_pos_dist = self.textual_position_distance(m1[0], m1[1])
+        m2_pos_dist = self.textual_position_distance(m2[0], m2[1])
+        return compare(m1_pos_dist, m2_pos_dist)
+    
+    def textual_position_distance(self, src: Tree, dst: Tree):
+        return abs(src.pos - dst.pos) + abs(src.end_pos - dst.end_pos)
 
 class AbsolutePositionDistanceMappingComparator:
     def compare(self, m1: Mapping, m2: Mapping) -> int:

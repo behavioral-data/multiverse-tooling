@@ -169,7 +169,7 @@ class ADG:
         for bl in blocks:
             # get the variables associated with a block
             vs = [chunk.variable for chunk in blocks[bl].chunks
-                  if chunk.variable != '']
+                  if chunk.variable != '' and not chunk.variable.startswith('_')]
             decs.extend(vs)
 
             # remove linked vars

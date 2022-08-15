@@ -251,14 +251,14 @@ class NewTemplateBuilder:
                 block_offsets.append((str(code_block), offset))
                 code_str = '\n'.join(self.new_intermediary_code_lines[start: end]) + '\n'
                 s = code_block.block_prefix + code_str
-                new_block_temp = BlockCode(code_block.dec_name, 
-                                      code_block.opt_name,
-                                      code_str,
-                                      block_prefix=code_block.block_prefix)
-                new_block_inter = BlockCode(code_block.dec_name, 
-                                      code_block.opt_name,
-                                      code_str
-                                      )
+                new_block_temp = BlockCode(dec_name=code_block.dec_name, 
+                                           opt_name=code_block.opt_name,
+                                           code_str=code_str,
+                                           block_prefix=code_block.block_prefix)
+                new_block_inter = BlockCode(dec_name=code_block.dec_name, 
+                                            opt_name=code_block.opt_name,
+                                            code_str=code_str
+                                            )
                 new_template_code_blocks.append(new_block_temp)
                 new_intermediary_code_blocks.append(new_block_inter)
                 strs.append(s)

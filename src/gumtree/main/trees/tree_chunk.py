@@ -54,6 +54,7 @@ class OffsetsFromBobaVar:
         offsets = []
         boba_vars = []
         boba_var_code_strs = []
+        mapped_vars.sort(key=lambda x: x.pos)
         for mbv in mapped_vars:
             chunk_pos.append(mbv.pos)
             chunk_pos.append(mbv.end_pos)
@@ -115,7 +116,7 @@ def get_tree_chunks_from_mapping(ms: MappingStore, tchunks: List[TreeChunk]):
     preorder_iter = IteratorHandler(ms.src.pre_order())
     cur_ind = 0
     for tc_ind, tc in enumerate(tchunks):
-        if tc.boba_var != '':
+        if tc.boba_var != '' and tc.boba_var != '_n':
             if len(tc.boba_var_trees) > 0: # has non empty boba var option
                 src_boba_var_trees = tc.boba_var_trees
                 i = 0
