@@ -93,23 +93,24 @@
                             <div class="tab-pane h-100" id="list-{{loop.index0}}" role="tabpanel">
                         {% endif %}
                             <h4>Error</h4>
-                            <div class="row" , style="height: 55%;">
-                                <pre style="white-space: pre-wrap; max-height: 95%; overflow: scroll;">
-                                    <code class="language-{{lang}}">{{error["error_msg"]}}</code>
-                                </pre>
+                            <div class="row" , style="height: 50%; ">
+                                
+                                <pre style="white-space: pre-wrap; max-height: 90%; overflow: scroll;"><code class="language-{{lang}}">{{error["error_msg"]}}</code> </pre>
                             </div>
-                            <h4>Relevant Decision Options</h4>
-                            <div class="d-flex justify-content-start align-items-start m-2" style="max-height: 10%; overflow: scroll;"> 
-                            {% for decision, options_str in error["common_decs"].items()%}
+                            
+                            <div class="d-flex justify-content-start align-items-start m-2" style="height: 12%; flex-wrap: wrap; overflow: scroll;"> 
+                                <h4 style="width: 100%;"">Relevant Decision Options</h4>
+                                
+                                {% for decision, options_str in error["common_decs"].items()%}
                                 <button type="button" class="btn btn-primary btn-m m-lg-2" data-bs-toggle="popover" 
                                 data-bs-trigger="focus" title="Relevant Options" data-bs-content="{{options_str}}">
                                     {{decision}}
                                 </button>
                             {% endfor %}
                             </div>
-                            <div class="row h-25">
+                            <div class="row" style="height: 30%;">
                                 <h4>Common Universes</h4>
-                                <div class="col-2" style="max-height: 100%; overflow: auto;">
+                                <div class="col-2" style="max-height: 90%; overflow: auto;">
                                     <div class="list-group list-group-flush overflow-auto" id="common_universes"
                                         role="tablist" style=" overflow-y: scroll; height: 100%;">
                                         {% for universe in error["common_universes"]%}
@@ -127,9 +128,9 @@
                                     </div>
                                 </div>
                                 
-                                <div class="col-10" , style="max-height: 100%;">
+                                <div class="col-10" , style="max-height: 90%;  overflow: auto;">
                                     <div class="tab-content h-100" id="nav-tabContent-universes"
-                                        style="overflow: hidden;">
+                                        style="overflow: scroll;">
 
                                         {% for universe in error["common_universes"]%}
                                             {% if loop.index0 == 0 %}
