@@ -10,3 +10,12 @@ div.code-toolbar{position:relative;}div.code-toolbar>.toolbar{position:absolute;
 .popover {
     white-space: pre-wrap;    
 }
+
+p{
+    font-size: 0.9em;
+}
+
+td {
+    font-size: 0.9em;
+
+}
