@@ -1,5 +1,6 @@
 from copy import deepcopy
 from collections import defaultdict
+from dataclasses import dataclass, field
 from pickle import TRUE
 import re
 import os
@@ -62,104 +63,17 @@ def set_universe_as_index(summary_df):
 	summary_df['universe_num'] = summary_df['Filename'].apply(lambda x: int(x.split('_')[-1].split('.')[0]))
 	return summary_df.set_index('universe_num')
 
-
-class DebugMultiverse:
-	def __init__(self, folder):
-		self.folder = folder
-		self.log_folder = os.path.join(folder, DIR_LOG)
-		self.file_log = os.path.join(self.log_folder, 'logs.csv')
-		self.code_folder = osp.join(folder, DIR_SCRIPT)
-		self.summary_df = pd.read_csv(osp.join(self.folder, 'summary.csv')).fillna('')
-		self.summary_df = set_universe_as_index(self.summary_df)
-		decisions = get_decs(self.summary_df)
-		fn = self.summary_df['Filename'].to_list()[0]
-		try:
-			with open(self.folder + '/lang.json', 'r') as f:
-				self.lang = Lang(fn, supported_langs=json.load(f))
-		except IOError:
-			self.lang = Lang(fn)
-		self._decisions = {k: v for k, v in decisions.items() if len(v) > 1}
-		self.refresh_vals()
-		# self.log_df, status = merge_error(log_folder)
-		# self.log_df['warning_msgs'] = self.log_df['warning_msgs'].apply(lambda x: eval(x))
-		# warning_msgs = self.log_df[['uid', 'warning_msgs']].explode('warning_msgs').dropna()
-		# warning_msgs['grped_warning_msg']= group_similar_strings(warning_msgs['warning_msgs'], ignore_index=True)
-		
-	def refresh_vals(self):
-		self.log_df, status = merge_error(self.log_folder, self.lang.lang[0])
-		self._unum_shared_lines, self._decisions_to_lines, self._common_lines = self.init_debug_multiverse() 
-		self._lines_to_decisions = {line: k for k, v in self.decisions_to_lines.items() for line in v}
+@dataclass
+class ErrorAggregateInfo:
+	unum_shared_lines: Dict[int, Dict[str, Set[int]]] = {}
+	decisions_to_lines: Dict[Tuple[Tuple[str, FrozenSet[str]]], List[str]] = {}
+	common_lines: Dict[FrozenSet[int], List[str]] = {}
+	lines_to_decisions: Dict[str, Tuple[Tuple[str, FrozenSet[str]]]] = {}
+	_unum_shared_lines: dict  = field(init=False, repr=False)
+	_decisions_to_lines: dict = field(init=False, repr=False)
+	_common_lines: dict = field(init=False, repr=False)
+	_lines_to_decisions: dict = field(init=False, repr=False)
   
-	def return_json_errors(self):
-		errors = []
-		no_errors = []
-
-		# previous merged error
-		fn = osp.join(self.log_folder, 'errors.csv')
-		if os.path.exists(fn):
-			df = pd.read_csv(fn, na_filter=False)
-			if len(df) < len(self.summary_df):
-				self.refresh_vals()
-
-		for unums, error_strs in self.common_lines.items():
-			error_str = error_strs[0]
-			if error_str == '':
-				first_line = 'No Error'
-				first_lines = ''
-			else:
-				first_line = error_str.split('\n')[0]
-				if len(first_line) > 50:
-					first_line = first_line[:47] + ' ...'
-				first_lines = '\n'.join(error_str.split('\n')[:5]) + '\n...'
-
-
-			common_decs = decisions_set_unique(self.lines_to_decisions[error_str], 
-                                      self.orig_decisions)
-			for dec, opts in common_decs.items():
-				opt_str = '\n'.join(f"{i+1}. {opt}" for i, opt in enumerate(opts))
-				common_decs[dec] = opt_str
-			common_unums = random.sample(list(unums), min(len(unums), 10))
-			number_affected = len(unums)
-			common_unums_jsons = []
-			for unum in common_unums:
-				df_row = self.summary_df.loc[unum]
-				filename = osp.join(self.code_folder, df_row[0])
-				decs = [{"decision": dec, "option": opt} 
-            			for dec, opt in df_row[2:].to_dict().items()]
-				common_unums_jsons.append({
-					"decisions": decs,
-					"universe_path": filename,
-					"universe_num": unum
-				})
-			if error_str == '':
-				no_errors.append({
-					"common_decs": common_decs,
-					"error_msg": error_str,
-					"error_msg_first_line": first_line,
-					"error_msg_first_lines": first_lines,
-					"common_universes": common_unums_jsons,
-					"number_affected": number_affected
-				})
-			else:
-				errors.append(
-					{
-					"common_decs": common_decs,
-					"error_msg": error_str,
-					"error_msg_first_line": first_line,
-					"error_msg_first_lines": first_lines,
-					"common_universes": common_unums_jsons,
-					"number_affected": number_affected
-				})
-		errors = sorted(errors, key=lambda x: x['number_affected'], reverse=True)
-		return errors + no_errors
-	
-	@property
-	def orig_decisions(self) -> Dict[str, FrozenSet[str]]:
-		"""
-		Mapping from decisions name to its decision options
-		"""
-		return self._decisions
-	
 	@property
 	def unum_shared_lines(self) -> Dict[int, Dict[str, Set[int]]]:
 		"""
@@ -213,12 +127,154 @@ class DebugMultiverse:
 		Mapping from line of code to the decisions and options which share this code
 		"""
 		return self._lines_to_decisions
+
+	@unum_shared_lines.setter
+	def unum_shared_lines(self, unum_shared_lines):
+		self._unum_shared_lines = unum_shared_lines
+  
+	@decisions_to_lines.setter
+	def decisions_to_lines(self, decisions_to_lines):
+		self._decisions_to_lines = decisions_to_lines
+  
+	@common_lines.setter
+	def common_lines(self, common_lines):
+		self._common_lines = common_lines
+  
+	@lines_to_decisions.setter
+	def lines_to_decisions(self, lines_to_decisions):
+		self._lines_to_decisions = lines_to_decisions
+
+class DebugMultiverse:
+	def __init__(self, folder):
+		self.folder = folder
+		self.log_folder = os.path.join(folder, DIR_LOG)
+		self.file_log = os.path.join(self.log_folder, 'logs.csv')
+		self.code_folder = osp.join(folder, DIR_SCRIPT)
+		self.summary_df = pd.read_csv(osp.join(self.folder, 'summary.csv')).fillna('')
+		self.summary_df = set_universe_as_index(self.summary_df)
+		decisions = get_decs(self.summary_df)
+		fn = self.summary_df['Filename'].to_list()[0]
+		try:
+			with open(self.folder + '/lang.json', 'r') as f:
+				self.lang = Lang(fn, supported_langs=json.load(f))
+		except IOError:
+			self.lang = Lang(fn)
+		self._decisions = {k: v for k, v in decisions.items() if len(v) > 1}
+		self.error_info = ErrorAggregateInfo({}, {}, {}, {})
+		self.warning_info = ErrorAggregateInfo({}, {}, {}, {})
+		self.refresh_vals()
+
+	def refresh_vals(self):
+		self.log_df, status = merge_error(self.log_folder, self.lang.lang[0])
+		if len(self.log_df) > 0:
+			error_msg_unique = self.log_df['error_msg'].unique()
+			if not(len(error_msg_unique) == 1 and error_msg_unique[0] == ''):
+				self.log_df['grped_error_msg'] = group_similar_strings(self.log_df['error_msg'], ignore_index=True) 
+				error_to_uids: Dict[str, Set[int]] = self.log_df.groupby('grped_error_msg')['uid'].apply(frozenset).to_dict()
+				self.error_info = self.init_debug_multiverse(error_to_uids) 
+			
+
+			self.log_df['warning_msgs'] = self.log_df['warning_msgs'].apply(lambda x: eval(x) if type(x) is str else x)
+			warning_msgs = self.log_df[['uid', 'warning_msgs']].explode('warning_msgs').dropna()
+			warning_msg_unique = warning_msgs['warning_msgs'].unique()
+			if len(warning_msg_unique) != 0:
+				warning_msgs['grped_warning_msg']= group_similar_strings(warning_msgs['warning_msgs'], ignore_index=True)
+				warning_to_uids = warning_msgs.groupby('grped_warning_msg')['uid'].apply(frozenset).to_dict()
+				self.warning_info = self.init_debug_multiverse(warning_to_uids)
+
+	def get_error_info(self, is_warning=False) -> ErrorAggregateInfo:
+		if is_warning:
+			return self.warning_info
+		else:
+			return self.error_info
+  
+	def return_json_errors(self, is_warning=False):
+		errors = []
+		no_errors = []
+
+		# previous merged error
+		fn = osp.join(self.log_folder, 'errors.csv')
+		if os.path.exists(fn):
+			df = pd.read_csv(fn, na_filter=False)
+			if len(df) < len(self.summary_df):
+				self.refresh_vals()
+
+		if not is_warning:
+			error_info: ErrorAggregateInfo = self.error_info
+			first_no_str_line = 'No Error but has Miscl Warnings'
+		else:
+			error_info: ErrorAggregateInfo = self.warning_info
+			first_no_str_line = 'No Warnings but has Error'
+  
+		for unums, error_strs in error_info.common_lines.items():
+			error_str = error_strs[0]
+			if error_str == '':
+				first_line = first_no_str_line
+				first_lines = ''
+			else:
+				first_line = error_str.split('\n')[0]
+				if self.lang.lang[0] == 'python':
+					if is_warning:
+						pt = '[a-zA-z]*Warning:\s.*'
+						m = re.search(pt, first_line)
+						if m:
+							first_line = m[0]
+					else:
+						first_line = error_str.split('\n')[-1].strip()
+      
+				if len(first_line) > 50:
+					first_line = first_line[:47] + ' ...'
+				first_lines = '\n'.join(error_str.split('\n')[:5]) + '\n...'
+
+			common_decs = decisions_set_unique(error_info.lines_to_decisions[error_str], 
+									  self.orig_decisions)
+			for dec, opts in common_decs.items():
+				opt_str = '\n'.join(f"{i+1}. {opt}" for i, opt in enumerate(opts))
+				common_decs[dec] = opt_str
+			common_unums = random.sample(list(unums), min(len(unums), 10))
+			number_affected = f"{len(unums)} out of {len(self.summary_df)} Universes Affected"
+			common_unums_jsons = []
+			for unum in common_unums:
+				df_row = self.summary_df.loc[unum]
+				filename = osp.join(self.code_folder, df_row[0])
+				decs = [{"decision": dec, "option": opt} 
+						for dec, opt in df_row[2:].to_dict().items()]
+				common_unums_jsons.append({
+					"decisions": decs,
+					"universe_path": filename,
+					"universe_num": unum
+				})
+			if error_str == '':
+				no_errors.append({
+					"common_decs": common_decs,
+					"error_msg": error_str,
+					"error_msg_first_line": first_line,
+					"error_msg_first_lines": first_lines,
+					"common_universes": common_unums_jsons,
+					"number_affected": number_affected
+				})
+			else:
+				errors.append(
+					{
+					"common_decs": common_decs,
+					"error_msg": error_str,
+					"error_msg_first_line": first_line,
+					"error_msg_first_lines": first_lines,
+					"common_universes": common_unums_jsons,
+					"number_affected": number_affected
+				})
+		errors = sorted(errors, key=lambda x: x['number_affected'], reverse=True)
+		return errors + no_errors
 	
+	@property
+	def orig_decisions(self) -> Dict[str, FrozenSet[str]]:
+		"""
+		Mapping from decisions name to its decision options
+		"""
+		return self._decisions
 	
-	def init_debug_multiverse(self):
+	def init_debug_multiverse(self, error_to_uids:  Dict[str, Set[int]]):
 		summary_df = self.summary_df
-		self.log_df['grped_error_msg']= group_similar_strings(self.log_df['error_msg'], ignore_index=True)
-		error_to_uids: Dict[str, Set[int]] = self.log_df.groupby('grped_error_msg')['uid'].apply(frozenset).to_dict()
 		def get_common_lines(res_lines: Dict[str, set]):
 			new_res = defaultdict(list)
 			for line, unum_set in res_lines.items():
@@ -241,47 +297,54 @@ class DebugMultiverse:
 				shared_unums = set(k)
 				shared_unums.discard(unum)
 				unum_shared_lines[unum]['\n'.join(lines)] = shared_unums
-	
-		return unum_shared_lines, decisions_to_lines, common_lines
 
-	def print_common_universes(self, unum):
+		lines_to_decisions = {line: k for k, v in decisions_to_lines.items() for line in v}
+  
+		return ErrorAggregateInfo(unum_shared_lines, decisions_to_lines, common_lines, lines_to_decisions)
+
+	def print_common_universes(self, unum, is_warning=False):
 		"""
 		For a universe what are its error ouputs and what are some other sample universes associated with its error output
 		"""
+		error_info = self.get_error_info(is_warning)
 		print(f'{bcolors.OKGREEN} ====== Universe {unum} Common Code Universes======')
-		for lines, other_unums in self.unum_shared_lines[unum].items():
+		for lines, other_unums in error_info.unum_shared_lines[unum].items():
 			print(f'{bcolors.OKBLUE}{lines}')
 			print(f'{bcolors.OKGREEN}Shared unums: {random.sample(list(other_unums), 10)}')
 			print(f'{bcolors.OKGREEN}Total shared: {len(other_unums)}\n\n')
 		
-	def print_common_output(self, unum1, unum2):
+	def print_common_output(self, unum1, unum2, is_warning=False):
 		"""
 		What are common error outputs between universe A and universe B
 		"""
+		error_info = self.get_error_info(is_warning)
 		print(f'{bcolors.OKGREEN} ====== Universe {unum1} and {unum2} Common Code ======')
-		for lines, other_nums in self.unum_shared_lines[unum1].items():
+		for lines, other_nums in error_info.unum_shared_lines[unum1].items():
 			if unum2 in other_nums:
 				print(f'{bcolors.OKBLUE}{lines}')
 
-	def print_decision_and_code(self, i=0):
+	def print_decision_and_code(self, i=0, is_warning=False):
 		"""
 		What are some of the common error outputs and the associated decision with that error output
 		"""
-		for ind, (k, lines) in enumerate(self.decisions_to_lines.items()):
+		error_info = self.get_error_info(is_warning)
+		for ind, (k, lines) in enumerate(error_info.decisions_to_lines.items()):
 			if ind == i:
 				print(f'{bcolors.OKGREEN}======== Decisions ========{bcolors.OKGREEN}')
 				print(frozen_set_to_str(k, self.orig_decisions))
 				print(F'{bcolors.OKBLUE}======== Code ========{bcolors.OKBLUE}')
 				print(f'\n\n'.join(lines))
 		
-	def print_common_decisions(self, unum):
+	def print_common_decisions(self, unum, is_warning=False):
 		"""
 		For a universe what are the decisions associated with its error output
 		What are also some other sample universes associated with its error output
 		"""
+		error_info = self.get_error_info(is_warning)
+  
 		print(f'{bcolors.OKGREEN}======== {unum} Code Decisions ========{bcolors.OKGREEN}')
-		for lines, other_unums in self.unum_shared_lines[unum].items():
-			decision = self.lines_to_decisions[lines]
+		for lines, other_unums in error_info.unum_shared_lines[unum].items():
+			decision = error_info.lines_to_decisions[lines]
 			print(f'{bcolors.OKBLUE}====== Code ======{bcolors.OKBLUE}')
 			print(lines)
 			print(f'{bcolors.OKGREEN}====== Decisions ======{bcolors.OKGREEN}')
@@ -323,9 +386,9 @@ def merge_error(dir_log, lang="r"):
 		logs = status.index.tolist()
 
 	# previous merged error
-	if os.path.exists(fn):
-		df = pd.read_csv(fn, na_filter=False)
-		merged = df['uid'].tolist()
+	# if os.path.exists(fn):
+	# 	df = pd.read_csv(fn, na_filter=False)
+	# 	merged = df['uid'].tolist()
 
 	# these are the new logs
 	remain = set(logs).difference(set(merged))
@@ -358,10 +421,11 @@ def cluster_error(df, lang="r"):
 		pt_skip = r'^warning message'
 		pt_err = r'^error'
 		pt_halt = r'^execution halted'
+	
 	else:
-		pt_skip = r'^warning'
-		pt_err = r'^(traceback (most recent call last):|\s+)'
-		pt_halt = r'^(\w+error|\w*exception)'
+		pt_skip = '^(/[a-zA-Z0-9._-]+)+[a-zA-Z0-9._-]*.py:[0-9]+:\s?[a-zA-z]*Warning'
+		pt_err = r'^traceback \(most recent call last\):'
+		pt_halt = '^([\w.]+Error|[\w*.]exception)'
   
 	# row-wise function
 	def process_row (row):

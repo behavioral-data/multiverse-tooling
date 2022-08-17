@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en" class="h-100">
+
+<head>
+    <meta charset="utf8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GumTree</title>
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <link type="text/css" href="/dist/monaco.css" rel="stylesheet" />
+    <link type="text/css" href="/dist/prism.css" rel="stylesheet" />
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/9000.0.1/prism.min.js"
+        integrity="sha512-UOoJElONeUNzQbbKQbjldDf9MwOHqxNz49NNJJ1d90yp+X9edsHyJoAs6O4K19CZGaIdjI5ohK+O2y5lBTW6uQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+
+<body class="h-100" style="overflow: hidden;">
+    <div class="container-fluid h-100">
+
+        <div class="row">
+            <div class="col-3 vh-100">
+                <div style="text-align: center;">
+                    <h4>Aggregate Errors</h4>
+                </div>
+                <div class="list-group list-group-flush overflow-auto" id="list-tab" role="tablist"
+                    style="overflow-y: scroll; height: 95%; overflow-x: hidden;">
+                        <a class="list-group-item list-group-item-action" id="list-1-list" 
+                        href="#list-1" role="tab">
+                            <div class="d-flex w-100 justify-content-between">
+                                <h5 class="mb-1">No Errors Found</h5>
+                            </div>                            
+                        </a>
+                </div>
+            </div>
+            <div class="col-9 vh-100">
+                <div class="row">
+                    <div class="col">
+                        <div class="col">
+                            <div class="toast" role="alert" aria-live="assertive" aria-atomic="true"
+                                data-autohide="true" style="width: 100%; position: relative; top: 0; left: 0;">
+                                <div class="toast-body" id="toast-message" style="width: 100%;">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="btn-toolbar justify-content-end">
+                            <div class="btn-group mr-2" role="group" aria-label="Controls">
+                                <button type="button" class="btn btn-default btn-primary toggle-mode"
+                                    onclick="location.href='/warnings'">View Aggregate Warnings</button>
+                                <form method="POST" action="/save-editor">
+                                    <button type="button" class="btn btn-default btn-primary"
+                                        onClick="sendDataToBackendAjax(event)">Save</button>
+                                </form>
+                            </div>
+                            <div class="btn-group mr-2">
+                                <button class="btn btn-primary" id="legend" data-bs-container="body"
+                                    data-bs-toggle="popover" data-bs-placement="bottom" data-bs-html="true"
+                                    data-bs-content="<span class=&quot;deleted&quot;>&nbsp;&nbsp;</span> deleted<br><span class=&quot;inserted&quot;>&nbsp;&nbsp;</span> inserted<br><span class=&quot;moved&quot;>&nbsp;&nbsp;</span> moved<br><span class=&quot;updated&quot;>&nbsp;&nbsp;</span> updated<br>">
+                                    Legend</button>
+                                <!-- <button
+                                    class="btn btn-primary btn-sm" id="shortcuts" data-bs-toggle="popover"
+                                    data-bs-placement="bottom" data-bs-html="true"
+                                    data-bs-content="<b>q</b> quit<br><b>l</b> list<br><b>t</b> top<br><b>b</b> bottom">Shortcuts</button> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-content h-100" id="nav-tabContent" style="overflow: hidden;">
+                    <div class="tab-pane h-100" id="list-1" role="tabpanel">
+                    <div style="text-align:center; position: absolute; margin:0; top: 50%; left: 50%; transform: translateY(-50%);"> <h3>No Errors Found</h3></div>
+                   </div>   
+                   </div>
+                </div>
+            </div>
+            <script type="text/javascript" src="/web/monaco-editor/min/vs/loader.js"></script>
+            <script type="text/javascript" src="/dist/shortcuts.js"></script>
+            <script type="text/javascript" src="/dist/prism.js"></script>
+            <script type="text/javascript" src="load_error_info.js"></script>
+            <script>
+                $(document).ready(function () {
+                    $(".toggle-mode").click(function () {
+                        var left = $("#sidebar-left"),
+                            right = $("#sidebar-right");
+                        left.toggleClass("collapsed");
+                        right.toggleClass("collapsed");
+
+                        var elem = document.getElementById("button-toggle");
+                        if (elem.innerText == "View Mode") elem.innerText = "Edit Mode";
+                        else elem.innerText = "View Mode";
+                        return false;
+                    });
+                });
+                $('#list-tab a').on('click', function (e) {
+                    e.preventDefault()
+                    $(this).tab('show')
+                })
+
+                $(document).ready(function () {
+                    $('a.universe-group-item').click(function (e) {
+                        e.preventDefault()
+                        $(this).tab('show')
+                    });
+                });
+                $(document).ready(function () {
+
+                $('.popover-dismiss').popover({
+                    trigger: 'focus'
+                });
+
+                });
+            </script>
+</body>
+
+</html>

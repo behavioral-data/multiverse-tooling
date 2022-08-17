@@ -27,7 +27,7 @@
         <div class="row">
             <div class="col-3 vh-100">
                 <div style="text-align: center;">
-                    <h4>Aggregate Errors</h4>
+                    <h4>Aggregate Warnings</h4>
                 </div>
                 <div class="list-group list-group-flush overflow-auto" id="list-tab" role="tablist"
                     style="overflow-y: scroll; height: 95%; overflow-x: hidden;">
@@ -64,7 +64,7 @@
                         <div class="btn-toolbar justify-content-end">
                             <div class="btn-group mr-2" role="group" aria-label="Controls">
                                 <button type="button" class="btn btn-default btn-primary toggle-mode"
-                                    onclick="location.href='/warnings'">View Aggregate Warnings</button>
+                                    onclick="location.href='/'">View Aggregate Errors</button>
                                 <form method="POST" action="/save-editor">
                                     <button type="button" class="btn btn-default btn-primary"
                                         onClick="sendDataToBackendAjax(event)">Save</button>
@@ -96,7 +96,7 @@
                                 
                                 <pre style="white-space: pre-wrap; max-height: 90%; overflow: scroll; font-size: 0.9em"><code class="language-{{lang}}">{{error["error_msg"]}}</code> </pre>
                             </div>
-                            <h5 style="width: 100%;"">Decisions and Options that Isolate this Error</h5>
+                            <h5 style="width: 100%;"">Decisions and Options that Isolate this Warning</h5>
                             <div class="d-flex justify-content-start align-items-start m-2" style="height: 10%; flex-wrap: wrap; overflow: scroll;"> 
                                 
                                 
