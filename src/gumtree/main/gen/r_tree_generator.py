@@ -18,7 +18,7 @@ RULES_FILE = osp.join(TREE_SITTER_DIR, 'rules.yml')
 
 
 Language.build_library(BUILD_DIR,
-                       [osp.join(TREE_SITTER_DIR, 'tree-sitter-r-template')]
+                       [osp.join(TREE_SITTER_DIR, 'tree-sitter-r')]
 )
 EMPTY_CONFIG = {'flattened': ["string"], 'aliased': {}, 'ignored': []}
 

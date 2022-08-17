@@ -34,6 +34,11 @@ def save_editor():
     return jsonify({'result': 'OK', 'returnText': ret_text})  
 
 
+@app_diff.route('/old_universe')
+def old_universe():
+    diff_view: TemplateDiffView = app_diff.diff_view
+    return diff_view.template_diff.src_code
+
 @app_diff.route('/new_universe')
 def new_universe():
     diff_view: TemplateDiffView = app_diff.diff_view

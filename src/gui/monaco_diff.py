@@ -5,8 +5,7 @@ import os.path as osp
 from src.gumtree.main.client.boba_template_diff import TemplateDiff
 from src.gumtree.main.trees.tree import Tree
 from src.gumtree.main.client.template_builder import CodePos
-
-from src.gumtree.main.trees.tree_chunk import MappedBobaVar, OffsetsFromBobaVar
+from src.gumtree.main.trees.tree_chunk import MappedBobaVar, OffsetsFromBobaVar, TreeChunk
 
 
 class TemplateDiffView:
@@ -21,14 +20,16 @@ class TemplateDiffView:
         self.new_template_i_code_pos: CodePos = self.template_diff.new_template_i_code_pos
         
     def get_all_config(self):
-        return ('config = {{ file: "{}", newUniverse: {}, '
+        return ('config = {{ file: "{}", oldUniverse: {}, newUniverse: {}, '
                 'oldTemplate: {}, newTemplate: {}, '
-                'templateMappings: {}, newUniTemplateMappings: {}, '
+                'templateMappings: {}, oldUniTemplateMappings: {}, newUniTemplateMappings: {}, '
                 'editor: {}}};'.format('test.py', 
+                                       self.get_old_universe_js_config(),
                                        self.get_new_universe_js_config(),
                                        self.get_old_template_js_config(),
                                        self.get_new_template_js_config(),
                                        self.get_templates_mapped_js_config(),
+                                       self.get_old_universe_old_template_mapped_js_config(),
                                        self.get_new_universe_new_template_mapped_js_config(),
                                        '{url: "/editor"}'))
     
@@ -55,6 +56,15 @@ class TemplateDiffView:
                 ret.append(mbv) 
         return ret
     
+    def get_old_universe_mapped_boba_nodes_from_spec_tree(self, t: Tree) -> List[TreeChunk]:
+        choice_spec_tree, child_url = self.get_boba_var_choice_tree_from_child(t)
+        boba_var = self.template_diff.template_spec_tree_to_boba_choice_var[choice_spec_tree]
+        ret = [] 
+        for tc in self.template_diff.tc:
+            if tc.boba_var == boba_var and tc.boba_var_code_str != '':
+                ret.append(tc) 
+        return ret
+    
     def get_new_universe_js_config(self):
         c = self.template_diff.classifier
         c_spec = self.template_diff.spec_classifier
@@ -72,6 +82,27 @@ class TemplateDiffView:
                 self.append_range(b, t, kind="updated")
             if t in c.get_inserted_dsts():
                 self.append_range(b, t, kind="inserted")
+        b.append("],")
+        b.append("}")
+        return " ".join(b)
+    
+    def get_old_universe_js_config(self):
+        c = self.template_diff.classifier
+        c_spec = self.template_diff.spec_classifier
+
+        b: List[str] = []
+        b.append("{")
+        b.append("url:")
+        b.append('"/old_universe",')
+        b.append("ranges: [")
+
+        for t in self.template_diff.diff.src.root.pre_order():
+            if t in c.get_moved_srcs():
+                self.append_range(b, t, kind="moved")
+            if t in c.get_updated_srcs():
+                self.append_range(b, t, kind="updated")
+            if t in c.get_deleted_srcs():
+                self.append_range(b, t, kind="deleted")
         b.append("],")
         b.append("}")
         return " ".join(b)
@@ -216,6 +247,30 @@ class TemplateDiffView:
                                                         t.end_pos + offsets[1]))
         b.append("]")
         return " ".join(b)
+    
+    def get_old_universe_old_template_mapped_js_config(self):
+        c = self.template_diff.classifier
+        c_spec = self.template_diff.spec_classifier
+        b = ["["]
+        for t in self.template_diff.spec_diff.src.root.pre_order():
+            if c_spec.changed_src_tree(t):
+                tcs = self.get_old_universe_mapped_boba_nodes_from_spec_tree(t)
+                for tc in tcs:
+                    b.append("[{}, {}, {}, {}],".format(tc.boba_var_start_pos,
+                                                        tc.boba_var_end_pos,
+                                                        t.pos,
+                                                        t.end_pos))
+                        
+        for t in self.template_diff.diff.src.root.pre_order():
+            if c.changed_src_tree(t):
+                offsets = self.get_offset(t, self.template_code_pos, self.template_diff.old_u_t_diff)
+                if offsets is not None:
+                    b.append("[{}, {}, {}, {}],".format(t.pos,
+                                                        t.end_pos,
+                                                        t.pos + offsets[0],
+                                                        t.end_pos + offsets[1]))
+        b.append("]")
+        return " ".join(b) 
                 
             
     def append_range(self, b: List[str], t: Tree, kind: str, offset: int=None, offset_end: int=None):
@@ -259,7 +314,7 @@ if __name__ == "__main__":
     
     # tdv = main_helper('/projects/bdata/kenqgu/Research/MultiverseProject/MultiverseTooling/multiverse-tooling/data/hurricane/multiverse/code/universe_5.R')
     # tdv = main_helper('/projects/bdata/kenqgu/Research/MultiverseProject/MultiverseTooling/multiverse-tooling/data/fertility/multiverse/code/universe_3.py')
-    tdv = main_helper('/projects/bdata/kenqgu/Research/MultiverseProject/MultiverseTooling/multiverse-tooling/data/hurricane_debug/multiverse/code/universe_3.R')
+    tdv = main_helper('/Users/qikungu/PythonProjects/MultiverseTooling/debugging_evaluation/reading/r/multiverse/code/universe_2.R')
     # tdv = main_helper('/projects/bdata/kenqgu/Research/MultiverseProject/MultiverseTooling/multiverse-tooling/data/playing_around/multiverse/code/universe_3.R')
     # tdv = main_helper('/projects/bdata/kenqgu/Research/MultiverseProject/MultiverseTooling/multiverse-tooling/data/playing_around_r/multiverse/code/universe_10.R')
     # tdv = main_helper('/projects/bdata/kenqgu/Research/MultiverseProject/MultiverseTooling/multiverse-tooling/data/playing_around_python/multiverse/code/universe_9.py')

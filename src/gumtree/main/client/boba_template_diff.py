@@ -65,13 +65,13 @@ class TemplateDiff(LineDiff):
 		self.diff: Diff = self.get_diff()
 		blocks = get_universe_blocks_from_template_blocks(self.boba_parser.code_parser.blocks,
 														  self.boba_parser.blocks_code[self.universe_num - 1])
-		tc = get_tree_chunks_from_blocks(self.diff.src.root, 
+		self.tc = get_tree_chunks_from_blocks(self.diff.src.root, 
 										 blocks,
 										 decision_dict)
-		mapped_boba_vars, unmapped = get_tree_chunks_from_mapping(self.diff.mappings, tc)
+		mapped_boba_vars, unmapped = get_tree_chunks_from_mapping(self.diff.mappings, self.tc)
 		self.new_intermediary_code, self.new_boba_var_pos = chunk_code_from_pos(self.dst_code, [('{{' + mapped_var.boba_var + '}}', mapped_var) for mapped_var in mapped_boba_vars])
 		self.mapped_boba_vars = mapped_boba_vars
-		self.old_u_t_diff = OffsetsFromBobaVar.init_from_tree_chunks(tc)
+		self.old_u_t_diff = OffsetsFromBobaVar.init_from_tree_chunks(self.tc)
 		self.new_u_t_diff = OffsetsFromBobaVar.init_from_mapped_vars(self.dst_code, mapped_boba_vars)
 		
 		u_code_blocks: List[BlockCode] = clean_code_blocks(self.boba_parser.blocks_code[self.universe_num - 1])

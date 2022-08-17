@@ -201,6 +201,7 @@ def get_tree_chunks(src: Tree,
                         cur_iter_ind -= 1
                         last_boba_t = cur_trees[-1] if cur_trees else last_boba_t
                     else:
+                        boba_var_start_pos = len(cur_chunk.code) + cur_tree_pos
                         cur_tree_pos = len(cur_chunk.code) + cur_tree_pos + len(boba_var_code_str)
                         boba_trees = []
                         while (cur_iter_ind + 1 < len(pre_order_iter)) and not(t.is_leaf() and pre_order_iter[cur_iter_ind + 1].pos >= cur_tree_pos):
@@ -213,7 +214,9 @@ def get_tree_chunks(src: Tree,
                                                      cur_trees, 
                                                      boba_trees,
                                                      cur_chunk.variable,
-                                                     boba_var_code_str
+                                                     boba_var_code_str,
+                                                     boba_var_start_pos=boba_var_start_pos,
+                                                     boba_var_end_pos=boba_var_start_pos + len(boba_var_code_str)
                                                     ))
                 cur_trees = []
                 chunks_ind += 1
@@ -229,7 +232,9 @@ class TreeChunk:
                  trees: List[Tree], 
                  boba_var_trees: List[Tree]=None,
                  boba_var: str=None,
-                 boba_var_code_str: str=None):
+                 boba_var_code_str: str=None,
+                 boba_var_start_pos: int=None,
+                 boba_var_end_pos: int=None):
         self._trees = []
         self._boba_var_trees = []
         self.code_str = code_str
@@ -239,6 +244,8 @@ class TreeChunk:
         self.boba_var_trees: List[Tree] = boba_var_trees if boba_var_trees is not None else []
         self.all_trees = self.trees + self.boba_var_trees
         self.all_code_str = self.code_str + self.boba_var_code_str
+        self.boba_var_start_pos = boba_var_start_pos
+        self.boba_var_end_pos = boba_var_end_pos
        
     def __repr__(self):
         return f'TreeChunk(boba_var={self.boba_var}, option={self.boba_var_code_str}, trees={self.trees}, boba_var_trees={self.boba_var_trees})'

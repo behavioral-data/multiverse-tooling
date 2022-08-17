@@ -26,13 +26,22 @@
 	overflow-x: hidden; /* necessary to hide collapsed sidebar */
 }
 
-#sidebar-left.collapsed {
+#old-universe.collapsed {
+	margin-left: -33.334%;
+}
+
+#new-universe.collapsed {
 	margin-left: -33.334%;
 			/* same width as sidebar */
 }
 
-#sidebar-right.collapsed {
-	margin-right: -25%;
+#new-template.collapsed {
+	margin-right: -33.33%;
+	/* same width as sidebar */
+}
+
+#editor-right.collapsed {
+	margin-right: -33.33%;
 	/* same width as sidebar */
 }
 

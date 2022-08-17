@@ -116,6 +116,9 @@ require.config({ paths: { 'vs': '/web/monaco-editor/min/vs' }});
 require(['vs/editor/editor.main'], function() {
     Promise.all(
         [
+            fetch(config.oldUniverse.url)
+                .then(result => result.text())
+                .then(text => monaco.editor.create(document.getElementById('old-universe-container'), getEditorOptions(text))),
             fetch(config.newUniverse.url)
                 .then(result => result.text())
                 .then(text => monaco.editor.create(document.getElementById('new-universe-container'), getEditorOptions(text))),
@@ -129,7 +132,8 @@ require(['vs/editor/editor.main'], function() {
                 .then(result => result.text())
                 .then(text => monaco.editor.create(document.getElementById('editor-container'), getEditorEditableOptions(text)))
         ]
-    ).then(([newUniverseEditor, oldTemplateEditor, newTemplateEditor, editableEditor]) => {
+    ).then(([oldUniverseEditor, newUniverseEditor, oldTemplateEditor, newTemplateEditor, editableEditor]) => {
+        installResizeWatcher(newUniverseContainer, oldUniverseEditor.layout.bind(oldUniverseEditor), 15)
         installResizeWatcher(newUniverseContainer, newUniverseEditor.layout.bind(newUniverseEditor), 15)
         installResizeWatcher(oldTemplateContainer, oldTemplateEditor.layout.bind(oldTemplateEditor), 15)
         installResizeWatcher(newTemplateContainer, newTemplateEditor.layout.bind(newTemplateEditor), 15)
@@ -146,7 +150,37 @@ require(['vs/editor/editor.main'], function() {
                 monaco.Range.fromPositions(newUniverseEditor.getModel().getPositionAt(mapping[0]), newUniverseEditor.getModel().getPositionAt(mapping[1])),
                 monaco.Range.fromPositions(newTemplateEditor.getModel().getPositionAt(mapping[2]), newTemplateEditor.getModel().getPositionAt(mapping[3]))
             ])
+
+        config.oldUniTemplateMappings = config.oldUniTemplateMappings.map(mapping =>
+            [
+                monaco.Range.fromPositions(oldUniverseEditor.getModel().getPositionAt(mapping[0]), oldUniverseEditor.getModel().getPositionAt(mapping[1])),
+                monaco.Range.fromPositions(oldTemplateEditor.getModel().getPositionAt(mapping[2]), oldTemplateEditor.getModel().getPositionAt(mapping[3]))
+            ])
         
+        oldUniverseEditor.onMouseDown((event) => {
+            const allDecorations = oldUniverseEditor.getModel().getDecorationsInRange(event.target.range, oldUniverseEditor.id, true)
+            if (allDecorations.length >= 1) {
+                let activatedRange = allDecorations[0].range;
+                if (allDecorations.length > 1)  {
+                    for (let i = 1; i < allDecorations.length; i = i + 1) {
+                        const candidateRange = allDecorations[i].range;
+                        if (activatedRange.containsRange(candidateRange))
+                            activatedRange = candidateRange;
+                    }
+                }
+                const mapping = config.oldUniTemplateMappings.find(mapping => mapping[0].containsRange(activatedRange))
+                oldTemplateEditor.revealRangeInCenter(mapping[1]);
+            }
+        });
+
+        const oldUniverseDecorations = config.oldUniverse.ranges.map(range => getDecoration(
+            range,
+            oldUniverseEditor.getModel().getPositionAt(range.from),
+            oldUniverseEditor.getModel().getPositionAt(range.to)
+        ));
+        oldUniverseEditor.deltaDecorations([], oldUniverseDecorations)
+
+
         const newUniverseDecorations = config.newUniverse.ranges.map(range => getDecoration(
             range,
             newUniverseEditor.getModel().getPositionAt(range.from),

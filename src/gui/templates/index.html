@@ -29,9 +29,11 @@
             <div class="col">
                 <div class="btn-toolbar justify-content-end">
                     <div class="btn-group mr-2" role="group" aria-label="Controls">
-                        <button type="button" class="btn btn-default btn-primary toggle-mode" id="button-toggle">View Mode</button>
+                        <button type="button" class="btn btn-default btn-success universe-mode" id="button-universe">Universe Mode</button>
+                        <button type="button" class="btn btn-default btn-secondary template-mode" id="button-template">Template Mode</button>
+                        <button type="button" class="btn btn-default btn-secondary edit-mode" id="button-edit">Edit Mode</button>
                         <form method="POST" action="/save-editor">
-                            <button type="button" class="btn btn-default btn-primary" onClick="sendDataToBackendAjax(event)">Save</button>
+                            <button type="button" class="btn btn-default btn-primary" id="button-save" onClick="sendDataToBackendAjax(event)" style="display: none;">Save</button>
                         </form>
                     </div>
                     <div class="btn-group mr-2">
@@ -54,20 +56,25 @@
 
         </div>
         <div class="row h-100" style="overflow: hidden;">
-            <div class="col-4 h-100 sidebar" id="sidebar-left">
-                <h5>{{new_universe_fname}}</h5>
+            <div class="col-4 h-100 sidebar" id="old-universe">
+                <h5 style="display:inline;">Old Universe </h5> <h6 style="display:inline;">(Read only)</h6>
+                <!-- <h5>{{new_universe_fname}}</h5> -->
+                <div id="old-universe-container" style="height: calc(100% - 100px); border:1px solid grey;"></div>
+            </div>
+            <div class="col-4 h-100 sidebar" id="new-universe">
+                <h5 style="display:inline;">{{new_universe_fname}}</h5> <h6 style="display:inline;">(Read only)</h6>
                 <div id="new-universe-container" style="height: calc(100% - 100px); border:1px solid grey;"></div>
             </div>
             <div class="col-4 h-100 content" id="old-template">
-                <h5>{{old_template_name}}</h5>
+                <h5 style="display:inline;">{{old_template_name}}</h5> <h6 style="display:inline;">(Read only)</h6>
                 <div id="old-template-container" style="height: calc(100% - 100px); border:1px solid grey;"></div>
             </div>
-            <div class="col-4 h-100 content" id="new-template">
-                <h5>{{new_template_name}}</h5>
+            <div class="col-4 h-100 content collapsed" id="new-template">
+                <h5 style="display:inline;">{{new_template_name}}</h5> <h6 style="display:inline;">(Read only)</h6>
                 <div id="new-template-container" style="height: calc(100% - 100px); border:1px solid grey;"></div>
             </div>
-            <div class="col-4 h-100 sidebar collapsed" id="sidebar-right">
-                <h5>Editor</h5>
+            <div class="col-4 h-100 sidebar collapsed" id="editor-right">
+                <h5 style="display:inline;">Editor</h5> <h6 style="display:inline;">(Editable, copy of new template)</h6>
                 <div id="editor-container" style="height: calc(100% - 100px); border:1px solid grey;"></div>
             </div>
         </div>
@@ -78,16 +85,73 @@
     <script type="text/javascript" src="/dist/shortcuts.js"></script>
     <script>
         $(document).ready(function () {
-            $(".toggle-mode").click(function () {
-                var left = $("#sidebar-left"),
-                    right = $("#sidebar-right");
-                left.toggleClass("collapsed");
-                right.toggleClass("collapsed");
+            $(".universe-mode").click(function () {
+                var old_universe = $("#old-universe"),
+                    new_universe = $("#new-universe");
+                    new_template = $('#new-template');
+                    editor_right =  $('#editor-right');
 
-                var elem = document.getElementById("button-toggle");
-                if (elem.innerText=="View Mode") elem.innerText = "Edit Mode";
-                else elem.innerText = "View Mode";
-                return false;
+                old_universe.removeClass("collapsed");
+                new_universe.removeClass("collapsed");
+                new_template.addClass("collapsed");
+                editor_right.addClass("collapsed");
+
+                var button_universe = $("#button-universe");
+                button_universe.removeClass("btn-secondary").addClass("btn-success");
+                var button_template = $("#button-template");
+                button_template.removeClass("btn-success").addClass("btn-secondary");
+                var button_edit = $("#button-edit");
+                button_edit.removeClass("btn-success").addClass("btn-secondary");
+
+                var button_save = document.getElementById("button-save");
+                button_save.style.display = "none";
+                // if (elem.innerText=="View Mode") elem.innerText = "Edit Mode";
+                // else elem.innerText = "View Mode";
+                // return false;
+            });
+
+            $(".template-mode").click(function () {
+                var old_universe = $("#old-universe"),
+                    new_universe = $("#new-universe");
+                    new_template = $('#new-template');
+                    editor_right =  $('#editor-right');
+
+                old_universe.addClass("collapsed");
+                new_universe.removeClass("collapsed");
+                new_template.removeClass("collapsed");
+                editor_right.addClass("collapsed");
+
+                var button_universe = $("#button-universe");
+                button_universe.removeClass("btn-success").addClass("btn-secondary");
+                var button_template = $("#button-template");
+                button_template.removeClass("btn-secondary").addClass("btn-success");
+                var button_edit = $("#button-edit");
+                button_edit.removeClass("btn-success").addClass("btn-secondary");
+
+                var button_save = document.getElementById("button-save");
+                button_save.style.display = "none";
+            });
+
+            $(".edit-mode").click(function () {
+                var old_universe = $("#old-universe"),
+                    new_universe = $("#new-universe");
+                    new_template = $('#new-template');
+                    editor_right =  $('#editor-right');
+
+                old_universe.addClass("collapsed");
+                new_universe.addClass("collapsed");
+                new_template.removeClass("collapsed");
+                editor_right.removeClass("collapsed");
+
+                var button_universe = $("#button-universe");
+                button_universe.removeClass("btn-success").addClass("btn-secondary");
+                var button_template = $("#button-template");
+                button_template.removeClass("btn-success").addClass("btn-secondary");
+                var button_edit = $("#button-edit");
+                button_edit.removeClass("btn-secondary").addClass("btn-success");
+
+                var button_save = document.getElementById("button-save");
+                button_save.style.display = "block";
             });
         });
 	</script>
