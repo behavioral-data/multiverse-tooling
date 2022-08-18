@@ -57,7 +57,7 @@ def decisions_set_unique(fr_set_tup, orig_decision_dict):
 
 def get_decs(summary_df) -> Dict[str, list]:
 	return {c : frozenset(summary_df[c].unique())
-			for c in summary_df.columns[2:]}
+			for c in summary_df.columns[1:]}
 	
 def set_universe_as_index(summary_df):
 	summary_df['universe_num'] = summary_df['Filename'].apply(lambda x: int(x.split('_')[-1].split('.')[0]))
@@ -238,7 +238,7 @@ class DebugMultiverse:
 				df_row = self.summary_df.loc[unum]
 				filename = osp.join(self.code_folder, df_row[0])
 				decs = [{"decision": dec, "option": opt} 
-						for dec, opt in df_row[2:].to_dict().items()]
+						for dec, opt in df_row[1:].to_dict().items()]
 				common_unums_jsons.append({
 					"decisions": decs,
 					"universe_path": filename,

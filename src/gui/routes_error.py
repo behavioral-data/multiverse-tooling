@@ -6,7 +6,6 @@ from flask import jsonify, render_template, request
 def index():
     errors = app_error_dashboard.aggr_error.return_json_errors(is_warning=False)
     lang = app_error_dashboard.aggr_error.lang.lang[0]
-    print(errors)
     if len(errors) == 0:
         return render_template('error_no_errors.html')
     else:
