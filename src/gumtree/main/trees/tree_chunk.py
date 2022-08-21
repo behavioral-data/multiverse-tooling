@@ -116,7 +116,7 @@ def get_tree_chunks_from_mapping(ms: MappingStore, tchunks: List[TreeChunk]):
     preorder_iter = IteratorHandler(ms.src.pre_order())
     cur_ind = 0
     for tc_ind, tc in enumerate(tchunks):
-        if tc.boba_var != '' and tc.boba_var != '_n':
+        if tc.boba_var != '':
             if len(tc.boba_var_trees) > 0: # has non empty boba var option
                 src_boba_var_trees = tc.boba_var_trees
                 i = 0
@@ -159,7 +159,7 @@ def get_tree_chunks_from_mapping(ms: MappingStore, tchunks: List[TreeChunk]):
                 dst_var_pos = dst_tree.end_pos + (src_var_pos - prev_tree_save.end_pos)
                 boba_vars.append(MappedBobaVar(tc.boba_var, tc.boba_var_code_str,
                                                code_start_pos=dst_var_pos,
-                                               code_end_pos=dst_var_pos))
+                                               code_end_pos=dst_var_pos + len(tc.boba_var_code_str)))
                 
         cur_ind += tc.all_code_len
     return boba_vars, unmapped

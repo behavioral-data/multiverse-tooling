@@ -69,6 +69,7 @@ class TemplateDiff(LineDiff):
 										 blocks,
 										 decision_dict)
 		mapped_boba_vars, unmapped = get_tree_chunks_from_mapping(self.diff.mappings, self.tc)
+		# mapped_boba_vars = [mbv for mbv in mapped_vars if not mbv.boba_var.startswith('_')]
 		self.new_intermediary_code, self.new_boba_var_pos = chunk_code_from_pos(self.dst_code, [('{{' + mapped_var.boba_var + '}}', mapped_var) for mapped_var in mapped_boba_vars])
 		self.mapped_boba_vars = mapped_boba_vars
 		self.old_u_t_diff = OffsetsFromBobaVar.init_from_tree_chunks(self.tc)
@@ -92,7 +93,7 @@ class TemplateDiff(LineDiff):
 		# generate new boba spec (need diff)
 		self.template_config_tree = get_tree(self.boba_parser.code_parser.raw_spec)
 		self.boba_var_to_tree_options = parse_boba_var_config_ast(self.template_config_tree)
-		self.var_tree_mappings, self.template_spec_tree_to_boba_choice_var = self.handle_boba_vars(self.dst_code, mapped_boba_vars)
+		self.var_tree_mappings, self.template_spec_tree_to_boba_choice_var = self.handle_boba_vars(self.dst_code, [mbv for mbv in mapped_boba_vars if not mbv.boba_var.startswith('_')])
 		self.new_raw_spec, _ = chunk_code_from_pos(self.boba_parser.code_parser.raw_spec, self.var_tree_mappings)
 		self.old_raw_spec = self.boba_parser.code_parser.raw_spec
 		self.spec_diff = self.get_spec_diff()
