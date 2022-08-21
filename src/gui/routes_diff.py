@@ -8,12 +8,14 @@ def index():
     if not hasattr(app_diff, 'diff_view') or app_diff.diff_view is None:
         return app_diff.send_static_file('monaco.html')
     diff_view: TemplateDiffView = app_diff.diff_view
-    univese_file_name = 'New ' + osp.basename(diff_view.dst_file)
+    old_universe_file_name = 'Old ' + osp.basename(diff_view.dst_file)
     template_file_name = osp.basename(diff_view.template_diff.boba_parser.fn_script)
     old_template_name = 'Old ' + template_file_name
+    new_univese_file_name = 'New ' + osp.basename(diff_view.dst_file)
     new_template_name = 'New ' + template_file_name
     return render_template('index.html', 
-                           new_universe_fname=univese_file_name,
+                           old_universe_fname=old_universe_file_name,
+                           new_universe_fname=new_univese_file_name,
                            old_template_name=old_template_name,
                            new_template_name=new_template_name,
                            js_config=diff_view.get_all_config())
@@ -22,7 +24,7 @@ def index():
 def save_editor():
     print(request.form)
     if not hasattr(app_diff, 'diff_view'):
-        print(f"Editor Text:\n{request.form.get('editor_text')}")
+        # print(f"Editor Text:\n{request.form.get('editor_text')}")
         ret_text = 'Testing so nothing is saved'
     else:
         diff_view: TemplateDiffView = app_diff.diff_view

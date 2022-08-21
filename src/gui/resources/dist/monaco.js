@@ -215,6 +215,7 @@ require(['vs/editor/editor.main'], function() {
         oldTemplateEditor.onMouseDown((event) => {
             const allDecorations = oldTemplateEditor.getModel().getDecorationsInRange(event.target.range, oldTemplateEditor.id, true)
                 .filter(decoration => decoration.options.className == "updated" || decoration.options.className == "moved");
+
             if (allDecorations.length >= 1) {
                 let activatedRange = allDecorations[0].range;
                 if (allDecorations.length > 1)  {
@@ -227,6 +228,21 @@ require(['vs/editor/editor.main'], function() {
                 const mapping = config.templateMappings.find(mapping => mapping[0].equalsRange(activatedRange))
                 newTemplateEditor.revealRangeInCenter(mapping[1]);
             }
+
+            const allDecorationsOldUniverse = oldTemplateEditor.getModel().getDecorationsInRange(event.target.range, oldTemplateEditor.id, true);
+            if (allDecorationsOldUniverse.length >= 1) {
+                let activatedRange = allDecorationsOldUniverse[0].range;
+                if (allDecorationsOldUniverse.length > 1)  {
+                    for (let i = 1; i < allDecorationsOldUniverse.length; i = i + 1) {
+                        const candidateRange = allDecorationsOldUniverse[i].range;
+                        if (activatedRange.containsRange(candidateRange))
+                            activatedRange = candidateRange;
+                    }
+                }
+                const mapping = config.oldUniTemplateMappings.find(mapping => mapping[1].equalsRange(activatedRange))
+                oldUniverseEditor.revealRangeInCenter(mapping[0]);
+            }
+
         });
 
         const newTemplateDecorations = config.newTemplate.ranges.map(range => getDecoration(  

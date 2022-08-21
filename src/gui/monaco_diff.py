@@ -76,7 +76,7 @@ class TemplateDiffView:
         b.append("ranges: [")
 
         for t in self.template_diff.diff.dst.root.pre_order():
-            if t in c.get_moved_dsts():
+            if t in c.get_moved_dsts() and t.tree_metrics.size > 1:
                 self.append_range(b, t, kind="moved")
             if t in c.get_updated_dsts():
                 self.append_range(b, t, kind="updated")
@@ -97,7 +97,7 @@ class TemplateDiffView:
         b.append("ranges: [")
 
         for t in self.template_diff.diff.src.root.pre_order():
-            if t in c.get_moved_srcs():
+            if t in c.get_moved_srcs() and t.tree_metrics.size > 1:
                 self.append_range(b, t, kind="moved")
             if t in c.get_updated_srcs():
                 self.append_range(b, t, kind="updated")
@@ -127,7 +127,7 @@ class TemplateDiffView:
         for t in self.template_diff.diff.dst.root.pre_order(): # if some are not mapped to boba nodes then it will be longer
             offsets = self.get_offset(t, self.new_template_u_code_pos, self.template_diff.new_u_t_diff)
             if offsets is not None:
-                if t in c.get_moved_dsts():
+                if t in c.get_moved_dsts() and t.tree_metrics.size > 1:
                     self.append_range(b, t, kind="moved",  offset=offsets[0], offset_end=offsets[1])
                 if t in c.get_updated_dsts():
                     self.append_range(b, t, kind="updated",  offset=offsets[0], offset_end=offsets[1])
@@ -187,7 +187,7 @@ class TemplateDiffView:
         for t in self.template_diff.diff.src.root.pre_order():
             offsets = self.get_offset(t, self.template_code_pos, self.template_diff.old_u_t_diff)
             if offsets is not None:
-                if t in c.get_moved_srcs():
+                if t in c.get_moved_srcs() and t.tree_metrics.size > 1:
                     self.append_range(b, t, kind="moved", offset=offsets[0], offset_end=offsets[1])
                 if t in c.get_updated_srcs():
                     self.append_range(b, t, kind="updated", offset=offsets[0], offset_end=offsets[1])
@@ -314,7 +314,7 @@ if __name__ == "__main__":
     
     # tdv = main_helper('/projects/bdata/kenqgu/Research/MultiverseProject/MultiverseTooling/multiverse-tooling/data/hurricane/multiverse/code/universe_5.R')
     # tdv = main_helper('/projects/bdata/kenqgu/Research/MultiverseProject/MultiverseTooling/multiverse-tooling/data/fertility/multiverse/code/universe_3.py')
-    tdv = main_helper('/Users/qikungu/PythonProjects/MultiverseTooling/debugging_evaluation/reading/r/multiverse/code/universe_2.R')
+    tdv = main_helper('/Users/qikungu/PythonProjects/MultiverseTooling/debugging_evaluation/final/hurricane_bug_3/multiverse/code/universe_8.R')
     # tdv = main_helper('/projects/bdata/kenqgu/Research/MultiverseProject/MultiverseTooling/multiverse-tooling/data/playing_around/multiverse/code/universe_3.R')
     # tdv = main_helper('/projects/bdata/kenqgu/Research/MultiverseProject/MultiverseTooling/multiverse-tooling/data/playing_around_r/multiverse/code/universe_10.R')
     # tdv = main_helper('/projects/bdata/kenqgu/Research/MultiverseProject/MultiverseTooling/multiverse-tooling/data/playing_around_python/multiverse/code/universe_9.py')
