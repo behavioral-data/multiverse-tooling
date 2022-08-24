@@ -283,14 +283,14 @@ function bootstrap_alert(elem, message, timeout) {
     }
   };
 
-function sendDataToBackendAjax(event) {
+function sendDataToBackendAjax(event, url_path) {
     
     // create own form in memory
     const formData = new FormData();
     var editorText = editor.getValue()
     // set values in this form
     formData.append("editor_text", editorText)
-    fetch("/save-editor", {
+    fetch(url_path, {
         method: "POST",
         body: formData
         //headers: {'Content-Type': 'application/json'},
@@ -306,7 +306,6 @@ function sendDataToBackendAjax(event) {
         $('.toast').toast("show")
         const toastbody = document.getElementById("toast-message")
         toastbody.textContent = data["returnText"]
-        console.log(data);
     })
     .catch((error) => {
         console.error('Error:', error);
@@ -314,5 +313,3 @@ function sendDataToBackendAjax(event) {
     
     event.preventDefault(); // don't send in normal way and don't reload page
 }
-
-

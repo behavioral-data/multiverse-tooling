@@ -76,7 +76,7 @@ class PythonPriorityTreeQueue(DefaultPriorityTreeQueue):
         priority = self.priority_calculator(t)
         # * temperorary custom code for Python, if want to include other languages need to generalize
         if self.minimum_priority == 0:
-            if priority < self.minimum_priority or t.node_type in ['.', ',', '=', '+', '\n'] :  
+            if priority < self.minimum_priority or t.node_type in ['.', ',', '=', '\n'] :  
                 return
         else:
             if priority < self.minimum_priority:

@@ -55,20 +55,6 @@
                             <div class="btn-group mr-2" role="group" aria-label="Controls">
                                 <button type="button" class="btn btn-default btn-primary toggle-mode"
                                     onclick="location.href='/warnings'">View Aggregate Warnings</button>
-                                <form method="POST" action="/save-editor">
-                                    <button type="button" class="btn btn-default btn-primary"
-                                        onClick="sendDataToBackendAjax(event)">Save</button>
-                                </form>
-                            </div>
-                            <div class="btn-group mr-2">
-                                <button class="btn btn-primary" id="legend" data-bs-container="body"
-                                    data-bs-toggle="popover" data-bs-placement="bottom" data-bs-html="true"
-                                    data-bs-content="<span class=&quot;deleted&quot;>&nbsp;&nbsp;</span> deleted<br><span class=&quot;inserted&quot;>&nbsp;&nbsp;</span> inserted<br><span class=&quot;moved&quot;>&nbsp;&nbsp;</span> moved<br><span class=&quot;updated&quot;>&nbsp;&nbsp;</span> updated<br>">
-                                    Legend</button>
-                                <!-- <button
-                                    class="btn btn-primary btn-sm" id="shortcuts" data-bs-toggle="popover"
-                                    data-bs-placement="bottom" data-bs-html="true"
-                                    data-bs-content="<b>q</b> quit<br><b>l</b> list<br><b>t</b> top<br><b>b</b> bottom">Shortcuts</button> -->
                             </div>
                         </div>
                     </div>

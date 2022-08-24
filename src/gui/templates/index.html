@@ -33,7 +33,10 @@
                         <button type="button" class="btn btn-default btn-secondary template-mode" id="button-template">Template Mode</button>
                         <button type="button" class="btn btn-default btn-secondary edit-mode" id="button-edit">Edit Mode</button>
                         <form method="POST" action="/save-editor">
-                            <button type="button" class="btn btn-default btn-primary" id="button-save" onClick="sendDataToBackendAjax(event)" style="display: none;">Save</button>
+                            <button type="button" class="btn btn-default btn-primary" id="button-save" onClick="sendDataToBackendAjax(event, '/save-editor')" style="display: none;">Save</button>
+                        </form>
+                        <form method="POST" action="/save-editor-compile">
+                            <button type="button" class="btn btn-default btn-primary" id="button-save-compile" onClick="sendDataToBackendAjax(event, '/save-editor-compile')" style="display: none;">Save and Compile</button>
                         </form>
                     </div>
                     <div class="btn-group mr-2">
@@ -105,6 +108,8 @@
 
                 var button_save = document.getElementById("button-save");
                 button_save.style.display = "none";
+                var button_save_and_compile = document.getElementById("button-save-compile");
+                button_save_and_compile.style.display = "none";
                 // if (elem.innerText=="View Mode") elem.innerText = "Edit Mode";
                 // else elem.innerText = "View Mode";
                 // return false;
@@ -130,6 +135,8 @@
 
                 var button_save = document.getElementById("button-save");
                 button_save.style.display = "none";
+                var button_save_and_compile = document.getElementById("button-save-compile");
+                button_save_and_compile.style.display = "none";
             });
 
             $(".edit-mode").click(function () {
@@ -151,7 +158,9 @@
                 button_edit.removeClass("btn-secondary").addClass("btn-success");
 
                 var button_save = document.getElementById("button-save");
+                var button_save_and_compile = document.getElementById("button-save-compile");
                 button_save.style.display = "block";
+                button_save_and_compile.style.display = "block";
             });
         });
 	</script>

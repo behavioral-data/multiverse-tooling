@@ -76,7 +76,7 @@ class TemplateDiffView:
         b.append("ranges: [")
 
         for t in self.template_diff.diff.dst.root.pre_order():
-            if t in c.get_moved_dsts() and t.tree_metrics.size > 1:
+            if t in c.get_moved_dsts():
                 self.append_range(b, t, kind="moved")
             if t in c.get_updated_dsts():
                 self.append_range(b, t, kind="updated")
@@ -97,7 +97,7 @@ class TemplateDiffView:
         b.append("ranges: [")
 
         for t in self.template_diff.diff.src.root.pre_order():
-            if t in c.get_moved_srcs() and t.tree_metrics.size > 1:
+            if t in c.get_moved_srcs():
                 self.append_range(b, t, kind="moved")
             if t in c.get_updated_srcs():
                 self.append_range(b, t, kind="updated")
@@ -127,7 +127,7 @@ class TemplateDiffView:
         for t in self.template_diff.diff.dst.root.pre_order(): # if some are not mapped to boba nodes then it will be longer
             offsets = self.get_offset(t, self.new_template_u_code_pos, self.template_diff.new_u_t_diff)
             if offsets is not None:
-                if t in c.get_moved_dsts() and t.tree_metrics.size > 1:
+                if t in c.get_moved_dsts():
                     self.append_range(b, t, kind="moved",  offset=offsets[0], offset_end=offsets[1])
                 if t in c.get_updated_dsts():
                     self.append_range(b, t, kind="updated",  offset=offsets[0], offset_end=offsets[1])
@@ -187,7 +187,7 @@ class TemplateDiffView:
         for t in self.template_diff.diff.src.root.pre_order():
             offsets = self.get_offset(t, self.template_code_pos, self.template_diff.old_u_t_diff)
             if offsets is not None:
-                if t in c.get_moved_srcs() and t.tree_metrics.size > 1:
+                if t in c.get_moved_srcs():
                     self.append_range(b, t, kind="moved", offset=offsets[0], offset_end=offsets[1])
                 if t in c.get_updated_srcs():
                     self.append_range(b, t, kind="updated", offset=offsets[0], offset_end=offsets[1])

@@ -2,6 +2,7 @@ from . import app_diff, app_error_dashboard
 from flask import jsonify, render_template, request
 import os.path as osp
 from src.gui.monaco_diff import TemplateDiffView
+from src.boba.parser import Parser
 
 @app_diff.route('/')
 def index():
@@ -22,7 +23,6 @@ def index():
     
 @app_diff.route('/save-editor', methods=['GET', 'POST'])
 def save_editor():
-    print(request.form)
     if not hasattr(app_diff, 'diff_view'):
         # print(f"Editor Text:\n{request.form.get('editor_text')}")
         ret_text = 'Testing so nothing is saved'
@@ -33,6 +33,24 @@ def save_editor():
             f.write(request.form.get('editor_text'))
         ret_text = 'Saved new template to ' + save_path
             
+    return jsonify({'result': 'OK', 'returnText': ret_text})  
+
+
+@app_diff.route('/save-editor-compile', methods=['GET', 'POST'])
+def save_editor_and_compile():
+    diff_view: TemplateDiffView = app_diff.diff_view
+    save_path = diff_view.template_diff.boba_parser.fn_script
+    with open(save_path, 'w') as f:
+        f.write(request.form.get('editor_text'))
+    ret_text = 'Saved new template to ' + save_path
+    
+    ps = Parser(save_path, osp.dirname(save_path))
+    ps.main_wo_warning()
+    ex = """Finished compiling muiltiverse. To execute the multiverse, run the following commands:
+    boba run --all
+    """.format(osp.join(osp.dirname(save_path), 'multiverse'))
+    
+    ret_text = ret_text +'\n' + ex
     return jsonify({'result': 'OK', 'returnText': ret_text})  
 
 

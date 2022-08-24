@@ -536,3 +536,11 @@ class Parser:
         if verbose:
             self._print_summary()
         self._save_parser()
+
+    def main_wo_warning(self, verbose=True):
+        self._code_gen()
+        self._write_csv()
+        self._write_server_config()
+        if verbose:
+            self._print_summary()
+        self._save_parser()

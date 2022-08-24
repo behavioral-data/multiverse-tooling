@@ -3,8 +3,6 @@ import json
 from typing import Union
 from os.path import dirname, abspath, join, exists
 from src.ast_viz import viz_code
-from svglib.svglib import svg2rlg
-from reportlab.graphics import renderPDF
 from src.boba.parser import Parser
 import pickle 
 

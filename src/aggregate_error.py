@@ -263,7 +263,7 @@ class DebugMultiverse:
 					"common_universes": common_unums_jsons,
 					"number_affected": number_affected
 				})
-		errors = sorted(errors, key=lambda x: x['number_affected'], reverse=True)
+		errors = sorted(errors, key=lambda x: int(x['number_affected'].split()[0]), reverse=True)
 		return errors + no_errors
 	
 	@property
@@ -366,6 +366,8 @@ def get_min_decisions(summary_df: pd.DataFrame):
 		to_run[row.index.values[0]] = {c: row[c].values[0] for c in row.columns[2:]}
 		cols = [(c, copy_df[c].nunique()) 
 				for c in copy_df.columns[2:] if copy_df[c].nunique() > 1]
+		if len(cols) == 0:
+			break
 		max_col = sorted(cols, key=lambda x: x[1])[-1][0]
 		for col, v in decision_options_dict.items():
 			v.discard(row[col].values[0])  
@@ -475,7 +477,7 @@ def cluster_error(df, lang="r"):
 		
 if __name__ == '__main__':
 	from os.path import join
-	MULTIVERSE_FOLDER = "/projects/bdata/kenqgu/Research/MultiverseProject/MultiverseTooling/multiverse-tooling/exploration/hurricane/boba_multiverse2"
+	MULTIVERSE_FOLDER = "/Users/qikungu/PythonProjects/MultiverseTooling/debugging_evaluation/final/hurricane/hurricane_r/hurricane_bug_5"
 	LOG_FOLDER = join(MULTIVERSE_FOLDER, 'multiverse', 'boba_logs')
 	SUM_DF_PATH = join(MULTIVERSE_FOLDER, 'multiverse', 'summary.csv')
 	
