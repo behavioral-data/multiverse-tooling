@@ -1,6 +1,9 @@
 # Boba
 
-This document outlines the rules for the available syntax in boba.
+Boba has a domain specific language (Boba DSL) for writing multiverse specifications.
+Boba comes with a command line tool to parse your DSL specification and generate universe scripts, execute all scripts with a single command.
+
+This document outlines the rules for the available syntax in boba and basic commands. 
 
 ## Script Template
 Script template is an annotated script that will be used as the template to
