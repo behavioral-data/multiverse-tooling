@@ -49,6 +49,11 @@ placeholder variable can take up:
   ]
 }
 ```
+To compile the script, we run
+
+```
+boba compile -s template.py
+```
 
 Now, calling the tool with the file path to your script and JSON will output 3
 python scripts. Each script is a universe where you choose a different cutoff

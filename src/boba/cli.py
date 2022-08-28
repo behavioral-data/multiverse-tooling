@@ -92,7 +92,7 @@ def run(folder, run_all, num, thru, jobs, batch_size, cover):
         if num > num_universes or thru > num_universes:
             print_help(f'There are only {num_universes} universes.')
             
-    if cover_check:
+    if cover:
         min_decs = get_min_decisions(df)
         print(f"Running minimum universes, {len(min_decs)} of {len(df)}")
         br = BobaRun(folder, jobs, batch_size)

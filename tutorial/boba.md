@@ -1,4 +1,4 @@
-# Boba Specification Rules
+# Boba
 
 This document outlines the rules for the available syntax in boba.
 
@@ -103,3 +103,52 @@ invoked. This field is optional.
 2. `after_execute` is a string of a single-line bash script. it will be 
 executed every time after executing all universes, when `execute.sh` is invoked.
 This field is optional.
+
+
+## Boba Project Folder Layout
+ ```
+ boba_project_folder
+ ┣ 🟧 multiverse
+ ┃ ┣ 🟦 boba_logs
+ ┃ ┃ ┣ log_1.txt
+ ┃ ┃ ┣ log_2.txt
+ ┃ ┃ ┣ log_3.txt
+ ┃ ┃ ┣ log_4.txt
+ ┃ ┃ ┣ log_5.txt
+ ┃ ┃ ┣ log_6.txt
+ ┃ ┃ ┗ logs.csv
+ ┃ ┣ 🟧 code
+ ┃ ┃ ┣ universe_1.py
+ ┃ ┃ ┣ universe_2.py
+ ┃ ┃ ┣ universe_3.py
+ ┃ ┃ ┣ universe_4.py
+ ┃ ┃ ┣ universe_5.py
+ ┃ ┃ ┗ universe_6.py
+ ┃ ┣ lang.json
+ ┃ ┣ overview.json
+ ┃ ┣ post_exe.sh
+ ┃ ┣ pre_exe.sh
+ ┃ ┗ 🟧 summary.csv
+ ┣ 🟩 data.csv
+ ┗ 🟩 template.py
+ ```
+As a multiverse involves many files, it is beneficial to go over the folder structure.
+Before running anything there should be a template file (`template.py`) in which the multiverse is built from and potentially a dataset file (`dataset.csv`). These are shown in 🟩.
+
+We run the following command to compile our template file into universes. 
+```
+boba compile -s template.py 
+```
+This command creates the `multiverse` folder which contains a `code` folder containing each generated analysis script and some additional metadata. The `summary.csv` that is generated contains each universe and the instantiated decision options that make up that universe. These are shown in 🟧.
+
+After compilation we can choose to run the multiverse. In the boba_project_folder we can run all universes with
+```
+boba run --all
+```
+As universes are ran there stdout and stderr outputs are saved in the `boba_logs` folder which is shown in 🟦.
+
+We can also run individual universes with
+```
+boba run 4
+```
+which will run universe #4.
