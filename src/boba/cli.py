@@ -66,8 +66,8 @@ def print_help(err=''):
 @click.option('--batch_size', default=0, help='The approximate number of universes a processor will run in a row.')
 @click.option('--dir', 'folder', help='Multiverse directory',
               default='./multiverse', show_default=True)
-@click.option('--cover_check', is_flag=True, show_default=True, default=False, help="Whether to run the min cover as a sanity check")
-def run(folder, run_all, num, thru, jobs, batch_size, cover_check):
+@click.option('--cover', is_flag=True, show_default=True, default=False, help="Whether to run the min cover as a sanity check")
+def run(folder, run_all, num, thru, jobs, batch_size, cover):
     """ Execute the generated universe scripts.
 
     Run all universes: boba run --all
@@ -82,7 +82,7 @@ def run(folder, run_all, num, thru, jobs, batch_size, cover_check):
     df = pd.read_csv(folder + '/summary.csv')
     num_universes = df.shape[0]
 
-    if not run_all and not cover_check:
+    if not run_all and not cover:
         if thru == -1:
             thru = num
         if num < 1:
@@ -96,8 +96,8 @@ def run(folder, run_all, num, thru, jobs, batch_size, cover_check):
         min_decs = get_min_decisions(df)
         print(f"Running minimum universes, {len(min_decs)} of {len(df)}")
         br = BobaRun(folder, jobs, batch_size)
-        for universe_num in min_decs.keys():
-            br.run_from_cli(False, universe_num, -1)
+        universe_nums = list(min_decs.keys())
+        br.run_multiverse(universe_nums)
         app_error_dashboard.data_folder = osp.realpath(folder)
         app_error_dashboard.aggr_error = DebugMultiverse(app_error_dashboard.data_folder)
         app_error_dashboard.run(host='0.0.0.0', port=f'8060')
