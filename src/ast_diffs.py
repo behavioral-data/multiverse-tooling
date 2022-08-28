@@ -41,7 +41,6 @@ def parse_constant_for_boba_var_node(node):
     if match and len(match.regs) == 1 and (match.regs[0][0] == 2 and match.regs[0][1] == (match.endpos - 2)): 
         return match.group()
     return None
-        
     
 def compare_ast(node1: Union[ast.expr, List[ast.expr]], node2: Union[ast.expr, List[ast.expr]]) -> bool:
     if type(node1) is not type(node2):

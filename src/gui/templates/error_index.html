@@ -28,9 +28,14 @@
             <div class="col-3 vh-100">
                 <div style="text-align: center;">
                     <h4>Aggregate Errors</h4>
+                    
+                    <div class="progress mt-2 mb-1"  style="height: 10px;">
+                        <div class="progress-bar bg-success" role="progressbar" style="width: {{progress_val}}%;" aria-valuenow="{{progress_val}}" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                    {{progress_str}}
                 </div>
-                <div class="list-group list-group-flush overflow-auto" id="list-tab" role="tablist"
-                    style="overflow-y: scroll; height: 95%; overflow-x: hidden;">
+                <div class="list-group list-group-flush" id="list-tab" role="tablist"
+                    style="overflow-y: scroll; overflow-wrap:break-word; height: 95%; overflow-x: hidden;">
                     {% for error in errors%}
                         {% if loop.index0 == 0 %}
                         <a class="list-group-item list-group-item-action active" id="list-{{loop.index0}}-list" 
@@ -51,7 +56,7 @@
             </div>
             <div class="col-9 vh-100">
                 <div class="row">
-                    <div class="col">
+                    <div class="col-8">
                         <div class="col">
                             <div class="toast" role="alert" aria-live="assertive" aria-atomic="true"
                                 data-autohide="true" style="width: 100%; position: relative; top: 0; left: 0;">
@@ -166,6 +171,7 @@
             <script type="text/javascript" src="/dist/prism.js"></script>
             <script type="text/javascript" src="load_error_info.js"></script>
             <script>
+
                 $(document).ready(function () {
                     $(".toggle-mode").click(function () {
                         var left = $("#sidebar-left"),

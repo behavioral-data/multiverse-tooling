@@ -28,9 +28,13 @@
             <div class="col-3 vh-100">
                 <div style="text-align: center;">
                     <h4>Aggregate Warnings</h4>
+                    <div class="progress mt-2 mb-1"  style="height: 10px;">
+                        <div class="progress-bar bg-success" role="progressbar" style="width: {{progress_val}}%;" aria-valuenow="{{progress_val}}" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                    {{progress_str}}
                 </div>
                 <div class="list-group list-group-flush overflow-auto" id="list-tab" role="tablist"
-                    style="overflow-y: scroll; height: 95%; overflow-x: hidden;">
+                    style="overflow-y: scroll; height: 88%; overflow-x: hidden;">
                     {% for error in errors%}
                         {% if loop.index0 == 0 %}
                         <a class="list-group-item list-group-item-action active" id="list-{{loop.index0}}-list" 

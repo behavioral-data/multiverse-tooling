@@ -198,7 +198,7 @@ class DebugMultiverse:
 			df = pd.read_csv(fn, na_filter=False)
 			if len(df) < len(self.summary_df):
 				self.refresh_vals()
-
+		
 		if not is_warning:
 			error_info: ErrorAggregateInfo = self.error_info
 			first_no_str_line = 'No Error but has Miscl Warnings'
@@ -260,7 +260,7 @@ class DebugMultiverse:
 					"error_msg": error_str,
 					"error_msg_first_line": first_line,
 					"error_msg_first_lines": first_lines,
-					"common_universes": common_unums_jsons,
+					"common_universes": sorted(common_unums_jsons, key=lambda x: x['universe_num']),
 					"number_affected": number_affected
 				})
 		errors = sorted(errors, key=lambda x: int(x['number_affected'].split()[0]), reverse=True)
