@@ -87,13 +87,30 @@
                                 
                                 <pre style="white-space: pre-wrap; max-height: 90%; overflow: scroll; font-size: 0.9em"><code class="language-{{lang}}">{{error["error_msg"]}}</code> </pre>
                             </div>
-                            <h5 style="width: 100%;"">Decisions and Options that Isolate this Error</h5>
+                            <h5 style="width: 100%;">Shared Decision Options that Isolate this Error <a data-bs-toggle="offcanvas" href="#offcanvasRight" aria-controls="offcanvasRight">Learn More</a></h5>
+
+                            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+                              <div class="offcanvas-header">
+                                <h5 id="offcanvasRightLabel">Shared Decision Options Calculation</h5>
+                                <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                              </div>
+                              <div class="offcanvas-body">
+                                <p>
+                                We show all <b>shared options</b> for each decision among universes that share the error as it could be any one of these options that 
+                                affect the error. However if the universes in this error </b>cover all options</b> of a decision, it is unlikely that this decision is affecting the error. Based on this
+                                heuristic we do not show the decision. </p>
+                                
+                                <p>
+                                An important note to consider though, is that the fewer the number of universes that are ran, the less we know about other decision options in unran universes 
+                                that could give us more information about the error. Therefore, if running the multiverse is relatively fast say <em>less than 30min</em>, we encourage you to run the multiverse in the background 
+                                and observe the errors in aggregate.
+                                </p>
+                              </div>
+                            </div>
                             <div class="d-flex justify-content-start align-items-start m-2" style="height: 10%; flex-wrap: wrap; overflow: scroll;"> 
-                                
-                                
                                 {% for decision, options_str in error["common_decs"].items()%}
-                                <button type="button" class="btn btn-primary btn-m m-lg-2" data-bs-toggle="popover" 
-                                data-bs-trigger="focus" title="Relevant Options" data-bs-content="{{options_str}}">
+                                <button type="button" class="btn btn-primary btn-m m-lg-2" data-bs-toggle="popover" data-bs-html="true"
+                                data-bs-trigger="focus" title="Shared Relevant Options (in Bold)" data-bs-content="{{options_str}}">
                                     {{decision}}
                                 </button>
                             {% endfor %}

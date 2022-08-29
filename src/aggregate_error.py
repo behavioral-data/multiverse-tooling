@@ -56,7 +56,7 @@ def decisions_set_unique(fr_set_tup, orig_decision_dict):
 	return orig_dict
 
 def get_decs(summary_df) -> Dict[str, list]:
-	return {c : frozenset(summary_df[c].unique())
+	return {c : summary_df[c].unique()
 			for c in summary_df.columns[1:]}
 	
 def set_universe_as_index(summary_df):
@@ -152,14 +152,14 @@ class DebugMultiverse:
 		self.code_folder = osp.join(folder, DIR_SCRIPT)
 		self.summary_df = pd.read_csv(osp.join(self.folder, 'summary.csv')).fillna('')
 		self.summary_df = set_universe_as_index(self.summary_df)
-		decisions = get_decs(self.summary_df)
+		self.decisions = get_decs(self.summary_df)
 		fn = self.summary_df['Filename'].to_list()[0]
 		try:
 			with open(self.folder + '/lang.json', 'r') as f:
 				self.lang = Lang(fn, supported_langs=json.load(f))
 		except IOError:
 			self.lang = Lang(fn)
-		self._decisions = {k: v for k, v in decisions.items() if len(v) > 1}
+		self._decisions = {k: frozenset(v) for k, v in self.decisions.items() if len(v) > 1}
 		self.error_info = ErrorAggregateInfo({}, {}, {}, {})
 		self.warning_info = ErrorAggregateInfo({}, {}, {}, {})
 		self.refresh_vals()
@@ -207,62 +207,70 @@ class DebugMultiverse:
 			first_no_str_line = 'No Warnings but has Error'
   
 		for unums, error_strs in error_info.common_lines.items():
-			error_str = error_strs[0]
-			if error_str == '':
-				first_line = first_no_str_line
-				first_lines = ''
-			else:
-				first_line = error_str.split('\n')[0]
-				if self.lang.lang[0] == 'python':
-					if is_warning:
-						pt = '[a-zA-z]*Warning:\s.*'
-						m = re.search(pt, first_line)
-						if m:
-							first_line = m[0]
-					else:
-						first_line = error_str.split('\n')[-1].strip()
-      
-				if len(first_line) > 50:
-					first_line = first_line[:47] + ' ...'
-				first_lines = '\n'.join(error_str.split('\n')[:5]) + '\n...'
+			for error_str in error_strs:
+				if error_str == '':
+					first_line = first_no_str_line
+					first_lines = ''
+				else:
+					first_line = error_str.split('\n')[0]
+					if self.lang.lang[0] == 'python':
+						if is_warning:
+							pt = '[a-zA-z]*Warning:\s.*'
+							m = re.search(pt, first_line)
+							if m:
+								first_line = m[0]
+						else:
+							first_line = error_str.split('\n')[-1].strip()
+		
+					if len(first_line) > 50:
+						first_line = first_line[:47] + ' ...'
+					first_lines = '\n'.join(error_str.split('\n')[:5]) + '\n...'
 
-			common_decs = decisions_set_unique(error_info.lines_to_decisions[error_str], 
-									  self.orig_decisions)
-			for dec, opts in common_decs.items():
-				opt_str = '\n'.join(f"{i+1}. {opt}" for i, opt in enumerate(opts))
-				common_decs[dec] = opt_str
-			common_unums = random.sample(list(unums), min(len(unums), 10))
-			number_affected = f"{len(unums)} out of {len(self.summary_df)} Universes Affected"
-			common_unums_jsons = []
-			for unum in common_unums:
-				df_row = self.summary_df.loc[unum]
-				filename = osp.join(self.code_folder, df_row[0])
-				decs = [{"decision": dec, "option": opt} 
-						for dec, opt in df_row[1:].to_dict().items()]
-				common_unums_jsons.append({
-					"decisions": decs,
-					"universe_path": filename,
-					"universe_num": unum
-				})
-			if error_str == '':
-				no_errors.append({
-					"common_decs": common_decs,
-					"error_msg": error_str,
-					"error_msg_first_line": first_line,
-					"error_msg_first_lines": first_lines,
-					"common_universes": common_unums_jsons,
-					"number_affected": number_affected
-				})
-			else:
-				errors.append(
-					{
-					"common_decs": common_decs,
-					"error_msg": error_str,
-					"error_msg_first_line": first_line,
-					"error_msg_first_lines": first_lines,
-					"common_universes": sorted(common_unums_jsons, key=lambda x: x['universe_num']),
-					"number_affected": number_affected
-				})
+				common_decs = decisions_set_unique(error_info.lines_to_decisions[error_str], 
+										self.orig_decisions)
+				for dec, opts in common_decs.items():
+					if dec == 'All Universes':
+						break
+					orig_opts = self.decisions[dec]
+					opt_str = ''
+					for i, opt in enumerate(orig_opts):
+						if opt not in opts:
+							opt_str += f'{i+1}. {opt} <br>'
+						else:
+							opt_str += f'<em><b>{i+1}.{opt}</b></em><br>'
+					common_decs[dec] = opt_str
+				common_unums = random.sample(list(unums), min(len(unums), 10))
+				number_affected = f"{len(unums)} out of {len(self.summary_df)} Universes Affected"
+				common_unums_jsons = []
+				for unum in common_unums:
+					df_row = self.summary_df.loc[unum]
+					filename = osp.join(self.code_folder, df_row[0])
+					decs = [{"decision": dec, "option": opt} 
+							for dec, opt in df_row[1:].to_dict().items()]
+					common_unums_jsons.append({
+						"decisions": decs,
+						"universe_path": filename,
+						"universe_num": unum
+					})
+				if error_str == '':
+					no_errors.append({
+						"common_decs": common_decs,
+						"error_msg": error_str,
+						"error_msg_first_line": first_line,
+						"error_msg_first_lines": first_lines,
+						"common_universes": common_unums_jsons,
+						"number_affected": number_affected
+					})
+				else:
+					errors.append(
+						{
+						"common_decs": common_decs,
+						"error_msg": error_str,
+						"error_msg_first_line": first_line,
+						"error_msg_first_lines": first_lines,
+						"common_universes": sorted(common_unums_jsons, key=lambda x: x['universe_num']),
+						"number_affected": number_affected
+					})
 		errors = sorted(errors, key=lambda x: int(x['number_affected'].split()[0]), reverse=True)
 		return errors + no_errors
 	
@@ -286,17 +294,18 @@ class DebugMultiverse:
 		decisions_to_lines = defaultdict(list)
 		for k, line in common_lines.items():
 			subset_df = summary_df.loc[list(k)]
-			decisions = get_decs(subset_df)
+			decisions = {k: frozenset(v) for k, v in get_decs(subset_df).items()}
 			decisions = {k: v for k, v in decisions.items() if k in self.orig_decisions}
 			decisions_repr = tuple((k, decisions[k])for k in sorted(decisions.keys())) 
-			decisions_to_lines[decisions_repr].append('\n'.join(line))
+			decisions_to_lines[decisions_repr].extend(line)
 		unum_shared_lines: Dict[int, Dict[str, Set[int]]] = defaultdict(dict)
 		
 		for k, lines in common_lines.items():
 			for unum in k:
 				shared_unums = set(k)
 				shared_unums.discard(unum)
-				unum_shared_lines[unum]['\n'.join(lines)] = shared_unums
+				for line in lines:
+					unum_shared_lines[unum][line] = shared_unums
 
 		lines_to_decisions = {line: k for k, v in decisions_to_lines.items() for line in v}
   
@@ -477,7 +486,7 @@ def cluster_error(df, lang="r"):
 		
 if __name__ == '__main__':
 	from os.path import join
-	MULTIVERSE_FOLDER = "/Users/qikungu/PythonProjects/MultiverseTooling/debugging_evaluation/final/hurricane/hurricane_r/hurricane_bug_5"
+	MULTIVERSE_FOLDER = "/Users/qikungu/PythonProjects/MultiverseTooling/user_study/08282022_Bernease/hurricane_bug_all"
 	LOG_FOLDER = join(MULTIVERSE_FOLDER, 'multiverse', 'boba_logs')
 	SUM_DF_PATH = join(MULTIVERSE_FOLDER, 'multiverse', 'summary.csv')
 	
@@ -487,7 +496,7 @@ if __name__ == '__main__':
 	print(f'{bcolors.OKCYAN}====== Sampled Universes to Run ======')
 	pprint(min_decs)
 	debug_multiverse = DebugMultiverse(join(MULTIVERSE_FOLDER, 'multiverse'))
-	res = debug_multiverse.return_json_errors()
+	res = debug_multiverse.return_json_errors(is_warning=True)
 	debug_multiverse.print_common_decisions(768)
 	debug_multiverse.print_common_output(768, 532)
 	debug_multiverse.print_decision_and_code(2)
