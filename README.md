@@ -48,18 +48,16 @@ This feature is to help **workflow steps 2 and 3**.
 Understand the existing errors better.
 
 ### GUI
-![boba error gui](resources/boba_error.png)
+![boba error gui](resources/error_aggr.png)
 
 ### Left Side Panel
 The side panel on the left is used to navigate through groups of errors. For each error, you will see a teaser of its error string, and the number of universes affected (from the one's ran so far)
-![boba error side panel](resources/boba_error_side_panel.png)
 
 ### Main Panel
 In the main panel, the full error text will be shown. In addition, based on the number of universes ran so far, we determine the **decisions and options that may isolate this error**. Each blue button shows a decision and clicking on it shows the relevant option. 
 
 Finally, towards the bottom of the main panel, you can see common universes that share this error. Clicking on one shows the filepath, and the decisions and options associated with that universe.
 
-![boba main panel](resources/boba_error_main_panel.png)
 
 ## Universe to Template Diff
 The previous features help with workflow steps 1, 2 and 3. This feature is intended to help with the final step: translating changes from the universe file to the tempalte file.
