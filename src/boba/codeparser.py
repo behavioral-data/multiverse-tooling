@@ -218,13 +218,14 @@ class CodeParser:
         try:
             self.spec = json.loads(self.raw_spec) if self.raw_spec else {}
             # ensure all items in decision options are str
-            for d_dict in self.spec['decisions']:
-                new_opts = []
-                for opt in d_dict['options']:
-                    if type(opt) is not str:
-                        opt = str(opt)
-                    new_opts.append(opt)
-                d_dict['options'] = new_opts
+            if self.spec:
+                for d_dict in self.spec['decisions']:
+                    new_opts = []
+                    for opt in d_dict['options']:
+                        if type(opt) is not str:
+                            opt = str(opt)
+                        new_opts.append(opt)
+                    d_dict['options'] = new_opts
             
         except ValueError as e:
             msg = self.raw_spec + '\n' + e.args[0]

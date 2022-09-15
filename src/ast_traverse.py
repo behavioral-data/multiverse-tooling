@@ -273,7 +273,7 @@ import statsmodels.formula.api as smf
 
 if __name__ == '__main__':
     # read data file
-    df = pd.read_csv('/projects/bdata/kenqgu/Research/MultiverseProject/boba_tea/boba/example/fertility/durante_etal_2013_study1.txt', delimiter='\t')
+    df = pd.read_csv('[redacted_for_anonymity]/MultiverseProject/boba_tea/boba/example/fertility/durante_etal_2013_study1.txt', delimiter='\t')
 
     # remove NA
     df = df.dropna(subset=['rel1', 'rel2', 'rel3'])

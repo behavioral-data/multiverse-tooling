@@ -84,7 +84,7 @@ class RTreeGenerator(TreeGenerator):
 
 if __name__ == "__main__":
     gen = RTreeGenerator()
-    f = '/projects/bdata/kenqgu/Research/MultiverseProject/MultiverseTooling/multiverse-tooling/data/hurricane/template.R'
+    f = '[redacted_for_anonymity]/MultiverseProject/MultiverseTooling/multiverse-tooling/data/hurricane/template.R'
     t = gen.generate_tree_from_file(f)
     t.root.viz_graph()
     print('here')

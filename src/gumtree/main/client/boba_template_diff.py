@@ -239,7 +239,7 @@ if __name__ == "__main__":
 	dataset, ext = 'hurricane', 'R'
 	save_file = osp.join(DATA_DIR, f'{dataset}_template_parser_obj_0804.pickle')
 	
-	# ps = Parser('/projects/bdata/kenqgu/Research/MultiverseProject/MultiverseTooling/multiverse-tooling/data/hurricane/template.R', 
+	# ps = Parser('[redacted_for_anonymity]/MultiverseProject/MultiverseTooling/multiverse-tooling/data/hurricane/template.R', 
     #          	'.', None)
 	# ps.main()
 	ps = load_parser_example(dataset, ext, None, run_parser_main=True)
