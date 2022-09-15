@@ -7,7 +7,7 @@ library("margins")
 
 # source("./boba_util.R")
 
-df <- read_csv("/projects/bdata/kenqgu/Research/MultiverseProject/multiverse_tooling/data/racial_discrimination/processed_racial_discrimination.csv")
+df <- read_csv("data/racial_discrimination/processed_racial_discrimination.csv")
 
 model_sumqdx <- lm(sumq ~ sumq_med, data = df)
 

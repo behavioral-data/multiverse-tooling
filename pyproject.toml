@@ -3,7 +3,7 @@ name = "src"
 version = "0.0.0"
 description = ""
 readme = "README.md"
-authors = ["Ken Gu <ken.qgu@gmail.com>"]
+authors = [""]
 packages = [
 ]
 

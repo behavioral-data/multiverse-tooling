@@ -3,7 +3,7 @@ import numpy as np
 import statsmodels.api as sm
 import statsmodels.formula.api as smf
 
-df = pd.read_csv('/projects/bdata/kenqgu/Research/MultiverseProject/boba_tea/boba/example/hurricane/multiverse/data_cleaned.csv')
+df = pd.read_csv('boba/example/hurricane/multiverse/data_cleaned.csv')
 formula= 'log_death ~ feminity + damage + zcat + feminity:damage + feminity:zcat + year:damage'
 model = smf.ols(formula=formula, data=df).fit()
 

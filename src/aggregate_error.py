@@ -6,6 +6,7 @@ import re
 import os
 from typing import Dict, FrozenSet, Set, List, Tuple
 import pandas as pd
+import numpy as np
 import glob
 from os.path import join
 import os.path as osp
@@ -56,7 +57,7 @@ def decisions_set_unique(fr_set_tup, orig_decision_dict):
 	return orig_dict
 
 def get_decs(summary_df) -> Dict[str, list]:
-	return {c : summary_df[c].unique()
+	return {c : summary_df[c].replace('', np.nan).dropna().unique()
 			for c in summary_df.columns[1:]}
 	
 def set_universe_as_index(summary_df):
@@ -486,7 +487,7 @@ def cluster_error(df, lang="r"):
 		
 if __name__ == '__main__':
 	from os.path import join
-	MULTIVERSE_FOLDER = "/Users/qikungu/PythonProjects/MultiverseTooling/user_study/08282022_Bernease/hurricane_bug_all"
+	MULTIVERSE_FOLDER = ""
 	LOG_FOLDER = join(MULTIVERSE_FOLDER, 'multiverse', 'boba_logs')
 	SUM_DF_PATH = join(MULTIVERSE_FOLDER, 'multiverse', 'summary.csv')
 	
@@ -496,7 +497,7 @@ if __name__ == '__main__':
 	print(f'{bcolors.OKCYAN}====== Sampled Universes to Run ======')
 	pprint(min_decs)
 	debug_multiverse = DebugMultiverse(join(MULTIVERSE_FOLDER, 'multiverse'))
-	res = debug_multiverse.return_json_errors(is_warning=True)
+	res = debug_multiverse.return_json_errors(is_warning=False)
 	debug_multiverse.print_common_decisions(768)
 	debug_multiverse.print_common_output(768, 532)
 	debug_multiverse.print_decision_and_code(2)
