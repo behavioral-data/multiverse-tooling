@@ -3,9 +3,8 @@ name = "src"
 version = "0.0.0"
 description = ""
 readme = "README.md"
-authors = [""]
-packages = [
-]
+authors = ["John Smith <john@example.com>"]
+packages = []
 
 [tool.poetry.scripts]
 # command_name = module_for_handler : function_for_handler

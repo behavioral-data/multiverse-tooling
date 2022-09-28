@@ -7,7 +7,15 @@ Welcome to our multiverse debugging CLI suite, a series of CLI features built on
 3. Focusing on one specific error
 4. Applying the solution to all selected path. 
 
-From this understanding of the workflow, we built 3 CLI features on top of Boba to help with these worfklows.
+From this understanding of the workflow, we built 3 CLI features on top of Boba to help with these worfklows. For more details about Boba see the [documentation](https://github.com/uwdata/boba).
+
+## Installation
+Need to have conda environment and also [poetry](https://python-poetry.org/docs/basic-usage/) installed.
+```
+conda create --name MultiverseDebugger python=3.9
+conda activate MultiverseDebugger
+poetry install
+```
 
 ## Multiverse Code Cover Sweep
 ### Previously
